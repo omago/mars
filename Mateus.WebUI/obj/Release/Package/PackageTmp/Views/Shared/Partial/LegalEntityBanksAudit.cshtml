@@ -1,0 +1,132 @@
+﻿@using Mateus.Model.BussinesLogic.Views.LegalEntityBankAuditModel;
+
+@{ 
+    int countChanges = 0; 
+    List<DateTime> legalEntityBanksDates = new List<DateTime>();
+    if (ViewBag.legalEntityBanksDatesHistory != null && ViewBag.legalEntityBanksDatesHistory is List<DateTime>)
+    {
+        legalEntityBanksDates = (List<DateTime>)ViewBag.legalEntityBanksDatesHistory;
+    }
+    legalEntityBanksDates = (List<DateTime>)ViewBag.legalEntityBanksDatesHistory;
+
+    countChanges = legalEntityBanksDates.Count;
+        
+    int cellWidth = (int) Math.Floor((double)84/countChanges);
+        
+    int count = 0;
+    if(ViewBag.legalEntityBanksHistory != null)
+    {
+        if(ViewBag.legalEntityBanksHistory is List<List<LegalEntityBankAuditView>>)
+        {
+            List<List<LegalEntityBankAuditView>> legalEntityBanks = (List<List<LegalEntityBankAuditView>>)ViewBag.legalEntityBanksHistory;
+            count = legalEntityBanks.Count; 
+
+            if(count > 0) 
+            {
+                <table class="grid">
+                    <tr>
+                        <th class="w16"></th>
+                        @for(int i = 0; i < countChanges; i++) { <th class="w@(cellWidth) left"><span>@(legalEntityBanksDates[i].ToString("dd.MM.yyyy."))</span></th> }
+                    </tr>
+                    @foreach(List<LegalEntityBankAuditView> legalEntityBank in legalEntityBanks)
+                    {
+                        <tr><td class="right"><b>Banka</b></td>
+                            @for(int i = 0; i < countChanges; i++) 
+                            {   
+                                string bankName = null;
+                                bool? deleted = null;
+                        
+                                foreach(LegalEntityBankAuditView legalEntityBankAuditView in legalEntityBank)
+                                {
+                                    if(legalEntityBankAuditView.ChangeDate == legalEntityBanksDates[i])
+                                    {
+                                        bankName = legalEntityBankAuditView.BankName;
+                                        deleted = legalEntityBankAuditView.Deleted;
+                                    }
+                                }
+                        
+                                if(bankName != null)
+                                {
+                                    <td class="left">@(bankName)</td> 
+                                }
+                                else if(deleted == true) 
+                                {
+                                    <td class="left">@("Obrisana vrijednost")</td>
+                                }
+                                else
+                                {
+                                    <td>&nbsp;</td>
+                                }
+                            }
+                        </tr>
+                    }                
+                </table>
+            }
+            else
+            {
+                <table class="grid">
+                    <tr>
+                        <td class="no-records">Nema zapisa</td>
+                    </tr>
+                </table>
+            }
+
+        }
+        else if(ViewBag.legalEntityBanksHistory is List<LegalEntityBankAuditView>)
+        {
+            List<LegalEntityBankAuditView> legalEntityBank = (List<LegalEntityBankAuditView>)ViewBag.legalEntityBanksHistory;
+            count = legalEntityBank.Count; 
+            <table class="grid">
+
+                @if(count > 0) 
+                {
+                    <tr><th class="w16"></th>@for(int i = 0; i < countChanges; i++) { <th class="w@(cellWidth) left"><span>@(legalEntityBanksDates[i].ToString("dd.MM.yyyy."))</span></th> }</tr>
+                    <tr><td class="right"><b>Banka</b></td>
+                        @for(int i = 0; i < countChanges; i++) 
+                        {   
+                            string bankName = null;
+                            bool? deleted = null;
+                        
+                            foreach(LegalEntityBankAuditView legalEntityBankAuditView in legalEntityBank)
+                            {
+                                if(legalEntityBankAuditView.ChangeDate == legalEntityBanksDates[i])
+                                {
+                                    bankName = legalEntityBankAuditView.BankName;
+                                    deleted = legalEntityBankAuditView.Deleted;
+                                }
+                            }
+                        
+                            if(bankName != null)
+                            {
+                                <td class="left">@(bankName)</td> 
+                            }
+                            else if(deleted == true) 
+                            {
+                                <td class="left">@("Obrisana vrijednost")</td>
+                            }
+                            else
+                            {
+                                <td>&nbsp;</td>
+                            }
+                        }
+                    </tr>
+                }
+                else
+                {
+                    <tr>
+                        <td class="no-records">Nema zapisa</td>
+                    </tr>
+                }
+            </table>
+        }
+
+    } 
+    else
+    {
+        <table class="grid">
+            <tr>
+                <td class="no-records">Nema zapisa</td>
+            </tr>
+        </table>
+    }
+}

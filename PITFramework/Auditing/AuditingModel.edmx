@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Mateus_wcModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="Mateus_wcModelStoreContainer">
+          <EntitySet Name="AuditingDetails" EntityType="Mateus_wcModel.Store.AuditingDetails" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="AuditingMaster" EntityType="Mateus_wcModel.Store.AuditingMaster" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_AuditingDetails_AuditingMaster" Association="Mateus_wcModel.Store.FK_AuditingDetails_AuditingMaster">
+            <End Role="AuditingMaster" EntitySet="AuditingMaster" />
+            <End Role="AuditingDetails" EntitySet="AuditingDetails" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="AuditingDetails">
+          <Key>
+            <PropertyRef Name="AuditingDetailPK" />
+          </Key>
+          <Property Name="AuditingDetailPK" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="AuditingMasterFK" Type="int" />
+          <Property Name="ColumnName" Type="nvarchar" MaxLength="256" />
+          <Property Name="OldValue" Type="nvarchar(max)" />
+          <Property Name="NewValue" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="AuditingMaster">
+          <Key>
+            <PropertyRef Name="AuditingMasterPK" />
+          </Key>
+          <Property Name="AuditingMasterPK" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserFK" Type="nvarchar" MaxLength="128" />
+          <Property Name="DBName" Type="nvarchar" MaxLength="128" />
+          <Property Name="TableName" Type="nvarchar" MaxLength="128" />
+          <Property Name="TableNameFK" Type="int" />
+          <Property Name="Date" Type="datetime" />
+          <Property Name="Operation" Type="nvarchar" MaxLength="128" />
+          <Property Name="ServerName" Type="nvarchar" MaxLength="128" />
+          <Property Name="SessionToken" Type="nvarchar" MaxLength="512" />
+          <Property Name="RelatedEntityPK" Type="int" />
+        </EntityType>
+        <Association Name="FK_AuditingDetails_AuditingMaster">
+          <End Role="AuditingMaster" Type="Mateus_wcModel.Store.AuditingMaster" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AuditingDetails" Type="Mateus_wcModel.Store.AuditingDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AuditingMaster">
+              <PropertyRef Name="AuditingMasterPK" />
+            </Principal>
+            <Dependent Role="AuditingDetails">
+              <PropertyRef Name="AuditingMasterFK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Mateus_wcModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="AuditingMateus" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AuditingDetails" EntityType="Mateus_wcModel.AuditingDetail" />
+          <EntitySet Name="AuditingMasters" EntityType="Mateus_wcModel.AuditingMaster" />
+          <AssociationSet Name="FK_AuditingDetails_AuditingMaster" Association="Mateus_wcModel.FK_AuditingDetails_AuditingMaster">
+            <End Role="AuditingMaster" EntitySet="AuditingMasters" />
+            <End Role="AuditingDetail" EntitySet="AuditingDetails" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="AuditingDetail">
+          <Key>
+            <PropertyRef Name="AuditingDetailPK" />
+          </Key>
+          <Property Name="AuditingDetailPK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AuditingMasterFK" Type="Int32" />
+          <Property Name="ColumnName" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+          <Property Name="OldValue" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="NewValue" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="AuditingMaster" Relationship="Mateus_wcModel.FK_AuditingDetails_AuditingMaster" FromRole="AuditingDetail" ToRole="AuditingMaster" />
+        </EntityType>
+        <EntityType Name="AuditingMaster">
+          <Key>
+            <PropertyRef Name="AuditingMasterPK" />
+          </Key>
+          <Property Name="AuditingMasterPK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DBName" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="TableName" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="TableNameFK" Type="Int32" />
+          <Property Name="Date" Type="DateTime" />
+          <Property Name="Operation" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="ServerName" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="SessionToken" Type="String" MaxLength="512" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="AuditingDetails" Relationship="Mateus_wcModel.FK_AuditingDetails_AuditingMaster" FromRole="AuditingMaster" ToRole="AuditingDetail" />
+          <Property Type="String" Name="UserFK" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="RelatedEntityPK" />
+        </EntityType>
+        <Association Name="FK_AuditingDetails_AuditingMaster">
+          <End Type="Mateus_wcModel.AuditingMaster" Role="AuditingMaster" Multiplicity="0..1" />
+          <End Type="Mateus_wcModel.AuditingDetail" Role="AuditingDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AuditingMaster">
+              <PropertyRef Name="AuditingMasterPK" />
+            </Principal>
+            <Dependent Role="AuditingDetail">
+              <PropertyRef Name="AuditingMasterFK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Mateus_wcModelStoreContainer" CdmEntityContainer="AuditingMateus">
+          <EntitySetMapping Name="AuditingDetails"><EntityTypeMapping TypeName="Mateus_wcModel.AuditingDetail"><MappingFragment StoreEntitySet="AuditingDetails">
+            <ScalarProperty Name="AuditingDetailPK" ColumnName="AuditingDetailPK" />
+            <ScalarProperty Name="AuditingMasterFK" ColumnName="AuditingMasterFK" />
+            <ScalarProperty Name="ColumnName" ColumnName="ColumnName" />
+            <ScalarProperty Name="OldValue" ColumnName="OldValue" />
+            <ScalarProperty Name="NewValue" ColumnName="NewValue" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="AuditingMasters"><EntityTypeMapping TypeName="Mateus_wcModel.AuditingMaster"><MappingFragment StoreEntitySet="AuditingMaster">
+                <ScalarProperty Name="RelatedEntityPK" ColumnName="RelatedEntityPK" />
+                <ScalarProperty Name="TableNameFK" ColumnName="TableNameFK" />
+                <ScalarProperty Name="UserFK" ColumnName="UserFK" />
+                <ScalarProperty Name="AuditingMasterPK" ColumnName="AuditingMasterPK" />
+            <ScalarProperty Name="DBName" ColumnName="DBName" />
+            <ScalarProperty Name="TableName" ColumnName="TableName" />
+            <ScalarProperty Name="Date" ColumnName="Date" />
+            <ScalarProperty Name="Operation" ColumnName="Operation" />
+            <ScalarProperty Name="ServerName" ColumnName="ServerName" />
+            <ScalarProperty Name="SessionToken" ColumnName="SessionToken" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="AuditingModel">
+        <EntityTypeShape EntityType="Mateus_wcModel.AuditingDetail" Width="1.5" PointX="1.125" PointY="2" Height="2.172587890625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Mateus_wcModel.AuditingMaster" Width="1.5" PointX="4.5" PointY="1.625" Height="2.9417936197916656" IsExpanded="true" />
+        <AssociationConnector Association="Mateus_wcModel.FK_AuditingDetails_AuditingMaster" >
+          <ConnectorPoint PointX="4.5" PointY="3.0862939453125" />
+          <ConnectorPoint PointX="2.625" PointY="3.0862939453125" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

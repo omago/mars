@@ -1,0 +1,74 @@
+﻿@using Mateus.Model.BussinesLogic.Views.LegalEntityAuditModel;
+
+@{ 
+    int count = 0; 
+    List<LegalEntityAuditView> model = new List<LegalEntityAuditView>();
+    if(ViewBag.legalEntityHistory != null && ViewBag.legalEntityHistory is List<LegalEntityAuditView>)
+    {
+        model = (List<LegalEntityAuditView>)ViewBag.legalEntityHistory;
+    } 
+    count = model.Count; 
+        
+    int cellWidth = (int) Math.Floor((double)84/count);
+}
+
+@if(count > 0) {
+
+    <table class="grid">
+        <!-- basic info -->
+        <tr><th class="w16"></th>@for(int i = 0; i < count; i++) { <th class="w@(cellWidth) left"><span>@(model[i].ChangeDate.Value.ToString("dd.MM.yyyy."))</span></th> }</tr>
+        <tr><td class="right"><b>Naziv</b></td>@for(int i = 0; i < count; i++) { <td class="left">@(model[i].Name)</td> }</tr> 
+        <tr><td class="right"><b>Kratki naziv (3 znaka)</b></td>@for(int i = 0; i < count; i++) { <td class="left">@(model[i].ShortName)</td> }</tr>
+        <tr><td class="right"><b>OIB</b></td>@for(int i = 0; i < count; i++) { <td class="left">@(model[i].OIB)</td> }</tr> 
+        <tr><td class="right"><b>MB</b></td>@for(int i = 0; i < count; i++) { <td class="left">@(model[i].MB)</td> }</tr> 
+        <tr><td class="right"><b>MBS</b></td>@for(int i = 0; i < count; i++) { <td class="left">@(model[i].MBS)</td> }</tr> 
+        <tr><td class="right"><b>Oblik</b></td>@for(int i = 0; i < count; i++) { <td class="left">@(model[i].FormName)</td> }</tr> 
+        <tr><td class="right"><b>Djelatnost</b></td>@for(int i = 0; i < count; i++) { <td class="left">@(model[i].ActivityName)</td> }</tr>  
+        <tr><td class="right"><b>Opis stvarne djelatnosti</b></td>@for(int i = 0; i < count; i++) { <td class="left">@(model[i].ActivityDescription)</td> }</tr> 
+        <tr><td class="right"><b>Temeljni kapital</b></td>@for(int i = 0; i < count; i++) { <td class="left">@if(model[i].FundamentalCapital != null && model[i].FundamentalCapital.Value.ToString() != "") { @(model[i].FundamentalCapital.Value.ToString("0,0.00") + " kn") }</td> } </tr>  
+        
+        <!-- registration info -->
+        <tr><td class="right"><b>Područni ured</b></td>@for(int i = 0; i < count; i++) { <td class="left">@(model[i].RegionalOfficeName)</td> }</tr>
+        <tr><td class="right"><b>Ispostava</b></td>@for(int i = 0; i < count; i++) { <td class="left">@(model[i].SubstationName)</td> }</tr>
+        <tr><td class="right"><b>Referent</b></td>@for(int i = 0; i < count; i++) { <td class="left">@(model[i].ReferentName)</td> }</tr>
+        <tr><td class="right"><b>Datum registracije</b></td>@for(int i = 0; i < count; i++) { <td class="left">@if(model[i].DateOfRegistration != null) { @(model[i].DateOfRegistration.Value.ToString("dd.MM.yyyy.")) }</td> }</tr>
+        <tr><td class="right"><b>Trgovački sud</b></td>@for(int i = 0; i < count; i++) { <td class="left">@(model[i].CommercialCourtName)</td> }</tr>
+        <tr><td class="right"><b>Porez</b></td>@for(int i = 0; i < count; i++) { <td class="left">@(model[i].TaxName)</td> }</tr>
+            
+        <!-- rest info -->
+        <tr><td class="right"><b>Datum prvog kontakta</b></td>@for(int i = 0; i < count; i++) { <td class="left">@if(model[i].FirstContactDate != null && model[i].FirstContactDate.Value.ToString() != "") { @(model[i].FirstContactDate.Value.ToString("dd.MM.yyyy.")) }</td> }</tr>
+        <tr><td class="right"><b>Turistička zajednica</b></td>@for(int i = 0; i < count; i++) { <td class="left">@if(model[i].TouristOffice == true) { <text>DA</text> } else if(model[i].TouristOffice == false) { <text>NE</text> }</td> }</tr>
+        <tr><td class="right"><b>Turistička zajednica opis</b></td>@for(int i = 0; i < count; i++) { <td class="left">@(model[i].TouristOfficeDescription)</td> }</tr>
+        <tr><td class="right"><b>Spomenička renta</b></td>@for(int i = 0; i < count; i++) { <td class="left">@if(model[i].MonumentAnnuity == true) { <text>DA</text> } else if(model[i].MonumentAnnuity == false)  { <text>NE</text> }</td> }</tr>
+        <tr><td class="right"><b>Spomenička renta opis</b></td>@for(int i = 0; i < count; i++) { <td class="left">@(model[i].MonumentAnnuityDescription)</td> }</tr>
+        <tr><td class="right"><b>Aktivan</b></td>@for(int i = 0; i < count; i++) { <td class="left">@if(model[i].Active == true) { <text>DA</text> } else if(model[i].Active == false) { <text>NE</text> }</td> }</tr>
+        <tr><td class="right"><b>Broj zaposlenih</b></td>@for(int i = 0; i < count; i++) { <td class="left">@if(model[i].NumberOfEmployees.ToString() == "DELETED-VALUE") { @("Obrisana vrijednost") } else { @(model[i].NumberOfEmployees) }</td> }</tr> 
+        <tr><td class="right"><b>MIRO - registracijski broj</b></td>@for(int i = 0; i < count; i++) { <td class="left">@if(model[i].MIORRegistrationNumber == "DELETED-VALUE") { @("Obrisana vrijednost") } else { @(model[i].MIORRegistrationNumber) }</td> }</tr> 
+        <tr><td class="right"><b>HZZO - broj obveze</b></td>@for(int i = 0; i < count; i++) { <td class="left">@if(model[i].HZZOObligationNumber == "DELETED-VALUE") { @("Obrisana vrijednost") } else { @(model[i].HZZOObligationNumber) }</td> }</tr> 
+        <tr><td class="right"><b>HZZO - šifra poslovnog subjekta</b></td>@for(int i = 0; i < count; i++) { <td class="left">@if(model[i].HZZOBussinesEntityCode == "DELETED-VALUE") { @("Obrisana vrijednost") } else { @(model[i].HZZOBussinesEntityCode) }</td> }</tr> 
+            
+        <!-- residence info -->
+        <tr><td class="right"><b>Država sjedišta</b></td>@for(int i = 0; i < count; i++) { <td class="left">@(model[i].CountryName)</td> }</tr> 
+        <tr><td class="right"><b>Županija sjedišta</b></td>@for(int i = 0; i < count; i++) { <td class="left">@(model[i].CountyName)</td> }</tr> 
+        <tr><td class="right"><b>Grad sjedišta</b></td>@for(int i = 0; i < count; i++) { <td class="left">@(model[i].CityCommunityName)</td> }</tr> 
+        <tr><td class="right"><b>Poštanski ured sjedišta</b></td>@for(int i = 0; i < count; i++) { <td class="left">@(model[i].PostalOfficeName)</td> }</tr> 
+        <tr><td class="right"><b>Naselje sjedišta</b></td>@for(int i = 0; i < count; i++) { <td class="left">@(model[i].PlaceName)</td> }</tr> 
+        <tr><td class="right"><b>Mjesto sjedišta</b></td>@for(int i = 0; i < count; i++) { <td class="left">@(model[i].Place)</td> }</tr> 
+        <tr><td class="right"><b>Ulica i broj sjedišta</b></td>@for(int i = 0; i < count; i++) { <td class="left">@(model[i].StreetName)</td> }</tr> 
+            
+        <!-- contact info -->
+        <tr><td class="right"><b>Telefon</b></td>@for(int i = 0; i < count; i++) { <td class="left">@if(model[i].Phone == "DELETED-VALUE") { @("Obrisana vrijednost") } else { @(model[i].Phone) }</td> }</tr> 
+        <tr><td class="right"><b>Fax</b></td>@for(int i = 0; i < count; i++) { <td class="left">@if(model[i].Fax == "DELETED-VALUE") { @("Obrisana vrijednost") } else { @(model[i].Fax) }</td> }</tr> 
+        <tr><td class="right"><b>Mobitel</b></td>@for(int i = 0; i < count; i++) { <td class="left">@if(model[i].Mobile == "DELETED-VALUE") { @("Obrisana vrijednost") } else { @(model[i].Mobile) }</td> }</tr> 
+        <tr><td class="right"><b>E-mail</b></td>@for(int i = 0; i < count; i++) { <td class="left">@if(model[i].EMail == "DELETED-VALUE") { @("Obrisana vrijednost") } else { @(model[i].EMail) }</td> }</tr> 
+
+    </table>
+}
+else
+{
+    <table class="grid">
+        <tr>
+            <td class="no-records">Nema zapisa</td>
+        </tr>
+    </table>    
+}

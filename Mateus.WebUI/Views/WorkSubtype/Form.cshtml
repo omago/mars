@@ -1,0 +1,38 @@
+﻿@model Mateus.Model.BussinesLogic.Views.WorkSubtypeModel.WorkSubtypeView
+
+<div id="controls-bar">
+    @Html.Partial("~/Views/Shared/Partial/Breadcrumb.cshtml")
+    <div>
+         @Html.ActionLink(" ", "Index", Session["ControllerReferrer"].ToString(), null, new { @class = "button back padding-right-0" })
+        <a href="#" class="button refresh padding-right-0 margin-right-15"></a>       
+        <input type="submit" class="button save" value="Spremi" />
+    </div>
+</div>
+
+<div id="content">
+
+    <div class="grid-5">
+        <div class="form">
+
+            <h2>Informacije o podtipu posla</h2>
+                
+            <fieldset>
+                <div class="row">
+                    <label for="Name">Naziv:<b>*</b><span>molimo unesite naziv</span></label>
+                    <div class="input">@Html.TextBoxFor(workSubtype => workSubtype.Name, new { @class = "w100" })</div>
+                    <div class="error">@Html.ValidationMessageFor(workSubtype => workSubtype.Name)</div>
+                    <div class="clear"></div>
+                </div>
+                
+                <div class="row">
+                    <label for="WorkTypes">Tip posla:<b>*</b><span>molimo odaberite tip posla</span></label>
+                    <div class="input">@Html.DropDownListFor(workSubtype => workSubtype.WorkTypeFK, Model.WorkTypes, "Odaberite tip posla", new { @class = "w100" })</div>
+                    <div class="error">@Html.ValidationMessageFor(workSubtype => workSubtype.WorkTypeFK)</div>
+                    <div class="clear"></div>
+                </div>
+            </fieldset>
+
+        </div>
+    </div>   
+    <div class="clear"></div>
+</div>  

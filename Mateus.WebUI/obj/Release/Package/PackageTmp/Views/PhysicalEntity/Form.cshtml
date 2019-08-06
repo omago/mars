@@ -1,0 +1,803 @@
+﻿@model Mateus.Model.BussinesLogic.Views.PhysicalEntityModel.PhysicalEntityView
+
+<div id="controls-bar">
+    @Html.Partial("~/Views/Shared/Partial/Breadcrumb.cshtml")
+    <div>
+        @Html.ActionLink(" ", "Index", Session["ControllerReferrer"].ToString(), null, new { @class = "button back padding-right-0" })
+        <a href="#" class="button refresh padding-right-0 margin-right-15"></a>       
+        <input type="submit" class="button save" value="Spremi" />
+    </div>
+</div>
+
+<div id="content">
+
+    <div class="grid-5">
+
+        <div class="form">
+
+            <h2>Kontekst fizičke osobe</h2>
+
+            <fieldset>
+
+                <div class="row">
+                    <label for="Owner">Vlasnik:<span>osoba je vlasnik</span></label>
+                    <div class="input">@Html.CheckBox("Owner")</div>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row">
+                    <label for="LegalRepresentative">Pravni zastupnik:<span>osoba je pravni zastupnik</span></label>
+                    <div class="input">@Html.CheckBox("LegalRepresentative")</div>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row">
+                    <label for="Referent">Referent:<span>osoba je referent</span></label>
+                    <div class="input">@Html.CheckBox("Referent")</div>
+                    <div class="clear"></div>
+                </div>
+
+            </fieldset>
+
+        </div>
+
+        <div class="form margin-top-20">
+
+            <h2>Osobni podaci</h2>
+
+            <fieldset>
+
+                <div class="row">
+                    <label for="Firstname">Ime:<b>*</b><span>molimo unesite ime</span></label>
+                    <div class="input">@Html.TextBoxFor(physicalEntity => physicalEntity.Firstname, new { @class = "w100" })</div>
+                    <div class="error">@Html.ValidationMessageFor(physicalEntity => physicalEntity.Firstname)</div> 
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row">
+                    <label for="Lastname">Prezime:<b>*</b><span>molimo unesite prezime</span></label>
+                    <div class="input">@Html.TextBoxFor(physicalEntity => physicalEntity.Lastname, new { @class = "w100" })</div>
+                    <div class="error">@Html.ValidationMessageFor(physicalEntity => physicalEntity.Lastname)</div> 
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row">
+                    <label for="Gender">Spol:<b>*</b><span>molimo odaberite spol</span></label>
+                    <div class="input">@Html.DropDownListFor(physicalEntity => physicalEntity.Gender, Model.Genders, "Odaberite spol", new { @class = "w100" })</div>
+                    <div class="error">@Html.ValidationMessageFor(physicalEntity => physicalEntity.Gender)</div>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row referent @if(Model.Referent == null || Model.Referent != true){ @("display-none") }">
+                    <label for="EMail">E-mail:<b>*</b><span>molimo unesite e-mail</span></label>
+                    <div class="input">@Html.TextBoxFor(physicalEntity => physicalEntity.EMail, new { @class = "w100" })</div>
+                    <div class="error">@Html.ValidationMessageFor(physicalEntity => physicalEntity.EMail)</div> 
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row owner legal-representative @if(Model.Owner == null || Model.Owner != true || Model.LegalRepresentative == null || Model.LegalRepresentative != true){ @("display-none") }">
+                    <label for="OIB">OIB:<b>*</b><span>molimo unesite OIB</span></label>
+                    <div class="input">@Html.TextBoxFor(physicalEntity => physicalEntity.OIB, new { @class = "w30", maxlength = "11" })</div>
+                    <div class="error">@Html.ValidationMessageFor(physicalEntity => physicalEntity.OIB)</div> 
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row owner legal-representative @if(Model.Owner == null || Model.Owner != true || Model.LegalRepresentative == null || Model.LegalRepresentative != true){ @("display-none") }">
+                    <label for="JMBG">JMBG:<span>molimo unesite JMBG</span></label>
+                    <div class="input">@Html.TextBoxFor(physicalEntity => physicalEntity.JMBG, new { @class = "w30", maxlength = "13" })</div>
+                    <div class="error">@Html.ValidationMessageFor(physicalEntity => physicalEntity.JMBG)</div> 
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row owner legal-representative @if(Model.Owner == null || Model.Owner != true || Model.LegalRepresentative == null || Model.LegalRepresentative != true){ @("display-none") }">
+                    <label for="DateOfBirth">Datum rođenja:<b>*</b><span>molimo unesite datum rođenja</span></label>
+                    <div class="input">
+                        @if(Model.DateOfBirth != null)
+                        {
+                            @Html.TextBoxFor(physicalEntity => physicalEntity.DateOfBirth, new { @class = "w50 datepicker", @Value = Model.DateOfBirth.Value.ToString("dd.MM.yyyy.") })
+                        } 
+                        else
+                        {
+                            @Html.TextBoxFor(physicalEntity => physicalEntity.DateOfBirth, new { @class = "w50 datepicker" })
+                        } 
+                    </div>
+                    <div class="error">@Html.ValidationMessageFor(physicalEntity => physicalEntity.DateOfBirth)</div> 
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row owner legal-representative @if(Model.Owner == null || Model.Owner != true || Model.LegalRepresentative == null || Model.LegalRepresentative != true){ @("display-none") }">
+                    <label for="CitizenshipFK">Državljanstvo:<b>*</b><span>molimo odaberite državljanstvo</span></label>
+                    <div class="input">@Html.DropDownListFor(physicalEntity => physicalEntity.CitizenshipFK, Model.Citizenships, "Odaberite državljanstvo", new { @class = "w100" })</div>
+                    <div class="error">@Html.ValidationMessageFor(physicalEntity => physicalEntity.CitizenshipFK)</div>
+                    <div class="clear"></div>
+                </div>
+
+            </fieldset>
+
+        </div>
+
+        <div class="form margin-top-20 owner legal-representative @if(Model.Owner == null || Model.Owner != true || Model.LegalRepresentative == null || Model.LegalRepresentative != true){ @("display-none") }">
+
+            <h2>Podaci o rođenju</h2>
+
+            <fieldset>
+
+                <div class="row">
+                    <label for="BirthCountryFK">Država rođenja:<b>*</b><span>molimo odaberite državu rođenja</span></label>
+                    <div class="input">@Html.DropDownListFor(physicalEntity => physicalEntity.BirthCountryFK, Model.BirthCountries, "Odaberite državu", new { @class = "w100" })</div>
+                    <div class="error">@Html.ValidationMessageFor(physicalEntity => physicalEntity.BirthCountryFK)</div>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row @if(Model.BirthCountryFK == null || Model.BirthCountryFK != 81){ @("display-none") }">
+                    <label for="BirthCountyFK">Županija rođenja:<b>*</b><span>Molimo odaberite županiju rođenja</span></label>
+                    <div class="input">@Html.DropDownListFor(physicalEntity => physicalEntity.BirthCountyFK, Model.BirthCounties, "----", new { @class = "w100" })</div>
+                    <div class="error">@Html.ValidationMessageFor(physicalEntity => physicalEntity.BirthCountyFK)</div> 
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row @if(Model.BirthCountryFK == null || Model.BirthCountryFK != 81){ @("display-none") }">
+                    <label for="BirthCityCommunityFK">Grad/općina rođenja:<b>*</b><span>Molimo odaberite grad/općinu rođenja</span></label>
+                    <div class="input">@Html.DropDownListFor(physicalEntity => physicalEntity.BirthCityCommunityFK, Model.BirthCitiesCommunities, "----", new { @class = "w100" })</div>
+                    <div class="error">@Html.ValidationMessageFor(physicalEntity => physicalEntity.BirthCityCommunityFK)</div> 
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row @if(Model.BirthCountryFK == null || Model.BirthCountryFK == 81){ @("display-none") }">
+                    <label for="BirthPlace">Mjesto rođenja:<b>*</b><span>Molimo unesite mjesto rođenja</span></label>
+                    <div class="input">@Html.TextBoxFor(owner => owner.BirthPlace, new { @class = "w100" })</div>
+                    <div class="error">@Html.ValidationMessageFor(owner => owner.BirthPlace)</div> 
+                    <div class="clear"></div>
+                </div>
+
+            </fieldset>
+
+        </div>
+
+        <div class="form margin-top-20 owner legal-representative @if(Model.Owner == null || Model.Owner != true || Model.LegalRepresentative == null || Model.LegalRepresentative != true){ @("display-none") }">
+
+            <h2>Podaci o stanovanju</h2>
+
+            <fieldset>
+
+                <div class="row">
+                    <label for="ResidenceCountryFK">Država stanovanja:<b>*</b><span>molimo odaberite državu stanovanja</span></label>
+                    <div class="input">@Html.DropDownListFor(physicalEntity => physicalEntity.ResidenceCountryFK, Model.ResidenceCountries, "Odaberite državu", new { @class = "w100" })</div>
+                    <div class="error">@Html.ValidationMessageFor(physicalEntity => physicalEntity.ResidenceCountryFK)</div>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row @if(Model.ResidenceCountryFK == null || Model.ResidenceCountryFK != 81){ @("display-none") }">
+                    <label for="ResidenceCountyFK">Županija stanovanja:<b>*</b><span>Molimo odaberite županiju stanovanja</span></label>
+                    <div class="input">@Html.DropDownListFor(physicalEntity => physicalEntity.ResidenceCountyFK, Model.ResidenceCounties, "----", new { @class = "w100" })</div>
+                    <div class="error">@Html.ValidationMessageFor(physicalEntity => physicalEntity.ResidenceCountyFK)</div> 
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row @if(Model.ResidenceCountryFK == null || Model.ResidenceCountryFK != 81){ @("display-none") }">
+                    <label for="ResidenceCityCommunityFK">Grad/općina stanovanja:<b>*</b><span>Molimo odaberite grad/općinu stanovanja</span></label>
+                    <div class="input">@Html.DropDownListFor(physicalEntity => physicalEntity.ResidenceCityCommunityFK, Model.ResidenceCitiesCommunities, "----", new { @class = "w100" })</div>
+                    <div class="error">@Html.ValidationMessageFor(physicalEntity => physicalEntity.ResidenceCityCommunityFK)</div> 
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row @if(Model.ResidenceCountryFK == null || Model.ResidenceCountryFK != 81){ @("display-none") }">
+                    <label for="ResidencePostalOfficeFK">Poštanski ured stanovanja:<b>*</b><span>Molimo odaberite poštanski ured stanovanja</span></label>
+                    <div class="input">@Html.DropDownListFor(physicalEntity => physicalEntity.ResidencePostalOfficeFK, Model.ResidencePostalOffices, "----", new { @class = "w100" })</div>
+                    <div class="error">@Html.ValidationMessageFor(physicalEntity => physicalEntity.ResidencePostalOfficeFK)</div> 
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row @if(Model.ResidenceCountryFK == null || Model.ResidenceCountryFK != 81){ @("display-none") }">
+                    <label for="ResidencePlaceFK">Naselje stanovanja:<b>*</b><span>Molimo odaberite naselje stanovanja</span></label>
+                    <div class="input">@Html.DropDownListFor(physicalEntity => physicalEntity.ResidencePlaceFK, Model.ResidencePlaces, "----", new { @class = "w100" })</div>
+                    <div class="error">@Html.ValidationMessageFor(physicalEntity => physicalEntity.ResidencePlaceFK)</div> 
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row @if(Model.ResidenceCountryFK == null || Model.ResidenceCountryFK == 81){ @("display-none") }">
+                    <label for="ResidencePlace">Mjesto stanovanja:<b>*</b><span>Molimo unesite mjesto stanovanja</span></label>
+                    <div class="input">@Html.TextBoxFor(owner => owner.ResidencePlace, new { @class = "w100" })</div>
+                    <div class="error">@Html.ValidationMessageFor(owner => owner.ResidencePlace)</div> 
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row">
+                    <label for="ResidenceStreetName">Ulica i broj stanovanja:<b>*</b><span>molimo unesite ulicu i broj stanovanja</span></label>
+                    <div class="input">@Html.TextBoxFor(physicalEntity => physicalEntity.ResidenceStreetName, new { @class = "w100" })</div>
+                    <div class="error">@Html.ValidationMessageFor(physicalEntity => physicalEntity.ResidenceStreetName)</div> 
+                    <div class="clear"></div>
+                </div>
+
+            </fieldset>
+
+        </div>
+    </div>   
+
+    <div class="grid-5">
+
+        <div class="form">
+
+            <h2>Podaci o unosu</h2>
+
+            <fieldset>
+
+                <div class="row">
+                    <label for="ChangeDate">Datum unosa:<b>*</b><span>molimo unesite datum unosa</span></label>
+                    <div class="input">
+                        @if(Model.ChangeDate != null)
+                        {
+                            @Html.TextBoxFor(physicalEntity => physicalEntity.ChangeDate, new { @class = "w50 datepicker", @Value = Model.ChangeDate.Value.ToString("dd.MM.yyyy.") })
+                        } 
+                        else
+                        {
+                            @Html.TextBoxFor(physicalEntity => physicalEntity.ChangeDate, new { @class = "w50 datepicker" })
+                        } 
+                    </div>
+                    <div class="error">@Html.ValidationMessageFor(physicalEntity => physicalEntity.ChangeDate)</div> 
+                    <div class="clear"></div>
+                </div>
+
+            </fieldset>
+
+        </div>
+
+        <div class="form margin-top-20 @if(Model.CitizenshipFK == null || Model.CitizenshipFK != 81){ @("display-none") }" id="identity-card-data">
+
+            <h2>Podaci o osobnoj iskaznici</h2>
+
+            <fieldset>
+
+                <div class="row">
+                    <label for="IdentityCardNumber">Broj osobne iskaznice:<b>*</b><span>molimo unesite broj osobne iskaznice</span></label>
+                    <div class="input">@Html.TextBoxFor(physicalEntity => physicalEntity.IdentityCardNumber, new { @class = "w100" })</div>
+                    <div class="error">@Html.ValidationMessageFor(physicalEntity => physicalEntity.IdentityCardNumber)</div> 
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row">
+                    <label for="IdentityCardDateOfIssue">Datum izdavanja osobne iskaznice:<b>*</b><span>molimo unesite datum izdavanja osobne iskaznice</span></label>
+                    <div class="input">
+                        @if(Model.IdentityCardDateOfIssue != null){
+                            @Html.TextBoxFor(physicalEntity => physicalEntity.IdentityCardDateOfIssue, new { @class = "w50 datepicker", @Value = Model.IdentityCardDateOfIssue.Value.ToString("dd.MM.yyyy.") })
+                        } 
+                        else
+                        {
+                            @Html.TextBoxFor(physicalEntity => physicalEntity.IdentityCardDateOfIssue, new { @class = "w50 datepicker" })
+                        } 
+                    </div>
+                    <div class="input"></div>
+                    <div class="error">@Html.ValidationMessageFor(physicalEntity => physicalEntity.IdentityCardDateOfIssue)</div> 
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row">
+                    <label for="IdentityCardDateTillValid">Datum isteka osobne iskaznice:<b>*</b><span>Molimo unesite datum isteka osobne iskaznice</span></label>
+                    <div class="input">
+                        @if(Model.IdentityCardDateTillValid != null){
+                            @Html.TextBoxFor(physicalEntity => physicalEntity.IdentityCardDateTillValid, new { @class = "w50 datepicker", @Value = Model.IdentityCardDateTillValid.Value.ToString("dd.MM.yyyy.") })
+                        } 
+                        else
+                        {
+                            @Html.TextBoxFor(physicalEntity => physicalEntity.IdentityCardDateTillValid, new { @class = "w50 datepicker" })
+                        } 
+                    </div>
+                    <div class="input"></div>
+                    <div class="error">@Html.ValidationMessageFor(physicalEntity => physicalEntity.IdentityCardDateTillValid)</div> 
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row">
+                    <label for="IdentityCardRegionalOfficeFK">Regionalni ured izdavanja:<b>*</b><span>Molimo odaberite regionalni ured izdavanja</span></label>
+                    <div class="input">@Html.DropDownListFor(physicalEntity => physicalEntity.IdentityCardRegionalOfficeFK, Model.IdentityCardRegionalOffices, "Odaberite regionalni ured", new { @class = "w100" })</div>
+                    <div class="error">@Html.ValidationMessageFor(physicalEntity => physicalEntity.IdentityCardRegionalOfficeFK)</div> 
+                    <div class="clear"></div>
+                </div>
+
+            </fieldset>
+
+        </div>
+
+        <div class="form margin-top-20 @if(Model.CitizenshipFK == null || Model.CitizenshipFK == 81){ @("display-none") }" id="passport-data">
+
+            <h2>Podaci o putovnici</h2>
+
+            <fieldset>
+
+                <div class="row">
+                    <label for="PassportNumber">Broj putovnice:<b>*</b><span>molimo unesite broj putovnice</span></label>
+                    <div class="input">@Html.TextBoxFor(physicalEntity => physicalEntity.PassportNumber, new { @class = "w100" })</div>
+                    <div class="error">@Html.ValidationMessageFor(physicalEntity => physicalEntity.PassportNumber)</div> 
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row">
+                    <label for="PassportDateOfIssue">Datum izdavanja putovnice:<b>*</b><span>molimo unesite datum izdavanja putovnice</span></label>
+                    <div class="input">
+                        @if(Model.PassportDateOfIssue != null){
+                            @Html.TextBoxFor(physicalEntity => physicalEntity.PassportDateOfIssue, new { @class = "w50 datepicker", @Value = Model.PassportDateOfIssue.Value.ToString("dd.MM.yyyy.") })
+                        } 
+                        else
+                        {
+                            @Html.TextBoxFor(physicalEntity => physicalEntity.PassportDateOfIssue, new { @class = "w50 datepicker" })
+                        } 
+                    </div>
+                    <div class="error">@Html.ValidationMessageFor(physicalEntity => physicalEntity.PassportDateOfIssue)</div> 
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row">
+                    <label for="PassportDateTillValid">Datum isteka putovnice:<b>*</b><span>Molimo unesite datum isteka putovnice</span></label>
+                    <div class="input">
+                        @if(Model.PassportDateTillValid != null){
+                            @Html.TextBoxFor(physicalEntity => physicalEntity.PassportDateTillValid, new { @class = "w50 datepicker", @Value = Model.PassportDateTillValid.Value.ToString("dd.MM.yyyy.") })
+                        } 
+                        else
+                        {
+                            @Html.TextBoxFor(physicalEntity => physicalEntity.PassportDateTillValid, new { @class = "w50 datepicker" })
+                        } 
+                    </div>
+                    <div class="error">@Html.ValidationMessageFor(physicalEntity => physicalEntity.PassportDateTillValid)</div> 
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row">
+                    <label for="PassportCountryOfIssueFK">Država izdavanja izdavanja:<b>*</b><span>Molimo odaberite državu izdavanja</span></label>
+                    <div class="input">@Html.DropDownListFor(physicalEntity => physicalEntity.PassportCountryOfIssueFK, Model.PassportCountriesOfIssue, "Odaberite državu", new { @class = "w100" })</div>
+                    <div class="error">@Html.ValidationMessageFor(physicalEntity => physicalEntity.PassportCountryOfIssueFK)</div> 
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row">
+                    <label for="PassportDateTillValid">Mjesto izdavanja:<b>*</b><span>Molimo unesite mjesto izdavanja putovnice</span></label>
+                    <div class="input">@Html.TextBoxFor(physicalEntity => physicalEntity.PassportPlaceOfIssue, new { @class = "w100" })</div>
+                    <div class="error">@Html.ValidationMessageFor(physicalEntity => physicalEntity.PassportPlaceOfIssue)</div> 
+                    <div class="clear"></div>
+                </div>
+
+            </fieldset>
+
+        </div>
+
+        <div class="form margin-top-20 referent @if(Model.Referent == null || Model.Referent != true){ @("display-none") }">
+
+            <h2>Podaci o referentu</h2>
+
+            <fieldset>
+
+                <div class="row">
+                    <label for="ReferentRegionalOfficeFK">Područni ured:<b>*</b><span>Molimo odaberite područni ured</span></label>
+                    <div class="input">@Html.DropDownListFor(physicalEntity => physicalEntity.ReferentRegionalOfficeFK, Model.ReferentRegionalOffices, "Molimo odaberite područni ured", new { @class = "w100" })</div>
+                    <div class="error">@Html.ValidationMessageFor(physicalEntity => physicalEntity.ReferentRegionalOfficeFK)</div> 
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row">
+                    <label for="ReferentSubstationFK">Ispostava:<b>*</b><span>Molimo odaberite ispostavu</span></label>
+                    <div class="input">@Html.DropDownListFor(physicalEntity => physicalEntity.ReferentSubstationFK, Model.ReferentSubstations, "----", new { @class = "w100" })</div>
+                    <div class="error">@Html.ValidationMessageFor(physicalEntity => physicalEntity.ReferentSubstationFK)</div> 
+                    <div class="clear"></div>
+                </div>
+            </fieldset>
+
+        </div>
+    </div>
+
+    <div class="clear"></div>
+
+</div>  
+
+
+<script type="text/javascript">
+
+    $('#CitizenshipFK').change(function () {
+
+        var selectedCountry = $(this).val();
+
+        if(selectedCountry == 81) {
+
+            $("#identity-card-data").show();
+            $("#passport-data").hide();
+
+        } else if(selectedCountry == "") {
+
+            $("#passport-data").hide();
+            $("#identity-card-data").hide();
+
+        } else {
+
+            $("#passport-data").show();
+            $("#identity-card-data").hide();
+
+        }
+
+    }); 
+
+
+    $("#Referent").click(function() {
+        if($(this).is(":checked")) {
+            $(".referent").show();
+        } else {
+            $(".referent").hide();
+        }
+    })
+
+
+    $("#Owner").click(function() {
+
+        if($(this).is(":checked")) {
+
+            $(".owner").show();
+
+            var selectedCountry = $('#CitizenshipFK').val();
+
+            if(selectedCountry == 81) {
+
+                $("#identity-card-data").show();
+                $("#passport-data").hide();
+
+            } else if(selectedCountry == "") {
+
+                $("#passport-data").hide();
+                $("#identity-card-data").hide();
+
+            } else {
+
+                $("#passport-data").show();
+                $("#identity-card-data").hide();
+
+            }
+
+        } else if($("#LegalRepresentative").is(":checked") == false) {
+
+            $(".owner").hide();
+            $("#identity-card-data").hide();
+            $("#passport-data").hide();
+
+        }
+
+    })
+
+
+    $("#LegalRepresentative").click(function() {
+
+        if($(this).is(":checked")) {
+
+            $(".legal-representative").show();
+
+            var selectedCountry = $('#CitizenshipFK').val();
+
+            if(selectedCountry == 81) {
+
+                $("#identity-card-data").show();
+                $("#passport-data").hide();
+
+            } else if(selectedCountry == "") {
+
+                $("#passport-data").hide();
+                $("#identity-card-data").hide();
+
+            } else {
+
+                $("#passport-data").show();
+                $("#identity-card-data").hide();
+
+            }
+
+        } else if($("#Owner").is(":checked") == false) {
+
+            $(".legal-representative").hide();
+            $("#identity-card-data").hide();
+            $("#passport-data").hide();
+
+        }
+
+    })
+
+
+    $('#BirthCountryFK').change(function () {
+
+        var countiesSelect = $('#BirthCountyFK');
+        var selectedCountry = $(this).val();
+
+        if(selectedCountry == 81) {
+
+            $(this).parent().parent().next(".row").show();
+            $(this).parent().parent().next(".row").next(".row").show();
+            $(this).parent().parent().next(".row").next(".row").next(".row").hide();
+
+        } else {
+
+            $(this).parent().parent().next(".row").hide();
+            $(this).parent().parent().next(".row").next(".row").hide();
+            $(this).parent().parent().next(".row").next(".row").next(".row").show();
+
+        }
+
+        DisplayLoader("BirthCountyFK");
+
+        if (selectedCountry != null && selectedCountry != '') {
+
+            $.getJSON('@Url.Action("GetCountiesByCountry", "Ajax")',
+            { country: selectedCountry },
+
+            function (counties) {
+                countiesSelect.empty();
+                countiesSelect.append($('<option/>', {
+                    value: '',
+                    text: 'Odaberite županiju' 
+                }));
+                $.each(counties, function (key, county) {
+                    countiesSelect.append($('<option/>', {
+                        value: county.value,
+                        text: county.text
+                    }));
+                });
+            });
+
+        } else {
+            countiesSelect.empty();
+            countiesSelect.append($('<option/>', {
+                value: '',
+                text: '----' 
+            }));
+        }
+
+        HideLoader("BirthCountyFK");
+
+        EmptySelectBox("BirthCityCommunityFK");
+        EmptySelectBox("BirthCommunityFK");
+
+    }); 
+
+
+    $('#BirthCountyFK').change(function () {
+
+        var citiesCommunitiesSelect = $('#BirthCityCommunityFK');
+        var selectedCounty = $(this).val();
+
+        DisplayLoader("BirthCityCommunityFK");
+
+        if (selectedCounty != null && selectedCounty != '') {
+
+            $.getJSON('@Url.Action("GetCitiesCommunitiesByCounty", "Ajax")',
+            { county: selectedCounty },
+
+            function (citiesCommunities) {
+                citiesCommunitiesSelect.empty();
+                citiesCommunitiesSelect.append($('<option/>', {
+                    value: '',
+                    text: 'Odaberite grad/općinu' 
+                }));
+                $.each(citiesCommunities, function (key, cityCommunity) {
+                    citiesCommunitiesSelect.append($('<option/>', {
+                        value: cityCommunity.value,
+                        text: cityCommunity.text
+                    }));
+                });
+            });
+
+        } else {
+
+            citiesCommunitiesSelect.empty();
+            citiesCommunitiesSelect.append($('<option/>', {
+                value: '',
+                text: '----' 
+            }));
+
+        }
+
+        HideLoader("BirthCityCommunityFK");
+
+    }); 
+
+
+    // residence
+    $('#ResidenceCountryFK').change(function () {
+
+        var countiesSelect      = $('#ResidenceCountyFK');
+        var selectedCountry     = $(this).val();
+
+        if(selectedCountry == 81) {
+            $(this).parent().parent().next(".row").show();
+            $(this).parent().parent().next(".row").next(".row").show();
+            $(this).parent().parent().next(".row").next(".row").next(".row").show();
+            $(this).parent().parent().next(".row").next(".row").next(".row").next(".row").show();
+            $(this).parent().parent().next(".row").next(".row").next(".row").next(".row").next(".row").hide();
+        } else {
+            $(this).parent().parent().next(".row").hide();
+            $(this).parent().parent().next(".row").next(".row").hide();
+            $(this).parent().parent().next(".row").next(".row").next(".row").hide();
+            $(this).parent().parent().next(".row").next(".row").next(".row").next(".row").hide();
+            $(this).parent().parent().next(".row").next(".row").next(".row").next(".row").next(".row").show();
+        }
+
+        DisplayLoader("ResidenceCountyFK");
+
+        if (selectedCountry != null && selectedCountry != '') {
+
+            $.getJSON('@Url.Action("GetCountiesByCountry", "Ajax")',
+            { country: selectedCountry },
+
+            function (counties) {
+                countiesSelect.empty();
+                countiesSelect.append($('<option/>', {
+                    value: '',
+                    text: 'Odaberite županiju' 
+                }));
+                $.each(counties, function (key, county) {
+                    countiesSelect.append($('<option/>', {
+                        value: county.value,
+                        text: county.text
+                    }));
+                });
+            });
+
+        } else {
+            countiesSelect.empty();
+            countiesSelect.append($('<option/>', {
+                value: '',
+                text: '----' 
+            }));
+        }
+
+        HideLoader("ResidenceCountyFK");
+
+        EmptySelectBox("ResidenceCityCommunityFK");
+
+    }); 
+
+
+    $('#ResidenceCountyFK').change(function () {
+
+        var citiesCommunitiesSelect = $('#ResidenceCityCommunityFK');
+        var postalOfficeSelect      = $('#ResidencePostalOfficeFK');
+        var placeSelect             = $('#ResidencePlaceFK');
+        var selectedCounty          = $(this).val();
+
+        DisplayLoader("ResidenceCityCommunityFK");
+        DisplayLoader("ResidencePostalOfficeFK");
+
+        if (selectedCounty != null && selectedCounty != '') {
+
+            $.getJSON('@Url.Action("GetCitiesCommunitiesByCounty", "Ajax")',
+            { county: selectedCounty },
+
+            function (citiesCommunities) {
+                citiesCommunitiesSelect.empty();
+                citiesCommunitiesSelect.append($('<option/>', {
+                    value: '',
+                    text: 'Odaberite grad' 
+                }));
+                $.each(citiesCommunities, function (key, city) {
+                    citiesCommunitiesSelect.append($('<option/>', {
+                        value: city.value,
+                        text: city.text
+                    }));
+                });
+            });
+
+            $.getJSON('@Url.Action("GetPostalOfficesByCounty", "Ajax")',
+            { county: selectedCounty },
+
+            function (postalOffice) {
+                postalOfficeSelect.empty();
+                postalOfficeSelect.append($('<option/>', {
+                    value: '',
+                    text: 'Odaberite mjesto' 
+                }));
+                $.each(postalOffice, function (key, postalOffice) {
+                    postalOfficeSelect.append($('<option/>', {
+                        value: postalOffice.value,
+                        text: postalOffice.text
+                    }));
+                });
+            });
+
+        } else {
+
+            postalOfficeSelect.empty();
+            postalOfficeSelect.append($('<option/>', {
+                value: '',
+                text: '----' 
+            }));
+
+            citiesCommunitiesSelect.empty();
+            citiesCommunitiesSelect.append($('<option/>', {
+                value: '',
+                text: '----' 
+            }));
+
+            placeSelect.empty();
+            placeSelect.append($('<option/>', {
+                value: '',
+                text: '----' 
+            }));
+
+        }
+
+        HideLoader("ResidenceCityCommunityFK");
+        HideLoader("ResidencePostalOfficeFK");
+
+    }); 
+
+
+    $('#ResidencePostalOfficeFK').change(function () {
+
+        var placesSelect            = $('#ResidencePlaceFK');
+        var selectedPostalOffice    = $(this).val();
+
+        DisplayLoader("ResidencePlaceFK");
+
+        if (selectedPostalOffice != null && selectedPostalOffice != '') {
+
+            $.getJSON('@Url.Action("GetPlacesByPostalOffice", "Ajax")',
+            { postalOffice: selectedPostalOffice },
+
+            function (places) {
+                placesSelect.empty();
+                placesSelect.append($('<option/>', {
+                    value: '',
+                    text: 'Odaberite naselje' 
+                }));
+                $.each(places, function (key, place) {
+                    placesSelect.append($('<option/>', {
+                        value: place.value,
+                        text: place.text
+                    }));
+                });
+            });
+
+        } else {
+            placesSelect.empty();
+            placesSelect.append($('<option/>', {
+                value: '',
+                text: '----' 
+            }));
+        }
+
+        HideLoader("ResidencePlaceFK");
+
+    }); 
+
+
+    $('#ReferentRegionalOfficeFK').change(function () {
+
+        var substationSelect        = $('#ReferentSubstationFK');
+        var selectedRegionalOffice  = $(this).val();
+
+        DisplayLoader("ReferentSubstationFK");
+
+        if (selectedRegionalOffice != null && selectedRegionalOffice != '') {
+
+            $.getJSON('@Url.Action("GetSubstationsByRegionalOffice", "Ajax")',
+            { regionalOffice: selectedRegionalOffice },
+
+            function (substations) {
+                substationSelect.empty();
+                substationSelect.append($('<option/>', {
+                    value: '',
+                    text: 'Odaberite ispostavu' 
+                }));
+                $.each(substations, function (key, substation) {
+                    substationSelect.append($('<option/>', {
+                        value: substation.value,
+                        text: substation.text
+                    }));
+                });
+            });
+
+        } else {
+            substationSelect.empty();
+            substationSelect.append($('<option/>', {
+                value: '',
+                text: '----' 
+            }));
+        }
+
+        HideLoader("ReferentSubstationFK");
+
+    }); 
+
+
+</script>

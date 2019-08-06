@@ -1,0 +1,115 @@
+﻿@model List<Mateus.Model.EFModel.Country>
+           
+@using PITFramework.Security;
+@using PITFramework.Support.Grid;
+
+@{ string[] userRoles = SecurityHelper.GetUserRolesFromCookie(); }
+
+<div id="controls-bar">
+    @Html.Partial("~/Views/Shared/Partial/Breadcrumb.cshtml")
+    <div>
+        @if (userRoles.Contains("add"))
+        { 
+            @Html.ActionLink("Nova država", "Add", null, new { @class = "button new" })
+        }
+    </div>
+</div>
+
+<div id="content">
+
+    @using (Html.BeginForm("Index", "Country", FormMethod.Get))
+    {
+        <div id="grid-controls">
+            <div class="grid-3">&nbsp;</div>
+            <div class="grid-4 text-center">
+                @Html.TextBox("searchString", Request.QueryString["searchString"], new { placeholder = "Upišite pojam za pretragu", @class = "w40" })
+                <input type="submit" value="Pretraži" class="button search" />
+            </div>
+            <div class="grid-3 text-right">
+                <a href="#" class="button print icon"></a>
+            </div>
+            <div class="clear"></div>
+        </div>
+    }
+
+    <div class="grid-10">
+        <div class="grid-holder">
+            <table class="grid">
+                @if(Model.Count() > 0) {
+                    <tr>
+                        <th class="w2">#</th>
+                        <th class="w2">@MvcHtmlString.Create(LinkHelper.GetSortLink("ID", "CountryPK"))</th>
+                        <th class="w20 left">@MvcHtmlString.Create(LinkHelper.GetSortLink("Naziv", "Name"))</th>
+                        <th class="w20 left">@MvcHtmlString.Create(LinkHelper.GetSortLink("Naziv [en]", "NameEn"))</th>
+                        <th class="w6">@MvcHtmlString.Create(LinkHelper.GetSortLink("Rizik", "Risk"))</th>
+                        <th class="w10 left">@MvcHtmlString.Create(LinkHelper.GetSortLink("Državljanstvo", "Citizenship"))</th>
+                        <th class="w10">@MvcHtmlString.Create(LinkHelper.GetSortLink("ISO 3166-1 alpha 2 šifra", "Alpha2Code"))</th>
+                        <th class="w10">@MvcHtmlString.Create(LinkHelper.GetSortLink("ISO 3166-1 alpha 3 šifra", "Alpha3Code"))</th>
+                        <th class="w10">@MvcHtmlString.Create(LinkHelper.GetSortLink("ISO 3166-1 numerička šifra", "NumericCode"))</th>
+                        @if (userRoles.Contains("edit") || userRoles.Contains("delete"))
+                        { 
+                            <th class="w10 no-print">Operacije</th>
+                        }
+                    </tr>
+
+                    int i = 1;
+                    string url = LinkHelper.getQueryStringArray();
+
+                    foreach (var item in Model)
+                    {
+                        <tr class="@if (i % 2 != 0)
+                                    { @MvcHtmlString.Create("odd");
+                                    }">
+                            <td>@i.ToString()</td>
+                            <td class="@LinkHelper.getIsSorted("CountryPK")">@item.CountryPK.ToString()</td>
+                            <td class="left @LinkHelper.getIsSorted("Name")">
+                                @if (userRoles.Contains("edit"))
+                                {
+                                    if (!String.IsNullOrWhiteSpace(@item.Name))
+                                    { 
+                                        @Html.ActionLink(@item.Name, "Edit", new {countryPK = @item.CountryPK })
+                                    }
+                                }
+                                else
+                                {
+                                    if (!String.IsNullOrWhiteSpace(@item.Name))
+                                    { 
+                                        @item.Name
+                                    }
+                                }
+                            </td>
+                            <td class="left @LinkHelper.getIsSorted("NameEn")">@if (!String.IsNullOrWhiteSpace(@item.NameEn)) { @item.NameEn }</td>
+                            <td class="@LinkHelper.getIsSorted("Risk")">@if (@item.Risk != null && @item.Risk != false) { <text>DA</text> } else { <text>NE</text> }</td>
+                            <td class="left @LinkHelper.getIsSorted("Citizenship")">@if (!String.IsNullOrWhiteSpace(@item.Citizenship)) { @item.Citizenship }</td>
+                            <td class="@LinkHelper.getIsSorted("Alpha2Code")">@if (!String.IsNullOrWhiteSpace(@item.Alpha2Code)) { @item.Alpha2Code }</td>
+                            <td class="@LinkHelper.getIsSorted("Alpha3Code")">@if (!String.IsNullOrWhiteSpace(@item.Alpha3Code)) { @item.Alpha3Code }</td>
+                            <td class="@LinkHelper.getIsSorted("NumericCode")">@if (!String.IsNullOrWhiteSpace(@item.NumericCode)){ @item.NumericCode }</td>
+                            @if (userRoles.Contains("edit") || userRoles.Contains("delete"))
+                            {  
+                                <td class="no-print">
+                                    @if (userRoles.Contains("edit"))
+                                    {
+                                        @Html.ActionLink(" ", "Edit", new { countryPK = @item.CountryPK }, new { @class = "edit" })
+                                    }
+                                    @if (userRoles.Contains("delete"))
+                                    {
+                                        @Html.ActionLink(" ", "Delete", new { countryPK = @item.CountryPK }, new { @class = "delete" })
+                                    }
+                                </td>
+                            }
+                        </tr>
+                        i++;
+                    }
+                }
+                else 
+                {
+                    <tr>
+                        <td class="no-records">Nema zapisa</td>
+                    </tr>
+                }  
+            </table>
+            @Html.Partial("~/Views/Shared/Partial/Pager.cshtml")
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>

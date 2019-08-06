@@ -1,0 +1,33 @@
+﻿@model Mateus.Model.BussinesLogic.Views.WayOfRepresentationModel.WayOfRepresentationView
+
+<div id="controls-bar">
+    @Html.Partial("~/Views/Shared/Partial/Breadcrumb.cshtml")
+    <div>
+        @Html.ActionLink(" ", "Index", Session["ControllerReferrer"].ToString(), null, new { @class = "button back padding-right-0" })
+        <a href="#" class="button refresh padding-right-0 margin-right-15"></a>       
+        <input type="submit" class="button save" value="Spremi" />
+    </div>
+</div>
+
+<div id="content">
+
+    <div class="grid-5">
+        <div class="form">
+
+            <h2>Informacije o načinu zastupanja</h2>
+                
+            <fieldset>
+                <div class="row">
+                    <label for="Name">Naziv:<b>*</b><span>molimo unesite naziv</span></label>
+                    <div class="input">@Html.TextBoxFor(wayOfRepresentation => wayOfRepresentation.Name, new { @class = "w100" })</div>
+                    <div class="error">@Html.ValidationMessageFor(wayOfRepresentation => wayOfRepresentation.Name)</div>
+                    <div class="clear"></div>
+                </div>
+            </fieldset>
+
+        </div>
+    </div>  
+     
+    <div class="clear"></div>
+
+</div>  

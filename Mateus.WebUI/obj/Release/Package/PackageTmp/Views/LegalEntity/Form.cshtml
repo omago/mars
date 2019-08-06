@@ -1,0 +1,649 @@
+﻿@model Mateus.Model.BussinesLogic.Views.LegalEntityModel.LegalEntityView
+
+<div id="controls-bar">
+    @Html.Partial("~/Views/Shared/Partial/Breadcrumb.cshtml")
+    <div>
+        @Html.ActionLink(" ", "Index", Session["ControllerReferrer"].ToString(), null, new { @class = "button back padding-right-0" })
+        <a href="#" class="button refresh padding-right-0 margin-right-15"></a>       
+        <input type="submit" class="button save" value="Spremi" />
+    </div>
+</div>
+
+<div id="content">
+
+    <div class="grid-5">
+        <div class="form">
+
+            <h2>Kontekst pravne osobe</h2>
+                
+            <fieldset>
+
+                <div class="row">
+                    <label for="Owner">Vlasnik:<span>pravne osoba je vlasnik</span></label>
+                    <div class="input">@Html.CheckBox("Owner")</div>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row">
+                    <label for="Company">Tvrtka:<span>pravne osoba je tvrtka</span></label>
+                    <div class="input">@Html.CheckBox("Company")</div>
+                    <div class="clear"></div>
+                </div>
+
+            </fieldset>
+
+        </div>
+
+        <div class="form margin-top-20">
+
+            <h2>Osnovne informacije</h2>
+                
+            <fieldset>
+                <div class="row">
+                    <label for="Name">Naziv:<b>*</b><span>molimo unesite naziv</span></label>
+                    <div class="input">@Html.TextBoxFor(legalEntity => legalEntity.Name, new { @class = "w100" })</div>
+                    <div class="error">@Html.ValidationMessageFor(legalEntity => legalEntity.Name)</div>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row company @if(Model.Company == null || Model.Company != true){ @("display-none") }">
+                    <label for="ShortName">Kratki naziv (3 znaka):<b>*</b><span>molimo unesite kratki naziv</span></label>
+                    <div class="input">@Html.TextBoxFor(legalEntity => legalEntity.ShortName, new { @class = "w10", maxlength = "3" })</div>
+                    <div class="error">@Html.ValidationMessageFor(legalEntity => legalEntity.ShortName)</div>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row">
+                    <label for="OIB">OIB:<b>*</b><span>molimo unesite OIB</span></label>
+                    <div class="input">@Html.TextBoxFor(legalEntity => legalEntity.OIB, new { @class = "w50", maxlength = "11" })</div>
+                    <div class="error">@Html.ValidationMessageFor(legalEntity => legalEntity.OIB)</div>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row">
+                    <label for="MB">MB:<span>molimo unesite MB</span></label>
+                    <div class="input">@Html.TextBoxFor(legalEntity => legalEntity.MB, new { @class = "w50", maxlength = "8" })</div>
+                    <div class="error">@Html.ValidationMessageFor(legalEntity => legalEntity.MB)</div>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row">
+                    <label for="MBS">MBS:<b>*</b><span>molimo unesite MBS</span></label>
+                    <div class="input">@Html.TextBoxFor(legalEntity => legalEntity.MBS, new { @class = "w50", maxlength = "9" })</div>
+                    <div class="error">@Html.ValidationMessageFor(legalEntity => legalEntity.MBS)</div>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row company @if(Model.Company == null || Model.Company != true){ @("display-none") }">
+                    <label for="FormFK">Oblik:<b>*</b><span>molimo odaberite oblik</span></label>
+                    <div class="input">@Html.DropDownListFor(legalEntity => legalEntity.FormFK, Model.Forms, "Odaberite oblik", new { @class = "w100" })</div>
+                    <div class="error">@Html.ValidationMessageFor(legalEntity => legalEntity.FormFK)</div>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row company @if(Model.Company == null || Model.Company != true){ @("display-none") }">
+                    <label for="ActivityName">Djelatnost:<b>*</b><span>molimo odaberite djelatnost</span></label>
+                    <div class="input">
+                        @Html.TextBoxFor(legalEntity => legalEntity.ActivityName, new { @class = "w100 autocomplete-with-hidden-field", data_autocomplete_url = Url.Action("AutocompleteActivities", "Ajax", null), autocomplete = "off"})
+                        @Html.HiddenFor(legalEntity => legalEntity.ActivityFK)
+                    </div>
+                    <div class="error">@Html.ValidationMessageFor(legalEntity => legalEntity.ActivityFK)</div>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row company @if(Model.Company == null || Model.Company != true){ @("display-none") }">
+                    <label for="ActivityDescription">Opis stvarne djelatnosti:<b>*</b><span>molimo unesite opis stvarne djelatnosti</span></label>
+                    <div class="input">@Html.TextBoxFor(legalEntity => legalEntity.ActivityDescription, new { @class = "w100"})</div>
+                    <div class="error">@Html.ValidationMessageFor(legalEntity => legalEntity.ActivityDescription)</div>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row company @if(Model.Company == null || Model.Company != true){ @("display-none") }">
+                    <label for="FundamentalCapital">Temeljni kapital:<b>*</b><span>molimo unesite temeljni kapital</span></label>
+                    <div class="input">@Html.TextBoxFor(legalEntity => legalEntity.FundamentalCapital, new { @class = "w100"})</div>
+                    <div class="error">@Html.ValidationMessageFor(legalEntity => legalEntity.FundamentalCapital)</div>
+                    <div class="clear"></div>
+                </div>
+
+            </fieldset>
+        </div>
+
+        <div class="form margin-top-20">
+
+            <h2>Podaci o registraciji</h2>
+
+            <fieldset>
+
+                <div class="row company @if(Model.Company == null || Model.Company != true){ @("display-none") }">
+                    <label for="RegionalOfficeFK">Područni ured:<b>*</b><span>molimo odaberite područni ured</span></label>
+                    <div class="input">@Html.DropDownListFor(legalEntity => legalEntity.RegionalOfficeFK, Model.RegionalOffices, "Odaberite područni ured", new { @class = "w100" })</div>
+                    <div class="error">@Html.ValidationMessageFor(legalEntity => legalEntity.RegionalOfficeFK)</div>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row company @if(Model.Company == null || Model.Company != true){ @("display-none") }">
+                    <label for="SubstationFK">Ispostava:<b>*</b><span>Molimo odaberite ispostavu</span></label>
+                    <div class="input">@Html.DropDownListFor(legalEntity => legalEntity.SubstationFK, Model.Substations, "----", new { @class = "w100" })</div>
+                    <div class="error">@Html.ValidationMessageFor(legalEntity => legalEntity.SubstationFK)</div> 
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row company @if(Model.Company == null || Model.Company != true){ @("display-none") }">
+                    <label for="ReferentFK">Referent:<span>Molimo odaberite ispostavu</span></label>
+                    <div class="input">@Html.DropDownListFor(legalEntity => legalEntity.ReferentFK, Model.Referents, "----", new { @class = "w100" })</div>
+                    <div class="error">@Html.ValidationMessageFor(legalEntity => legalEntity.ReferentFK)</div> 
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row company @if(Model.Company == null || Model.Company != true){ @("display-none") }">
+                    <label for="DateOfRegistration">Datum registracije:<span>molimo unesite datum registracije</span></label>
+                    <div class="input">
+                        @if(Model.DateOfRegistration != null){
+                            @Html.TextBoxFor(legalEntity => legalEntity.DateOfRegistration, new { @class = "w50 datepicker", @Value = Model.DateOfRegistration.Value.ToString("dd.MM.yyyy.") })
+                        } 
+                        else
+                        {
+                            @Html.TextBoxFor(legalEntity => legalEntity.DateOfRegistration, new { @class = "w50 datepicker" })
+                        } 
+                    </div>
+                    <div class="error">@Html.ValidationMessageFor(legalEntity => legalEntity.DateOfRegistration)</div>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row">
+                    <label for="CommercialCourtFK">Trgovački sud:<b>*</b><span>molimo odaberite trgovački sud</span></label>
+                    <div class="input">@Html.DropDownListFor(legalEntity => legalEntity.CommercialCourtFK, Model.CommercialCourts, "----", new { @class = "w100" })</div>
+                    <div class="error">@Html.ValidationMessageFor(legalEntity => legalEntity.CommercialCourtFK)</div> 
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row company @if(Model.Company == null || Model.Company != true){ @("display-none") }">
+                    <label for="TaxFK">Porez:<b>*</b><span>molimo odaberite porez</span></label>
+                    <div class="input">@Html.DropDownListFor(legalEntity => legalEntity.TaxFK, Model.Taxes, "----", new { @class = "w100" })</div>
+                    <div class="error">@Html.ValidationMessageFor(legalEntity => legalEntity.TaxFK)</div> 
+                    <div class="clear"></div>
+                </div>
+
+            </fieldset>
+
+        </div>
+
+        <div class="form margin-top-20 company @if(Model.Company == null || Model.Company != true){ @("display-none") }">
+
+            <h2>Ostalo</h2>
+
+            <fieldset>
+
+                <div class="row">
+                    <label for="FirstContactDate">Datum prvog kontakta:<b>*</b><span>molimo unesite datum prvog kontakt</span></label>
+                    <div class="input">
+                        @if (Model.FirstContactDate != null)
+                        {
+                            @Html.TextBoxFor(legalEntity => legalEntity.FirstContactDate, new { @class = "w50 datepicker", @Value = Model.FirstContactDate.Value.ToString("dd.MM.yyyy.") })
+                        } 
+                        else
+                        {
+                            @Html.TextBoxFor(legalEntity => legalEntity.FirstContactDate, new { @class = "w50 datepicker" })
+                        } 
+                    </div>
+                    <div class="error">@Html.ValidationMessageFor(legalEntity => legalEntity.FirstContactDate)</div>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row">
+                    <label for="TouristOffice">Turistička zajednica:<span>da li je turistička zajednica</span></label>
+                    <div class="input">@Html.CheckBox("TouristOffice")</div>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row @if(Model.TouristOffice == null || Model.TouristOffice != true){ @("display-none") }">
+                    <label for="TouristOfficeDescription">Turistička zajednica opis:<b>*</b><span>molimo unesite opis turističke zajednice</span></label>
+                    <div class="input">@Html.TextBoxFor(legalEntity => legalEntity.TouristOfficeDescription, new { @class = "w100"})</div>
+                    <div class="error">@Html.ValidationMessageFor(legalEntity => legalEntity.TouristOfficeDescription)</div>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row">
+                    <label for="MonumentAnnuity">Spomenička renta:<span>da li je spomenička renta</span></label>
+                    <div class="input">@Html.CheckBox("MonumentAnnuity")</div>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row @if(Model.MonumentAnnuity == null || Model.MonumentAnnuity != true){ @("display-none") }">
+                    <label for="TouristOfficeDescription">Spomenička renta opis:<b>*</b><span>molimo unesite opis spomeničke rente</span></label>
+                    <div class="input">@Html.TextBoxFor(legalEntity => legalEntity.MonumentAnnuityDescription, new { @class = "w100"})</div>
+                    <div class="error">@Html.ValidationMessageFor(legalEntity => legalEntity.MonumentAnnuityDescription)</div>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row">
+                    <label for="Active">Aktivan:<span>tvrka je aktivna</span></label>
+                    <div class="input">@Html.CheckBox("Active")</div>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row">
+                    <label for="NumberOfEmployees">Broj zaposlenih:<span>molimo unesite broj zaposlenih</span></label>
+                    <div class="input">@Html.TextBoxFor(legalEntity => legalEntity.NumberOfEmployees, new { @class = "w10"})</div>
+                    <div class="error">@Html.ValidationMessageFor(legalEntity => legalEntity.NumberOfEmployees)</div>
+                    <div class="clear"></div>
+                </div>
+                
+                <div class="row @if(Model.NumberOfEmployees == null || Model.NumberOfEmployees < 1){ @("display-none") }">
+                    <label for="MIORRegistrationNumber">MIRO - registracijski broj:<b>*</b><span>molimo unesite MIOR - registracijski broj</span></label>
+                    <div class="input">@Html.TextBoxFor(legalEntity => legalEntity.MIORRegistrationNumber, new { @class = "w50", maxlength = "10"})</div>
+                    <div class="error">@Html.ValidationMessageFor(legalEntity => legalEntity.MIORRegistrationNumber)</div>
+                    <div class="clear"></div>
+                </div>
+                
+                <div class="row @if(Model.NumberOfEmployees == null || Model.NumberOfEmployees < 1){ @("display-none") }">
+                    <label for="HZZOObligationNumber">HZZO - broj obveze:<b>*</b><span>molimo unesite HZZO - broj obveze</span></label>
+                    <div class="input">@Html.TextBoxFor(legalEntity => legalEntity.HZZOObligationNumber, new { @class = "w50", maxlength = "11"})</div>
+                    <div class="error">@Html.ValidationMessageFor(legalEntity => legalEntity.HZZOObligationNumber)</div>
+                    <div class="clear"></div>
+                </div>
+                                
+                <div class="row @if(Model.NumberOfEmployees == null || Model.NumberOfEmployees < 1){ @("display-none") }">
+                    <label for="HZZOBussinesEntityCode">HZZO - šifra poslovnog subjekta:<b>*</b><span>molimo unesite HZZO - šifru poslovnog subjekta</span></label>
+                    <div class="input">@Html.TextBoxFor(legalEntity => legalEntity.HZZOBussinesEntityCode, new { @class = "w50", maxlength = "10"})</div>
+                    <div class="error">@Html.ValidationMessageFor(legalEntity => legalEntity.HZZOBussinesEntityCode)</div>
+                    <div class="clear"></div>
+                </div>
+            </fieldset>
+
+        </div>
+    </div>   
+    <div class="grid-5">
+
+        <div class="form">
+
+            <h2>Podaci o unosu</h2>
+
+            <fieldset>
+
+                <div class="row">
+                    <label for="ChangeDate">Datum unosa:<b>*</b><span>molimo unesite datum unosa</span></label>
+                    <div class="input">
+                        @if(Model.ChangeDate != null)
+                        {
+                            @Html.TextBoxFor(physicalEntity => physicalEntity.ChangeDate, new { @class = "w50 datepicker", @Value = Model.ChangeDate.Value.ToString("dd.MM.yyyy.") })
+                        } 
+                        else
+                        {
+                            @Html.TextBoxFor(physicalEntity => physicalEntity.ChangeDate, new { @class = "w50 datepicker" })
+                        } 
+                    </div>
+                    <div class="error">@Html.ValidationMessageFor(physicalEntity => physicalEntity.ChangeDate)</div> 
+                    <div class="clear"></div>
+                </div>
+
+            </fieldset>
+
+        </div>
+
+        <div class="form margin-top-20">
+
+            <h2>Podaci o sjedištu</h2>
+
+            <fieldset>
+
+                <div class="row">
+                    <label for="CountryFK">Država sjedišta:<b>*</b><span>molimo odaberite državu sjedišta</span></label>
+                    <div class="input">@Html.DropDownListFor(physicalEntity => physicalEntity.CountryFK, Model.Countries, "Odaberite državu", new { @class = "w100" })</div>
+                    <div class="error">@Html.ValidationMessageFor(physicalEntity => physicalEntity.CountryFK)</div>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row @if(Model.CountryFK == null || Model.CountryFK != 81){ @("display-none") }">
+                    <label for="CountyFK">Županija sjedišta:<b>*</b><span>Molimo odaberite županiju sjedišta</span></label>
+                    <div class="input">@Html.DropDownListFor(physicalEntity => physicalEntity.CountyFK, Model.Counties, "----", new { @class = "w100" })</div>
+                    <div class="error">@Html.ValidationMessageFor(physicalEntity => physicalEntity.CountyFK)</div> 
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row @if(Model.CountryFK == null || Model.CountryFK != 81){ @("display-none") }">
+                    <label for="CityCommunityFK">Grad/općina sjedišta:<b>*</b><span>Molimo odaberite grad/općinu sjedišta</span></label>
+                    <div class="input">@Html.DropDownListFor(physicalEntity => physicalEntity.CityCommunityFK, Model.CitiesCommunities, "----", new { @class = "w100" })</div>
+                    <div class="error">@Html.ValidationMessageFor(physicalEntity => physicalEntity.CityCommunityFK)</div> 
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row @if(Model.CountryFK == null || Model.CountryFK != 81){ @("display-none") }">
+                    <label for="PostalOfficeFK">Poštanski ured sjedišta:<b>*</b><span>Molimo odaberite poštanski ured sjedišta</span></label>
+                    <div class="input">@Html.DropDownListFor(physicalEntity => physicalEntity.PostalOfficeFK, Model.PostalOffices, "----", new { @class = "w100" })</div>
+                    <div class="error">@Html.ValidationMessageFor(physicalEntity => physicalEntity.PostalOfficeFK)</div> 
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row @if(Model.CountryFK == null || Model.CountryFK != 81){ @("display-none") }">
+                    <label for="PlaceFK">Naselje sjedišta:<b>*</b><span>Molimo odaberite naselje sjedišta</span></label>
+                    <div class="input">@Html.DropDownListFor(physicalEntity => physicalEntity.PlaceFK, Model.Places, "----", new { @class = "w100" })</div>
+                    <div class="error">@Html.ValidationMessageFor(physicalEntity => physicalEntity.PlaceFK)</div> 
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row @if(Model.CountryFK == null || Model.CountryFK == 81){ @("display-none") }">
+                    <label for="Place">Mjesto sjedišta:<b>*</b><span>Molimo unesite mjesto sjedišta</span></label>
+                    <div class="input">@Html.TextBoxFor(owner => owner.Place, new { @class = "w100" })</div>
+                    <div class="error">@Html.ValidationMessageFor(owner => owner.Place)</div> 
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row">
+                    <label for="StreetName">Ulica i broj sjedišta:<b>*</b><span>molimo unesite ulicu i broj sjedišta</span></label>
+                    <div class="input">@Html.TextBoxFor(physicalEntity => physicalEntity.StreetName, new { @class = "w100" })</div>
+                    <div class="error">@Html.ValidationMessageFor(physicalEntity => physicalEntity.StreetName)</div> 
+                    <div class="clear"></div>
+                </div>
+
+            </fieldset>
+
+        </div>
+
+        <div class="form margin-top-20 company @if(Model.Company == null || Model.Company != true){ @("display-none") }">
+
+            <h2>Kontakt podaci</h2>
+
+            <fieldset>
+
+                <div class="row">
+                    <label for="Phone">Telefon:<span>molimo unesite telefon</span></label>
+                    <div class="input">@Html.TextBoxFor(legalEntity => legalEntity.Phone, new { @class = "w100"})</div>
+                    <div class="error">@Html.ValidationMessageFor(legalEntity => legalEntity.Phone)</div>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row">
+                    <label for="Fax">Fax:<span>molimo unesite fax</span></label>
+                    <div class="input">@Html.TextBoxFor(legalEntity => legalEntity.Fax, new { @class = "w100"})</div>
+                    <div class="error">@Html.ValidationMessageFor(legalEntity => legalEntity.Fax)</div>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row">
+                    <label for="Mobile">Mobitel:<span>molimo unesite mobitel</span></label>
+                    <div class="input">@Html.TextBoxFor(legalEntity => legalEntity.Mobile, new { @class = "w100"})</div>
+                    <div class="error">@Html.ValidationMessageFor(legalEntity => legalEntity.Mobile)</div>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row">
+                    <label for="EMail">E-mail:<span>molimo unesite E-mail</span></label>
+                    <div class="input">@Html.TextBoxFor(legalEntity => legalEntity.EMail, new { @class = "w100"})</div>
+                    <div class="error">@Html.ValidationMessageFor(legalEntity => legalEntity.EMail)</div>
+                    <div class="clear"></div>
+                </div>
+
+            </fieldset>
+
+        </div>
+
+    </div>
+
+    <div class="clear"></div>
+
+</div>  
+
+
+<script type="text/javascript">
+
+    showNextRowIfChecked("TouristOffice");
+    showNextRowIfChecked("MonumentAnnuity");
+
+    $("#NumberOfEmployees").keyup(function () {
+
+        if($(this).val() > 0) {
+            $(this).parent().parent().next(".row").show();
+            $(this).parent().parent().next(".row").next(".row").show();
+            $(this).parent().parent().next(".row").next(".row").next(".row").show();
+        } else {
+            $(this).parent().parent().next(".row").hide();
+            $(this).parent().parent().next(".row").find("input").val("");
+            $(this).parent().parent().next(".row").next(".row").hide();
+            $(this).parent().parent().next(".row").next(".row").find("input").val("");
+            $(this).parent().parent().next(".row").next(".row").next(".row").hide();
+            $(this).parent().parent().next(".row").next(".row").next(".row").find("input").val("");
+        }
+
+    });
+
+
+    $("#Company").click(function() {
+        if($(this).is(":checked")) {
+            $(".company").show();
+        } else {
+            $(".company").hide();
+        }
+    })
+
+    $('#CountryFK').change(function () {
+
+        var countiesSelect      = $('#CountyFK');
+        var selectedCountry     = $(this).val();
+
+        if(selectedCountry == 81) {
+
+            $(this).parent().parent().next(".row").show();
+            $(this).parent().parent().next(".row").next(".row").show();
+            $(this).parent().parent().next(".row").next(".row").next(".row").show();
+            $(this).parent().parent().next(".row").next(".row").next(".row").next(".row").show();
+            $(this).parent().parent().next(".row").next(".row").next(".row").next(".row").next(".row").hide();
+
+        } else {
+
+            $(this).parent().parent().next(".row").hide();
+            $(this).parent().parent().next(".row").next(".row").hide();
+            $(this).parent().parent().next(".row").next(".row").next(".row").hide();
+            $(this).parent().parent().next(".row").next(".row").next(".row").next(".row").hide();
+            $(this).parent().parent().next(".row").next(".row").next(".row").next(".row").next(".row").show();
+
+        }
+
+        DisplayLoader("CountyFK");
+
+        if (selectedCountry != null && selectedCountry != '') {
+
+            $.getJSON('@Url.Action("GetCountiesByCountry", "Ajax")',
+            { country: selectedCountry },
+
+            function (counties) {
+                countiesSelect.empty();
+                countiesSelect.append($('<option/>', {
+                    value: '',
+                    text: 'Odaberite županiju' 
+                }));
+                $.each(counties, function (key, county) {
+                    countiesSelect.append($('<option/>', {
+                        value: county.value,
+                        text: county.text
+                    }));
+                });
+            });
+
+        } else {
+            countiesSelect.empty();
+            countiesSelect.append($('<option/>', {
+                value: '',
+                text: '----' 
+            }));
+        }
+
+        HideLoader("CountyFK");
+
+        EmptySelectBox("CityCommunityFK");
+        EmptySelectBox("PostalOfficeFK");
+        EmptySelectBox("PlaceFK");
+
+    }); 
+
+
+    $('#CountyFK').change(function () {
+
+        var citiesCommunitiesSelect = $('#CityCommunityFK');
+        var postalOfficesSelect     = $('#PostalOfficeFK');
+        var selectedCounty          = $(this).val();
+
+        if (selectedCounty != null && selectedCounty != '') {
+
+            $.getJSON('@Url.Action("GetCitiesCommunitiesByCounty", "Ajax")',
+            { county: selectedCounty },
+
+            function (citiesCommunities) {
+                citiesCommunitiesSelect.empty();
+                citiesCommunitiesSelect.append($('<option/>', {
+                    value: '',
+                    text: 'Odaberite grad/općinu' 
+                }));
+                $.each(citiesCommunities, function (key, city) {
+                    citiesCommunitiesSelect.append($('<option/>', {
+                        value: city.value,
+                        text: city.text
+                    }));
+                });
+            });
+
+            $.getJSON('@Url.Action("GetPostalOfficesByCounty", "Ajax")',
+            { county: selectedCounty },
+
+            function (postalOffices) {
+                postalOfficesSelect.empty();
+                postalOfficesSelect.append($('<option/>', {
+                    value: '',
+                    text: 'Odaberite poštanski ured' 
+                }));
+                $.each(postalOffices, function (key, postalOffice) {
+                    postalOfficesSelect.append($('<option/>', {
+                        value: postalOffice.value,
+                        text: postalOffice.text
+                    }));
+                });
+            });
+
+        } else {
+
+            postalOfficesSelect.empty();
+            postalOfficesSelect.append($('<option/>', {
+                value: '',
+                text: '----' 
+            }));
+
+            citiesCommunitiesSelect.empty();
+            citiesCommunitiesSelect.append($('<option/>', {
+                value: '',
+                text: '----' 
+            }));
+
+        }
+
+        EmptySelectBox("PlaceFK");
+    }); 
+
+
+    $('#PostalOfficeFK').change(function () {
+
+        var placesSelect            = $('#PlaceFK');
+        var selectedPostalOffice    = $(this).val();
+
+        if (selectedPostalOffice != null && selectedPostalOffice != '') {
+
+            $.getJSON('@Url.Action("GetPlacesByPostalOffice", "Ajax")',
+            { postalOffice: selectedPostalOffice },
+
+            function (places) {
+                placesSelect.empty();
+                placesSelect.append($('<option/>', {
+                    value: '',
+                    text: 'Odaberite mjesto' 
+                }));
+                $.each(places, function (key, place) {
+                    placesSelect.append($('<option/>', {
+                        value: place.value,
+                        text: place.text
+                    }));
+                });
+            });
+
+        } else {
+            placesSelect.empty();
+            placesSelect.append($('<option/>', {
+                value: '',
+                text: '----' 
+            }));
+        }
+    }); 
+
+
+    $('#RegionalOfficeFK').change(function () {
+
+        var substationsSelect       = $('#SubstationFK');
+        var referentsSelect         = $('#ReferentFK');
+        var selectedRegionalOffice  = $(this).val();
+
+        if (selectedRegionalOffice != null && selectedRegionalOffice != '') {
+
+            $.getJSON('@Url.Action("GetSubstationsByRegionalOffice", "Ajax")',
+            { regionalOffice: selectedRegionalOffice },
+
+            function (substations) {
+                substationsSelect.empty();
+                substationsSelect.append($('<option/>', {
+                    value: '',
+                    text: 'Odaberite ispostavu' 
+                }));
+                $.each(substations, function (key, substation) {
+                    substationsSelect.append($('<option/>', {
+                        value: substation.value,
+                        text: substation.text
+                    }));
+                });
+            });
+
+        } else {
+            substationsSelect.empty();
+            substationsSelect.append($('<option/>', {
+                value: '',
+                text: '----' 
+            }));
+
+            referentsSelect.empty();
+            referentsSelect.append($('<option/>', {
+                value: '',
+                text: '----' 
+            }));
+        }
+    });
+
+
+    $('#SubstationFK').change(function () {
+
+        var referentsSelect     = $('#ReferentFK');
+        var selectedSubstation  = $(this).val();
+
+        if (selectedSubstation != null && selectedSubstation != '') {
+
+            $.getJSON('@Url.Action("GetReferentsBySubstation", "Ajax")',
+            { substation: selectedSubstation },
+
+            function (referents) {
+                referentsSelect.empty();
+                referentsSelect.append($('<option/>', {
+                    value: '',
+                    text: 'Odaberite referenta' 
+                }));
+                $.each(referents, function (key, referent) {
+                    referentsSelect.append($('<option/>', {
+                        value: referent.value,
+                        text: referent.text
+                    }));
+                });
+            });
+
+        } else {
+            referentsSelect.empty();
+            referentsSelect.append($('<option/>', {
+                value: '',
+                text: '----' 
+            }));
+        }
+    });
+</script>

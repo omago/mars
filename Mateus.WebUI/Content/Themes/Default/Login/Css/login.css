@@ -1,0 +1,40 @@
+/* 
+    Document   : style
+    Created on : 13.05.2012., 19:35:51
+    Author     : Domagoj Kovač
+*/
+
+*{ margin: 0px; padding: 0px; font-family: "Arial"; font-size: 12px; color: #535353; }
+
+a { text-decoration: none; }
+.clear { clear: both; }
+
+html { height: 100%; }
+
+body { background: url("../Images/bg_body.jpg") center 50px no-repeat #f4f4f4; }
+
+
+.container { vertical-align: middle; height: 300px; position: relative; width: 560px; margin: 114px auto 0 auto; }
+
+h1 { position: absolute; top: 86px; left: 34px; padding-right: 116px; height: 90px; display: table; vertical-align: middle; width: 100px; text-align: center; background: url("../Images/bg_h1.png") no-repeat right center; }
+h1 span { display: table-cell; vertical-align: middle; font-size: 18px; font-weight: bold; text-transform: uppercase; }
+form { position: absolute; top: 76px; left: 280px; }
+form input[type=text],
+form input[type=password] { border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; padding: 10px 10px 10px 40px; width: 198px; margin: 7px 0; border: 1px solid #d5d5d5; background-position: 10px 6px; background-repeat: no-repeat; background-color: white; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; padding: 10px 10px 10px 40px; width: 198px; margin: 7px 0; border: 1px solid #d5d5d5; }
+form input[type=text]:hover,
+form input[type=password]:hover { border: 1px solid green; }
+form input[type=text]:focus,
+form input[type=password]:focus { border: 2px solid green; padding: 9px 9px 9px 39px; background-position: 9px 5px; outline: 0; }
+form input[type=submit]  { text-transform: uppercase; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; font-size: 18px; display: inline-block; cursor: pointer; border: 1px solid #cccccc; padding: 10px 16px; background-color: #fafafa; vertical-align: middle; width: 250px; margin-top: 22px; text-shadow: 1px 1px 0px #fff; -moz-box-shadow: inset 0px 0px 0px 2px #fff; -webkit-box-shadow: inset 0px 0px 0px 2px #fff; box-shadow: inset 0px 0px 0px 2px #fff; background-image: linear-gradient(top, #f8f8f8 0%, #e4e4e4 100%); background-image: -o-linear-gradient(top, #f8f8f8 0%, #e4e4e4 100%); background-image: -moz-linear-gradient(top, #f8f8f8 0%, #e4e4e4 100%); background-image: -webkit-linear-gradient(top, #f8f8f8 0%, #e4e4e4 100%); background-image: -ms-linear-gradient(top, #f8f8f8 0%, #e4e4e4 100%); filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f8f8f8', endColorstr='#e4e4e4'); }
+form input[type=submit]:hover { background-color: #eaeaea; -moz-box-shadow: 0px 0px 2px #000, inset 0px 0px 0px 2px #fff; -webkit-box-shadow: 0px 0px 2px lightgray, inset 0px 0px 0px 2px #fff; box-shadow: 0px 0px 10px lightgray, inset 0px 0px 0px 2px #fff; background-image: linear-gradient(top, #e4e4e4 0%, #f8f8f8 100%); background-image: -o-linear-gradient(top, #e4e4e4 0%, #f8f8f8 100%); background-image: -moz-linear-gradient(top, #e4e4e4 0%, #f8f8f8 100%); background-image: -webkit-linear-gradient(top, #e4e4e4 0%, #f8f8f8 100%); background-image: -ms-linear-gradient(top, #e4e4e4 0%, #f8f8f8 100%); filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e4e4e4', endColorstr='#f8f8f8'); }
+form input[type=text] { background-image: url("../Images/bg_input_username.png"); }
+form input[type=password] { background-image: url("../Images/bg_input_password.png"); }
+
+.validation-summary-errors { position: absolute; left: 280px; top: 2px; width: 240px; color: red; font-weight: bold; }
+.validation-summary-errors span { color: red; font-size: 14px; }
+.validation-summary-errors ul { margin-left: 17px; margin-top: 5px; }
+.validation-summary-errors ul li { color: red; list-style-type: square; font-weight: normal; }
+.field-validation-error { display: block; font-size: 10px; color: red; margin-top: -4px; }
+
+p { position: absolute; right: 20px; top: 256px; width: 270px; text-align: center; }
+p a { font-weight: bold; border-bottom: 1px dotted; }

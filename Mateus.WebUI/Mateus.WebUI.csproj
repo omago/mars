@@ -1,0 +1,601 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7C581B1F-772A-4986-BA74-1051EAED7E75}</ProjectGuid>
+    <ProjectTypeGuids>{E53F8FEA-EAE0-44A6-8774-FFD645390401};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Mateus</RootNamespace>
+    <AssemblyName>Mateus</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Entity.Design" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.WebPages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ActivityController.cs" />
+    <Compile Include="Controllers\AssessmentController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\BankController.cs" />
+    <Compile Include="Controllers\CommercialCourtsController.cs" />
+    <Compile Include="Controllers\CityCommunityController.cs" />
+    <Compile Include="Controllers\ContractValidityController.cs" />
+    <Compile Include="Controllers\ContractController.cs" />
+    <Compile Include="Controllers\AnnexContractController.cs" />
+    <Compile Include="Controllers\CSSController.cs" />
+    <Compile Include="Controllers\LegalEntityBranchController.cs" />
+    <Compile Include="Controllers\LegalEntityBankController.cs" />
+    <Compile Include="Controllers\AjaxController.cs" />
+    <Compile Include="Controllers\ChangeTypeController.cs" />
+    <Compile Include="Controllers\BussinesShareBurdenController.cs" />
+    <Compile Include="Controllers\AdditionalFactorController.cs" />
+    <Compile Include="Controllers\AssessmentTypeController.cs" />
+    <Compile Include="Controllers\AssessmentGroupController.cs" />
+    <Compile Include="Controllers\AssessmentQuestionController.cs" />
+    <Compile Include="Controllers\LegalEntityOwnerController.cs" />
+    <Compile Include="Controllers\AttachmentController.cs" />
+    <Compile Include="Controllers\LegalEntityLegalRepresentativeController.cs" />
+    <Compile Include="Controllers\ReportController.cs" />
+    <Compile Include="Controllers\LegalEntityController.cs" />
+    <Compile Include="Controllers\PhysicalEntityController.cs" />
+    <Compile Include="Controllers\WorkDoneAttachmentController.cs" />
+    <Compile Include="Controllers\UserActivityController.cs" />
+    <Compile Include="Controllers\WorkSubtypeController.cs" />
+    <Compile Include="Controllers\WorkTypeController.cs" />
+    <Compile Include="Controllers\ServiceTypeController.cs" />
+    <Compile Include="Controllers\FullfilledFactorController.cs" />
+    <Compile Include="Controllers\CurrencyController.cs" />
+    <Compile Include="Controllers\WorkDoneController.cs" />
+    <Compile Include="Controllers\ToDoListController.cs" />
+    <Compile Include="Controllers\SubstationsController.cs" />
+    <Compile Include="Controllers\RegionalOfficeController.cs" />
+    <Compile Include="Controllers\CountyController.cs" />
+    <Compile Include="Controllers\PlaceController.cs" />
+    <Compile Include="Controllers\WayOfRepresentationController.cs" />
+    <Compile Include="Controllers\TaxController.cs" />
+    <Compile Include="Controllers\RiskController.cs" />
+    <Compile Include="Controllers\PostalOfficeController.cs" />
+    <Compile Include="Controllers\FormController.cs" />
+    <Compile Include="Controllers\CountryController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Support\CompressFilter.cs" />
+    <Compile Include="Support\MVCExtensionMethods.cs" />
+    <Compile Include="Support\PITAuthorizeAttribute.cs" />
+    <Compile Include="Support\RepositoryExtensionMethods.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app_offline.OFFLINE" />
+    <Content Include="Attachments\5370abc5-f6a3-4c71-bf8c-205503d8193b.txt" />
+    <Content Include="Content\Shared\Scripts\jquery-1.7.2.min.js" />
+    <Content Include="Content\Shared\Scripts\jquery-ui-1.8.20.custom.min.js" />
+    <Content Include="Content\Shared\Scripts\jquery-ui-timepicker-addon.js" />
+    <Content Include="Content\Shared\Scripts\scripts.js" />
+    <Content Include="Content\Themes\Default\Login\Css\login.css" />
+    <Content Include="Content\Themes\Default\Login\Images\bg_body.jpg" />
+    <Content Include="Content\Themes\Default\Login\Images\bg_h1.png" />
+    <Content Include="Content\Themes\Default\Login\Images\bg_input_password.png" />
+    <Content Include="Content\Themes\Default\Login\Images\bg_input_username.png" />
+    <Content Include="Content\Themes\Default\Site\Css\blue.css" />
+    <Content Include="Content\Themes\Default\Site\Css\yellow.css" />
+    <Content Include="Content\Themes\Default\Site\Css\screen.css" />
+    <Content Include="Content\Themes\Default\Site\Css\_css3.css" />
+    <Content Include="Content\Themes\Default\Site\Css\layout.css" />
+    <Content Include="Content\Themes\Default\Site\Css\orange.css" />
+    <Content Include="Content\Themes\Default\Site\Css\darkgreen.css" />
+    <Content Include="Content\Themes\Default\Site\Css\darkgrey.css" />
+    <Content Include="Content\Themes\Default\Site\Css\purple.css" />
+    <Content Include="Content\Themes\Default\Site\Css\lightgreen.css" />
+    <Content Include="Content\Themes\Default\Site\Css\red.css" />
+    <Content Include="Content\Themes\Default\Site\Css\print.css" />
+    <Content Include="Content\Themes\Default\Site\Css\_screen.css" />
+    <Content Include="Content\Themes\Default\Site\Css\css3.css" />
+    <Content Include="Content\Themes\Default\Site\Css\Smoothness\Images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\Themes\Default\Site\Css\Smoothness\Images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\Themes\Default\Site\Css\Smoothness\Images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\Themes\Default\Site\Css\Smoothness\Images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\Themes\Default\Site\Css\Smoothness\Images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\Themes\Default\Site\Css\Smoothness\Images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\Themes\Default\Site\Css\Smoothness\Images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\Themes\Default\Site\Css\Smoothness\Images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\Themes\Default\Site\Css\Smoothness\Images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\Themes\Default\Site\Css\Smoothness\Images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\Themes\Default\Site\Css\Smoothness\Images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\Themes\Default\Site\Css\Smoothness\Images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\Themes\Default\Site\Css\Smoothness\Images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\Themes\Default\Site\Css\Smoothness\jquery-ui-1.8.20.custom.css" />
+    <Content Include="Content\Themes\Default\Site\Images\mars_logo.png" />
+    <Content Include="Content\Themes\Default\Site\Images\select_box_ajax_loader.gif" />
+    <Content Include="Content\Themes\Default\Site\Images\sprite.png" />
+    <Content Include="Content\Themes\Default\Site\Images\sprite_128.png" />
+    <Content Include="Global.asax" />
+    <Content Include="Mateus.WebUI.Publish.xml" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Template\Error.cshtml" />
+    <Content Include="Views\Error\InternalServerError.cshtml" />
+    <None Include="Properties\PublishProfiles\Profile1.pubxml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Mateus.Model\Mateus.Model.csproj">
+      <Project>{DC372D15-797A-4F6F-B03F-E5CAC878F1E7}</Project>
+      <Name>Mateus.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PITFramework\PITFramework.csproj">
+      <Project>{F2369610-EA18-4CFB-9A42-43B6E8E30C7F}</Project>
+      <Name>PITFramework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\LogOn.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\User\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Partial\Pager.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Error\UnauthorizedAccess.cshtml" />
+    <Content Include="Views\Activity\Index.cshtml" />
+    <Content Include="Views\Activity\Edit.cshtml" />
+    <Content Include="Views\Bank\Index.cshtml" />
+    <Content Include="Views\Country\Add.cshtml" />
+    <Content Include="Views\Country\Index.cshtml" />
+    <Content Include="Views\Form\Add.cshtml" />
+    <Content Include="Views\Form\Index.cshtml" />
+    <Content Include="Views\Shared\Partial\Breadcrumb.cshtml" />
+    <Content Include="Views\PostalOffice\Form.cshtml" />
+    <Content Include="Views\PostalOffice\Index.cshtml" />
+    <Content Include="Views\County\Add.cshtml" />
+    <Content Include="Views\County\Index.cshtml" />
+    <Content Include="Views\CityCommunity\Add.cshtml" />
+    <Content Include="Views\CityCommunity\Index.cshtml" />
+    <Content Include="Views\Community\Add.cshtml" />
+    <Content Include="Views\Community\Index.cshtml" />
+    <Content Include="Views\Bank\Form.cshtml" />
+    <Content Include="Views\Activity\Form.cshtml" />
+    <Content Include="Views\Activity\Add.cshtml" />
+    <Content Include="Views\Bank\Add.cshtml" />
+    <Content Include="Views\Bank\Edit.cshtml" />
+    <Content Include="Views\Place\Add.cshtml" />
+    <Content Include="Views\Place\Edit.cshtml" />
+    <Content Include="Views\Place\Form.cshtml" />
+    <Content Include="Views\Place\Index.cshtml" />
+    <Content Include="Views\CityCommunity\Form.cshtml" />
+    <Content Include="Views\CityCommunity\Edit.cshtml" />
+    <Content Include="Views\PostalOffice\Add.cshtml" />
+    <Content Include="Views\PostalOffice\Edit.cshtml" />
+    <Content Include="Views\Country\Form.cshtml" />
+    <Content Include="Views\Country\Edit.cshtml" />
+    <Content Include="Views\County\Form.cshtml" />
+    <Content Include="Views\County\Edit.cshtml" />
+    <Content Include="Views\RegionalOffice\Add.cshtml" />
+    <Content Include="Views\RegionalOffice\Edit.cshtml" />
+    <Content Include="Views\RegionalOffice\Form.cshtml" />
+    <Content Include="Views\RegionalOffice\Index.cshtml" />
+    <Content Include="Views\Substation\Add.cshtml" />
+    <Content Include="Views\Substation\Edit.cshtml" />
+    <Content Include="Views\Community\Edit.cshtml" />
+    <Content Include="Views\Community\Form.cshtml" />
+    <Content Include="Views\Substation\Form.cshtml" />
+    <Content Include="Views\Substation\Index.cshtml" />
+    <Content Include="Views\Form\Form.cshtml" />
+    <Content Include="Views\Form\Edit.cshtml" />
+    <Content Include="Views\CommercialCourt\Add.cshtml" />
+    <Content Include="Views\CommercialCourt\Edit.cshtml" />
+    <Content Include="Views\CommercialCourt\Form.cshtml" />
+    <Content Include="Views\CommercialCourt\Index.cshtml" />
+    <Content Include="Views\ContractValidity\Add.cshtml" />
+    <Content Include="Views\ContractValidity\Edit.cshtml" />
+    <Content Include="Views\ContractValidity\Form.cshtml" />
+    <Content Include="Views\ContractValidity\Index.cshtml" />
+    <Content Include="Views\Risk\Add.cshtml" />
+    <Content Include="Views\Risk\Index.cshtml" />
+    <Content Include="Views\Risk\Edit.cshtml" />
+    <Content Include="Views\Risk\Form.cshtml" />
+    <Content Include="Views\Tax\Add.cshtml" />
+    <Content Include="Views\Tax\Index.cshtml" />
+    <Content Include="Views\Tax\Edit.cshtml" />
+    <Content Include="Views\Tax\Form.cshtml" />
+    <Content Include="Views\ToDoList\Add.cshtml" />
+    <Content Include="Views\ToDoList\Edit.cshtml" />
+    <Content Include="Views\ToDoList\Form.cshtml" />
+    <Content Include="Views\ToDoList\Index.cshtml" />
+    <Content Include="Views\Contract\Add.cshtml" />
+    <Content Include="Views\Contract\Edit.cshtml" />
+    <Content Include="Views\Contract\Form.cshtml" />
+    <Content Include="Views\Contract\Index.cshtml" />
+    <Content Include="Views\AnnexContract\Add.cshtml" />
+    <Content Include="Views\AnnexContract\Edit.cshtml" />
+    <Content Include="Views\AnnexContract\Form.cshtml" />
+    <Content Include="Views\AnnexContract\Index.cshtml" />
+    <Content Include="Views\LegalEntityBranch\Add.cshtml" />
+    <Content Include="Views\LegalEntityBranch\Edit.cshtml" />
+    <Content Include="Views\LegalEntityBranch\Form.cshtml" />
+    <Content Include="Views\LegalEntityBranch\Index.cshtml" />
+    <Content Include="Views\LegalEntityBank\Add.cshtml" />
+    <Content Include="Views\LegalEntityBank\Edit.cshtml" />
+    <Content Include="Views\LegalEntityBank\Form.cshtml" />
+    <Content Include="Views\LegalEntityBank\Index.cshtml" />
+    <Content Include="Views\WorkDone\Add.cshtml" />
+    <Content Include="Views\WorkDone\Edit.cshtml" />
+    <Content Include="Views\WorkDone\Form.cshtml" />
+    <Content Include="Views\WorkDone\Index.cshtml" />
+    <Content Include="Views\User\Add.cshtml" />
+    <Content Include="Views\User\Form.cshtml" />
+    <Content Include="Views\User\Edit.cshtml" />
+    <Content Include="Views\WayOfRepresentation\Add.cshtml" />
+    <Content Include="Views\WayOfRepresentation\Edit.cshtml" />
+    <Content Include="Views\WayOfRepresentation\Form.cshtml" />
+    <Content Include="Views\WayOfRepresentation\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Currency\Add.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Currency\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Currency\Form.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Currency\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ChangeType\Add.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ChangeType\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ChangeType\Form.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ChangeType\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\BussinesShareBurden\Add.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\BussinesShareBurden\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\BussinesShareBurden\Form.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\BussinesShareBurden\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\AdditionalFactor\Add.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\AdditionalFactor\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\AdditionalFactor\Form.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\AdditionalFactor\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\FulfilledFactor\Add.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\FulfilledFactor\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\FulfilledFactor\Form.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\FulfilledFactor\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ServiceType\Add.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ServiceType\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ServiceType\Form.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ServiceType\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\WorkType\Add.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\WorkType\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\WorkType\Form.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\WorkType\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\WorkSubtype\Add.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\WorkSubtype\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\WorkSubtype\Form.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\WorkSubtype\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\AssessmentType\Add.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\AssessmentType\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\AssessmentType\Form.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\AssessmentType\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Assessment\Add.cshtml" />
+    <Content Include="Views\Assessment\Edit.cshtml" />
+    <Content Include="Views\Assessment\Form.cshtml" />
+    <Content Include="Views\Assessment\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\UserActivity\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\AssessmentGroup\Add.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\AssessmentGroup\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\AssessmentGroup\Form.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\AssessmentGroup\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\AssessmentQuestion\Add.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\AssessmentQuestion\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\AssessmentQuestion\Form.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\AssessmentQuestion\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Error\PageNotFound.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\LegalEntityOwner\Add.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\LegalEntityOwner\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\LegalEntityOwner\Form.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\LegalEntityOwner\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\WorkDoneAttachment\Add.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\WorkDoneAttachment\Form.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\WorkDoneAttachment\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\WorkDoneAttachment\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\PhysicalEntity\Add.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\PhysicalEntity\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\PhysicalEntity\Form.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\PhysicalEntity\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\LegalEntity\Add.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\LegalEntity\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\LegalEntity\Form.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\LegalEntity\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Report\LegalEntities.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\LegalEntityLegalRepresentative\Add.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\LegalEntityLegalRepresentative\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\LegalEntityLegalRepresentative\Form.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\LegalEntityLegalRepresentative\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Report\LegalEntity.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\LegalEntity\Audit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Partial\LegalEntityBanksAudit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Partial\LegalEntityBranchesAudit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Partial\LegalEntityOwnersAudit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Partial\LegalEntityLegalRepresentativesAudit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Partial\LegalEntityAudit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\LegalEntityBank\Audit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\LegalEntityBranch\Audit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\LegalEntityOwner\Audit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\LegalEntityLegalRepresentative\Audit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\PhysicalEntity\Audit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Partial\PhysicalEntityAudit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Report\WorkDone.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Template\Default\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Template\Default\_Login.cshtml" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>17514</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

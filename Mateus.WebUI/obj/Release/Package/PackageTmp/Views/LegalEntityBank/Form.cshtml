@@ -1,0 +1,104 @@
+﻿@model Mateus.Model.BussinesLogic.Views.LegalEntityBankModel.LegalEntityBankView
+           
+@using PITFramework.Security;
+
+@{
+    string[] userRoles = SecurityHelper.GetUserRolesFromCookie();
+}
+
+<div id="controls-bar">
+    @Html.Partial("~/Views/Shared/Partial/Breadcrumb.cshtml")
+    <div>
+        @Html.ActionLink(" ", "Index", Session["ControllerReferrer"].ToString(), null, new { @class = "button back padding-right-0" })
+        <a href="#" class="button refresh padding-right-0 margin-right-15"></a>       
+        <input type="submit" class="button save" value="Spremi" />
+    </div>
+</div>
+
+<div id="content">
+
+    <div class="grid-5">
+        <div class="form">
+
+            <h2>Informacije o banci tvrtke</h2>
+                
+            <fieldset>
+
+                <div class="row">
+                    <label for="LegalEntityFK">Tvrtka:<b>*</b><span>molimo odaberite tvrtku</span></label>
+                    <div class="input">
+                        @Html.TextBoxFor(legalEntityBank => legalEntityBank.LegalEntityName, new { @class = "w100 autocomplete-with-hidden-field", data_autocomplete_url = Url.Action("AutocompleteLegalEntitiesWithOIB", "Ajax", null), autocomplete = "off"})
+                        @Html.HiddenFor(legalEntityBank => legalEntityBank.LegalEntityFK)
+                    </div>
+                    <div class="error">@Html.ValidationMessageFor(legalEntityBank => legalEntityBank.LegalEntityFK)</div>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row">
+                    <label for="BankFK">Banka:<b>*</b><span>molimo odaberite banku</span></label>
+                    <div class="input">@Html.DropDownListFor(legalEntityBank => legalEntityBank.BankFK, Model.Banks, "Odaberite banku", new { @class = "w100" })</div>
+                    <div class="error">@Html.ValidationMessageFor(legalEntityBank => legalEntityBank.BankFK)</div>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row">
+                    <label for="Iban">IBAN:<b>*</b><span>molimo unesite IBAN</span></label>
+                    <div class="input">@Html.TextBoxFor(legalEntityBank => legalEntityBank.Iban, new { @class = "w50", maxlength = "32" })</div>
+                    <div class="error">@Html.ValidationMessageFor(legalEntityBank => legalEntityBank.Iban)</div>                                                                                                                                                                                         
+                    <div class="clear"></div>
+                </div>
+            </fieldset>
+
+        </div>
+    </div>   
+
+    <div class="grid-5">
+        <div class="form">
+
+            <h2>Podaci o unosu</h2>
+
+            <fieldset>
+
+                <div class="row">
+                    <label for="IdentityCardNumber">Datum unosa:<b>*</b><span>molimo unesite datum unosa</span></label>
+                    <div class="input">
+                        @if(Model.ChangeDate != null)
+                        {
+                            @Html.TextBoxFor(legalEntityBank => legalEntityBank.ChangeDate, new { @class = "w50 datepicker", @Value = Model.ChangeDate.Value.ToString("dd.MM.yyyy.") })
+                        } 
+                        else
+                        {
+                            @Html.TextBoxFor(legalEntityBank => legalEntityBank.ChangeDate, new { @class = "w50 datepicker" })
+                        } 
+                    </div>
+                    <div class="error">@Html.ValidationMessageFor(legalEntityBank => legalEntityBank.ChangeDate)</div> 
+                    <div class="clear"></div>
+                </div>
+
+            </fieldset>
+
+        </div>
+
+        @if (userRoles.Contains("delete"))
+        {
+            <div class="form margin-top-20">
+
+                <h2>Brisanje</h2>
+
+                <fieldset>
+
+                    <div class="row">
+                        <label for="Deleted">Obrisano:<span>obriši zapis</span></label>
+                        <div class="input">@Html.CheckBox("Deleted")</div>
+                        <div class="clear"></div>
+                    </div>
+
+                </fieldset>
+
+            </div>
+        }
+    </div>
+
+    <div class="clear"></div>
+
+</div>

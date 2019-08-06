@@ -1,0 +1,184 @@
+﻿@model Mateus.Model.BussinesLogic.Views.LegalEntityOwnerModel.LegalEntityOwnerView
+
+@using PITFramework.Security;
+
+@{
+    string[] userRoles = SecurityHelper.GetUserRolesFromCookie();
+}
+
+<div id="controls-bar">
+    @Html.Partial("~/Views/Shared/Partial/Breadcrumb.cshtml")
+    <div>
+        @Html.ActionLink(" ", "Index", Session["ControllerReferrer"].ToString(), null, new { @class = "button back padding-right-0" })
+        <a href="#" class="button refresh padding-right-0 margin-right-15"></a>       
+        <input type="submit" class="button save" value="Spremi" />
+    </div>
+</div>
+
+<div id="content">
+
+    <div class="grid-5">
+        <div class="form">
+
+            <h2>Informacije o vlasniku tvrtke</h2>
+                
+            <fieldset>
+
+                <div class="row">
+                    <label for="LegalEntityFK">Tvrtka:<b>*</b><span>molimo odaberite tvrtku</span></label>
+                    <div class="input">
+                        @Html.TextBoxFor(legalEntityOwner => legalEntityOwner.LegalEntityName, new { @class = "w100 autocomplete-with-hidden-field", data_autocomplete_url = Url.Action("AutocompleteLegalEntities", "Ajax", null), autocomplete = "off"})
+                        @Html.HiddenFor(legalEntityOwner => legalEntityOwner.LegalEntityFK)
+                    </div>
+                    <div class="error">@Html.ValidationMessageFor(legalEntityOwner => legalEntityOwner.LegalEntityFK)</div>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row">
+                    <label for="OwnerStringFK">Vlasnik:<b>*</b><span>molimo odaberite vlasnika</span></label>
+                    <div class="input">@Html.DropDownListFor(legalEntityOwner => legalEntityOwner.OwnerStringFK, Model.Owners, "Odaberite vlasnika", new { @class = "w100" })</div>
+                    <div class="error">@Html.ValidationMessageFor(legalEntityOwner => legalEntityOwner.OwnerStringFK)</div>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row">
+                    <label for="EntryDate">Datum unosa:<b>*</b><span>molimo unesite datum unosa</span></label>
+                    <div class="input">
+                        @if(Model.EntryDate != null){
+                            @Html.TextBoxFor(legalEntityOwner => legalEntityOwner.EntryDate, new { @class = "w50 datepicker", @Value = Model.EntryDate.Value.ToString("dd.MM.yyyy.") })
+                        } 
+                        else
+                        {
+                            @Html.TextBoxFor(legalEntityOwner => legalEntityOwner.EntryDate, new { @class = "w50 datepicker" })
+                        } 
+                    </div>
+                    <div class="error">@Html.ValidationMessageFor(legalEntityOwner => legalEntityOwner.EntryDate)</div> 
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row">
+                    <label for="BusinessShareAmount">Iznos poslovnog udjela:<b>*</b><span>molimo unesite iznos poslovnog udjela</span></label>
+                    <div class="input">@Html.TextBoxFor(legalEntityOwner => legalEntityOwner.BusinessShareAmount, new { @class = "w40" })</div>
+                    <div class="error">@Html.ValidationMessageFor(legalEntityOwner => legalEntityOwner.BusinessShareAmount)</div> 
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row">
+                    <label for="NominalBussinesShareAmount">Nominalni iznos poslovnog udjela:<b>*</b><span>molimo unesite nominalni iznos poslovnog udjela</span></label>
+                    <div class="input">@Html.TextBoxFor(legalEntityOwner => legalEntityOwner.NominalBussinesShareAmount, new { @class = "w40" })</div>
+                    <div class="error">@Html.ValidationMessageFor(legalEntityOwner => legalEntityOwner.NominalBussinesShareAmount)</div> 
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row">
+                    <label for="PaidBussinesShareAmount">Iznos uplaćenih sredstava:<b>*</b><span>molimo unesite iznos uplaćenih sredstava</span></label>
+                    <div class="input">@Html.TextBoxFor(legalEntityOwner => legalEntityOwner.PaidBussinesShareAmount, new { @class = "w40" })</div>
+                    <div class="error">@Html.ValidationMessageFor(legalEntityOwner => legalEntityOwner.PaidBussinesShareAmount)</div> 
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row">
+                    <label for="AdditionalFactorFK">Dodatna činidba:<b>*</b><span>molimo odaberite dodatnu činidbu</span></label>
+                    <div class="input">@Html.DropDownListFor(legalEntityOwner => legalEntityOwner.AdditionalFactorFK, Model.AdditionalFactors, "Odaberite dodatnu činidbu", new { @class = "w100" })</div>
+                    <div class="error">@Html.ValidationMessageFor(legalEntityOwner => legalEntityOwner.AdditionalFactorFK)</div>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row">
+                    <label for="FulfilledFactorFK">Ispunjena činidba:<b>*</b><span>molimo odaberite ispunjenu činidbu</span></label>
+                    <div class="input">@Html.DropDownListFor(legalEntityOwner => legalEntityOwner.FulfilledFactorFK, Model.FulfilledFactors, "Odaberite ispunjenu činidbu", new { @class = "w100" })</div>
+                    <div class="error">@Html.ValidationMessageFor(legalEntityOwner => legalEntityOwner.FulfilledFactorFK)</div>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row">
+                    <label for="BussinesShareBurdenFK">Teret na poslovnom udjelu:<b>*</b><span>molimo odaberite teret na poslovnom udjelu</span></label>
+                    <div class="input">@Html.DropDownListFor(legalEntityOwner => legalEntityOwner.BussinesShareBurdenFK, Model.BussinesShareBurdens, "Odaberite teret na poslovnom udjelu", new { @class = "w100" })</div>
+                    <div class="error">@Html.ValidationMessageFor(legalEntityOwner => legalEntityOwner.BussinesShareBurdenFK)</div>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row">
+                    <label for="ChangeTypeFK">Vrsta promjene:<b>*</b><span>molimo odaberite vrstu promjene</span></label>
+                    <div class="input">@Html.DropDownListFor(legalEntityOwner => legalEntityOwner.ChangeTypeFK, Model.ChangeTypes, "Odaberite vrstu promjene", new { @class = "w100" })</div>
+                    <div class="error">@Html.ValidationMessageFor(legalEntityOwner => legalEntityOwner.ChangeTypeFK)</div>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row">
+                    <label for="NumberOfVotes">Broj glasova:<b>*</b><span>molimo unesite broj glasova</span></label>
+                    <div class="input">@Html.TextBoxFor(legalEntityOwner => legalEntityOwner.NumberOfVotes, new { @class = "w10" })</div>
+                    <div class="error">@Html.ValidationMessageFor(legalEntityOwner => legalEntityOwner.NumberOfVotes)</div> 
+                    <div class="clear"></div>
+                </div>
+
+            </fieldset>
+
+        </div>
+    </div>
+
+    <div class="grid-5">
+
+        <div class="form">
+
+            <h2>Podaci o unosu</h2>
+
+            <fieldset>
+
+                <div class="row">
+                    <label for="IdentityCardNumber">Datum unosa:<b>*</b><span>molimo unesite datum unosa</span></label>
+                    <div class="input">
+                        @if(Model.ChangeDate != null)
+                        {
+                            @Html.TextBoxFor(legalEntityOwner => legalEntityOwner.ChangeDate, new { @class = "w50 datepicker", @Value = Model.ChangeDate.Value.ToString("dd.MM.yyyy.") })
+                        } 
+                        else
+                        {
+                            @Html.TextBoxFor(legalEntityOwner => legalEntityOwner.ChangeDate, new { @class = "w50 datepicker" })
+                        } 
+                    </div>
+                    <div class="error">@Html.ValidationMessageFor(legalEntityOwner => legalEntityOwner.ChangeDate)</div> 
+                    <div class="clear"></div>
+                </div>
+
+            </fieldset>
+
+        </div>
+
+        @if (userRoles.Contains("delete"))
+        {
+            <div class="form margin-top-20">
+
+                <h2>Brisanje</h2>
+
+                <fieldset>
+
+                    <div class="row">
+                        <label for="Deleted">Obrisano:<span>obriši zapis</span></label>
+                        <div class="input">@Html.CheckBox("Deleted")</div>
+                        <div class="clear"></div>
+                    </div>
+
+                </fieldset>
+
+            </div>
+        }
+    </div>
+
+    <div class="clear"></div>
+
+</div>  
+
+
+<script type="text/javascript">
+
+    $("#LegalEntityFK").change(function() {
+
+        var selectedLegalEntity = $(this).val();
+
+        $("#OwnerStringFK option").show();
+        $("#OwnerStringFK option[value='le|" + selectedLegalEntity + "']").hide();
+
+    });
+
+</script>

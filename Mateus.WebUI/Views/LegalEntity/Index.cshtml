@@ -1,0 +1,186 @@
+﻿@model List<Mateus.Model.BussinesLogic.Views.LegalEntityModel.LegalEntityView>
+           
+@using PITFramework.Security;
+@using PITFramework.Support.Grid;
+
+@{ string[] userRoles = SecurityHelper.GetUserRolesFromCookie(); }
+
+<div id="controls-bar">
+    @Html.Partial("~/Views/Shared/Partial/Breadcrumb.cshtml")
+    <div>
+        @if (userRoles.Contains("add"))
+        { 
+            @Html.ActionLink("Nova pravna osoba", "Add", "LegalEntity", null, new { @class = "button new" })
+        }
+    </div>
+</div>
+
+<div id="content">
+
+    @using (Html.BeginForm("Index", "LegalEntity", FormMethod.Get))
+    {
+        <div id="grid-controls">
+            <div class="grid-3 text-left">
+                Molimo odaberite filter: 
+                <label class="margin-left-20" for="owner">Vlasnik</label>
+                @Html.CheckBox("owner", LinkHelper.isChecked(Request.QueryString["owner"]), new { @class = "w3 margin-left-5" })
+                <label class="margin-left-20" for="company">Tvrtka</label> 
+                @Html.CheckBox("company", LinkHelper.isChecked(Request.QueryString["company"]), new { @class = "w3 margin-left-5" })
+            </div>
+            <div class="grid-4 text-center">
+                @Html.TextBox("searchString", Request.QueryString["searchString"], new { placeholder = "Upišite pojam za pretragu", @class = "w40" })
+                <input type="submit" value="Pretraži" class="button search" />
+            </div>
+            <div class="grid-3 text-right">
+                <a href="#" class="button print icon"></a>
+            </div>
+            <div class="clear"></div>
+        </div>
+    }
+
+    <div class="grid-10">
+        <div class="grid-holder">
+            <table class="grid">
+                @if(Model.Count() > 0) {
+                    <tr>
+                        <th class="w2">#</th>
+                        <th class="w2">@MvcHtmlString.Create(LinkHelper.GetSortLink("ID", "LegalEntityPK"))</th>
+                        <th class="w16 left">@MvcHtmlString.Create(LinkHelper.GetSortLink("Naziv", "Name"))</th>
+                        <th class="w5">@MvcHtmlString.Create(LinkHelper.GetSortLink("Vlasnik", "Owner"))</th>
+                        <th class="w5">@MvcHtmlString.Create(LinkHelper.GetSortLink("Tvrtka", "Company"))</th>
+                        <th class="w10">@MvcHtmlString.Create(LinkHelper.GetSortLink("Poslovnice", "BranchesCount"))</th>
+                        <th class="w10">@MvcHtmlString.Create(LinkHelper.GetSortLink("Ugovori", "ContractsCount"))</th>
+                        <th class="w10">@MvcHtmlString.Create(LinkHelper.GetSortLink("Banke", "BanksCount"))</th>
+                        <th class="w10">@MvcHtmlString.Create(LinkHelper.GetSortLink("Zakonski zastupnici", "LegalRepresentativesCount"))</th>
+                        <th class="w10">@MvcHtmlString.Create(LinkHelper.GetSortLink("Vlasnici", "LegalEntityOwnersCount"))</th>
+                        <th class="w10">@MvcHtmlString.Create(LinkHelper.GetSortLink("Procjene", "AssessmentsCount"))</th>
+                        @if (userRoles.Contains("edit") || userRoles.Contains("delete"))
+                        { 
+                            <th class="w10 no-print">Operacije</th>
+                        }
+                    </tr>
+                
+                    int i = 1; 
+                
+                    foreach (var item in Model)
+                    {
+                        <tr class="@if(i%2 != 0){ @MvcHtmlString.Create("odd"); }">
+                            <td>@i.ToString()</td>
+                            <td class="@LinkHelper.getIsSorted("LegalEntityPK")">@item.LegalEntityPK.ToString()</td>
+                            <td class="left @LinkHelper.getIsSorted("Name")">
+                                @if (userRoles.Contains("edit"))
+                                {
+                                    if (!String.IsNullOrWhiteSpace(@item.Name))
+                                    { 
+                                        @Html.ActionLink(@item.Name, "Edit", "LegalEntity", new { legalEntityPK = @item.LegalEntityPK }, null)
+                                    }
+                                }
+                                else
+                                {
+                                    if (!String.IsNullOrWhiteSpace(@item.Name))
+                                    { 
+                                        @item.Name
+                                    }
+                                }
+                            </td>
+                            <td class="@LinkHelper.getIsSorted("Owner")">
+                                @if (@item.Owner != null && @item.Owner == true)
+                                { 
+                                    <span class="yes">DA</span>
+                                }
+                                else
+                                {
+                                    <span class="no">NE</span>
+                                }
+                            </td>
+                            <td class="@LinkHelper.getIsSorted("Company")">
+                                @if (@item.Company != null && @item.Company == true)
+                                { 
+                                    <span class="yes">DA</span>
+                                }
+                                else
+                                {
+                                    <span class="no">NE</span>
+                                }
+                            </td>
+                            <td class="@LinkHelper.getIsSorted("BranchesCount")">
+                                @Html.ActionLink(@item.BranchesCount.ToString(), "Index", "LegalEntityBranch", new { legalEntityFK = @item.LegalEntityPK }, null)
+                                @if (userRoles.Contains("add"))
+                                {   
+                                    @: | 
+                                    @Html.ActionLink("Dodaj", "Add", "LegalEntityBranch", new { legalEntityFK = @item.LegalEntityPK }, null)
+                                }
+                            </td>
+                            <td class="@LinkHelper.getIsSorted("ContractsCount")">
+                                @Html.ActionLink(@item.ContractsCount.ToString(), "Index", "Contract", new { legalEntityFK = @item.LegalEntityPK }, null)
+                                @if (userRoles.Contains("add"))
+                                {   
+                                    @: | 
+                                    @Html.ActionLink("Dodaj", "Add", "Contract", new { legalEntityFK = @item.LegalEntityPK }, null)
+                                }
+                            </td>
+                            <td class="@LinkHelper.getIsSorted("BanksCount")">
+                                @Html.ActionLink(@item.BanksCount.ToString(), "Index", "LegalEntityBank", new { legalEntityFK = @item.LegalEntityPK }, null)
+                                @if (userRoles.Contains("add"))
+                                {   
+                                    @: | 
+                                    @Html.ActionLink("Dodaj", "Add", "LegalEntityBank", new { legalEntityFK = @item.LegalEntityPK }, null)
+                                }
+                            </td>
+                            <td class="@LinkHelper.getIsSorted("LegalRepresentativesCount")">
+                                @Html.ActionLink(@item.LegalRepresentativesCount.ToString(), "Index", "LegalEntityLegalRepresentative", new { legalEntityFK = @item.LegalEntityPK }, null)
+                                @if (userRoles.Contains("add"))
+                                {   
+                                    @: | 
+                                    @Html.ActionLink("Dodaj", "Add", "LegalEntityLegalRepresentative", new { legalEntityFK = @item.LegalEntityPK }, null)
+                                }
+                            </td>
+                            <td class="@LinkHelper.getIsSorted("LegalEntityOwnersCount")">
+                                @Html.ActionLink(@item.LegalEntityOwnersCount.ToString(), "Index", "LegalEntityOwner", new { legalEntityFK = @item.LegalEntityPK }, null)
+                                @if (userRoles.Contains("add"))
+                                {   
+                                    @: | 
+                                    @Html.ActionLink("Dodaj", "Add", "LegalEntityOwner", new { legalEntityFK = @item.LegalEntityPK }, null)
+                                }
+                            </td>
+                            <td class="@LinkHelper.getIsSorted("AssessmentsCount")">
+                                @Html.ActionLink(@item.AssessmentsCount.ToString(), "Index", "Assessment", new { legalEntityFK = @item.LegalEntityPK }, null)
+                                @if (userRoles.Contains("add"))
+                                {   
+                                    @: | 
+                                    @Html.ActionLink("Dodaj", "Add", "Assessment", new { legalEntityFK = @item.LegalEntityPK }, null)
+                                }
+                            </td>
+                            @if (userRoles.Contains("edit") || userRoles.Contains("delete"))
+                            {  
+                                <td class="no-print">
+                                    @if (userRoles.Contains("view"))
+                                    {
+                                        @Html.ActionLink(" ", "Audit", new { legalEntityPK = @item.LegalEntityPK }, new { @class = "stats" })
+                                    }
+                                    @if (userRoles.Contains("edit"))
+                                    {
+                                        @Html.ActionLink(" ", "Edit", new { legalEntityPK = @item.LegalEntityPK }, new { @class = "edit" })
+                                    }
+                                    @if (userRoles.Contains("delete"))
+                                    {
+                                        @Html.ActionLink(" ", "Delete", new { legalEntityPK = @item.LegalEntityPK }, new { @class = "delete" })
+                                    }
+                                </td>
+                            }
+                        </tr>
+                        i++;
+                    }
+                }
+                else 
+                {
+                    <tr>
+                        <td class="no-records">Nema zapisa</td>
+                    </tr>
+                }            
+            </table>
+            @Html.Partial("~/Views/Shared/Partial/Pager.cshtml")
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>

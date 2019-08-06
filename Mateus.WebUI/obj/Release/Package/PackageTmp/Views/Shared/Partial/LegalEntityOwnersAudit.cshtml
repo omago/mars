@@ -1,0 +1,92 @@
+﻿@using Mateus.Model.BussinesLogic.Views.LegalEntityOwnerAuditModel;
+
+@{ 
+    if(ViewBag.legalEntityOwnersHistory != null)
+    {
+        if(ViewBag.legalEntityOwnersHistory is List<List<LegalEntityOwnerAuditView>>)
+        {
+            List<List<LegalEntityOwnerAuditView>>models = (List<List<LegalEntityOwnerAuditView>>)ViewBag.legalEntityOwnersHistory;
+            int count = models.Count; 
+
+            if(count > 0) 
+            {
+                foreach(List<LegalEntityOwnerAuditView> model in models)
+                {
+                    int countChanges = model.Count;
+                    int cellWidth = (int) Math.Floor((double)84/countChanges);
+
+                    <table class="grid">
+                        <tr><th class="w16"></th>@for(int i = 0; i < countChanges; i++) { <th class="w@(cellWidth) left"><span>@(model[i].ChangeDate.Value.ToString("dd.MM.yyyy."))</span></th> }</tr>
+               
+                        <tr><td class="right"><b>Vlasnik</b></td>@for(int i = 0; i < countChanges; i++) { if(model[i].Deleted == true) { <td class="left deleted-entry" rowspan="10">Zapis obrisan</td> } else { <td class="left">@(model[i].OwnerName)</td> } }</tr>
+
+                        <tr><td class="right"><b>Datum unosa</b></td>@for(int i = 0; i < countChanges; i++) { if(model[i].Deleted != true) { <td class="left">@if(model[i].BusinessShareAmount != null) { @(model[i].EntryDate.Value.ToString("dd.MM.yyyy.")) }</td> } }</tr>
+
+                        <tr><td class="right"><b>Iznos poslovnog udjela</b></td>@for(int i = 0; i < countChanges; i++) { if(model[i].Deleted != true) { <td class="left">@if(model[i].BusinessShareAmount != null) { @(model[i].BusinessShareAmount.Value.ToString("0,0.00") + " kn") }</td> } }</tr>
+                        <tr><td class="right"><b>Nominalni iznos poslovnog udjela:</b></td>@for(int i = 0; i < countChanges; i++) { if(model[i].Deleted != true) { <td class="left">@if(model[i].NominalBussinesShareAmount != null) { @(model[i].NominalBussinesShareAmount.Value.ToString("0,0.00") + " kn") }</td> } }</tr>
+                        <tr><td class="right"><b>Iznos uplaćenih sredstava</b></td>@for(int i = 0; i < countChanges; i++) { if(model[i].Deleted != true) { <td class="left">@if(model[i].PaidBussinesShareAmount != null) { @(model[i].PaidBussinesShareAmount.Value.ToString("0,0.00") + " kn") }</td> } }</tr>
+
+                        <tr><td class="right"><b>Dodatna činidba</b></td>@for(int i = 0; i < countChanges; i++) { if(model[i].Deleted != true) { <td class="left">@(model[i].AdditionalFactorName)</td> } }</tr>
+                        <tr><td class="right"><b>Ispunjena činidba:</b></td>@for(int i = 0; i < countChanges; i++) { if(model[i].Deleted != true) { <td class="left">@(model[i].FulfilledFactorName)</td> } }</tr>
+                        <tr><td class="right"><b>Teret na poslovnom udjelu:</b></td>@for(int i = 0; i < countChanges; i++) { if(model[i].Deleted != true) { <td class="left">@(model[i].BussinesShareBurdenName)</td> } }</tr>
+                        <tr><td class="right"><b>Vrsta promjene</b></td>@for(int i = 0; i < countChanges; i++) { if(model[i].Deleted != true) { <td class="left">@(model[i].ChangeTypeName)</td> } }</tr>
+
+                        <tr><td class="right"><b>Broj glasova:</b></td>@for(int i = 0; i < countChanges; i++) { if(model[i].Deleted != true) { <td class="left">@(model[i].NumberOfVotes)</td> } }</tr>
+                    </table>
+                }
+            }
+            else
+            {
+                <table class="grid">
+                    <tr>
+                        <td class="no-records">Nema zapisa</td>
+                    </tr>
+                </table>
+            }
+            
+        } 
+        else if(ViewBag.legalEntityOwnersHistory is List<LegalEntityOwnerAuditView>)
+        {
+            List<LegalEntityOwnerAuditView>model = (List<LegalEntityOwnerAuditView>)ViewBag.legalEntityOwnersHistory;
+            int countChanges = model.Count;    
+            int cellWidth = (int) Math.Floor((double)84/countChanges);
+            
+            <table class="grid">
+                @if(countChanges > 0) 
+                {
+                    <tr><th class="w16"></th>@for(int i = 0; i < countChanges; i++) { <th class="w@(cellWidth) left"><span>@(model[i].ChangeDate.Value.ToString("dd.MM.yyyy."))</span></th> }</tr>
+               
+                    <tr><td class="right"><b>Vlasnik</b></td>@for(int i = 0; i < countChanges; i++) {  if(model[i].Deleted == true) { <td class="left deleted-entry" rowspan="10">Zapis obrisan</td> } else { <td class="left">@(model[i].OwnerName)</td> } }</tr>
+
+                    <tr><td class="right"><b>Datum unosa</b></td>@for(int i = 0; i < countChanges; i++) { if(model[i].Deleted != true) { <td class="left">@if(model[i].BusinessShareAmount != null) { @(model[i].EntryDate.Value.ToString("dd.MM.yyyy.")) }</td> } }</tr>
+
+                    <tr><td class="right"><b>Iznos poslovnog udjela</b></td>@for(int i = 0; i < countChanges; i++) { if(model[i].Deleted != true) { <td class="left">@if(model[i].BusinessShareAmount != null) { @(model[i].BusinessShareAmount.Value.ToString("0,0.00") + " kn") }</td> } }</tr>
+                    <tr><td class="right"><b>Nominalni iznos poslovnog udjela:</b></td>@for(int i = 0; i < countChanges; i++) { if(model[i].Deleted != true) { <td class="left">@if(model[i].NominalBussinesShareAmount != null) { @(model[i].NominalBussinesShareAmount.Value.ToString("0,0.00") + " kn") }</td> } }</tr>
+                    <tr><td class="right"><b>Iznos uplaćenih sredstava</b></td>@for(int i = 0; i < countChanges; i++) { if(model[i].Deleted != true) { <td class="left">@if(model[i].PaidBussinesShareAmount != null) { @(model[i].PaidBussinesShareAmount.Value.ToString("0,0.00") + " kn") }</td> } }</tr>
+
+                    <tr><td class="right"><b>Dodatna činidba</b></td>@for(int i = 0; i < countChanges; i++) { if(model[i].Deleted != true) { <td class="left">@(model[i].AdditionalFactorName)</td> } }</tr>
+                    <tr><td class="right"><b>Ispunjena činidba:</b></td>@for(int i = 0; i < countChanges; i++) { if(model[i].Deleted != true) { <td class="left">@(model[i].FulfilledFactorName)</td> } }</tr>
+                    <tr><td class="right"><b>Teret na poslovnom udjelu:</b></td>@for(int i = 0; i < countChanges; i++) { if(model[i].Deleted != true) { <td class="left">@(model[i].BussinesShareBurdenName)</td> } }</tr>
+                    <tr><td class="right"><b>Vrsta promjene</b></td>@for(int i = 0; i < countChanges; i++) { if(model[i].Deleted != true) { <td class="left">@(model[i].ChangeTypeName)</td> } }</tr>
+
+                    <tr><td class="right"><b>Broj glasova:</b></td>@for(int i = 0; i < countChanges; i++) { if(model[i].Deleted != true) { <td class="left">@(model[i].NumberOfVotes)</td> } }</tr>
+                }
+                else
+                {
+                    <tr>
+                        <td class="no-records">Nema zapisa</td>
+                    </tr>
+                }
+            </table>
+        }
+
+    }
+    else
+    {
+        <table class="grid">
+            <tr>
+                <td class="no-records">Nema zapisa</td>
+            </tr>
+        </table>
+    }
+}

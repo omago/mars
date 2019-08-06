@@ -1,0 +1,70 @@
+﻿@model Mateus.Model.BussinesLogic.Views.ActivityModel.ActivityView
+           
+<div id="controls-bar">
+    @Html.Partial("~/Views/Shared/Partial/Breadcrumb.cshtml")
+    <div>
+        @Html.ActionLink(" ", "Index", Session["ControllerReferrer"].ToString(), null, new { @class = "button back padding-right-0" })
+        <a href="#" class="button refresh padding-right-0 margin-right-15"></a>
+        <input type="submit" class="button save" value="Spremi" />
+    </div>
+</div>
+
+<div id="content">
+
+    <div class="grid-5">
+
+        <div class="form">
+
+            <h2>Informacije o djelatnosti</h2>
+
+            <fieldset>
+
+                <div class="row">
+                    <label for="Name">Naziv:<b>*</b><span>molimo unesite naziv</span></label>
+                    <div class="input">@Html.TextBoxFor(activity => activity.Name, new { @class = "w100" })</div>
+                    <div class="error">@Html.ValidationMessageFor(activity => activity.Name)</div>
+                    <div class="clear">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <label for="Code">Šifra:<b>*</b><span>molimo unesite šifru</span></label>
+                    <div class="input">@Html.TextBoxFor(activity => activity.Code, new { @class = "w20", maxlength = "10" })</div>
+                    <div class="caption error">@Html.ValidationMessageFor(activity => activity.Code)</div>
+                    <div class="clear">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <label for="HighRisk">Visoki rizik:<span>je li djelatnost visokorizična</span></label>
+                    <div class="input">@Html.CheckBox("HighRisk")</div>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row">
+                    <label for="LowRisk">Niski rizik:<span>je li djelatnost niskorizična</span></label>
+                    <div class="input">@Html.CheckBox("LowRisk")</div>
+                    <div class="clear"></div>
+                </div>
+
+            </fieldset>
+
+        </div>
+
+    </div>
+    <div class="clear"></div>
+</div>
+
+<script type="text/javascript">
+    $("#HighRisk").click(function () {
+        if ($("#HighRisk").is(":checked") && $("#LowRisk").is(":checked")) {
+            $("#LowRisk").attr('checked', false);
+        }
+    })
+
+    $("#LowRisk").click(function () {
+        if ($("#HighRisk").is(":checked") && $("#LowRisk").is(":checked")) {
+            $("#HighRisk").attr('checked', false);
+        }
+    })
+</script>

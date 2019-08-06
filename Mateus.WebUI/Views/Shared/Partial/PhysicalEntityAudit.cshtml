@@ -1,0 +1,66 @@
+﻿@using Mateus.Model.BussinesLogic.Views.PhysicalEntityAuditModel;
+
+@{ 
+    int count = 0; 
+    List<PhysicalEntityAuditView> model = new List<PhysicalEntityAuditView>();
+    if(ViewBag.physicalEntitiesHistory != null && ViewBag.physicalEntitiesHistory is List<PhysicalEntityAuditView>)
+    {
+        model = (List<PhysicalEntityAuditView>)ViewBag.physicalEntitiesHistory;
+    } 
+    count = model.Count; 
+        
+    int cellWidth = (int) Math.Floor((double)84/count);
+}
+
+@if(count > 0) {
+
+    <table class="grid">
+
+        <!-- basic info -->
+        <tr><th class="w16"></th>@for(int i = 0; i < count; i++) { <th class="w@(cellWidth) left"><span>@if(model[i].ChangeDate != null) { <text>@(model[i].ChangeDate.Value.ToString("dd.MM.yyyy."))</text> }</span></th> }</tr>
+        <tr><td class="right"><b>Ime</b></td>@for(int i = 0; i < count; i++) { <td class="left">@(model[i].Firstname)</td> }</tr> 
+        <tr><td class="right"><b>Prezime</b></td>@for(int i = 0; i < count; i++) { <td class="left">@(model[i].Lastname)</td> }</tr>
+        <tr><td class="right"><b>Spol</b></td>@for(int i = 0; i < count; i++) { <td class="left">@(model[i].Gender)</td> }</tr>
+        <tr><td class="right"><b>OIB</b></td>@for(int i = 0; i < count; i++) { <td class="left">@(model[i].OIB)</td> }</tr> 
+        <tr><td class="right"><b>JMBG</b></td>@for(int i = 0; i < count; i++) { <td class="left">@(model[i].JMBG)</td> }</tr> 
+        <tr><td class="right"><b>Datum rođenja</b></td>@for(int i = 0; i < count; i++) { <td class="left">@if(model[i].DateOfBirth != null && model[i].DateOfBirth.Value.ToString() != "") { @(model[i].DateOfBirth.Value.ToString("dd.MM.yyyy.")) }</td> }</tr> 
+        <tr><td class="right"><b>Državljanstvo</b></td>@for(int i = 0; i < count; i++) { <td class="left">@(model[i].Citizenship)</td> }</tr> 
+
+        <!-- registration info -->
+        <tr><td class="right"><b>Država rođenja</b></td>@for(int i = 0; i < count; i++) { <td class="left">@(model[i].BirthCountryName)</td> }</tr>
+        <tr><td class="right"><b>Županija rođenja</b></td>@for(int i = 0; i < count; i++) { <td class="left">@(model[i].BirthCountyName)</td> }</tr>
+        <tr><td class="right"><b>Grad/općina rođenja</b></td>@for(int i = 0; i < count; i++) { <td class="left">@(model[i].BirthCityCommunityName)</td> }</tr>
+
+        <tr><td class="right"><b>Država stanovanja</b></td>@for(int i = 0; i < count; i++) { <td class="left">@(model[i].ResidenceCountryName)</td> }</tr>
+        <tr><td class="right"><b>Županija stanovanja</b></td>@for(int i = 0; i < count; i++) { <td class="left">@(model[i].ResidenceCountyName)</td> }</tr>
+        <tr><td class="right"><b>Grad/općina stanovanja</b></td>@for(int i = 0; i < count; i++) { <td class="left">@(model[i].ResidenceCityCommunityName)</td> }</tr>
+        <tr><td class="right"><b>Poštanski ured stanovanja</b></td>@for(int i = 0; i < count; i++) { <td class="left">@(model[i].ResidencePostalOfficeFK)</td> }</tr>
+        <tr><td class="right"><b>Naselje stanovanja</b></td>@for(int i = 0; i < count; i++) { <td class="left">@(model[i].ResidencePlaceName)</td> }</tr>
+        <tr><td class="right"><b>Mjesto stanovanja</b></td>@for(int i = 0; i < count; i++) { <td class="left">@(model[i].ResidencePlace)</td> }</tr>
+        <tr><td class="right"><b>Ulica i broj stanovanja</b></td>@for(int i = 0; i < count; i++) { <td class="left">@(model[i].ResidenceStreetName)</td> }</tr>
+
+        <tr><td class="right"><b>Broj osobne iskaznice</b></td>@for(int i = 0; i < count; i++) { <td class="left">@(model[i].IdentityCardNumber)</td> }</tr>
+        <tr><td class="right"><b>Datum izdavanja osobne iskaznice</b></td>@for(int i = 0; i < count; i++) { <td class="left">@if(model[i].IdentityCardDateOfIssue != null && model[i].IdentityCardDateOfIssue.Value.ToString() != "") { @(model[i].IdentityCardDateOfIssue.Value.ToString("dd.MM.yyyy.")) }</td> }</tr> 
+        <tr><td class="right"><b>Datum isteka osobne iskaznice</b></td>@for(int i = 0; i < count; i++) { <td class="left">@if(model[i].IdentityCardDateTillValid != null && model[i].IdentityCardDateTillValid.Value.ToString() != "") { @(model[i].IdentityCardDateTillValid.Value.ToString("dd.MM.yyyy.")) }</td> }</tr> 
+        <tr><td class="right"><b>Regionalni ured izdavanja</b></td>@for(int i = 0; i < count; i++) { <td class="left">@(model[i].IdentityCardRegionalOfficeName)</td> }</tr>
+
+        <tr><td class="right"><b>Broj putovnice</b></td>@for(int i = 0; i < count; i++) { <td class="left">@(model[i].PassportNumber)</td> }</tr>
+        <tr><td class="right"><b>Datum izdavanja putovnice</b></td>@for(int i = 0; i < count; i++) { <td class="left">@if(model[i].PassportDateOfIssue != null && model[i].PassportDateOfIssue.Value.ToString() != "") { @(model[i].PassportDateOfIssue.Value.ToString("dd.MM.yyyy.")) }</td> }</tr> 
+        <tr><td class="right"><b>Datum isteka putovnice</b></td>@for(int i = 0; i < count; i++) { <td class="left">@if(model[i].PassportDateTillValid != null && model[i].PassportDateTillValid.Value.ToString() != "") { @(model[i].PassportDateTillValid.Value.ToString("dd.MM.yyyy.")) }</td> }</tr> 
+        <tr><td class="right"><b>Država izdavanja</b></td>@for(int i = 0; i < count; i++) { <td class="left">@(model[i].PassportCountryOfIssueName)</td> }</tr>
+        <tr><td class="right"><b>Mjesto izdavanja</b></td>@for(int i = 0; i < count; i++) { <td class="left">@(model[i].PassportPlaceOfIssue)</td> }</tr>
+
+        <tr><td class="right"><b>Vlasnik</b></td>@for(int i = 0; i < count; i++) { <td class="left">@if(model[i].Owner == true) { <text>DA</text> } else if(model[i].Owner == false) { <text>NE</text> }</td> }</tr>
+        <tr><td class="right"><b>Pravni zastupnik</b></td>@for(int i = 0; i < count; i++) { <td class="left">@if(model[i].LegalRepresentative == true) { <text>DA</text> } else if(model[i].LegalRepresentative == false) { <text>NE</text> }</td> }</tr>
+        <tr><td class="right"><b>Referent</b></td>@for(int i = 0; i < count; i++) { <td class="left">@if(model[i].Referent == true) { <text>DA</text> } else if(model[i].Referent == false) { <text>NE</text> }</td> }</tr>
+
+    </table>
+}
+else
+{
+    <table class="grid">
+        <tr>
+            <td class="no-records">Nema zapisa</td>
+        </tr>
+    </table>
+}

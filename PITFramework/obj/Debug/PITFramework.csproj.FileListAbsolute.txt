@@ -1,0 +1,12 @@
+C:\Users\Domagoj\Desktop\mars_source\Solution\PITFramework\bin\Debug\PITFramework.dll.config
+C:\Users\Domagoj\Desktop\mars_source\Solution\PITFramework\bin\Debug\PITFramework.dll
+C:\Users\Domagoj\Desktop\mars_source\Solution\PITFramework\bin\Debug\PITFramework.pdb
+C:\Users\Domagoj\Desktop\mars_source\Solution\PITFramework\obj\Debug\PITFramework.csprojResolveAssemblyReference.cache
+C:\Users\Domagoj\Desktop\mars_source\Solution\PITFramework\obj\Debug\PITFramework.dll
+C:\Users\Domagoj\Desktop\mars_source\Solution\PITFramework\obj\Debug\PITFramework.pdb
+C:\projects\mateus\mars_source\Solution\PITFramework\bin\Debug\PITFramework.dll.config
+C:\projects\mateus\mars_source\Solution\PITFramework\bin\Debug\PITFramework.dll
+C:\projects\mateus\mars_source\Solution\PITFramework\bin\Debug\PITFramework.pdb
+C:\projects\mateus\mars_source\Solution\PITFramework\obj\Debug\PITFramework.csprojResolveAssemblyReference.cache
+C:\projects\mateus\mars_source\Solution\PITFramework\obj\Debug\PITFramework.dll
+C:\projects\mateus\mars_source\Solution\PITFramework\obj\Debug\PITFramework.pdb

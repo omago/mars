@@ -1,0 +1,137 @@
+﻿@model List<Mateus.Model.BussinesLogic.Views.ContractModel.ContractView>
+
+@using PITFramework.Security;
+@using PITFramework.Support.Grid;
+
+@{
+    string[] userRoles = SecurityHelper.GetUserRolesFromCookie();
+    
+    string searchString = Request.QueryString["searchString"] != null ? Request.QueryString["searchString"] : "";    
+}
+
+<div id="controls-bar">
+    @Html.Partial("~/Views/Shared/Partial/Breadcrumb.cshtml")
+    <div>
+        @if (userRoles.Contains("add"))
+        { 
+            @Html.ActionLink("Novi ugovor", "Add", null, new { @class = "button new" })
+        }
+    </div>
+</div>
+
+<div id="content">
+
+    @using (Html.BeginForm("Index", "Contract", FormMethod.Get))
+    {
+        <div id="grid-controls">
+            <div class="grid-3 text-left">
+                Molimo odaberite filter: @Html.DropDownList("legalEntityFK", ViewBag.LegalEntities as SelectList, "Odaberite tvrtku", new { @class = "w30 margin-left-10" })
+            </div>
+            <div class="grid-4 text-center">
+                @Html.TextBox("searchString", Request.QueryString["searchString"], new { placeholder = "Upišite pojam za pretragu", @class = "w40" })
+                <input type="submit" value="Pretraži" class="button search" />
+            </div>
+            <div class="grid-3 text-right">
+                <a href="#" class="button print icon"></a>
+            </div>
+            <div class="clear"></div>
+        </div>
+    }
+
+    <div class="grid-10">
+        <div class="grid-holder">
+            <table class="grid">
+                @if(Model.Count() > 0) {
+                    <tr>
+                        <th class="w2">#</th>
+                        <th class="w2">@MvcHtmlString.Create(LinkHelper.GetSortLink("ID", "ContractPK"))</th>
+                        <th class="w26 left">@MvcHtmlString.Create(LinkHelper.GetSortLink("Naziv", "Name"))</th>
+                        <th class="w10">@MvcHtmlString.Create(LinkHelper.GetSortLink("Aneksi", "AnnexContractsCount"))</th>
+                        <th class="w10 left">@MvcHtmlString.Create(LinkHelper.GetSortLink("Tvrtka", "LegalEntityName"))</th>
+                        <th class="w10 left">@MvcHtmlString.Create(LinkHelper.GetSortLink("Broj ugovora", "Number"))</th>
+                        <th class="w10 left">@MvcHtmlString.Create(LinkHelper.GetSortLink("Datum ugovora", "Date"))</th>
+                        <th class="w10 left">@MvcHtmlString.Create(LinkHelper.GetSortLink("Primjena ugovora", "ContractBegin"))</th>
+                        <th class="w10 left">@MvcHtmlString.Create(LinkHelper.GetSortLink("Istek ugovora", "ContractEnd"))</th>
+                        @if (userRoles.Contains("edit") || userRoles.Contains("delete"))
+                        { 
+                            <th class="w10 no-print">Operacije</th>
+                        }
+                    </tr>
+
+                    int i = 1;
+
+                    foreach (var item in Model)
+                    {
+                        <tr class="@if (i % 2 != 0)
+                                    { @MvcHtmlString.Create("odd");
+                                    }">
+                            <td>@i.ToString()</td>
+                            <td class="@LinkHelper.getIsSorted("ContractPK")">@item.ContractPK.ToString()</td>
+                            <td class="left @LinkHelper.getIsSorted("Name")">
+                                @if (userRoles.Contains("edit"))
+                                {
+                                    if (!String.IsNullOrWhiteSpace(@item.Name))
+                                    { 
+                                        @Html.ActionLink(@item.Name, "Edit", new { contractPK = @item.ContractPK })
+                                    }
+                                }
+                                else
+                                {
+                                    if (!String.IsNullOrWhiteSpace(@item.Name))
+                                    { 
+                                        @item.Name
+                                    }
+                                }
+                            </td>
+                            <td class="@LinkHelper.getIsSorted("AnnexContractsCount")">
+                                @Html.ActionLink(@item.AnnexContractsCount.ToString(), "Index", "AnnexContract", new { contractFK = @item.ContractPK }, null)
+                                @if (userRoles.Contains("add"))
+                                {   
+                                    @: | 
+                                    @Html.ActionLink("Dodaj", "Add", "AnnexContract", new { contractFK = @item.ContractPK }, null)
+                                }
+                        
+                            </td>
+                            <td class="left @LinkHelper.getIsSorted("LegalEntityName")">@item.LegalEntityName.ToString()</td>
+                            <td class="left @LinkHelper.getIsSorted("Number")">@item.Number.ToString()</td>
+                            <td class="left @LinkHelper.getIsSorted("Date")">@item.Date.Value.ToString("dd.MM.yyyy.")</td>
+                            <td class="left @LinkHelper.getIsSorted("ContractBegin")">@item.ContractBegin.Value.ToString("dd.MM.yyyy.")</td>
+                            <td class="left @LinkHelper.getIsSorted("ContractEnd")">
+                            @if(@item.ContractEnd != null && item.ContractValidityFK == 1)
+                            {
+                                @item.ContractEnd.Value.ToString("dd.MM.yyyy.")
+                            }
+                            else
+                            {
+                                @("∞")
+                            }
+                            </td>
+                            @if (userRoles.Contains("edit") || userRoles.Contains("delete"))
+                            { 
+                                <td class="no-print">
+                                    @if (userRoles.Contains("edit"))
+                                    {
+                                        @Html.ActionLink(" ", "Edit", new { formPK = @item.ContractPK }, new { @class = "edit" })
+                                    }
+                                    @if (userRoles.Contains("delete"))
+                                    {
+                                        @Html.ActionLink(" ", "Delete", new { formPK = @item.ContractPK }, new { @class = "delete" })
+                                    }
+                                </td>
+                            }
+                        </tr>
+                        i++;
+                    }
+                }
+                else 
+                {
+                    <tr>
+                        <td class="no-records">Nema zapisa</td>
+                    </tr>
+                }   
+            </table>
+            @Html.Partial("~/Views/Shared/Partial/Pager.cshtml")
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>

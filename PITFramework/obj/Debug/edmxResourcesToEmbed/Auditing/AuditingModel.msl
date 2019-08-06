@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Mateus_wcModelStoreContainer" CdmEntityContainer="AuditingMateus">
+    <EntitySetMapping Name="AuditingDetails">
+      <EntityTypeMapping TypeName="Mateus_wcModel.AuditingDetail">
+        <MappingFragment StoreEntitySet="AuditingDetails">
+          <ScalarProperty Name="AuditingDetailPK" ColumnName="AuditingDetailPK" />
+          <ScalarProperty Name="AuditingMasterFK" ColumnName="AuditingMasterFK" />
+          <ScalarProperty Name="ColumnName" ColumnName="ColumnName" />
+          <ScalarProperty Name="OldValue" ColumnName="OldValue" />
+          <ScalarProperty Name="NewValue" ColumnName="NewValue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AuditingMasters">
+      <EntityTypeMapping TypeName="Mateus_wcModel.AuditingMaster">
+        <MappingFragment StoreEntitySet="AuditingMaster">
+          <ScalarProperty Name="RelatedEntityPK" ColumnName="RelatedEntityPK" />
+          <ScalarProperty Name="TableNameFK" ColumnName="TableNameFK" />
+          <ScalarProperty Name="UserFK" ColumnName="UserFK" />
+          <ScalarProperty Name="AuditingMasterPK" ColumnName="AuditingMasterPK" />
+          <ScalarProperty Name="DBName" ColumnName="DBName" />
+          <ScalarProperty Name="TableName" ColumnName="TableName" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Operation" ColumnName="Operation" />
+          <ScalarProperty Name="ServerName" ColumnName="ServerName" />
+          <ScalarProperty Name="SessionToken" ColumnName="SessionToken" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

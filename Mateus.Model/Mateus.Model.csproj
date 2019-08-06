@@ -1,0 +1,247 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DC372D15-797A-4F6F-B03F-E5CAC878F1E7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Mateus.Model</RootNamespace>
+    <AssemblyName>Mateus.Model</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dynamic">
+      <HintPath>..\packages\DynamicQuery.1.0\lib\35\Dynamic.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET MVC 3\Assemblies\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BussinesLogic\Core\Account\LogOn.cs" />
+    <Compile Include="BussinesLogic\Support\DDL\DDLHelper.cs" />
+    <Compile Include="BussinesLogic\Support\ExtensionMethods\AuditingHelper.cs" />
+    <Compile Include="BussinesLogic\Support\Validation\LessThenSystemDate.cs" />
+    <Compile Include="BussinesLogic\Support\Validation\DateTimeAttribute.cs" />
+    <Compile Include="BussinesLogic\Support\Validation\JMBGAttribute.cs" />
+    <Compile Include="BussinesLogic\Support\Validation\OIBAttribute.cs" />
+    <Compile Include="BussinesLogic\Support\Validation\RequiredIfAttribute.cs" />
+    <Compile Include="BussinesLogic\Support\Validation\WebAddressAttribute.cs" />
+    <Compile Include="BussinesLogic\Support\Validation\GiroAccountAttribute.cs" />
+    <Compile Include="BussinesLogic\Support\Validation\EmailAttribute.cs" />
+    <Compile Include="BussinesLogic\Support\Validation\NumberAttribute.cs" />
+    <Compile Include="BussinesLogic\Views\AccountModel\UserAccoutView.cs" />
+    <Compile Include="BussinesLogic\Views\ActivityModel\ActivityView.cs" />
+    <Compile Include="BussinesLogic\Views\AnnexContractModel\AnnexContractView.cs" />
+    <Compile Include="BussinesLogic\Views\AssessmentsModel\AssessmentsView.cs" />
+    <Compile Include="BussinesLogic\Views\BankModel\BankView.cs" />
+    <Compile Include="BussinesLogic\Views\LegalEntityBranchModel\LegalEntityBranchAuditView.cs" />
+    <Compile Include="BussinesLogic\Views\CommercialCourtModel\CommercialCourtView.cs" />
+    <Compile Include="BussinesLogic\Views\CityCommunityModel\CityCommunityView.cs" />
+    <Compile Include="BussinesLogic\Views\LegalEntityBankModel\LegalEntityBankAuditView.cs" />
+    <Compile Include="BussinesLogic\Views\LegalEntityLegalRepresentativeModel\LegalEntityLegalRepresentativeAuditView.cs" />
+    <Compile Include="BussinesLogic\Views\LegalEntityOwnerModel\LegalEntityOwnerAuditView.cs" />
+    <Compile Include="BussinesLogic\Views\ContractModel\ContractView.cs" />
+    <Compile Include="BussinesLogic\Views\ContractValidityModel\ContractValidityView.cs" />
+    <Compile Include="BussinesLogic\Views\LegalEntityBranchModel\LegalEntityBranchView.cs" />
+    <Compile Include="BussinesLogic\Views\LegalEntityBankModel\LegalEntityBankView.cs" />
+    <Compile Include="BussinesLogic\Views\ChangeTypeModel\ChangeTypeView.cs" />
+    <Compile Include="BussinesLogic\Views\BussinesShareBurdenModel\BussinesShareBurdenView.cs" />
+    <Compile Include="BussinesLogic\Views\AdditionalFactorModel\AdditionalFactorView.cs" />
+    <Compile Include="BussinesLogic\Views\AssessmentGroupModel\AssessmentGroupView.cs" />
+    <Compile Include="BussinesLogic\Views\AssessmentQuestionModel\AssessmentQuestionView.cs" />
+    <Compile Include="BussinesLogic\Views\LegalEntityOwnerModel\LegalEntityOwnerView.cs" />
+    <Compile Include="BussinesLogic\Views\AttachmentModel\AttachmentView.cs" />
+    <Compile Include="BussinesLogic\Views\LegalEntityLegalRepresentativeModel\LegalEntityLegalRepresentativeView.cs" />
+    <Compile Include="BussinesLogic\Views\LegalEntityModel\LegalEntityAuditView.cs" />
+    <Compile Include="BussinesLogic\Views\LegalEntityModel\LegalEntityView.cs" />
+    <Compile Include="BussinesLogic\Views\PhysicalEntityModel\PhysicalEntityAuditView.cs" />
+    <Compile Include="BussinesLogic\Views\PhysicalEntityModel\PhysicalEntityView.cs" />
+    <Compile Include="BussinesLogic\Views\GeneratorModel\GeneratorView.cs" />
+    <Compile Include="BussinesLogic\Views\WorkDoneAttachmentModel\WorkDoneAttachmentView.cs" />
+    <Compile Include="BussinesLogic\Views\CountyModel\CountyView.cs" />
+    <Compile Include="BussinesLogic\Views\UserActivity\UserActivityView.cs" />
+    <Compile Include="BussinesLogic\Views\WorkSubtypeModel\WorkSubtypeView.cs" />
+    <Compile Include="BussinesLogic\Views\WorkTypeModel\WorkTypeView.cs" />
+    <Compile Include="BussinesLogic\Views\ServiceTypeModel\ServiceTypeView.cs" />
+    <Compile Include="BussinesLogic\Views\FulfilledFactorModel\FulfilledFactorView.cs" />
+    <Compile Include="BussinesLogic\Views\CurrencyModel\CurrencyView.cs" />
+    <Compile Include="BussinesLogic\Views\WorkDoneModel\WorkDoneView.cs" />
+    <Compile Include="BussinesLogic\Views\ToDoListModel\ToDoListView.cs" />
+    <Compile Include="BussinesLogic\Views\SubstationModel\SubstationView.cs" />
+    <Compile Include="BussinesLogic\Views\RegionalOfficeModel\RegionalOfficeView.cs" />
+    <Compile Include="BussinesLogic\Views\AssessmentTypeModel\AssessmentTypeView.cs" />
+    <Compile Include="BussinesLogic\Views\PlaceModel\PlaceView.cs" />
+    <Compile Include="BussinesLogic\Views\WayOfRepresentationModel\WayOfRepresentationView.cs" />
+    <Compile Include="BussinesLogic\Views\TaxModel\TaxView.cs" />
+    <Compile Include="BussinesLogic\Views\RiskModel\RiskView.cs" />
+    <Compile Include="BussinesLogic\Views\PostalOfficeModel\PostalOfficeView.cs" />
+    <Compile Include="BussinesLogic\Views\FormModel\FormView.cs" />
+    <Compile Include="BussinesLogic\Views\CountryModel\CountryView.cs" />
+    <Compile Include="EFModel\MateusEFModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MateusEFModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="EFModel\Repository\Concrete\ActivitiesRepository.cs" />
+    <Compile Include="EFModel\Repository\Concrete\AnnexContractsRepository.cs" />
+    <Compile Include="EFModel\Repository\Concrete\AssessmentsRepository.cs" />
+    <Compile Include="EFModel\Repository\Concrete\BanksRepository.cs" />
+    <Compile Include="EFModel\Repository\Concrete\CommercialCourtsRepository.cs" />
+    <Compile Include="EFModel\Repository\Concrete\CitiesCommunitiesRepository.cs" />
+    <Compile Include="EFModel\Repository\Concrete\ContractsRepository.cs" />
+    <Compile Include="EFModel\Repository\Concrete\ContractValidityRepository.cs" />
+    <Compile Include="EFModel\Repository\Concrete\LegalEntityBranchesRepository.cs" />
+    <Compile Include="EFModel\Repository\Concrete\LegalEntityBanksRepository.cs" />
+    <Compile Include="EFModel\Repository\Concrete\ChangeTypesRepository.cs" />
+    <Compile Include="EFModel\Repository\Concrete\BussinesShareBurdensRepository.cs" />
+    <Compile Include="EFModel\Repository\Concrete\AdditionalFactorsRepository.cs" />
+    <Compile Include="EFModel\Repository\Concrete\AssessmentTypesRepository.cs" />
+    <Compile Include="EFModel\Repository\Concrete\AssessmentGroupsRepository.cs" />
+    <Compile Include="EFModel\Repository\Concrete\AssessmentQuestionsRepository.cs" />
+    <Compile Include="EFModel\Repository\Concrete\AssessmentAnswersRepository.cs" />
+    <Compile Include="EFModel\Repository\Concrete\LegalEntityOwnersRepository.cs" />
+    <Compile Include="EFModel\Repository\Concrete\AttachmentsRepository.cs" />
+    <Compile Include="EFModel\Repository\Concrete\LegalEntityLegalRepresentativesRepository.cs" />
+    <Compile Include="EFModel\Repository\Concrete\AuditingDetailsRepository.cs" />
+    <Compile Include="EFModel\Repository\Concrete\AuditingMasterRepository.cs" />
+    <Compile Include="EFModel\Repository\Concrete\LegalEntitiesRepository.cs" />
+    <Compile Include="EFModel\Repository\Concrete\PhysicalEntityRepository.cs" />
+    <Compile Include="EFModel\Repository\Concrete\WorkDoneAttachmentsRepository.cs" />
+    <Compile Include="EFModel\Repository\Concrete\UserActivitiesRepository.cs" />
+    <Compile Include="EFModel\Repository\Concrete\FulfilledFactorsRepository.cs" />
+    <Compile Include="EFModel\Repository\Concrete\SystemControllersRepository.cs" />
+    <Compile Include="EFModel\Repository\Concrete\SystemActionsRepository.cs" />
+    <Compile Include="EFModel\Repository\Concrete\CurrenciesRepository.cs" />
+    <Compile Include="EFModel\Repository\Concrete\ServiceTypesRepository.cs" />
+    <Compile Include="EFModel\Repository\Concrete\WorkTypesRepository.cs" />
+    <Compile Include="EFModel\Repository\Concrete\WorkSubtypesRepository.cs" />
+    <Compile Include="EFModel\Repository\Concrete\WorkDonesRepository.cs" />
+    <Compile Include="EFModel\Repository\Concrete\ToDoListRepository.cs" />
+    <Compile Include="EFModel\Repository\Concrete\SubstationsRepository.cs" />
+    <Compile Include="EFModel\Repository\Concrete\RegionalOfficesRepository.cs" />
+    <Compile Include="EFModel\Repository\Concrete\CountiesRepository.cs" />
+    <Compile Include="EFModel\Repository\Concrete\PlacesRepository.cs" />
+    <Compile Include="EFModel\Repository\Concrete\WaysOfRepresentationRepository.cs" />
+    <Compile Include="EFModel\Repository\Concrete\TaxesRepository.cs" />
+    <Compile Include="EFModel\Repository\Concrete\RisksRepository.cs" />
+    <Compile Include="EFModel\Repository\Concrete\PostalOfficesRepository.cs" />
+    <Compile Include="EFModel\Repository\Concrete\FormsRepository.cs" />
+    <Compile Include="EFModel\Repository\Concrete\CountriesRepository.cs" />
+    <Compile Include="EFModel\Repository\Concrete\RolesRepositoy.cs" />
+    <Compile Include="EFModel\Repository\Concrete\UsersInRolesRepository.cs" />
+    <Compile Include="EFModel\Repository\Concrete\UsersRepository.cs" />
+    <Compile Include="EFModel\Repository\Interface\IAuditingDetailsRepository.cs" />
+    <Compile Include="EFModel\Repository\Interface\IAuditingMasterRepository.cs" />
+    <Compile Include="EFModel\Repository\Interface\ILegalEntityLegalRepresentativesRepository.cs" />
+    <Compile Include="EFModel\Repository\Interface\ILegalEntitiesRepository.cs" />
+    <Compile Include="EFModel\Repository\Interface\IPhysicalEntityRepository.cs" />
+    <Compile Include="EFModel\Repository\Interface\IWorkDoneAttachmentsRepository.cs" />
+    <Compile Include="EFModel\Repository\Interface\IAttachmentsRepository.cs" />
+    <Compile Include="EFModel\Repository\Interface\ILegalEntityOwnersRepository.cs" />
+    <Compile Include="EFModel\Repository\Interface\IUserActivitiesRepository.cs" />
+    <Compile Include="EFModel\Repository\Interface\IAssessmentAnswersRepository.cs" />
+    <Compile Include="EFModel\Repository\Interface\IAssessmentQuestionsRepository.cs" />
+    <Compile Include="EFModel\Repository\Interface\IAssessmentGroupsRepository.cs" />
+    <Compile Include="EFModel\Repository\Interface\IAssessmentsRepository.cs" />
+    <Compile Include="EFModel\Repository\Interface\IAssessmentTypesRepository.cs" />
+    <Compile Include="EFModel\Repository\Interface\IFulfilledFactorsRepository.cs" />
+    <Compile Include="EFModel\Repository\Interface\IAdditionalFactorsRepository.cs" />
+    <Compile Include="EFModel\Repository\Interface\IBussinesShareBurdensRepository.cs" />
+    <Compile Include="EFModel\Repository\Interface\IChangeTypesRepository.cs" />
+    <Compile Include="EFModel\Repository\Interface\ISystemActionsRepository.cs" />
+    <Compile Include="EFModel\Repository\Interface\ISystemControllersRepository.cs" />
+    <Compile Include="EFModel\Repository\Interface\ICurrenciesRepository.cs" />
+    <Compile Include="EFModel\Repository\Interface\IServiceTypesRepository.cs" />
+    <Compile Include="EFModel\Repository\Interface\IWorkSubtypesRepository.cs" />
+    <Compile Include="EFModel\Repository\Interface\IWorkTypesRepository.cs" />
+    <Compile Include="EFModel\Repository\Interface\IWorkDonesRepository.cs" />
+    <Compile Include="EFModel\Repository\Interface\ILegalEntityBanksRepository.cs" />
+    <Compile Include="EFModel\Repository\Interface\ILegalEntityBranchesRepository.cs" />
+    <Compile Include="EFModel\Repository\Interface\IAnnexContractsRepository.cs" />
+    <Compile Include="EFModel\Repository\Interface\IContractsRepository.cs" />
+    <Compile Include="EFModel\Repository\Interface\IContractValiditiesRepository.cs" />
+    <Compile Include="EFModel\Repository\Interface\IToDoListsRepository.cs" />
+    <Compile Include="EFModel\Repository\Interface\ISubstationsRepository.cs" />
+    <Compile Include="EFModel\Repository\Interface\IRegionalOfficesRepository.cs" />
+    <Compile Include="EFModel\Repository\Interface\ICitiesCommunitiesRepository.cs" />
+    <Compile Include="EFModel\Repository\Interface\ICountiesRepository.cs" />
+    <Compile Include="EFModel\Repository\Interface\IPlacesRepository.cs" />
+    <Compile Include="EFModel\Repository\Interface\IWaysOfRepresentationRepository.cs" />
+    <Compile Include="EFModel\Repository\Interface\ITaxesRepository.cs" />
+    <Compile Include="EFModel\Repository\Interface\IRisksRepository.cs" />
+    <Compile Include="EFModel\Repository\Interface\IPostalOfficesRepository.cs" />
+    <Compile Include="EFModel\Repository\Interface\IFormsRepository.cs" />
+    <Compile Include="EFModel\Repository\Interface\ICountriesRepository.cs" />
+    <Compile Include="EFModel\Repository\Interface\IBanksRepository.cs" />
+    <Compile Include="EFModel\Repository\Interface\IActivitiesRepository.cs" />
+    <Compile Include="EFModel\Repository\Interface\ICommercialCourtsRepository.cs" />
+    <Compile Include="EFModel\Repository\Interface\IRolesRepository.cs" />
+    <Compile Include="EFModel\Repository\Interface\IUsersInRolesRepository.cs" />
+    <Compile Include="EFModel\Repository\Interface\IUsersRepository.cs" />
+    <Compile Include="EFModel\Repository\RepositoryExtensionMethods.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <EntityDeploy Include="EFModel\MateusEFModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>MateusEFModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Dynamic Expressions.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PITFramework\PITFramework.csproj">
+      <Project>{F2369610-EA18-4CFB-9A42-43B6E8E30C7F}</Project>
+      <Name>PITFramework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

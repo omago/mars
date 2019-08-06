@@ -1,0 +1,100 @@
+﻿@model List<Mateus.Model.EFModel.FulfilledFactor>
+           
+@using PITFramework.Security;
+@using PITFramework.Support.Grid;
+
+@{ string[] userRoles = SecurityHelper.GetUserRolesFromCookie(); }
+
+<div id="controls-bar">
+    @Html.Partial("~/Views/Shared/Partial/Breadcrumb.cshtml")
+    <div> 
+        @if (userRoles.Contains("add"))
+        { 
+            @Html.ActionLink("Nova ispunjena činidba", "Add", null, new { @class = "button new" })
+        }
+    </div>
+</div>
+
+<div id="content">
+
+    @using (Html.BeginForm("Index", "FulfilledFactor", FormMethod.Get))
+    {
+        <div id="grid-controls">
+            <div class="grid-3">&nbsp;</div>
+            <div class="grid-4 text-center">
+                @Html.TextBox("searchString", Request.QueryString["searchString"], new { placeholder = "Upišite pojam za pretragu", @class = "w40" })
+                <input type="submit" value="Pretraži" class="button search" />
+            </div>
+            <div class="grid-3 text-right">
+                <a href="#" class="button print icon"></a>
+            </div>
+            <div class="clear"></div>
+        </div>
+    }
+
+    <div class="grid-10">
+        <div class="grid-holder">
+            <table class="grid">
+                @if(Model.Count() > 0) {
+                    <tr>
+                        <th class="w2">#</th>
+                        <th class="w2">@MvcHtmlString.Create(LinkHelper.GetSortLink("ID", "FulfilledFactorPK"))</th>
+                        <th class="w86 left">@MvcHtmlString.Create(LinkHelper.GetSortLink("Naziv", "Name"))</th>
+                        @if (userRoles.Contains("edit") || userRoles.Contains("delete"))
+                        { 
+                            <th class="w10 no-print">Operacije</th>
+                        }
+                    </tr>
+
+                    int i = 1; 
+                
+                    foreach (var item in Model)
+                    {
+                        <tr class="@if(i%2 != 0){ @MvcHtmlString.Create("odd"); }">
+                            <td>@i.ToString()</td>
+                            <td class="@LinkHelper.getIsSorted("FulfilledFactorPK")">@item.FulfilledFactorPK.ToString()</td>
+                            <td class="left @LinkHelper.getIsSorted("Name")">
+                                @if (userRoles.Contains("edit"))
+                                {
+                                    if (!String.IsNullOrWhiteSpace(@item.Name))
+                                    { 
+                                        @Html.ActionLink(@item.Name, "Edit", new { fulfilledFactorPK = @item.FulfilledFactorPK })
+                                    }
+                                }
+                                else
+                                {
+                                    if (!String.IsNullOrWhiteSpace(@item.Name))
+                                    { 
+                                        @item.Name
+                                    }
+                                }
+                            </td>
+                            @if (userRoles.Contains("edit") || userRoles.Contains("delete"))
+                            {  
+                                <td class="no-print">
+                                    @if (userRoles.Contains("edit"))
+                                    {
+                                        @Html.ActionLink(" ", "Edit", new { fulfilledFactorPK = @item.FulfilledFactorPK}, new { @class = "edit" })
+                                    }
+                                    @if (userRoles.Contains("delete"))
+                                    {
+                                        @Html.ActionLink(" ", "Delete", new { fulfilledFactorPK = @item.FulfilledFactorPK}, new { @class = "delete" })
+                                    }
+                                </td>
+                            }
+                        </tr>
+                        i++;
+                    }
+                }
+                else 
+                {
+                    <tr>
+                        <td class="no-records">Nema zapisa</td>
+                    </tr>
+                }   
+            </table>
+            @Html.Partial("~/Views/Shared/Partial/Pager.cshtml")
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>

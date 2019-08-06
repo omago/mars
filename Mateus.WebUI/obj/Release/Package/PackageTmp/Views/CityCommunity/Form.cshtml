@@ -1,0 +1,94 @@
+﻿@model Mateus.Model.BussinesLogic.Views.CityCommunityModel.CityCommunityView
+     
+<div id="controls-bar">
+    @Html.Partial("~/Views/Shared/Partial/Breadcrumb.cshtml")
+    <div>
+        @Html.ActionLink(" ", "Index", Session["ControllerReferrer"].ToString(), null, new { @class = "button back padding-right-0" })
+        <a href="#" class="button refresh padding-right-0 margin-right-15"></a>
+        <input type="submit" class="button save" value="Spremi" />
+    </div>
+</div>
+<div id="content">
+
+    <div class="grid-5">
+        <div class="form">
+            
+            <h2>Informacije o gradu/općini</h2>
+
+            <fieldset>
+
+                <div class="row">
+                    <label for="Name">Naziv:<b>*</b><span>molimo unesite naziv</span></label>
+                    <div class="input">@Html.TextBoxFor(cityCommunity => cityCommunity.Name, new { @class = "w100" })</div>
+                    <div class="error">@Html.ValidationMessageFor(cityCommunity => cityCommunity.Name)</div>
+                    <div class="clear">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <label for="Name">Šifra:<b>*</b><span>molimo unesite šifru</span></label>
+                    <div class="input">@Html.TextBoxFor(cityCommunity => cityCommunity.Code, new { @class = "w100" })</div>
+                    <div class="error">@Html.ValidationMessageFor(cityCommunity => cityCommunity.Code)</div>
+                    <div class="clear">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <label for="CountryFK">Država:<b>*</b><span>molimo odaberite državu</span></label>
+                    <div class="input">@Html.DropDownListFor(place => place.CountryFK, Model.Countries, "----", new { @class = "w100" })</div>
+                    <div class="error">@Html.ValidationMessageFor(place => place.CountryFK)</div>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row">
+                    <label for="CountyFK">Županija:<b>*</b><span>molimo odaberite županiju</span></label>
+                    <div class="input">@Html.DropDownListFor(place => place.CountyFK, Model.Counties, Model.CountryFK == null ? "----" : "Odaberite županiju", new { @class = "w100" })</div>
+                    <div class="error">@Html.ValidationMessageFor(place => place.CountyFK)</div>
+                    <div class="clear"></div>
+                </div>
+
+            </fieldset>
+        </div>
+    </div>
+
+    <div class="clear"></div>
+
+</div>
+
+<script type="text/javascript">
+
+    $('#CountryFK').change(function () {
+
+        var countiesSelect      = $('#CountyFK');
+        var selectedCountry     = $(this).val();
+
+        if (selectedCountry != null && selectedCountry != '') {
+
+            $.getJSON('@Url.Action("GetCountiesByCountry", "Ajax")',
+            { country: selectedCountry },
+
+            function (counties) {
+                countiesSelect.empty();
+                countiesSelect.append($('<option/>', {
+                    value: '',
+                    text: 'Odaberite županiju' 
+                }));
+                $.each(counties, function (key, county) {
+                    countiesSelect.append($('<option/>', {
+                        value: county.value,
+                        text: county.text
+                    }));
+                });
+            });
+
+        } else {
+            countiesSelect.empty();
+            countiesSelect.append($('<option/>', {
+                value: '',
+                text: '----' 
+            }));
+        }
+
+    }); 
+
+</script>

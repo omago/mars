@@ -1,0 +1,98 @@
+﻿@model List<Mateus.Model.BussinesLogic.Views.LegalEntityBankModel.LegalEntityBankView>
+           
+@using PITFramework.Security;
+@using PITFramework.Support.Grid;
+
+@{ string[] userRoles = SecurityHelper.GetUserRolesFromCookie(); }
+
+<div id="controls-bar">
+    @Html.Partial("~/Views/Shared/Partial/Breadcrumb.cshtml")
+    <div>
+        @if (userRoles.Contains("add"))
+        { 
+            @Html.ActionLink("Nova banka tvrtke", "Add", null, new { @class = "button new" })
+        }
+    </div>
+</div>
+
+<div id="content">
+
+    @using (Html.BeginForm("Index", "LegalEntityBank", FormMethod.Get))
+    {
+        <div id="grid-controls">
+            <div class="grid-3 text-left">
+                Molimo odaberite filter: @Html.DropDownList("legalEntityFK", ViewBag.LegalEntities as SelectList, "Odaberite tvrtku", new { @class = "w30 margin-left-10" })
+            </div>
+            <div class="grid-4 text-center">&nbsp;</div>
+            <div class="grid-3 text-right">
+                <a href="#" class="button print icon"></a>
+            </div>
+            <div class="clear"></div>
+        </div>
+    }
+
+    <div class="grid-10">
+        <div class="grid-holder">
+            <table class="grid">
+                @if(Model.Count() > 0) {
+                    <tr>
+                        <th class="w2">#</th>
+                        <th class="w2">@MvcHtmlString.Create(LinkHelper.GetSortLink("ID", "LegalEntityBankPK"))</th>
+                        <th class="w33 left">@MvcHtmlString.Create(LinkHelper.GetSortLink("Banka", "BankName"))</th>
+                        <th class="w33 left">@MvcHtmlString.Create(LinkHelper.GetSortLink("Tvrtka", "LegalEntityName"))</th>
+                        <th class="w20 left">@MvcHtmlString.Create(LinkHelper.GetSortLink("IBAN", "Iban"))</th>
+                        @if (userRoles.Contains("view") || userRoles.Contains("edit"))
+                        { 
+                            <th class="w10 no-print">Operacije</th>
+                        }
+                    </tr>
+
+                    int i = 1;
+
+                    foreach (var item in Model)
+                    {
+                        <tr class="@if (i % 2 != 0) { @MvcHtmlString.Create("odd"); }">
+                            <td>@i.ToString()</td>
+                            <td class="@LinkHelper.getIsSorted("LegalEntityBankPK")">@item.LegalEntityBankPK.ToString()</td>
+                            <td class="left @LinkHelper.getIsSorted("BankName")">
+                            @if (userRoles.Contains("edit"))
+                            {
+                                @Html.ActionLink(@item.BankName.ToString(), "Edit", new { legalEntityBankPK = @item.LegalEntityBankPK })
+                            }
+                            else
+                            {
+                                @item.BankName.ToString()
+                            }
+                            </td>
+                            <td class="left @LinkHelper.getIsSorted("LegalEntityName")">@item.LegalEntityName.ToString()</td>
+                            <td class="left @LinkHelper.getIsSorted("Iban")">@item.Iban</td>
+                            @if (userRoles.Contains("view") || userRoles.Contains("edit"))
+                            {  
+                                <td class="no-print">
+                                    @if (userRoles.Contains("view"))
+                                    {
+                                        @Html.ActionLink(" ", "Audit", new { legalEntityBankPK = @item.LegalEntityBankPK }, new { @class = "stats" })
+                                    }
+                                    @if (userRoles.Contains("edit"))
+                                    {
+                                        @Html.ActionLink(" ", "Edit", new { legalEntityBankPK = @item.LegalEntityBankPK }, new { @class = "edit" })
+                                    }
+                                </td>
+                            }
+                        </tr>
+                        i++;
+                    }
+
+                }
+                else 
+                {
+                    <tr>
+                        <td class="no-records">Nema zapisa</td>
+                    </tr>
+                }    
+            </table>
+            @Html.Partial("~/Views/Shared/Partial/Pager.cshtml")
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>

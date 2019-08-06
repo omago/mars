@@ -1,0 +1,795 @@
+﻿@model Mateus.Model.BussinesLogic.Views.LegalEntityModel.LegalEntityView
+           
+@using PITFramework.Security;
+@using PITFramework.Support.Grid;
+
+@{
+    string[] userRoles = SecurityHelper.GetUserRolesFromCookie();
+    
+    bool firstRequest = false;
+    
+    if(Request.QueryString["Name"] == null) 
+    {
+        firstRequest = true;
+    }
+
+    string Name = Request.QueryString["Name"] != null ? Request.QueryString["Name"] : "";
+    string LegalEntityFK = Request.QueryString["LegalEntityFK"] != null ? Request.QueryString["LegalEntityFK"] : "";
+}
+
+<div id="controls-bar">
+    @Html.Partial("~/Views/Shared/Partial/Breadcrumb.cshtml")
+    <div>
+        <a href="#" class="button refresh icon"></a>      
+    </div>
+</div>
+<div id="content">
+    @using (Html.BeginForm("LegalEntity", "Report", FormMethod.Get))
+    {
+        <div id="report-controls">
+            <div class="grid-5 text-left no-print">
+
+                <div class="filter-text">Molimo odaberite filter:</div> 
+
+                <div class="inputs">
+
+                    @Html.TextBox("Name", Request.QueryString["Name"], new { @class = "w70 autocomplete-with-hidden-field", placeholder = "Molimo upišite ime pravne osobe", data_autocomplete_url = Url.Action("AutocompleteLegalEntities", "Ajax", null), autocomplete = "off"})
+                    @Html.Hidden("LegalEntityFK", Request.QueryString["LegalEntityFK"])<br /> 
+
+                    @Html.Label("ShowBasicInfo", "Osnovne informacije")
+                    @Html.CheckBox("ShowBasicInfo", LinkHelper.isChecked(Request.QueryString["ShowBasicInfo"]))
+
+                    @Html.Label("ShowRegistrationInfo", "Podaci o registraciji")
+                    @Html.CheckBox("ShowRegistrationInfo", LinkHelper.isChecked(Request.QueryString["ShowRegistrationInfo"]))<br />
+
+                    @Html.Label("ShowRest", "Ostalo")
+                    @Html.CheckBox("ShowRest", LinkHelper.isChecked(Request.QueryString["ShowRest"]))
+
+                    @Html.Label("ShowResidenceInfo", "Podaci o sjedištu")
+                    @Html.CheckBox("ShowResidenceInfo", LinkHelper.isChecked(Request.QueryString["ShowResidenceInfo"]))<br />
+
+                    @Html.Label("ShowContactInfo", "Kontakt podaci")
+                    @Html.CheckBox("ShowContactInfo", LinkHelper.isChecked(Request.QueryString["ShowContactInfo"]))<br /><br />
+
+                    @Html.Label("ShowLegalEntityOwners", "Vlasnici")
+                    @Html.CheckBox("ShowLegalEntityOwners", LinkHelper.isChecked(Request.QueryString["ShowLegalEntityOwners"]))
+
+                    @Html.Label("ShowLegalEntityLegalRepresentatives", "Zakonski zastupnici")
+                    @Html.CheckBox("ShowLegalEntityLegalRepresentatives", LinkHelper.isChecked(Request.QueryString["ShowLegalEntityLegalRepresentatives"]))<br />
+
+                    @Html.Label("ShowLegalEntityBanks", "Banke")
+                    @Html.CheckBox("ShowLegalEntityBanks", LinkHelper.isChecked(Request.QueryString["ShowLegalEntityBanks"]))
+
+                    @Html.Label("ShowContracts", "Ugovor")
+                    @Html.CheckBox("ShowContracts", LinkHelper.isChecked(Request.QueryString["ShowContracts"]))<br />
+
+                    @Html.Label("ShowBranches", "Poslovnice")
+                    @Html.CheckBox("ShowBranches", LinkHelper.isChecked(Request.QueryString["ShowBranches"]))<br /><br />
+                                
+                    <input type="submit" value="Pretraži" class="button search margin-top-20" />
+                    @Html.ActionLink("Očisti odabir", "ClearReport", null, new { @class = "button margin-top-20"})
+
+                </div>
+            </div>
+
+            <div class="grid-5 text-left no-print">
+                
+                <div class="filter-text">Molimo odaberite polja:</div> 
+                
+                <div class="inputs">
+
+                    @Html.Label("ShowLegalEntityHistory", "Pravna osoba povijesno")
+                    @Html.CheckBox("ShowLegalEntityHistory", LinkHelper.isChecked(Request.QueryString["ShowLegalEntityHistory"]))
+
+                    @Html.Label("ShowLegalEntityOwnersHistory", "Vlasnici povijesno")
+                    @Html.CheckBox("ShowLegalEntityOwnersHistory", LinkHelper.isChecked(Request.QueryString["ShowLegalEntityOwnersHistory"]))<br />
+
+                    @Html.Label("ShowLegalEntityLegalRepresentativesHistory", "Zakonski zastupnici povijesno")
+                    @Html.CheckBox("ShowLegalEntityLegalRepresentativesHistory", LinkHelper.isChecked(Request.QueryString["ShowLegalEntityLegalRepresentativesHistory"]))
+
+                    @Html.Label("ShowLegalEntityBanksHistory", "Banke povijesno")
+                    @Html.CheckBox("ShowLegalEntityBanksHistory", LinkHelper.isChecked(Request.QueryString["ShowLegalEntityBanksHistory"]))<br />
+
+                    @Html.Label("ShowBranchesHistory", "Poslovnice povijesno")
+                    @Html.CheckBox("ShowBranchesHistory", LinkHelper.isChecked(Request.QueryString["ShowBranchesHistory"]))<br />
+
+                </div>
+            </div>
+
+            <div class="clear"></div>
+
+        </div>
+        if(firstRequest == false && 
+            (Request.QueryString["ShowBasicInfo"] != null || 
+            Request.QueryString["ShowRegistrationInfo"] != null || 
+            Request.QueryString["ShowRest"] != null || 
+            Request.QueryString["ShowResidenceInfo"] != null || 
+            Request.QueryString["ShowContactInfo"] != null) ||
+            Request.QueryString["ShowLegalEntityOwners"] != null) 
+        {
+            <div id="grid-controls">
+                <div class="grid-10 text-right">
+                    <a href="#" class="button print icon"></a>
+                </div>
+                <div class="clear"></div>
+            </div>
+        }
+    }
+
+    @if(firstRequest == false) 
+    {
+        <div class="grid-5">
+
+            @if (LinkHelper.isChecked(Request.QueryString["ShowBasicInfo"])) 
+            {
+                <div class="form margin-bottom-20">
+
+                    <h2>Osnovne informacije</h2>
+                
+                    <fieldset>
+                        @if(@Model.PostalOfficeName != null || 
+                            @Model.SubstationName != null || 
+                            @Model.DateOfRegistration != null ||
+                            @Model.CommercialCourtName != null ||
+                            @Model.TaxName != null)
+                        {
+                            if(@Model.Name != null) 
+                            {
+                                <div class="row">
+                                    <label>Naziv:</label>
+                                    <div class="text">@Model.Name</div>
+                                    <div class="clear"></div>
+                                </div>
+                            }
+                        
+                            if(@Model.ShortName != null) 
+                            {
+                                <div class="row">
+                                    <label>Kratki naziv (3 znaka):</label>
+                                    <div class="text">@Model.ShortName</div>
+                                    <div class="clear"></div>
+                                </div>
+                            }
+
+                            if(@Model.OIB != null) 
+                            {
+                                <div class="row">
+                                    <label>OIB:</label>
+                                    <div class="text">@Model.OIB</div>
+                                    <div class="clear"></div>
+                                </div>
+                            }
+
+                            if(@Model.MB != null) 
+                            {
+                                <div class="row">
+                                    <label>MB:</label>
+                                    <div class="text">@Model.MB</div>
+                                    <div class="clear"></div>
+                                </div>
+                            }
+                    
+                            if(@Model.MBS != null) 
+                            {
+                                <div class="row">
+                                    <label>MBS:</label>
+                                    <div class="text">@Model.MBS</div>
+                                    <div class="clear"></div>
+                                </div>
+                            }
+
+                            if(@Model.FormName != null) 
+                            {
+                                <div class="row">
+                                    <label>Oblik:</label>
+                                    <div class="text">@Model.FormName</div>
+                                    <div class="clear"></div>
+                                </div>
+                            }
+                    
+                            if(@Model.ActivityName != null) 
+                            {
+                                <div class="row">
+                                    <label>Djelatnost:</label>
+                                    <div class="text">@Model.ActivityName</div>
+                                    <div class="clear"></div>
+                                </div>
+                            }
+                    
+                            if(@Model.ActivityDescription != null) 
+                            {
+                                <div class="row">
+                                    <label>Opis stvarne djelatnosti:</label>
+                                    <div class="text">@Model.ActivityDescription</div>
+                                    <div class="clear"></div>
+                                </div>
+                            }
+                    
+                            if(@Model.FundamentalCapital != null) 
+                            {
+                                <div class="row">
+                                    <label>Temeljni kapital:</label>
+                                    <div class="text">@Model.FundamentalCapital.Value.ToString("0,0.00") kn</div>
+                                    <div class="clear"></div>
+                                </div>
+                            }
+                        }
+                        else 
+                        {
+                            <div class="row">
+                                <div class="text margin-left-0">Nema zapisa</div>
+                            </div>                        
+                        }
+                    </fieldset>
+                </div>
+            }
+            
+            @if (LinkHelper.isChecked(Request.QueryString["ShowRegistrationInfo"])) 
+            {
+                <div class="form margin-bottom-20">
+
+                    <h2>Podaci o registraciji</h2>
+
+                    <fieldset>
+                        @if(@Model.PostalOfficeName != null || 
+                            @Model.SubstationName != null || 
+                            @Model.DateOfRegistration != null ||
+                            @Model.CommercialCourtName != null ||
+                            @Model.TaxName != null)
+                        {
+                            if(@Model.PostalOfficeName != null) 
+                            {
+                                <div class="row">
+                                    <label>Područni ured:</label>
+                                    <div class="text">@Model.PostalOfficeName</div>
+                                    <div class="clear"></div>
+                                </div>
+                            }
+
+                            if(@Model.SubstationName != null) 
+                            {
+                                <div class="row">
+                                    <label>Ispostava:</label>
+                                    <div class="text">@Model.SubstationName</div>
+                                    <div class="clear"></div>
+                                </div>
+                            }
+                    
+                            if(@Model.DateOfRegistration != null) 
+                            {
+                                <div class="row">
+                                    <label>Datum registracije:</label>
+                                    <div class="text">@Model.DateOfRegistration.Value.ToString("dd.MM.yyyy.")</div>
+                                    <div class="clear"></div>
+                                </div>
+                            }
+                    
+                            if(@Model.CommercialCourtName != null) 
+                            {
+                                <div class="row">
+                                    <label>Trgovački sud:</label>
+                                    <div class="text">@Model.CommercialCourtName</div>
+                                    <div class="clear"></div>
+                                </div>
+                            }
+                    
+                            if(@Model.TaxName != null) 
+                            {
+                                <div class="row">
+                                    <label>Porez:</label>
+                                    <div class="text">@Model.TaxName</div>
+                                    <div class="clear"></div>
+                                </div>
+                            }
+                        }
+                        else 
+                        {
+                            <div class="row">
+                                <div class="text margin-left-0">Nema zapisa</div>
+                            </div>                        
+                        }
+                    </fieldset>
+
+                </div>
+            }
+
+            @if (LinkHelper.isChecked(Request.QueryString["ShowRest"]))
+            {
+                
+                <div class="form margin-bottom-20">
+
+                    <h2>Ostalo</h2>
+
+                    <fieldset>
+                        @if(@Model.FirstContactDate != null || 
+                            @Model.TouristOffice != null || 
+                            @Model.TouristOfficeDescription != null ||
+                            @Model.MonumentAnnuity != null ||
+                            @Model.MonumentAnnuityDescription != null || 
+                            @Model.Active != null || 
+                            @Model.NumberOfEmployees != null || 
+                            @Model.MIORRegistrationNumber != null || 
+                            @Model.HZZOObligationNumber != null || 
+                            @Model.HZZOBussinesEntityCode != null)
+                        {
+                            if(@Model.FirstContactDate != null) 
+                            {
+                                <div class="row">
+                                    <label>Datum prvog kontakta:</label>
+                                    <div class="text">@Model.FirstContactDate.Value.ToString("dd.MM.yyyy.")</div>
+                                    <div class="clear"></div>
+                                </div>
+                            }
+                    
+                            if(@Model.TouristOffice != null) 
+                            {
+                                <div class="row">
+                                    <label>Turistička zajednica:</label>
+                                    <div class="text">@if(Model.TouristOffice == true) { @("DA") } else { @("NE") }</div>
+                                    <div class="clear"></div>
+                                </div>
+                            }
+                    
+                            if(@Model.TouristOfficeDescription != null) 
+                            {    
+                                <div class="row">
+                                    <label>Turistička zajednica opis:</label>
+                                    <div class="text">@Model.TouristOfficeDescription</div>
+                                    <div class="clear"></div>
+                                </div>
+                            }
+                        
+                            if(@Model.MonumentAnnuity != null) 
+                            {    
+                                <div class="row">
+                                    <label>Spomenička renta:</label>
+                                    <div class="text">@if(Model.MonumentAnnuity == true) { <text>DA</text> } else { @("NE") }</div>
+                                    <div class="clear"></div>
+                                </div>
+                            }
+
+                            if(@Model.MonumentAnnuityDescription != null) 
+                            { 
+                                <div class="row">
+                                    <label>Spomenička renta opis:</label>
+                                    <div class="text">@Model.MonumentAnnuityDescription</div>
+                                    <div class="clear"></div>
+                                </div>
+                            }
+
+                            if(@Model.Active != null) 
+                            {    
+                                <div class="row">
+                                    <label>Aktivan:</label>
+                                    <div class="text">@if(Model.Active == true) { <text>DA</text> } else { @("NE") }</div>
+                                    <div class="clear"></div>
+                                </div>
+                            }
+
+                            if(@Model.NumberOfEmployees != null) 
+                            {    
+                                <div class="row">
+                                    <label>Broj zaposlenih:</label>
+                                    <div class="text">@Model.NumberOfEmployees</div>
+                                    <div class="clear"></div>
+                                </div>
+                            }
+                    
+                            if(@Model.MIORRegistrationNumber != null) 
+                            {    
+                                <div class="row">
+                                    <label>MIRO - registracijski broj:</label>
+                                    <div class="text">@Model.MIORRegistrationNumber</div>
+                                    <div class="clear"></div>
+                                </div>
+                            }
+                    
+                            if(@Model.HZZOObligationNumber != null) 
+                            {    
+                                <div class="row">
+                                    <label>HZZO - broj obveze:</label>
+                                    <div class="text">@Model.HZZOObligationNumber</div>
+                                    <div class="clear"></div>
+                                </div>
+                            }      
+                          
+                            if(@Model.HZZOBussinesEntityCode != null) 
+                            {    
+                                <div class="row">
+                                    <label>HZZO - šifra poslovnog subjekta:</label>
+                                    <div class="text">@Model.HZZOBussinesEntityCode</div>
+                                    <div class="clear"></div>
+                                </div>
+                            }
+                        }
+                        else 
+                        {
+                            <div class="row">
+                                <div class="text margin-left-0">Nema zapisa</div>
+                            </div>                        
+                        }
+
+                    </fieldset>
+
+                </div>
+            }
+            
+            @if(LinkHelper.isChecked(Request.QueryString["ShowResidenceInfo"])) 
+            {
+                <div class="form margin-bottom-20">
+
+                    <h2>Podaci o sjedištu</h2>
+
+                    <fieldset>
+                    
+                        @if(@Model.CountryName != null || 
+                            @Model.CountyName != null || 
+                            @Model.CityCommunityName != null ||
+                            @Model.PostalOfficeName != null ||
+                            @Model.PlaceName != null || 
+                            @Model.StreetName != null)
+                        {
+                            if(@Model.CountryName != null) 
+                            {
+                                <div class="row">
+                                    <label>Država:</label>
+                                    <div class="text">@Model.CountryName</div>
+                                    <div class="clear"></div>
+                                </div>
+                            }
+                    
+                            if(@Model.CountyName != null) 
+                            {
+                                <div class="row">
+                                    <label>Županija:</label>
+                                    <div class="text">@Model.CountyName</div>
+                                    <div class="clear"></div>
+                                </div>
+                            }
+
+                            if(@Model.CityCommunityName != null) {
+                                <div class="row">
+                                    <label>Grad/općina:</label>
+                                    <div class="text">@Model.CityCommunityName</div>
+                                    <div class="clear"></div>
+                                </div>
+                            }
+
+                            if(@Model.PostalOfficeName != null) 
+                            {
+                                <div class="row">
+                                    <label>Poštanski ured:</label>
+                                    <div class="text">@Model.PostalOfficeName</div>
+                                    <div class="clear"></div>
+                                </div>
+                            }
+
+                            if(@Model.PlaceName != null) 
+                            {
+                                <div class="row">
+                                    <label>Mjesto:</label>
+                                    <div class="text">@Model.PlaceName</div>
+                                    <div class="clear"></div>
+                                </div>
+                            }
+
+                            if(@Model.StreetName != null) 
+                            {
+                                <div class="row">
+                                    <label>Ulica i broj:</label>
+                                    <div class="text">@Model.StreetName</div>
+                                    <div class="clear"></div>
+                                </div>
+                            }
+                        }
+                        else 
+                        {
+                            <div class="row">
+                                <div class="text margin-left-0">Nema zapisa</div>
+                            </div>                        
+                        }
+                    </fieldset>
+
+                </div>
+            }
+
+            @if (LinkHelper.isChecked(Request.QueryString["ShowContactInfo"])) 
+            {
+                <div class="form margin-bottom-20">
+
+                    <h2>Kontakt podaci</h2>
+
+                    <fieldset>
+
+                        @if(@Model.Phone != null || 
+                            @Model.Fax != null || 
+                            @Model.Mobile != null || 
+                            @Model.EMail != null) 
+                        {
+                            if(@Model.Phone != null) {
+                                <div class="row">
+                                    <label>Telefon:</label>
+                                    <div class="text">@Model.Phone</div>
+                                    <div class="clear"></div>
+                                </div>
+                            }
+                    
+                            if(@Model.Fax != null) {
+                                <div class="row">
+                                    <label>Fax:</label>
+                                    <div class="text">@Model.Fax</div>
+                                    <div class="clear"></div>
+                                </div>
+                            }
+                    
+                            if(@Model.Mobile != null) {
+                                <div class="row">
+                                    <label>Fax:</label>
+                                    <div class="text">@Model.Mobile</div>
+                                    <div class="clear"></div>
+                                </div>
+                            }
+                    
+                            if(@Model.EMail != null) {
+                                <div class="row">
+                                    <label>E-mail:</label>
+                                    <div class="text">@Model.EMail</div>
+                                    <div class="clear"></div>
+                                </div>
+                            }
+                        } 
+                        else 
+                        {
+                            <div class="row">
+                                <div class="text margin-left-0">Nema zapisa</div>
+                            </div>                        
+                        }
+                    
+                    </fieldset>
+
+                </div>
+            }
+        </div>
+        
+        <div class="grid-5">
+
+            @if (LinkHelper.isChecked(Request.QueryString["ShowLegalEntityOwners"]))
+            {
+                <div class="form margin-bottom-20">
+
+                    <h2>Vlasnici</h2>
+
+                    <fieldset>
+                        @{ string gray = "#F3F3F3"; }
+                        <img src="@Url.Action("ShowLegalEntityOwnersGraph", "Report", new { legalEntityFK = @LegalEntityFK, color = @gray, dpi = 96 })"  class="no-print" alt="LegalEntity owners graph"/>
+                        @{ string white = "#FFFFFF"; }
+                        <img src="@Url.Action("ShowLegalEntityOwnersGraph", "Report", new { legalEntityFK = @LegalEntityFK, color = @white, dpi = 300 })" width="360" class="print-only" alt="LegalEntity owners graph"/>
+                    </fieldset>
+
+                </div>
+            }
+            
+            @if (LinkHelper.isChecked(Request.QueryString["ShowLegalEntityLegalRepresentatives"]))
+            {
+                <div class="form margin-bottom-20">
+
+                    <h2>Zakonski zastupnici</h2>
+
+                    <fieldset>
+
+                        @{
+                            <table class="grid">
+                                @if(ViewBag.LegalEntityLegalRepresentatives != null && ViewBag.LegalEntityLegalRepresentatives.Count > 0) 
+                                {
+                                    <tr>
+                                        <th class="w10">#</th>
+                                        <th class="w10">ID</th>
+                                        <th class="w80 left"><span>Zakonski zastupnici</span></th>
+                                    </tr>
+                                    
+                                    int c = 1;
+                                    foreach (var legalRepresentative in ViewBag.LegalEntityLegalRepresentatives)
+                                    {
+                                        <tr class="@if(c%2 != 0){ @MvcHtmlString.Create("odd"); }">
+                                            <td>@c.ToString()</td>
+                                            <td>@legalRepresentative.LegalRepresentativeFK.ToString()</td>
+                                            <td class="left">@legalRepresentative.LegalRepresentativeName</td>
+                                        </tr>
+                                        c++;
+                                    }
+                                    
+                                }
+                                else 
+                                {
+                                    <tr>
+                                        <td class="no-records">Nema zapisa</td>
+                                    </tr>                     
+                                }
+                            </table>
+                        }
+                    
+                    </fieldset>
+
+                </div>
+            }
+            
+            @if (LinkHelper.isChecked(Request.QueryString["ShowLegalEntityBanks"]))
+            {
+                <div class="form margin-bottom-20">
+
+                    <h2>Banke</h2>
+
+                    <fieldset>
+
+                        @{
+                            <table class="grid">
+                                @if(ViewBag.LegalEntityBanks != null && ViewBag.LegalEntityBanks.Count > 0)
+                                {
+                                    <tr>
+                                        <th class="w10">#</th>
+                                        <th class="w10">ID</th>
+                                        <th class="w40 left"><span>Banka</span></th>
+                                        <th class="w40 left"><span>Iban</span></th>
+                                    </tr>
+
+                                    int c = 1;
+                                    foreach (var bank in ViewBag.LegalEntityBanks)
+                                    {
+                                        <tr class="@if(c%2 != 0){ @MvcHtmlString.Create("odd"); }">
+                                            <td>@c.ToString()</td>
+                                            <td>@bank.BankFK.ToString()</td>
+                                            <td class="left">@bank.BankName</td>
+                                            <td class="left">@bank.BankIban</td>
+                                        </tr>
+                                        c++;
+                                    }
+
+                                }
+                                else 
+                                {
+                                    <tr>
+                                        <td class="no-records">Nema zapisa</td>
+                                    </tr>
+                                }      
+                            </table>
+
+                        }
+                    
+                    </fieldset>
+
+                </div>
+            }    
+                    
+            @if (LinkHelper.isChecked(Request.QueryString["ShowContracts"]))
+            {
+                <div class="form margin-bottom-20">
+
+                    <h2>Ugovori</h2>
+
+                    <fieldset>
+
+                        @{
+                            <table class="grid">
+                                @if(ViewBag.Contracts != null && ViewBag.Contracts.Count > 0)
+                                {
+                                    <tr>
+                                        <th class="w10">#</th>
+                                        <th class="w10">ID</th>
+                                        <th class="w40 left"><span>Ugovor</span></th>
+                                        <th class="w40 left"><span>Aneksi</span></th>
+                                    </tr>
+
+                                    int c = 1;
+                                    foreach (var contract in ViewBag.Contracts)
+                                    {
+                                        <tr class="@if(c%2 != 0){ @MvcHtmlString.Create("odd"); }">
+                                            <td>@c.ToString()</td>
+                                            <td>@contract.ContractPK.ToString()</td>
+                                            <td class="left">@contract.Name</td>
+                                            <td class="left">@contract.AnnexContractsCount</td>
+                                        </tr>
+                                        c++;
+                                    }
+
+                                }
+                                else 
+                                {
+                                    <tr>
+                                        <td class="no-records">Nema zapisa</td>
+                                    </tr>
+                                }      
+                            </table>
+
+                        }
+                    
+                    </fieldset>
+
+                </div>
+            }        
+                        
+            @if (LinkHelper.isChecked(Request.QueryString["ShowBranches"]))
+            {
+                <div class="form margin-bottom-20">
+
+                    <h2>Poslovnice</h2>
+
+                    <fieldset>
+
+                        @{
+                            <table class="grid">
+                                @if(ViewBag.Branches != null && ViewBag.Branches.Count > 0)
+                                {
+                                    <tr>
+                                        <th class="w10">#</th>
+                                        <th class="w10">ID</th>
+                                        <th class="w80 left"><span>Poslovnica</span></th>
+                                    </tr>
+
+                                    int c = 1;
+                                    foreach (var branch in ViewBag.Branches)
+                                    {
+                                        <tr class="@if(c%2 != 0){ @MvcHtmlString.Create("odd"); }">
+                                            <td>@c.ToString()</td>
+                                            <td>@branch.LegalEntityBranchPK.ToString()</td>
+                                            <td class="left">@branch.Name</td>
+                                        </tr>
+                                        c++;
+                                    }
+
+                                }
+                                else 
+                                {
+                                    <tr>
+                                        <td class="no-records">Nema zapisa</td>
+                                    </tr>
+                                }      
+                            </table>
+
+                        }
+                    
+                    </fieldset>
+
+                </div>
+            }
+
+        </div>
+        
+        <div class="clear"></div>
+        
+        <div class="grid-10">
+
+            @if (LinkHelper.isChecked(Request.QueryString["ShowLegalEntityHistory"]))
+            { 
+                <h2>Povijest promjena tvrtke</h2>
+                @Html.Partial("~/Views/Shared/Partial/LegalEntityAudit.cshtml")
+            }
+            
+            @if (LinkHelper.isChecked(Request.QueryString["ShowBranchesHistory"]))
+            { 
+                <h2>Povijest promjena poslovnica</h2>
+                @Html.Partial("~/Views/Shared/Partial/LegalEntityBranchesAudit.cshtml") 
+            }
+            
+            @if (LinkHelper.isChecked(Request.QueryString["ShowLegalEntityBanksHistory"])) 
+            { 
+                <h2>Povijest promjena banaka tvrtke</h2>
+                @Html.Partial("~/Views/Shared/Partial/LegalEntityBanksAudit.cshtml") 
+            }
+            
+            @if (LinkHelper.isChecked(Request.QueryString["ShowLegalEntityOwnersHistory"])) 
+            { 
+                <h2>Povijest promjena vlasnika tvrtke</h2>
+                @Html.Partial("~/Views/Shared/Partial/LegalEntityOwnersAudit.cshtml") 
+            }
+            
+            @if (LinkHelper.isChecked(Request.QueryString["ShowLegalEntityLegalRepresentativesHistory"])) 
+            { 
+                <h2>Povijest promjena pravnih zastupnika tvrtke</h2>
+                @Html.Partial("~/Views/Shared/Partial/LegalEntityLegalRepresentativesAudit.cshtml") 
+            }
+            
+        </div>
+
+        <div class="clear"></div>
+    }
+</div>

@@ -1,0 +1,69 @@
+﻿@model Mateus.Model.BussinesLogic.Views.ToDoListModel.ToDoListView
+
+<div id="controls-bar">
+    @Html.Partial("~/Views/Shared/Partial/Breadcrumb.cshtml")
+    <div>
+        @Html.ActionLink(" ", "Index", Session["ControllerReferrer"].ToString(), null, new { @class = "button back padding-right-0" })
+        <a href="#" class="button refresh padding-right-0 margin-right-15"></a>       
+        <input type="submit" class="button save" value="Spremi" />
+    </div>
+</div>
+
+<div id="content">
+
+    <div class="grid-5">
+        <div class="form">
+
+            <h2>Informacije o obavezi</h2>
+                
+            <fieldset>
+                <div class="row">
+                    <label for="Name">Naziv:<b>*</b><span>molimo upišite naziv</span></label>
+                    <div class="input">@Html.TextBoxFor(toDoList => toDoList.Name, new { @class = "w100" })</div>
+                    <div class="error">@Html.ValidationMessageFor(toDoList => toDoList.Name)</div>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row">
+                    <label for="Date">Datum unosa:<b>*</b><span>molimo upišite datum unosa obaveze</span></label>
+                    <div class="input">
+                        @if(Model.Date != null) 
+                        {
+                            @Html.TextBoxFor(toDoList => toDoList.Date, new { @class = "w50 datepicker", @Value = Model.Date.Value.ToString("dd.MM.yyyy.") })
+                        } 
+                        else
+                        {
+                            @Html.TextBoxFor(toDoList => toDoList.Date, new { @class = "w50 datepicker", @Value = DateTime.Today.ToString("dd.MM.yyyy.") })
+                        }
+                    </div>
+                    <div class="error">@Html.ValidationMessageFor(toDoList => toDoList.Date)</div>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row">
+                    <label for="Deadline">Rok:<b>*</b><span>molimo upišite rok za obavezu</span></label>
+                    <div class="input">@Html.TextBoxFor(toDoList => toDoList.Deadline, new { @class = "w50 datetimepicker" })</div>
+                    <div class="error">@Html.ValidationMessageFor(toDoList => toDoList.Deadline)</div>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row">
+                    <label for="LegalEntityPK">Tvrtke za koje se stvara obaveza:<span>ctrl+click za višestruki odabir</span></label> 
+                    <div class="input">@Html.ListBox("LegalEntityPK", Model.Companies as MultiSelectList, new { size = 10, @class = "w100" })</div>
+                    <div class="error">@Html.ValidationMessageFor(toDoList => toDoList.LegalEntityPK)</div>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row">
+                    <label for="Finished">Izvršeno:<span>da li je obaveza izvršena</span></label>
+                    <div class="input">@Html.CheckBox("Finished")</div>
+                    <div class="clear"></div>
+                </div>
+            </fieldset>
+
+        </div>
+    </div>
+
+    <div class="clear"></div>
+
+</div>  

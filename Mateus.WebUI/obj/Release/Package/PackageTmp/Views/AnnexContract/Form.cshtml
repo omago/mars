@@ -1,0 +1,214 @@
+﻿@model Mateus.Model.BussinesLogic.Views.AnnexContractModel.AnnexContractView
+
+ <div id="controls-bar">
+    @Html.Partial("~/Views/Shared/Partial/Breadcrumb.cshtml")
+    <div>
+        @Html.ActionLink(" ", "Index", null, new { @class = "button back padding-right-0" })
+        <a href="#" class="button refresh padding-right-0 margin-right-15"></a>       
+        <input type="submit" class="button save" value="Spremi" />
+    </div>
+</div>
+
+<div id="content">
+
+    <div class="grid-5">
+        <div class="form">
+
+            <h2>Opće informacije</h2>
+                
+            <fieldset>
+
+                <div class="row">
+                    <label for="ContractFK">Ugovor:<b>*</b><span>molimo odaberite ugovor</span></label>
+                    <div class="input">@Html.DropDownListFor(annexContract => annexContract.ContractFK, Model.Contracts, "Odaberite ugovor", new { @class = "w100" })</div>
+                    <div class="error">@Html.ValidationMessageFor(annexContract => annexContract.ContractFK)</div>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row">
+                    <label for="Name">Naziv:<b>*</b><span>molimo unesite naziv</span></label>
+                    <div class="input">@Html.TextBoxFor(annexContract => annexContract.Name, new { @class = "w100" })</div>
+                    <div class="error">@Html.ValidationMessageFor(annexContract => annexContract.Name)</div> 
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row">
+                    <label for="Number">Aneks broj:<b>*</b><span>molimo unesite broj ugovora</span></label>
+                    <div class="input">@Html.TextBoxFor(annexContract => annexContract.Number, new { @class = "w100" })</div>
+                    <div class="error">@Html.ValidationMessageFor(annexContract => annexContract.Number)</div> 
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row">
+                    <label for="Date">Datum aneksa:<b>*</b><span>molimo unesite datum ugovora</span></label>
+                    <div class="input">
+                        @if(Model.Date != null){
+                            @Html.TextBoxFor(annexContract => annexContract.Date, new { @class = "w50 datepicker", @Value = Model.Date.Value.ToString("dd.MM.yyyy.") })
+                        } 
+                        else
+                        {
+                            @Html.TextBoxFor(annexContract => annexContract.Date, new { @class = "w50 datepicker" })
+                        } 
+                    </div>
+                    <div class="error">@Html.ValidationMessageFor(annexContract => annexContract.Date)</div> 
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row">
+                    <label for="AnnexContractBegin">Primjena aneksa:<b>*</b><span>molimo unesite datum primjene ugovora</span></label>
+                    <div class="input">
+                        @if(Model.AnnexContractBegin != null){
+                            @Html.TextBoxFor(annexContract => annexContract.AnnexContractBegin, new { @class = "w50 datepicker", @Value = Model.AnnexContractBegin.Value.ToString("dd.MM.yyyy.") })
+                        } 
+                        else
+                        {
+                            @Html.TextBoxFor(annexContract => annexContract.AnnexContractBegin, new { @class = "w50 datepicker" })
+                        } 
+                    </div>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row">
+                    <label for="ContractValidityFK">Valjanost aneksa:<b>*</b><span>molimo odaberite valjanost ugovora</span></label>
+                    <div class="input">@Html.DropDownListFor(annexContract => annexContract.ContractValidityFK, Model.ContractValidities, "Odaberite valjanost ugovora", new { @class = "w100" })</div>
+                    <div class="error">@Html.ValidationMessageFor(annexContract => annexContract.ContractValidityFK)</div>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row @if(Model.ContractValidityFK == null || Model.ContractValidityFK > 1){ @("display-none") }">
+                    <label for="AnnexContractEnd">Datum isteka:<b>*</b><span>molimo unesite datum isteka ugovora</span></label>
+                    <div class="input">
+                        @if(Model.AnnexContractEnd != null){
+                            @Html.TextBoxFor(annexContract => annexContract.AnnexContractEnd, new { @class = "w50 datepicker", @Value = Model.AnnexContractEnd.Value.ToString("dd.MM.yyyy.") })
+                        } 
+                        else
+                        {
+                            @Html.TextBoxFor(annexContract => annexContract.AnnexContractEnd, new { @class = "w50 datepicker" })
+                        } 
+                    </div>
+                    <div class="error">@Html.ValidationMessageFor(annexContract => annexContract.AnnexContractEnd)</div> 
+                    <div class="clear"></div>
+                </div>
+            </fieldset>
+
+        </div>
+
+
+        <div class="form margin-top-10">
+
+            <h2>Raskid ugovora</h2>
+                
+            <fieldset>
+
+                <div class="row">
+                    <label for="Terminated">Ugovor je raskinut:<span>dali je ugovor raskinut</span></label>
+                    <div class="input">@Html.CheckBox("Terminated")</div>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row @if(Model.Terminated == null || Model.Terminated != true){@("display-none") }">
+                    <label for="TerminationDate">Datum raskida:<b>*</b><span>molimo unesite datum raskida ugovora</span></label>
+                    <div class="input">
+                        @if(Model.TerminationDate != null){
+                            @Html.TextBoxFor(annexContract => annexContract.TerminationDate, new { @class = "w50 datepicker", @Value = Model.TerminationDate.Value.ToString("dd.MM.yyyy.") })
+                        } 
+                        else
+                        {
+                            @Html.TextBoxFor(annexContract => annexContract.TerminationDate, new { @class = "w50 datepicker" })
+                        } 
+                    </div>
+                    <div class="input"></div>
+                    <div class="error">@Html.ValidationMessageFor(annexContract => annexContract.TerminationDate)</div> 
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row @if(Model.Terminated == null || Model.Terminated != true){@("display-none") }">
+                    <label for="TerminationDescription">Razlog raskida:<b>*</b><span>molimo unesite razlog raskida</span></label>
+                    <div class="input">@Html.TextBoxFor(annexContract => annexContract.TerminationDescription, new { @class = "w100" })</div>
+                    <div class="error">@Html.ValidationMessageFor(annexContract => annexContract.TerminationDescription)</div> 
+                    <div class="clear"></div>
+                </div>
+
+            </fieldset>
+
+        </div>
+    </div>   
+
+    <div class="grid-5">
+        <div class="form">
+
+            <h2>Informacije o cijenama</h2>
+                
+            <fieldset>
+
+                <div class="row">
+                    <label for="CurrencyFK">Valuta:<span>molimo odaberite valutu</span></label>
+                    <div class="input">@Html.DropDownListFor(contract => contract.CurrencyFK, Model.Currencies, "Odaberite valutu", new { @class = "w100" })</div>
+                    <div class="error">@Html.ValidationMessageFor(contract => contract.CurrencyFK)</div>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row">
+                    <label for="MIO">MIO:<span>molimo unesite cijenu za MIO</span></label>
+                    <div class="input">@Html.TextBoxFor(contract => contract.MIO, new { @class = "w30" })</div>
+                    <div class="error">@Html.ValidationMessageFor(contract => contract.MIO)</div> 
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row">
+                    <label for="TSI">TSI:<span>molimo unesite cijenu za tromjesečni statistički izvještaj</span></label>
+                    <div class="input">@Html.TextBoxFor(contract => contract.TSI, new { @class = "w30" })</div>
+                    <div class="error">@Html.ValidationMessageFor(contract => contract.TSI)</div> 
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row">
+                    <label for="GZR">GZR:<span>molimo unesite cijenu za godišnji završni račun</span></label>
+                    <div class="input">@Html.TextBoxFor(contract => contract.GZR, new { @class = "w30" })</div>
+                    <div class="error">@Html.ValidationMessageFor(contract => contract.GZR)</div> 
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row">
+                    <label for="OPL">OPL:<span>molimo unesite cijenu za obračun plaća</span></label>
+                    <div class="input">@Html.TextBoxFor(contract => contract.OPL, new { @class = "w30" })</div>
+                    <div class="error">@Html.ValidationMessageFor(contract => contract.OPL)</div> 
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row">
+                    <label for="AUP">AUP:<span>molimo unesite cijenu za administrativno-upravne poslove</span></label>
+                    <div class="input">@Html.TextBoxFor(contract => contract.AUP, new { @class = "w30" })</div>
+                    <div class="error">@Html.ValidationMessageFor(contract => contract.AUP)</div> 
+                    <div class="clear"></div>
+                </div>
+
+            </fieldset>
+
+        </div>
+    </div>  
+    <div class="clear"></div> 
+</div>
+
+<script type="text/javascript">
+
+$("#ContractValidityFK").change(function() {
+    if($(this).val() == 1) {
+        $(this).parent().parent().next(".row").show();
+    } else {
+        $(this).parent().parent().next(".row").hide();
+    }
+})
+
+
+$("#Terminated").click(function() {
+    if($("#Terminated").is(":checked")) {
+        $("#Terminated").parent().parent().next(".row").show();
+        $("#Terminated").parent().parent().next(".row").next(".row").show();
+    } else {
+        $("#Terminated").parent().parent().next(".row").hide();
+        $("#Terminated").parent().parent().next(".row").next(".row").hide();
+    }
+})
+
+</script>

@@ -1,0 +1,1670 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Mateus_wcModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="Mateus_wcModelStoreContainer">
+    <EntitySet Name="Activities" EntityType="Mateus_wcModel.Store.Activities" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AdditionalFactors" EntityType="Mateus_wcModel.Store.AdditionalFactors" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AnnexContracts" EntityType="Mateus_wcModel.Store.AnnexContracts" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AssessmentAnswers" EntityType="Mateus_wcModel.Store.AssessmentAnswers" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AssessmentGroups" EntityType="Mateus_wcModel.Store.AssessmentGroups" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AssessmentQuestions" EntityType="Mateus_wcModel.Store.AssessmentQuestions" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Assessments" EntityType="Mateus_wcModel.Store.Assessments" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AssessmentTypes" EntityType="Mateus_wcModel.Store.AssessmentTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Attachments" EntityType="Mateus_wcModel.Store.Attachments" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AuditingDetails" EntityType="Mateus_wcModel.Store.AuditingDetails" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AuditingMaster" EntityType="Mateus_wcModel.Store.AuditingMaster" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Banks" EntityType="Mateus_wcModel.Store.Banks" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="BussinesShareBurdens" EntityType="Mateus_wcModel.Store.BussinesShareBurdens" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ChangeTypes" EntityType="Mateus_wcModel.Store.ChangeTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CitiesCommunities" EntityType="Mateus_wcModel.Store.CitiesCommunities" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CommercialCourts" EntityType="Mateus_wcModel.Store.CommercialCourts" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Contracts" EntityType="Mateus_wcModel.Store.Contracts" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ContractValidities" EntityType="Mateus_wcModel.Store.ContractValidities" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Counties" EntityType="Mateus_wcModel.Store.Counties" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Countries" EntityType="Mateus_wcModel.Store.Countries" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Currencies" EntityType="Mateus_wcModel.Store.Currencies" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Forms" EntityType="Mateus_wcModel.Store.Forms" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="FulfilledFactors" EntityType="Mateus_wcModel.Store.FulfilledFactors" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LegalEntities" EntityType="Mateus_wcModel.Store.LegalEntities" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LegalEntityBanks" EntityType="Mateus_wcModel.Store.LegalEntityBanks" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LegalEntityBranches" EntityType="Mateus_wcModel.Store.LegalEntityBranches" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LegalEntityLegalRepresentatives" EntityType="Mateus_wcModel.Store.LegalEntityLegalRepresentatives" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LegalEntityOwners" EntityType="Mateus_wcModel.Store.LegalEntityOwners" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="OwnerTypes" EntityType="Mateus_wcModel.Store.OwnerTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PhysicalEntities" EntityType="Mateus_wcModel.Store.PhysicalEntities" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Places" EntityType="Mateus_wcModel.Store.Places" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PostalOffices" EntityType="Mateus_wcModel.Store.PostalOffices" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RegionalOffices" EntityType="Mateus_wcModel.Store.RegionalOffices" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Risks" EntityType="Mateus_wcModel.Store.Risks" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Roles" EntityType="Mateus_wcModel.Store.Roles" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ServiceTypes" EntityType="Mateus_wcModel.Store.ServiceTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Substations" EntityType="Mateus_wcModel.Store.Substations" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SystemActions" EntityType="Mateus_wcModel.Store.SystemActions" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SystemControllers" EntityType="Mateus_wcModel.Store.SystemControllers" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Taxes" EntityType="Mateus_wcModel.Store.Taxes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ToDoLists" EntityType="Mateus_wcModel.Store.ToDoLists" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserActivities" EntityType="Mateus_wcModel.Store.UserActivities" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Users" EntityType="Mateus_wcModel.Store.Users" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UsersInRoles" EntityType="Mateus_wcModel.Store.UsersInRoles" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="WaysOfRepresentation" EntityType="Mateus_wcModel.Store.WaysOfRepresentation" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="WorkDoneAttachments" EntityType="Mateus_wcModel.Store.WorkDoneAttachments" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="WorkDones" EntityType="Mateus_wcModel.Store.WorkDones" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="WorkSubtypes" EntityType="Mateus_wcModel.Store.WorkSubtypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="WorkTypes" EntityType="Mateus_wcModel.Store.WorkTypes" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_Actions_Controllers" Association="Mateus_wcModel.Store.FK_Actions_Controllers">
+      <End Role="SystemControllers" EntitySet="SystemControllers" />
+      <End Role="SystemActions" EntitySet="SystemActions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AnnexContracts_AnnexContracts" Association="Mateus_wcModel.Store.FK_AnnexContracts_AnnexContracts">
+      <End Role="Contracts" EntitySet="Contracts" />
+      <End Role="AnnexContracts" EntitySet="AnnexContracts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AnnexContracts_ContractValidities" Association="Mateus_wcModel.Store.FK_AnnexContracts_ContractValidities">
+      <End Role="ContractValidities" EntitySet="ContractValidities" />
+      <End Role="AnnexContracts" EntitySet="AnnexContracts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AssessmentAnswers_AssessmentQuestions" Association="Mateus_wcModel.Store.FK_AssessmentAnswers_AssessmentQuestions">
+      <End Role="AssessmentQuestions" EntitySet="AssessmentQuestions" />
+      <End Role="AssessmentAnswers" EntitySet="AssessmentAnswers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AssessmentAnswers_Assessments" Association="Mateus_wcModel.Store.FK_AssessmentAnswers_Assessments">
+      <End Role="Assessments" EntitySet="Assessments" />
+      <End Role="AssessmentAnswers" EntitySet="AssessmentAnswers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AssessmentGroups_AssessmentTypes" Association="Mateus_wcModel.Store.FK_AssessmentGroups_AssessmentTypes">
+      <End Role="AssessmentTypes" EntitySet="AssessmentTypes" />
+      <End Role="AssessmentGroups" EntitySet="AssessmentGroups" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AssessmentQuestions_AssessmentGroups" Association="Mateus_wcModel.Store.FK_AssessmentQuestions_AssessmentGroups">
+      <End Role="AssessmentGroups" EntitySet="AssessmentGroups" />
+      <End Role="AssessmentQuestions" EntitySet="AssessmentQuestions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Assessments_AssessmentTypes" Association="Mateus_wcModel.Store.FK_Assessments_AssessmentTypes">
+      <End Role="AssessmentTypes" EntitySet="AssessmentTypes" />
+      <End Role="Assessments" EntitySet="Assessments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Assessments_Risks" Association="Mateus_wcModel.Store.FK_Assessments_Risks">
+      <End Role="Risks" EntitySet="Risks" />
+      <End Role="Assessments" EntitySet="Assessments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AuditingDetails_AuditingMaster" Association="Mateus_wcModel.Store.FK_AuditingDetails_AuditingMaster">
+      <End Role="AuditingMaster" EntitySet="AuditingMaster" />
+      <End Role="AuditingDetails" EntitySet="AuditingDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Branches_Cities" Association="Mateus_wcModel.Store.FK_Branches_Cities">
+      <End Role="CitiesCommunities" EntitySet="CitiesCommunities" />
+      <End Role="LegalEntityBranches" EntitySet="LegalEntityBranches" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Branches_Counties" Association="Mateus_wcModel.Store.FK_Branches_Counties">
+      <End Role="Counties" EntitySet="Counties" />
+      <End Role="LegalEntityBranches" EntitySet="LegalEntityBranches" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Branches_Countries" Association="Mateus_wcModel.Store.FK_Branches_Countries">
+      <End Role="Countries" EntitySet="Countries" />
+      <End Role="LegalEntityBranches" EntitySet="LegalEntityBranches" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Branches_Places" Association="Mateus_wcModel.Store.FK_Branches_Places">
+      <End Role="Places" EntitySet="Places" />
+      <End Role="LegalEntityBranches" EntitySet="LegalEntityBranches" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Branches_PostalOffices" Association="Mateus_wcModel.Store.FK_Branches_PostalOffices">
+      <End Role="PostalOffices" EntitySet="PostalOffices" />
+      <End Role="LegalEntityBranches" EntitySet="LegalEntityBranches" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cities_Counties" Association="Mateus_wcModel.Store.FK_Cities_Counties">
+      <End Role="Counties" EntitySet="Counties" />
+      <End Role="CitiesCommunities" EntitySet="CitiesCommunities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CompanyLegalRepresentative_LegalEntities" Association="Mateus_wcModel.Store.FK_CompanyLegalRepresentative_LegalEntities">
+      <End Role="LegalEntities" EntitySet="LegalEntities" />
+      <End Role="LegalEntityLegalRepresentatives" EntitySet="LegalEntityLegalRepresentatives" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CompanyLegalRepresentative_PhysicalEntities" Association="Mateus_wcModel.Store.FK_CompanyLegalRepresentative_PhysicalEntities">
+      <End Role="PhysicalEntities" EntitySet="PhysicalEntities" />
+      <End Role="LegalEntityLegalRepresentatives" EntitySet="LegalEntityLegalRepresentatives" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CompanyLegalRepresentative_WaysOfRepresentation" Association="Mateus_wcModel.Store.FK_CompanyLegalRepresentative_WaysOfRepresentation">
+      <End Role="WaysOfRepresentation" EntitySet="WaysOfRepresentation" />
+      <End Role="LegalEntityLegalRepresentatives" EntitySet="LegalEntityLegalRepresentatives" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Contracts_ContractValidities" Association="Mateus_wcModel.Store.FK_Contracts_ContractValidities">
+      <End Role="ContractValidities" EntitySet="ContractValidities" />
+      <End Role="Contracts" EntitySet="Contracts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Counties_Countries" Association="Mateus_wcModel.Store.FK_Counties_Countries">
+      <End Role="Countries" EntitySet="Countries" />
+      <End Role="Counties" EntitySet="Counties" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LegalEntities_Activities" Association="Mateus_wcModel.Store.FK_LegalEntities_Activities">
+      <End Role="Activities" EntitySet="Activities" />
+      <End Role="LegalEntities" EntitySet="LegalEntities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LegalEntities_Cities" Association="Mateus_wcModel.Store.FK_LegalEntities_Cities">
+      <End Role="CitiesCommunities" EntitySet="CitiesCommunities" />
+      <End Role="LegalEntities" EntitySet="LegalEntities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LegalEntities_CommercialCourts" Association="Mateus_wcModel.Store.FK_LegalEntities_CommercialCourts">
+      <End Role="CommercialCourts" EntitySet="CommercialCourts" />
+      <End Role="LegalEntities" EntitySet="LegalEntities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LegalEntities_Counties" Association="Mateus_wcModel.Store.FK_LegalEntities_Counties">
+      <End Role="Counties" EntitySet="Counties" />
+      <End Role="LegalEntities" EntitySet="LegalEntities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LegalEntities_Countries" Association="Mateus_wcModel.Store.FK_LegalEntities_Countries">
+      <End Role="Countries" EntitySet="Countries" />
+      <End Role="LegalEntities" EntitySet="LegalEntities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LegalEntities_Forms" Association="Mateus_wcModel.Store.FK_LegalEntities_Forms">
+      <End Role="Forms" EntitySet="Forms" />
+      <End Role="LegalEntities" EntitySet="LegalEntities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LegalEntities_PhysicalEntities" Association="Mateus_wcModel.Store.FK_LegalEntities_PhysicalEntities">
+      <End Role="PhysicalEntities" EntitySet="PhysicalEntities" />
+      <End Role="LegalEntities" EntitySet="LegalEntities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LegalEntities_Places" Association="Mateus_wcModel.Store.FK_LegalEntities_Places">
+      <End Role="Places" EntitySet="Places" />
+      <End Role="LegalEntities" EntitySet="LegalEntities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LegalEntities_PostalOffices" Association="Mateus_wcModel.Store.FK_LegalEntities_PostalOffices">
+      <End Role="PostalOffices" EntitySet="PostalOffices" />
+      <End Role="LegalEntities" EntitySet="LegalEntities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LegalEntities_RegionalOffices" Association="Mateus_wcModel.Store.FK_LegalEntities_RegionalOffices">
+      <End Role="RegionalOffices" EntitySet="RegionalOffices" />
+      <End Role="LegalEntities" EntitySet="LegalEntities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LegalEntities_Substations" Association="Mateus_wcModel.Store.FK_LegalEntities_Substations">
+      <End Role="Substations" EntitySet="Substations" />
+      <End Role="LegalEntities" EntitySet="LegalEntities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LegalEntities_Taxes" Association="Mateus_wcModel.Store.FK_LegalEntities_Taxes">
+      <End Role="Taxes" EntitySet="Taxes" />
+      <End Role="LegalEntities" EntitySet="LegalEntities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LegalEntityBanks_Banks" Association="Mateus_wcModel.Store.FK_LegalEntityBanks_Banks">
+      <End Role="Banks" EntitySet="Banks" />
+      <End Role="LegalEntityBanks" EntitySet="LegalEntityBanks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LegalEntityBanks_LegalEntities" Association="Mateus_wcModel.Store.FK_LegalEntityBanks_LegalEntities">
+      <End Role="LegalEntities" EntitySet="LegalEntities" />
+      <End Role="LegalEntityBanks" EntitySet="LegalEntityBanks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LegalEntityBranches_LegalEntities" Association="Mateus_wcModel.Store.FK_LegalEntityBranches_LegalEntities">
+      <End Role="LegalEntities" EntitySet="LegalEntities" />
+      <End Role="LegalEntityBranches" EntitySet="LegalEntityBranches" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PhysicalEntities_Cities" Association="Mateus_wcModel.Store.FK_PhysicalEntities_Cities">
+      <End Role="CitiesCommunities" EntitySet="CitiesCommunities" />
+      <End Role="PhysicalEntities" EntitySet="PhysicalEntities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PhysicalEntities_Cities1" Association="Mateus_wcModel.Store.FK_PhysicalEntities_Cities1">
+      <End Role="CitiesCommunities" EntitySet="CitiesCommunities" />
+      <End Role="PhysicalEntities" EntitySet="PhysicalEntities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PhysicalEntities_Counties" Association="Mateus_wcModel.Store.FK_PhysicalEntities_Counties">
+      <End Role="Counties" EntitySet="Counties" />
+      <End Role="PhysicalEntities" EntitySet="PhysicalEntities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PhysicalEntities_Counties1" Association="Mateus_wcModel.Store.FK_PhysicalEntities_Counties1">
+      <End Role="Counties" EntitySet="Counties" />
+      <End Role="PhysicalEntities" EntitySet="PhysicalEntities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PhysicalEntities_Countries" Association="Mateus_wcModel.Store.FK_PhysicalEntities_Countries">
+      <End Role="Countries" EntitySet="Countries" />
+      <End Role="PhysicalEntities" EntitySet="PhysicalEntities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PhysicalEntities_Countries1" Association="Mateus_wcModel.Store.FK_PhysicalEntities_Countries1">
+      <End Role="Countries" EntitySet="Countries" />
+      <End Role="PhysicalEntities" EntitySet="PhysicalEntities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PhysicalEntities_Countries2" Association="Mateus_wcModel.Store.FK_PhysicalEntities_Countries2">
+      <End Role="Countries" EntitySet="Countries" />
+      <End Role="PhysicalEntities" EntitySet="PhysicalEntities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PhysicalEntities_Countries3" Association="Mateus_wcModel.Store.FK_PhysicalEntities_Countries3">
+      <End Role="Countries" EntitySet="Countries" />
+      <End Role="PhysicalEntities" EntitySet="PhysicalEntities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PhysicalEntities_Places" Association="Mateus_wcModel.Store.FK_PhysicalEntities_Places">
+      <End Role="Places" EntitySet="Places" />
+      <End Role="PhysicalEntities" EntitySet="PhysicalEntities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PhysicalEntities_PostalOffices" Association="Mateus_wcModel.Store.FK_PhysicalEntities_PostalOffices">
+      <End Role="PostalOffices" EntitySet="PostalOffices" />
+      <End Role="PhysicalEntities" EntitySet="PhysicalEntities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PhysicalEntities_RegionalOffices" Association="Mateus_wcModel.Store.FK_PhysicalEntities_RegionalOffices">
+      <End Role="RegionalOffices" EntitySet="RegionalOffices" />
+      <End Role="PhysicalEntities" EntitySet="PhysicalEntities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PhysicalEntities_RegionalOffices1" Association="Mateus_wcModel.Store.FK_PhysicalEntities_RegionalOffices1">
+      <End Role="RegionalOffices" EntitySet="RegionalOffices" />
+      <End Role="PhysicalEntities" EntitySet="PhysicalEntities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PhysicalEntities_Substations" Association="Mateus_wcModel.Store.FK_PhysicalEntities_Substations">
+      <End Role="Substations" EntitySet="Substations" />
+      <End Role="PhysicalEntities" EntitySet="PhysicalEntities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PhysicalEntities_WaysOfRepresentation" Association="Mateus_wcModel.Store.FK_PhysicalEntities_WaysOfRepresentation">
+      <End Role="WaysOfRepresentation" EntitySet="WaysOfRepresentation" />
+      <End Role="PhysicalEntities" EntitySet="PhysicalEntities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Places_PostalOffices" Association="Mateus_wcModel.Store.FK_Places_PostalOffices">
+      <End Role="PostalOffices" EntitySet="PostalOffices" />
+      <End Role="Places" EntitySet="Places" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PostalOffices_Counties" Association="Mateus_wcModel.Store.FK_PostalOffices_Counties">
+      <End Role="Counties" EntitySet="Counties" />
+      <End Role="PostalOffices" EntitySet="PostalOffices" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Substations_RegionalOffices" Association="Mateus_wcModel.Store.FK_Substations_RegionalOffices">
+      <End Role="RegionalOffices" EntitySet="RegionalOffices" />
+      <End Role="Substations" EntitySet="Substations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ToDoLists_Users" Association="Mateus_wcModel.Store.FK_ToDoLists_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="ToDoLists" EntitySet="ToDoLists" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserActivities_Users" Association="Mateus_wcModel.Store.FK_UserActivities_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="UserActivities" EntitySet="UserActivities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UsersInRoles_Roles" Association="Mateus_wcModel.Store.FK_UsersInRoles_Roles">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="UsersInRoles" EntitySet="UsersInRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WorkDoneAttachments_WorkDoneAttachments" Association="Mateus_wcModel.Store.FK_WorkDoneAttachments_WorkDoneAttachments">
+      <End Role="Attachments" EntitySet="Attachments" />
+      <End Role="WorkDoneAttachments" EntitySet="WorkDoneAttachments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WorkDones_ServiceTypes" Association="Mateus_wcModel.Store.FK_WorkDones_ServiceTypes">
+      <End Role="ServiceTypes" EntitySet="ServiceTypes" />
+      <End Role="WorkDones" EntitySet="WorkDones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WorkDones_ToDoLists" Association="Mateus_wcModel.Store.FK_WorkDones_ToDoLists">
+      <End Role="ToDoLists" EntitySet="ToDoLists" />
+      <End Role="WorkDones" EntitySet="WorkDones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WorkDones_Users" Association="Mateus_wcModel.Store.FK_WorkDones_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="WorkDones" EntitySet="WorkDones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WorkDones_WorkSubtypes" Association="Mateus_wcModel.Store.FK_WorkDones_WorkSubtypes">
+      <End Role="WorkSubtypes" EntitySet="WorkSubtypes" />
+      <End Role="WorkDones" EntitySet="WorkDones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WorkDones_WorkTypes" Association="Mateus_wcModel.Store.FK_WorkDones_WorkTypes">
+      <End Role="WorkTypes" EntitySet="WorkTypes" />
+      <End Role="WorkDones" EntitySet="WorkDones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WorkSubtypes_WorkTypes" Association="Mateus_wcModel.Store.FK_WorkSubtypes_WorkTypes">
+      <End Role="WorkTypes" EntitySet="WorkTypes" />
+      <End Role="WorkSubtypes" EntitySet="WorkSubtypes" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Activities">
+    <Key>
+      <PropertyRef Name="ActivityPK" />
+    </Key>
+    <Property Name="ActivityPK" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="nvarchar" MaxLength="10" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" />
+    <Property Name="HighRisk" Type="bit" />
+    <Property Name="LowRisk" Type="bit" />
+    <Property Name="Deleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="AdditionalFactors">
+    <Key>
+      <PropertyRef Name="AdditionalFactorPK" />
+    </Key>
+    <Property Name="AdditionalFactorPK" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" />
+    <Property Name="Deleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="AnnexContracts">
+    <Key>
+      <PropertyRef Name="AnnexContractPK" />
+    </Key>
+    <Property Name="AnnexContractPK" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ContractFK" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" />
+    <Property Name="Number" Type="nvarchar" MaxLength="50" />
+    <Property Name="Date" Type="date" />
+    <Property Name="ContractValidityFK" Type="int" />
+    <Property Name="AnnexContractBegin" Type="date" />
+    <Property Name="AnnexContractEnd" Type="date" />
+    <Property Name="TerminationDate" Type="date" />
+    <Property Name="TerminationDescription" Type="nvarchar" MaxLength="512" />
+    <Property Name="Terminated" Type="bit" />
+    <Property Name="CurrencyFK" Type="int" />
+    <Property Name="MRR" Type="decimal" Scale="2" />
+    <Property Name="MIO" Type="decimal" Scale="2" />
+    <Property Name="TSI" Type="decimal" Scale="2" />
+    <Property Name="GZR" Type="decimal" Scale="2" />
+    <Property Name="OPL" Type="decimal" Scale="2" />
+    <Property Name="AUP" Type="decimal" Scale="2" />
+    <Property Name="Deleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="AssessmentAnswers">
+    <Key>
+      <PropertyRef Name="AssessmentAnswerPK" />
+    </Key>
+    <Property Name="AssessmentAnswerPK" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="AssessmentAnswer" Type="bit" />
+    <Property Name="AssessmentQuestionFK" Type="int" />
+    <Property Name="AssessmentFK" Type="int" />
+    <Property Name="Deleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="AssessmentGroups">
+    <Key>
+      <PropertyRef Name="AssessmentGroupPK" />
+    </Key>
+    <Property Name="AssessmentGroupPK" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" />
+    <Property Name="Deleted" Type="bit" />
+    <Property Name="AssessmentTypeFK" Type="int" />
+  </EntityType>
+  <EntityType Name="AssessmentQuestions">
+    <Key>
+      <PropertyRef Name="AssessmentQuestionPK" />
+    </Key>
+    <Property Name="AssessmentQuestionPK" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" MaxLength="2000" />
+    <Property Name="Deleted" Type="bit" />
+    <Property Name="AssessmentGroupFK" Type="int" />
+  </EntityType>
+  <EntityType Name="Assessments">
+    <Key>
+      <PropertyRef Name="AssessmentPK" />
+    </Key>
+    <Property Name="AssessmentPK" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="LegalEntityFK" Type="int" />
+    <Property Name="RiskFK" Type="int" />
+    <Property Name="AssessmentTypeFK" Type="int" />
+    <Property Name="AssessmentComment" Type="nvarchar" MaxLength="1024" />
+    <Property Name="AssessmentDate" Type="date" />
+    <Property Name="ChangeDate" Type="date" />
+    <Property Name="Deleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="AssessmentTypes">
+    <Key>
+      <PropertyRef Name="AssessmentTypePK" />
+    </Key>
+    <Property Name="AssessmentTypePK" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" />
+    <Property Name="Deleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="Attachments">
+    <Key>
+      <PropertyRef Name="AttachmentPK" />
+    </Key>
+    <Property Name="AttachmentPK" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" />
+    <Property Name="Filename" Type="nvarchar" MaxLength="256" />
+    <Property Name="Extension" Type="nvarchar" MaxLength="10" />
+    <Property Name="ContentType" Type="nvarchar" MaxLength="256" />
+    <Property Name="Deleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="AuditingDetails">
+    <Key>
+      <PropertyRef Name="AuditingDetailPK" />
+    </Key>
+    <Property Name="AuditingDetailPK" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="AuditingMasterFK" Type="int" />
+    <Property Name="ColumnName" Type="nvarchar" MaxLength="256" />
+    <Property Name="OldValue" Type="nvarchar(max)" />
+    <Property Name="NewValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="AuditingMaster">
+    <Key>
+      <PropertyRef Name="AuditingMasterPK" />
+    </Key>
+    <Property Name="AuditingMasterPK" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserFK" Type="int" />
+    <Property Name="DBName" Type="nvarchar" MaxLength="128" />
+    <Property Name="TableName" Type="nvarchar" MaxLength="128" />
+    <Property Name="TableNameFK" Type="int" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="Operation" Type="nvarchar" MaxLength="128" />
+    <Property Name="ServerName" Type="nvarchar" MaxLength="128" />
+    <Property Name="SessionToken" Type="nvarchar" MaxLength="512" />
+    <Property Name="RelatedEntityPK" Type="int" />
+  </EntityType>
+  <EntityType Name="Banks">
+    <Key>
+      <PropertyRef Name="BankPK" />
+    </Key>
+    <Property Name="BankPK" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" />
+    <Property Name="AccountNumber" Type="nvarchar" MaxLength="256" />
+    <Property Name="Swift" Type="nvarchar" MaxLength="256" />
+    <Property Name="Oib" Type="nvarchar" MaxLength="256" />
+    <Property Name="Iban" Type="nvarchar" MaxLength="256" />
+    <Property Name="Deleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="BussinesShareBurdens">
+    <Key>
+      <PropertyRef Name="BussinesShareBurdenPK" />
+    </Key>
+    <Property Name="BussinesShareBurdenPK" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" />
+    <Property Name="Deleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="ChangeTypes">
+    <Key>
+      <PropertyRef Name="ChangeTypePK" />
+    </Key>
+    <Property Name="ChangeTypePK" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" />
+    <Property Name="Deleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="CitiesCommunities">
+    <Key>
+      <PropertyRef Name="CityCommunityPK" />
+    </Key>
+    <Property Name="CityCommunityPK" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CountyFK" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" />
+    <Property Name="Code" Type="int" />
+    <Property Name="Deleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="CommercialCourts">
+    <Key>
+      <PropertyRef Name="CommercialCourtPK" />
+    </Key>
+    <Property Name="CommercialCourtPK" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" />
+    <Property Name="Deleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="Contracts">
+    <Key>
+      <PropertyRef Name="ContractPK" />
+    </Key>
+    <Property Name="ContractPK" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="LegalEntityFK" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" />
+    <Property Name="Number" Type="nvarchar" MaxLength="50" />
+    <Property Name="Date" Type="date" />
+    <Property Name="ContractValidityFK" Type="int" />
+    <Property Name="ContractBegin" Type="date" />
+    <Property Name="ContractEnd" Type="date" />
+    <Property Name="TerminationDate" Type="date" />
+    <Property Name="TerminationDescription" Type="nvarchar" MaxLength="512" />
+    <Property Name="Terminated" Type="bit" />
+    <Property Name="CurrencyFK" Type="int" />
+    <Property Name="MRR" Type="decimal" Scale="2" />
+    <Property Name="MIO" Type="decimal" Scale="2" />
+    <Property Name="TSI" Type="decimal" Scale="2" />
+    <Property Name="GZR" Type="decimal" Scale="2" />
+    <Property Name="OPL" Type="decimal" Scale="2" />
+    <Property Name="AUP" Type="decimal" Scale="2" />
+    <Property Name="ChangeDate" Type="date" />
+    <Property Name="Deleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="ContractValidities">
+    <Key>
+      <PropertyRef Name="ContractValidityPK" />
+    </Key>
+    <Property Name="ContractValidityPK" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" />
+    <Property Name="Deleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="Counties">
+    <Key>
+      <PropertyRef Name="CountyPK" />
+    </Key>
+    <Property Name="CountyPK" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CountryFK" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" />
+    <Property Name="Deleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="Countries">
+    <Key>
+      <PropertyRef Name="CountryPK" />
+    </Key>
+    <Property Name="CountryPK" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" />
+    <Property Name="NameEn" Type="nvarchar" MaxLength="256" />
+    <Property Name="Citizenship" Type="nvarchar" MaxLength="256" />
+    <Property Name="Alpha2Code" Type="nvarchar" MaxLength="2" />
+    <Property Name="Alpha3Code" Type="nvarchar" MaxLength="3" />
+    <Property Name="NumericCode" Type="nvarchar" MaxLength="3" />
+    <Property Name="Risk" Type="bit" />
+    <Property Name="Deleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="Currencies">
+    <Key>
+      <PropertyRef Name="CurrencyPK" />
+    </Key>
+    <Property Name="CurrencyPK" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" />
+    <Property Name="Sign" Type="nvarchar" MaxLength="10" />
+    <Property Name="Deleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="Forms">
+    <Key>
+      <PropertyRef Name="FormPK" />
+    </Key>
+    <Property Name="FormPK" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" />
+    <Property Name="Deleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="FulfilledFactors">
+    <Key>
+      <PropertyRef Name="FulfilledFactorPK" />
+    </Key>
+    <Property Name="FulfilledFactorPK" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" />
+    <Property Name="Deleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="LegalEntities">
+    <Key>
+      <PropertyRef Name="LegalEntityPK" />
+    </Key>
+    <Property Name="LegalEntityPK" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" />
+    <Property Name="ShortName" Type="nvarchar" MaxLength="3" />
+    <Property Name="OIB" Type="nvarchar" MaxLength="11" />
+    <Property Name="MB" Type="nvarchar" MaxLength="8" />
+    <Property Name="MBS" Type="nvarchar" MaxLength="9" />
+    <Property Name="ActivityFK" Type="int" />
+    <Property Name="ActivityDescription" Type="nvarchar" MaxLength="256" />
+    <Property Name="FormFK" Type="int" />
+    <Property Name="FundamentalCapital" Type="decimal" Scale="2" />
+    <Property Name="CountryFK" Type="int" />
+    <Property Name="CountyFK" Type="int" />
+    <Property Name="CityCommunityFK" Type="int" />
+    <Property Name="StreetName" Type="nvarchar" MaxLength="256" />
+    <Property Name="PostalOfficeFK" Type="int" />
+    <Property Name="PlaceFK" Type="int" />
+    <Property Name="Place" Type="nvarchar" MaxLength="256" />
+    <Property Name="RegionalOfficeFK" Type="int" />
+    <Property Name="SubstationFK" Type="int" />
+    <Property Name="ReferentFK" Type="int" />
+    <Property Name="DateOfRegistration" Type="date" />
+    <Property Name="CommercialCourtFK" Type="int" />
+    <Property Name="TaxFK" Type="int" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="256" />
+    <Property Name="Fax" Type="nvarchar" MaxLength="256" />
+    <Property Name="Mobile" Type="nvarchar" MaxLength="256" />
+    <Property Name="EMail" Type="nvarchar" MaxLength="256" />
+    <Property Name="FirstContactDate" Type="date" />
+    <Property Name="TouristOffice" Type="bit" />
+    <Property Name="TouristOfficeDescription" Type="nvarchar" MaxLength="256" />
+    <Property Name="MonumentAnnuity" Type="bit" />
+    <Property Name="MonumentAnnuityDescription" Type="nvarchar" MaxLength="256" />
+    <Property Name="NumberOfEmployees" Type="int" />
+    <Property Name="MIORRegistrationNumber" Type="nvarchar" MaxLength="10" />
+    <Property Name="HZZOObligationNumber" Type="nvarchar" MaxLength="11" />
+    <Property Name="HZZOBussinesEntityCode" Type="nvarchar" MaxLength="10" />
+    <Property Name="ChangeDate" Type="date" />
+    <Property Name="Owner" Type="bit" />
+    <Property Name="Company" Type="bit" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="Deleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="LegalEntityBanks">
+    <Key>
+      <PropertyRef Name="LegalEntityBankPK" />
+    </Key>
+    <Property Name="LegalEntityBankPK" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="LegalEntityFK" Type="int" />
+    <Property Name="BankFK" Type="int" />
+    <Property Name="Iban" Type="nvarchar" MaxLength="16" />
+    <Property Name="ChangeDate" Type="date" />
+    <Property Name="Deleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="LegalEntityBranches">
+    <Key>
+      <PropertyRef Name="LegalEntityBranchPK" />
+    </Key>
+    <Property Name="LegalEntityBranchPK" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="LegalEntityFK" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" />
+    <Property Name="CountryFK" Type="int" />
+    <Property Name="CountyFK" Type="int" />
+    <Property Name="CityCommunityFK" Type="int" />
+    <Property Name="PostalOfficeFK" Type="int" />
+    <Property Name="PlaceFK" Type="int" />
+    <Property Name="StreetName" Type="nvarchar" MaxLength="256" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="256" />
+    <Property Name="Fax" Type="nvarchar" MaxLength="256" />
+    <Property Name="Mobile" Type="nvarchar" MaxLength="256" />
+    <Property Name="EMail" Type="nvarchar" MaxLength="256" />
+    <Property Name="ChangeDate" Type="date" />
+    <Property Name="Deleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="LegalEntityLegalRepresentatives">
+    <Key>
+      <PropertyRef Name="LegalEntityLegalRepresentativePK" />
+    </Key>
+    <Property Name="LegalEntityLegalRepresentativePK" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="LegalEntityFK" Type="int" />
+    <Property Name="WayOfRepresentationFK" Type="int" />
+    <Property Name="LegalRepresentativeFK" Type="int" />
+    <Property Name="ChangeDate" Type="date" />
+    <Property Name="Deleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="LegalEntityOwners">
+    <Key>
+      <PropertyRef Name="LegalEntityOwnerPK" />
+    </Key>
+    <Property Name="LegalEntityOwnerPK" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="LegalEntityFK" Type="int" />
+    <Property Name="OwnerFK" Type="int" />
+    <Property Name="OwnerType" Type="nvarchar" MaxLength="10" />
+    <Property Name="EntryDate" Type="date" />
+    <Property Name="BusinessShareAmount" Type="decimal" Scale="2" />
+    <Property Name="PaidBussinesShareAmount" Type="decimal" Scale="2" />
+    <Property Name="NominalBussinesShareAmount" Type="decimal" Scale="2" />
+    <Property Name="AdditionalFactorFK" Type="int" />
+    <Property Name="FulfilledFactorFK" Type="int" />
+    <Property Name="BussinesShareBurdenFK" Type="int" />
+    <Property Name="NumberOfVotes" Type="int" />
+    <Property Name="ChangeTypeFK" Type="int" />
+    <Property Name="ChangeDate" Type="date" />
+    <Property Name="Deleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="OwnerTypes">
+    <Key>
+      <PropertyRef Name="OwnerTypePK" />
+    </Key>
+    <Property Name="OwnerTypePK" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" />
+    <Property Name="Deleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="PhysicalEntities">
+    <Key>
+      <PropertyRef Name="PhysicalEntityPK" />
+    </Key>
+    <Property Name="PhysicalEntityPK" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Firstname" Type="nvarchar" MaxLength="256" />
+    <Property Name="Lastname" Type="nvarchar" MaxLength="256" />
+    <Property Name="Gender" Type="nvarchar" MaxLength="1" />
+    <Property Name="EMail" Type="nvarchar" MaxLength="256" />
+    <Property Name="OIB" Type="nvarchar" MaxLength="11" />
+    <Property Name="JMBG" Type="nvarchar" MaxLength="13" />
+    <Property Name="DateOfBirth" Type="date" />
+    <Property Name="CitizenshipFK" Type="int" />
+    <Property Name="BirthCountryFK" Type="int" />
+    <Property Name="BirthCountyFK" Type="int" />
+    <Property Name="BirthCityCommunityFK" Type="int" />
+    <Property Name="BirthPlace" Type="nvarchar" MaxLength="256" />
+    <Property Name="ResidenceCountryFK" Type="int" />
+    <Property Name="ResidenceCountyFK" Type="int" />
+    <Property Name="ResidenceCityCommunityFK" Type="int" />
+    <Property Name="ResidencePostalOfficeFK" Type="int" />
+    <Property Name="ResidencePlaceFK" Type="int" />
+    <Property Name="ResidencePlace" Type="nvarchar" MaxLength="256" />
+    <Property Name="ResidenceStreetName" Type="nvarchar" MaxLength="256" />
+    <Property Name="WayOfRepresentationFK" Type="int" />
+    <Property Name="IdentityCardNumber" Type="nvarchar" MaxLength="20" />
+    <Property Name="IdentityCardDateOfIssue" Type="date" />
+    <Property Name="IdentityCardRegionalOfficeFK" Type="int" />
+    <Property Name="IdentityCardDateTillValid" Type="date" />
+    <Property Name="PassportNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="PassportDateOfIssue" Type="date" />
+    <Property Name="PassportDateTillValid" Type="date" />
+    <Property Name="PassportCountryOfIssueFK" Type="int" />
+    <Property Name="PassportPlaceOfIssue" Type="nvarchar" MaxLength="256" />
+    <Property Name="ReferentRegionalOfficeFK" Type="int" />
+    <Property Name="ReferentSubstationFK" Type="int" />
+    <Property Name="ChangeDate" Type="date" />
+    <Property Name="Owner" Type="bit" />
+    <Property Name="LegalRepresentative" Type="bit" />
+    <Property Name="Referent" Type="bit" />
+    <Property Name="Deleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="Places">
+    <Key>
+      <PropertyRef Name="PlacePK" />
+    </Key>
+    <Property Name="PlacePK" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PostalOfficeFK" Type="int" />
+    <Property Name="Ordinal" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" />
+    <Property Name="Deleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="PostalOffices">
+    <Key>
+      <PropertyRef Name="PostalOfficePK" />
+    </Key>
+    <Property Name="PostalOfficePK" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CountyFK" Type="int" />
+    <Property Name="Number" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" />
+    <Property Name="Deleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="RegionalOffices">
+    <Key>
+      <PropertyRef Name="RegionalOfficePK" />
+    </Key>
+    <Property Name="RegionalOfficePK" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" />
+    <Property Name="Deleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="Risks">
+    <Key>
+      <PropertyRef Name="RiskPK" />
+    </Key>
+    <Property Name="RiskPK" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" />
+    <Property Name="Deleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="RolePK" />
+    </Key>
+    <Property Name="RolePK" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" />
+    <Property Name="Description" Type="nvarchar" MaxLength="256" />
+    <Property Name="DisplayName" Type="nvarchar" MaxLength="256" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="Deleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="ServiceTypes">
+    <Key>
+      <PropertyRef Name="ServiceTypePK" />
+    </Key>
+    <Property Name="ServiceTypePK" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" />
+    <Property Name="Deleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="Substations">
+    <Key>
+      <PropertyRef Name="SubstationPK" />
+    </Key>
+    <Property Name="SubstationPK" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="RegionalOfficeFK" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" />
+    <Property Name="Deleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="SystemActions">
+    <Key>
+      <PropertyRef Name="SystemActionPK" />
+    </Key>
+    <Property Name="SystemActionPK" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SystemControllerFK" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" />
+    <Property Name="DisplayName" Type="nvarchar" MaxLength="256" />
+    <Property Name="Deleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="SystemControllers">
+    <Key>
+      <PropertyRef Name="SystemControllerPK" />
+    </Key>
+    <Property Name="SystemControllerPK" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" />
+    <Property Name="DisplayName" Type="nvarchar" MaxLength="256" />
+    <Property Name="Theme" Type="nvarchar" MaxLength="256" />
+    <Property Name="Deleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="Taxes">
+    <Key>
+      <PropertyRef Name="TaxPK" />
+    </Key>
+    <Property Name="TaxPK" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" />
+    <Property Name="Deleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="ToDoLists">
+    <Key>
+      <PropertyRef Name="ToDoListPK" />
+    </Key>
+    <Property Name="ToDoListPK" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="Deadline" Type="datetime" />
+    <Property Name="Finished" Type="bit" />
+    <Property Name="UserFK" Type="int" />
+    <Property Name="CreationDate" Type="datetime" />
+    <Property Name="Deleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="UserActivities">
+    <Key>
+      <PropertyRef Name="UserActivityPK" />
+    </Key>
+    <Property Name="UserActivityPK" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserFK" Type="int" />
+    <Property Name="ActivityTime" Type="datetime" />
+    <Property Name="ActivityDescription" Type="nvarchar" MaxLength="1024" />
+    <Property Name="Deleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="UserPK" />
+    </Key>
+    <Property Name="UserPK" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Username" Type="nvarchar" MaxLength="250" />
+    <Property Name="Password" Type="nvarchar" MaxLength="250" />
+    <Property Name="Salt" Type="nvarchar" MaxLength="250" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="250" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="250" />
+    <Property Name="Email" Type="nvarchar" MaxLength="250" />
+    <Property Name="RegistrationDate" Type="datetime" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="Deleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="UsersInRoles">
+    <Key>
+      <PropertyRef Name="UserInRolePK" />
+    </Key>
+    <Property Name="UserInRolePK" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserFK" Type="int" Nullable="false" />
+    <Property Name="RoleFK" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WaysOfRepresentation">
+    <Key>
+      <PropertyRef Name="WayOfRepresentationPK" />
+    </Key>
+    <Property Name="WayOfRepresentationPK" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" />
+    <Property Name="Deleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="WorkDoneAttachments">
+    <Key>
+      <PropertyRef Name="WorkDoneAttachmentPK" />
+    </Key>
+    <Property Name="WorkDoneAttachmentPK" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WorkDoneFK" Type="int" />
+    <Property Name="AttachmentFK" Type="int" />
+    <Property Name="Deleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="WorkDones">
+    <Key>
+      <PropertyRef Name="WorkDonePK" />
+    </Key>
+    <Property Name="WorkDonePK" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ToDoListFK" Type="int" />
+    <Property Name="Date" Type="date" />
+    <Property Name="LegalEntityFK" Type="int" />
+    <Property Name="WorkTypeFK" Type="int" />
+    <Property Name="WorkSubtypeFK" Type="int" />
+    <Property Name="ServiceTypeFK" Type="int" />
+    <Property Name="Description" Type="nvarchar" MaxLength="1024" />
+    <Property Name="TimeSpent" Type="int" />
+    <Property Name="Comment" Type="nvarchar" MaxLength="1024" />
+    <Property Name="UserFK" Type="int" />
+    <Property Name="CreationDate" Type="datetime" />
+    <Property Name="CreatedWithToDo" Type="bit" />
+    <Property Name="Deleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="WorkSubtypes">
+    <Key>
+      <PropertyRef Name="WorkSubtypePK" />
+    </Key>
+    <Property Name="WorkSubtypePK" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WorkTypeFK" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" />
+    <Property Name="Deleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="WorkTypes">
+    <Key>
+      <PropertyRef Name="WorkTypePK" />
+    </Key>
+    <Property Name="WorkTypePK" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" />
+    <Property Name="Deleted" Type="bit" />
+  </EntityType>
+  <Association Name="FK_Actions_Controllers">
+    <End Role="SystemControllers" Type="Mateus_wcModel.Store.SystemControllers" Multiplicity="0..1" />
+    <End Role="SystemActions" Type="Mateus_wcModel.Store.SystemActions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SystemControllers">
+        <PropertyRef Name="SystemControllerPK" />
+      </Principal>
+      <Dependent Role="SystemActions">
+        <PropertyRef Name="SystemControllerFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AnnexContracts_AnnexContracts">
+    <End Role="Contracts" Type="Mateus_wcModel.Store.Contracts" Multiplicity="0..1" />
+    <End Role="AnnexContracts" Type="Mateus_wcModel.Store.AnnexContracts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Contracts">
+        <PropertyRef Name="ContractPK" />
+      </Principal>
+      <Dependent Role="AnnexContracts">
+        <PropertyRef Name="ContractFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AnnexContracts_ContractValidities">
+    <End Role="ContractValidities" Type="Mateus_wcModel.Store.ContractValidities" Multiplicity="0..1" />
+    <End Role="AnnexContracts" Type="Mateus_wcModel.Store.AnnexContracts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ContractValidities">
+        <PropertyRef Name="ContractValidityPK" />
+      </Principal>
+      <Dependent Role="AnnexContracts">
+        <PropertyRef Name="ContractValidityFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AssessmentAnswers_AssessmentQuestions">
+    <End Role="AssessmentQuestions" Type="Mateus_wcModel.Store.AssessmentQuestions" Multiplicity="0..1" />
+    <End Role="AssessmentAnswers" Type="Mateus_wcModel.Store.AssessmentAnswers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AssessmentQuestions">
+        <PropertyRef Name="AssessmentQuestionPK" />
+      </Principal>
+      <Dependent Role="AssessmentAnswers">
+        <PropertyRef Name="AssessmentQuestionFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AssessmentAnswers_Assessments">
+    <End Role="Assessments" Type="Mateus_wcModel.Store.Assessments" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AssessmentAnswers" Type="Mateus_wcModel.Store.AssessmentAnswers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Assessments">
+        <PropertyRef Name="AssessmentPK" />
+      </Principal>
+      <Dependent Role="AssessmentAnswers">
+        <PropertyRef Name="AssessmentFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AssessmentGroups_AssessmentTypes">
+    <End Role="AssessmentTypes" Type="Mateus_wcModel.Store.AssessmentTypes" Multiplicity="0..1" />
+    <End Role="AssessmentGroups" Type="Mateus_wcModel.Store.AssessmentGroups" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AssessmentTypes">
+        <PropertyRef Name="AssessmentTypePK" />
+      </Principal>
+      <Dependent Role="AssessmentGroups">
+        <PropertyRef Name="AssessmentTypeFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AssessmentQuestions_AssessmentGroups">
+    <End Role="AssessmentGroups" Type="Mateus_wcModel.Store.AssessmentGroups" Multiplicity="0..1" />
+    <End Role="AssessmentQuestions" Type="Mateus_wcModel.Store.AssessmentQuestions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AssessmentGroups">
+        <PropertyRef Name="AssessmentGroupPK" />
+      </Principal>
+      <Dependent Role="AssessmentQuestions">
+        <PropertyRef Name="AssessmentGroupFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Assessments_AssessmentTypes">
+    <End Role="AssessmentTypes" Type="Mateus_wcModel.Store.AssessmentTypes" Multiplicity="0..1" />
+    <End Role="Assessments" Type="Mateus_wcModel.Store.Assessments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AssessmentTypes">
+        <PropertyRef Name="AssessmentTypePK" />
+      </Principal>
+      <Dependent Role="Assessments">
+        <PropertyRef Name="AssessmentTypeFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Assessments_Risks">
+    <End Role="Risks" Type="Mateus_wcModel.Store.Risks" Multiplicity="0..1" />
+    <End Role="Assessments" Type="Mateus_wcModel.Store.Assessments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Risks">
+        <PropertyRef Name="RiskPK" />
+      </Principal>
+      <Dependent Role="Assessments">
+        <PropertyRef Name="RiskFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AuditingDetails_AuditingMaster">
+    <End Role="AuditingMaster" Type="Mateus_wcModel.Store.AuditingMaster" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AuditingDetails" Type="Mateus_wcModel.Store.AuditingDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AuditingMaster">
+        <PropertyRef Name="AuditingMasterPK" />
+      </Principal>
+      <Dependent Role="AuditingDetails">
+        <PropertyRef Name="AuditingMasterFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Branches_Cities">
+    <End Role="CitiesCommunities" Type="Mateus_wcModel.Store.CitiesCommunities" Multiplicity="0..1" />
+    <End Role="LegalEntityBranches" Type="Mateus_wcModel.Store.LegalEntityBranches" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CitiesCommunities">
+        <PropertyRef Name="CityCommunityPK" />
+      </Principal>
+      <Dependent Role="LegalEntityBranches">
+        <PropertyRef Name="CityCommunityFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Branches_Counties">
+    <End Role="Counties" Type="Mateus_wcModel.Store.Counties" Multiplicity="0..1" />
+    <End Role="LegalEntityBranches" Type="Mateus_wcModel.Store.LegalEntityBranches" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Counties">
+        <PropertyRef Name="CountyPK" />
+      </Principal>
+      <Dependent Role="LegalEntityBranches">
+        <PropertyRef Name="CountyFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Branches_Countries">
+    <End Role="Countries" Type="Mateus_wcModel.Store.Countries" Multiplicity="0..1" />
+    <End Role="LegalEntityBranches" Type="Mateus_wcModel.Store.LegalEntityBranches" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Countries">
+        <PropertyRef Name="CountryPK" />
+      </Principal>
+      <Dependent Role="LegalEntityBranches">
+        <PropertyRef Name="CountryFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Branches_Places">
+    <End Role="Places" Type="Mateus_wcModel.Store.Places" Multiplicity="0..1" />
+    <End Role="LegalEntityBranches" Type="Mateus_wcModel.Store.LegalEntityBranches" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Places">
+        <PropertyRef Name="PlacePK" />
+      </Principal>
+      <Dependent Role="LegalEntityBranches">
+        <PropertyRef Name="PlaceFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Branches_PostalOffices">
+    <End Role="PostalOffices" Type="Mateus_wcModel.Store.PostalOffices" Multiplicity="0..1" />
+    <End Role="LegalEntityBranches" Type="Mateus_wcModel.Store.LegalEntityBranches" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PostalOffices">
+        <PropertyRef Name="PostalOfficePK" />
+      </Principal>
+      <Dependent Role="LegalEntityBranches">
+        <PropertyRef Name="PostalOfficeFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cities_Counties">
+    <End Role="Counties" Type="Mateus_wcModel.Store.Counties" Multiplicity="0..1" />
+    <End Role="CitiesCommunities" Type="Mateus_wcModel.Store.CitiesCommunities" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Counties">
+        <PropertyRef Name="CountyPK" />
+      </Principal>
+      <Dependent Role="CitiesCommunities">
+        <PropertyRef Name="CountyFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CompanyLegalRepresentative_LegalEntities">
+    <End Role="LegalEntities" Type="Mateus_wcModel.Store.LegalEntities" Multiplicity="0..1" />
+    <End Role="LegalEntityLegalRepresentatives" Type="Mateus_wcModel.Store.LegalEntityLegalRepresentatives" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LegalEntities">
+        <PropertyRef Name="LegalEntityPK" />
+      </Principal>
+      <Dependent Role="LegalEntityLegalRepresentatives">
+        <PropertyRef Name="LegalEntityFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CompanyLegalRepresentative_PhysicalEntities">
+    <End Role="PhysicalEntities" Type="Mateus_wcModel.Store.PhysicalEntities" Multiplicity="0..1" />
+    <End Role="LegalEntityLegalRepresentatives" Type="Mateus_wcModel.Store.LegalEntityLegalRepresentatives" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PhysicalEntities">
+        <PropertyRef Name="PhysicalEntityPK" />
+      </Principal>
+      <Dependent Role="LegalEntityLegalRepresentatives">
+        <PropertyRef Name="LegalRepresentativeFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CompanyLegalRepresentative_WaysOfRepresentation">
+    <End Role="WaysOfRepresentation" Type="Mateus_wcModel.Store.WaysOfRepresentation" Multiplicity="0..1" />
+    <End Role="LegalEntityLegalRepresentatives" Type="Mateus_wcModel.Store.LegalEntityLegalRepresentatives" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WaysOfRepresentation">
+        <PropertyRef Name="WayOfRepresentationPK" />
+      </Principal>
+      <Dependent Role="LegalEntityLegalRepresentatives">
+        <PropertyRef Name="WayOfRepresentationFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Contracts_ContractValidities">
+    <End Role="ContractValidities" Type="Mateus_wcModel.Store.ContractValidities" Multiplicity="0..1" />
+    <End Role="Contracts" Type="Mateus_wcModel.Store.Contracts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ContractValidities">
+        <PropertyRef Name="ContractValidityPK" />
+      </Principal>
+      <Dependent Role="Contracts">
+        <PropertyRef Name="ContractValidityFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Counties_Countries">
+    <End Role="Countries" Type="Mateus_wcModel.Store.Countries" Multiplicity="0..1" />
+    <End Role="Counties" Type="Mateus_wcModel.Store.Counties" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Countries">
+        <PropertyRef Name="CountryPK" />
+      </Principal>
+      <Dependent Role="Counties">
+        <PropertyRef Name="CountryFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LegalEntities_Activities">
+    <End Role="Activities" Type="Mateus_wcModel.Store.Activities" Multiplicity="0..1" />
+    <End Role="LegalEntities" Type="Mateus_wcModel.Store.LegalEntities" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Activities">
+        <PropertyRef Name="ActivityPK" />
+      </Principal>
+      <Dependent Role="LegalEntities">
+        <PropertyRef Name="ActivityFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LegalEntities_Cities">
+    <End Role="CitiesCommunities" Type="Mateus_wcModel.Store.CitiesCommunities" Multiplicity="0..1" />
+    <End Role="LegalEntities" Type="Mateus_wcModel.Store.LegalEntities" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CitiesCommunities">
+        <PropertyRef Name="CityCommunityPK" />
+      </Principal>
+      <Dependent Role="LegalEntities">
+        <PropertyRef Name="CityCommunityFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LegalEntities_CommercialCourts">
+    <End Role="CommercialCourts" Type="Mateus_wcModel.Store.CommercialCourts" Multiplicity="0..1" />
+    <End Role="LegalEntities" Type="Mateus_wcModel.Store.LegalEntities" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CommercialCourts">
+        <PropertyRef Name="CommercialCourtPK" />
+      </Principal>
+      <Dependent Role="LegalEntities">
+        <PropertyRef Name="CommercialCourtFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LegalEntities_Counties">
+    <End Role="Counties" Type="Mateus_wcModel.Store.Counties" Multiplicity="0..1" />
+    <End Role="LegalEntities" Type="Mateus_wcModel.Store.LegalEntities" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Counties">
+        <PropertyRef Name="CountyPK" />
+      </Principal>
+      <Dependent Role="LegalEntities">
+        <PropertyRef Name="CountyFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LegalEntities_Countries">
+    <End Role="Countries" Type="Mateus_wcModel.Store.Countries" Multiplicity="0..1" />
+    <End Role="LegalEntities" Type="Mateus_wcModel.Store.LegalEntities" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Countries">
+        <PropertyRef Name="CountryPK" />
+      </Principal>
+      <Dependent Role="LegalEntities">
+        <PropertyRef Name="CountryFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LegalEntities_Forms">
+    <End Role="Forms" Type="Mateus_wcModel.Store.Forms" Multiplicity="0..1" />
+    <End Role="LegalEntities" Type="Mateus_wcModel.Store.LegalEntities" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Forms">
+        <PropertyRef Name="FormPK" />
+      </Principal>
+      <Dependent Role="LegalEntities">
+        <PropertyRef Name="FormFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LegalEntities_PhysicalEntities">
+    <End Role="PhysicalEntities" Type="Mateus_wcModel.Store.PhysicalEntities" Multiplicity="0..1" />
+    <End Role="LegalEntities" Type="Mateus_wcModel.Store.LegalEntities" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PhysicalEntities">
+        <PropertyRef Name="PhysicalEntityPK" />
+      </Principal>
+      <Dependent Role="LegalEntities">
+        <PropertyRef Name="ReferentFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LegalEntities_Places">
+    <End Role="Places" Type="Mateus_wcModel.Store.Places" Multiplicity="0..1" />
+    <End Role="LegalEntities" Type="Mateus_wcModel.Store.LegalEntities" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Places">
+        <PropertyRef Name="PlacePK" />
+      </Principal>
+      <Dependent Role="LegalEntities">
+        <PropertyRef Name="PlaceFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LegalEntities_PostalOffices">
+    <End Role="PostalOffices" Type="Mateus_wcModel.Store.PostalOffices" Multiplicity="0..1" />
+    <End Role="LegalEntities" Type="Mateus_wcModel.Store.LegalEntities" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PostalOffices">
+        <PropertyRef Name="PostalOfficePK" />
+      </Principal>
+      <Dependent Role="LegalEntities">
+        <PropertyRef Name="PostalOfficeFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LegalEntities_RegionalOffices">
+    <End Role="RegionalOffices" Type="Mateus_wcModel.Store.RegionalOffices" Multiplicity="0..1" />
+    <End Role="LegalEntities" Type="Mateus_wcModel.Store.LegalEntities" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RegionalOffices">
+        <PropertyRef Name="RegionalOfficePK" />
+      </Principal>
+      <Dependent Role="LegalEntities">
+        <PropertyRef Name="RegionalOfficeFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LegalEntities_Substations">
+    <End Role="Substations" Type="Mateus_wcModel.Store.Substations" Multiplicity="0..1" />
+    <End Role="LegalEntities" Type="Mateus_wcModel.Store.LegalEntities" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Substations">
+        <PropertyRef Name="SubstationPK" />
+      </Principal>
+      <Dependent Role="LegalEntities">
+        <PropertyRef Name="SubstationFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LegalEntities_Taxes">
+    <End Role="Taxes" Type="Mateus_wcModel.Store.Taxes" Multiplicity="0..1" />
+    <End Role="LegalEntities" Type="Mateus_wcModel.Store.LegalEntities" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Taxes">
+        <PropertyRef Name="TaxPK" />
+      </Principal>
+      <Dependent Role="LegalEntities">
+        <PropertyRef Name="TaxFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LegalEntityBanks_Banks">
+    <End Role="Banks" Type="Mateus_wcModel.Store.Banks" Multiplicity="0..1" />
+    <End Role="LegalEntityBanks" Type="Mateus_wcModel.Store.LegalEntityBanks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Banks">
+        <PropertyRef Name="BankPK" />
+      </Principal>
+      <Dependent Role="LegalEntityBanks">
+        <PropertyRef Name="BankFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LegalEntityBanks_LegalEntities">
+    <End Role="LegalEntities" Type="Mateus_wcModel.Store.LegalEntities" Multiplicity="0..1" />
+    <End Role="LegalEntityBanks" Type="Mateus_wcModel.Store.LegalEntityBanks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LegalEntities">
+        <PropertyRef Name="LegalEntityPK" />
+      </Principal>
+      <Dependent Role="LegalEntityBanks">
+        <PropertyRef Name="LegalEntityFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LegalEntityBranches_LegalEntities">
+    <End Role="LegalEntities" Type="Mateus_wcModel.Store.LegalEntities" Multiplicity="0..1" />
+    <End Role="LegalEntityBranches" Type="Mateus_wcModel.Store.LegalEntityBranches" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LegalEntities">
+        <PropertyRef Name="LegalEntityPK" />
+      </Principal>
+      <Dependent Role="LegalEntityBranches">
+        <PropertyRef Name="LegalEntityFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PhysicalEntities_Cities">
+    <End Role="CitiesCommunities" Type="Mateus_wcModel.Store.CitiesCommunities" Multiplicity="0..1" />
+    <End Role="PhysicalEntities" Type="Mateus_wcModel.Store.PhysicalEntities" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CitiesCommunities">
+        <PropertyRef Name="CityCommunityPK" />
+      </Principal>
+      <Dependent Role="PhysicalEntities">
+        <PropertyRef Name="BirthCityCommunityFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PhysicalEntities_Cities1">
+    <End Role="CitiesCommunities" Type="Mateus_wcModel.Store.CitiesCommunities" Multiplicity="0..1" />
+    <End Role="PhysicalEntities" Type="Mateus_wcModel.Store.PhysicalEntities" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CitiesCommunities">
+        <PropertyRef Name="CityCommunityPK" />
+      </Principal>
+      <Dependent Role="PhysicalEntities">
+        <PropertyRef Name="ResidenceCityCommunityFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PhysicalEntities_Counties">
+    <End Role="Counties" Type="Mateus_wcModel.Store.Counties" Multiplicity="0..1" />
+    <End Role="PhysicalEntities" Type="Mateus_wcModel.Store.PhysicalEntities" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Counties">
+        <PropertyRef Name="CountyPK" />
+      </Principal>
+      <Dependent Role="PhysicalEntities">
+        <PropertyRef Name="BirthCountyFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PhysicalEntities_Counties1">
+    <End Role="Counties" Type="Mateus_wcModel.Store.Counties" Multiplicity="0..1" />
+    <End Role="PhysicalEntities" Type="Mateus_wcModel.Store.PhysicalEntities" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Counties">
+        <PropertyRef Name="CountyPK" />
+      </Principal>
+      <Dependent Role="PhysicalEntities">
+        <PropertyRef Name="ResidenceCountyFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PhysicalEntities_Countries">
+    <End Role="Countries" Type="Mateus_wcModel.Store.Countries" Multiplicity="0..1" />
+    <End Role="PhysicalEntities" Type="Mateus_wcModel.Store.PhysicalEntities" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Countries">
+        <PropertyRef Name="CountryPK" />
+      </Principal>
+      <Dependent Role="PhysicalEntities">
+        <PropertyRef Name="CitizenshipFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PhysicalEntities_Countries1">
+    <End Role="Countries" Type="Mateus_wcModel.Store.Countries" Multiplicity="0..1" />
+    <End Role="PhysicalEntities" Type="Mateus_wcModel.Store.PhysicalEntities" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Countries">
+        <PropertyRef Name="CountryPK" />
+      </Principal>
+      <Dependent Role="PhysicalEntities">
+        <PropertyRef Name="BirthCountryFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PhysicalEntities_Countries2">
+    <End Role="Countries" Type="Mateus_wcModel.Store.Countries" Multiplicity="0..1" />
+    <End Role="PhysicalEntities" Type="Mateus_wcModel.Store.PhysicalEntities" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Countries">
+        <PropertyRef Name="CountryPK" />
+      </Principal>
+      <Dependent Role="PhysicalEntities">
+        <PropertyRef Name="ResidenceCountryFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PhysicalEntities_Countries3">
+    <End Role="Countries" Type="Mateus_wcModel.Store.Countries" Multiplicity="0..1" />
+    <End Role="PhysicalEntities" Type="Mateus_wcModel.Store.PhysicalEntities" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Countries">
+        <PropertyRef Name="CountryPK" />
+      </Principal>
+      <Dependent Role="PhysicalEntities">
+        <PropertyRef Name="PassportCountryOfIssueFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PhysicalEntities_Places">
+    <End Role="Places" Type="Mateus_wcModel.Store.Places" Multiplicity="0..1" />
+    <End Role="PhysicalEntities" Type="Mateus_wcModel.Store.PhysicalEntities" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Places">
+        <PropertyRef Name="PlacePK" />
+      </Principal>
+      <Dependent Role="PhysicalEntities">
+        <PropertyRef Name="ResidencePlaceFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PhysicalEntities_PostalOffices">
+    <End Role="PostalOffices" Type="Mateus_wcModel.Store.PostalOffices" Multiplicity="0..1" />
+    <End Role="PhysicalEntities" Type="Mateus_wcModel.Store.PhysicalEntities" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PostalOffices">
+        <PropertyRef Name="PostalOfficePK" />
+      </Principal>
+      <Dependent Role="PhysicalEntities">
+        <PropertyRef Name="ResidencePostalOfficeFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PhysicalEntities_RegionalOffices">
+    <End Role="RegionalOffices" Type="Mateus_wcModel.Store.RegionalOffices" Multiplicity="0..1" />
+    <End Role="PhysicalEntities" Type="Mateus_wcModel.Store.PhysicalEntities" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RegionalOffices">
+        <PropertyRef Name="RegionalOfficePK" />
+      </Principal>
+      <Dependent Role="PhysicalEntities">
+        <PropertyRef Name="IdentityCardRegionalOfficeFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PhysicalEntities_RegionalOffices1">
+    <End Role="RegionalOffices" Type="Mateus_wcModel.Store.RegionalOffices" Multiplicity="0..1" />
+    <End Role="PhysicalEntities" Type="Mateus_wcModel.Store.PhysicalEntities" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RegionalOffices">
+        <PropertyRef Name="RegionalOfficePK" />
+      </Principal>
+      <Dependent Role="PhysicalEntities">
+        <PropertyRef Name="ReferentRegionalOfficeFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PhysicalEntities_Substations">
+    <End Role="Substations" Type="Mateus_wcModel.Store.Substations" Multiplicity="0..1" />
+    <End Role="PhysicalEntities" Type="Mateus_wcModel.Store.PhysicalEntities" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Substations">
+        <PropertyRef Name="SubstationPK" />
+      </Principal>
+      <Dependent Role="PhysicalEntities">
+        <PropertyRef Name="ReferentSubstationFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PhysicalEntities_WaysOfRepresentation">
+    <End Role="WaysOfRepresentation" Type="Mateus_wcModel.Store.WaysOfRepresentation" Multiplicity="0..1" />
+    <End Role="PhysicalEntities" Type="Mateus_wcModel.Store.PhysicalEntities" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WaysOfRepresentation">
+        <PropertyRef Name="WayOfRepresentationPK" />
+      </Principal>
+      <Dependent Role="PhysicalEntities">
+        <PropertyRef Name="WayOfRepresentationFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Places_PostalOffices">
+    <End Role="PostalOffices" Type="Mateus_wcModel.Store.PostalOffices" Multiplicity="0..1" />
+    <End Role="Places" Type="Mateus_wcModel.Store.Places" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PostalOffices">
+        <PropertyRef Name="PostalOfficePK" />
+      </Principal>
+      <Dependent Role="Places">
+        <PropertyRef Name="PostalOfficeFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PostalOffices_Counties">
+    <End Role="Counties" Type="Mateus_wcModel.Store.Counties" Multiplicity="0..1" />
+    <End Role="PostalOffices" Type="Mateus_wcModel.Store.PostalOffices" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Counties">
+        <PropertyRef Name="CountyPK" />
+      </Principal>
+      <Dependent Role="PostalOffices">
+        <PropertyRef Name="CountyFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Substations_RegionalOffices">
+    <End Role="RegionalOffices" Type="Mateus_wcModel.Store.RegionalOffices" Multiplicity="0..1" />
+    <End Role="Substations" Type="Mateus_wcModel.Store.Substations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RegionalOffices">
+        <PropertyRef Name="RegionalOfficePK" />
+      </Principal>
+      <Dependent Role="Substations">
+        <PropertyRef Name="RegionalOfficeFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ToDoLists_Users">
+    <End Role="Users" Type="Mateus_wcModel.Store.Users" Multiplicity="0..1" />
+    <End Role="ToDoLists" Type="Mateus_wcModel.Store.ToDoLists" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserPK" />
+      </Principal>
+      <Dependent Role="ToDoLists">
+        <PropertyRef Name="UserFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserActivities_Users">
+    <End Role="Users" Type="Mateus_wcModel.Store.Users" Multiplicity="0..1" />
+    <End Role="UserActivities" Type="Mateus_wcModel.Store.UserActivities" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserPK" />
+      </Principal>
+      <Dependent Role="UserActivities">
+        <PropertyRef Name="UserFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UsersInRoles_Roles">
+    <End Role="Roles" Type="Mateus_wcModel.Store.Roles" Multiplicity="1" />
+    <End Role="UsersInRoles" Type="Mateus_wcModel.Store.UsersInRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="RolePK" />
+      </Principal>
+      <Dependent Role="UsersInRoles">
+        <PropertyRef Name="RoleFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WorkDoneAttachments_WorkDoneAttachments">
+    <End Role="Attachments" Type="Mateus_wcModel.Store.Attachments" Multiplicity="0..1" />
+    <End Role="WorkDoneAttachments" Type="Mateus_wcModel.Store.WorkDoneAttachments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Attachments">
+        <PropertyRef Name="AttachmentPK" />
+      </Principal>
+      <Dependent Role="WorkDoneAttachments">
+        <PropertyRef Name="AttachmentFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WorkDones_ServiceTypes">
+    <End Role="ServiceTypes" Type="Mateus_wcModel.Store.ServiceTypes" Multiplicity="0..1" />
+    <End Role="WorkDones" Type="Mateus_wcModel.Store.WorkDones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ServiceTypes">
+        <PropertyRef Name="ServiceTypePK" />
+      </Principal>
+      <Dependent Role="WorkDones">
+        <PropertyRef Name="ServiceTypeFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WorkDones_ToDoLists">
+    <End Role="ToDoLists" Type="Mateus_wcModel.Store.ToDoLists" Multiplicity="0..1" />
+    <End Role="WorkDones" Type="Mateus_wcModel.Store.WorkDones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ToDoLists">
+        <PropertyRef Name="ToDoListPK" />
+      </Principal>
+      <Dependent Role="WorkDones">
+        <PropertyRef Name="ToDoListFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WorkDones_Users">
+    <End Role="Users" Type="Mateus_wcModel.Store.Users" Multiplicity="0..1" />
+    <End Role="WorkDones" Type="Mateus_wcModel.Store.WorkDones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserPK" />
+      </Principal>
+      <Dependent Role="WorkDones">
+        <PropertyRef Name="UserFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WorkDones_WorkSubtypes">
+    <End Role="WorkSubtypes" Type="Mateus_wcModel.Store.WorkSubtypes" Multiplicity="0..1" />
+    <End Role="WorkDones" Type="Mateus_wcModel.Store.WorkDones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkSubtypes">
+        <PropertyRef Name="WorkSubtypePK" />
+      </Principal>
+      <Dependent Role="WorkDones">
+        <PropertyRef Name="WorkSubtypeFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WorkDones_WorkTypes">
+    <End Role="WorkTypes" Type="Mateus_wcModel.Store.WorkTypes" Multiplicity="0..1" />
+    <End Role="WorkDones" Type="Mateus_wcModel.Store.WorkDones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkTypes">
+        <PropertyRef Name="WorkTypePK" />
+      </Principal>
+      <Dependent Role="WorkDones">
+        <PropertyRef Name="WorkTypeFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WorkSubtypes_WorkTypes">
+    <End Role="WorkTypes" Type="Mateus_wcModel.Store.WorkTypes" Multiplicity="0..1" />
+    <End Role="WorkSubtypes" Type="Mateus_wcModel.Store.WorkSubtypes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkTypes">
+        <PropertyRef Name="WorkTypePK" />
+      </Principal>
+      <Dependent Role="WorkSubtypes">
+        <PropertyRef Name="WorkTypeFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

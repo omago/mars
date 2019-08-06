@@ -1,0 +1,269 @@
+﻿@model Mateus.Model.BussinesLogic.Views.WorkDoneModel.WorkDoneView
+
+<div id="controls-bar">
+    @Html.Partial("~/Views/Shared/Partial/Breadcrumb.cshtml")
+    <div>
+        @Html.ActionLink(" ", "Index", Session["ControllerReferrer"].ToString(), null, new { @class = "button back padding-right-0" })
+        <a href="#" class="button refresh padding-right-0 margin-right-15"></a>       
+        <input type="submit" class="button save" value="Spremi" />
+    </div>
+</div>
+
+<div id="content">
+
+    <div class="grid-5">
+        <div class="form">
+
+            <h2>Osnovne informacije</h2>
+                
+            <fieldset>
+
+                <div class="row">
+                    <label for="ToDoListFK">Obaveza:<b>*</b><span>molimo odaberite obavezu</span></label>
+                    <div class="input">@Html.DropDownListFor(workDone => workDone.ToDoListFK, Model.ToDoLists, "Odaberite obavezu", new { @class = "w100" })</div>
+                    <div class="error">@Html.ValidationMessageFor(workDone => workDone.ToDoListFK)</div>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row">
+                    <label for="LegalEntityFK">Tvrtka:<b>*</b><span>molimo odaberite tvrtku</span></label>
+                    <div class="input">@Html.DropDownListFor(workDone => workDone.LegalEntityFK, Model.LegalEntities, "Odaberite tvrtku", new { @class = "w100" })</div>
+                    <div class="error">@Html.ValidationMessageFor(workDone => workDone.LegalEntityFK)</div>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row">
+                    <label for="WorkTypeFK">Vrsta rada:<b>*</b><span>molimo odaberite vrstu rada</span></label>
+                    <div class="input">@Html.DropDownListFor(workDone => workDone.WorkTypeFK, Model.WorkTypes, "Odaberite vrstu rada", new { @class = "w100" })</div>
+                    <div class="error">@Html.ValidationMessageFor(workDone => workDone.WorkTypeFK)</div>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row">
+                    <label for="WorkSubtypeFK">Vrsta posla:<b>*</b><span>molimo odaberite vrstu posla</span></label>
+                    <div class="input">@Html.DropDownListFor(workDone => workDone.WorkSubtypeFK, Model.WorkSubtypes, "----", new { @class = "w100" })</div>
+                    <div class="error">@Html.ValidationMessageFor(workDone => workDone.WorkSubtypeFK)</div>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row">
+                    <label for="ServiceTypeFK">Vrsta usluge:<b>*</b><span>molimo odaberite vrstu usluge</span></label>
+                    <div class="input">@Html.DropDownListFor(workDone => workDone.ServiceTypeFK, Model.ServiceTypes, "Odaberite vrstu usluge", new { @class = "w100" })</div>
+                    <div class="error">@Html.ValidationMessageFor(workDone => workDone.ServiceTypeFK)</div>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row">
+                    <label for="Date">Datum izvršenja:<b>*</b><span>molimo unesite datum izvršenja:</span></label>
+                    <div class="input">
+                        @if(Model.Date != null) 
+                        {
+                            @Html.TextBoxFor(workDone => workDone.Date, new { @class = "w50 datepicker", @Value = Model.Date.Value.ToString("dd.MM.yyyy.") })
+                        } 
+                        else
+                        {
+                            @Html.TextBoxFor(workDone => workDone.Date, new { @class = "w50 datepicker", @Value = DateTime.Today.ToString("dd.MM.yyyy.") })
+                        }
+                    </div>
+                    <div class="error">@Html.ValidationMessageFor(workDone => workDone.Date)</div> 
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row">
+                    <label for="Description">Opis posla:<b>*</b><span>molimo unesite opis posla</span></label>
+                    <div class="input">@Html.TextBoxFor(workDone => workDone.Description, new { @class = "w70" })</div>
+                    <div class="error">@Html.ValidationMessageFor(workDone => workDone.Description)</div> 
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row">
+                    <label for="Description">Utrošeno vrijeme:<b>*</b><span>molimo unesite utrošeno vrijeme</span></label>
+                    <div class="input">
+                        @Html.DropDownListFor(workDone => workDone.TimeSpentHours, Model.Hours, "----", new { @class = "w20" })
+                        @Html.DropDownListFor(workDone => workDone.TimeSpentMinutes, Model.Minutes, "----", new { @class = "w20" })
+                    </div>
+                    <div class="error">@Html.ValidationMessageFor(workDone => workDone.TimeSpentHours)</div> 
+                    <div class="error">@Html.ValidationMessageFor(workDone => workDone.TimeSpentMinutes)</div> 
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row">
+                    <label for="Comment">Važna napomena:<span>molimo unesite važnu napomenu</span></label>
+                    <div class="input">@Html.TextBoxFor(workDone => workDone.Comment, new { @class = "w100" })</div>
+                    <div class="error">@Html.ValidationMessageFor(workDone => workDone.Comment)</div> 
+                    <div class="clear"></div>
+                </div>
+
+            </fieldset>
+
+        </div>
+
+    </div>  
+     
+    <div class="grid-5">
+        <div class="form">
+
+            <h2>Prilozi</h2>
+                
+            <fieldset>
+                
+                @{
+                    if(ViewBag.Attachments != null) {
+                        if(ViewBag.Attachments.Count > 0) {
+                            <table class="grid">
+                                <tr>
+                                    <th class="w6">#</th>
+                                    <th class="w58 left"><span>Datoteka</span></th>
+                                    <th class="w26"></th>
+                                    <th class="w10">Operacije</th>
+                                </tr>
+                                @{
+                                    int c = 1;
+                                    foreach (var attachment in ViewBag.Attachments)
+                                    {
+                                        <tr class="@if(c%2 != 0){ @MvcHtmlString.Create("odd"); }">
+                                            <td>@c.ToString()</td>
+                                            <td class="left">@attachment.AttachmentName</td>
+                                            <td>@Html.ActionLink("Preuzmi datoteku", "Download", "Attachment", new { attachmentPK = @attachment.AttachmentFK}, null)</td>
+                                            <td>@Html.ActionLink(" ", "Delete", "WorkDoneAttachment", new { workDoneAttachmentPK = @attachment.WorkDoneAttachmentPK}, new { @class = "delete" })</td>
+                                        </tr>
+                                        c++;
+                                    }
+                                }
+                            </table>
+                        }
+                    }
+                    
+                    int i;
+                    
+                    for(i = 1; i < 6; i++) {
+                        
+                        <div class="row">
+                            <label for="file@(i)">Datoteka @(i):<span>molimo odaberite datoteku</span></label>
+                            <div class="input"><input type="file" name="files" id="file@(i)" class="w70" /></div>
+                            <div class="clear"></div>
+                        </div>
+                    
+                    }
+                }
+
+                <a class="button new margin-top-10" id="add_attachment">Dodaj prilog</a>
+                
+            </fieldset>
+
+        </div>
+
+    </div>   
+    <div class="clear"></div>
+</div>  
+
+
+<script type="text/javascript">
+
+    var i = @i;
+
+    $("#add_attachment").click(function() {
+        
+        var content = "";
+        content =   '<div class="row">';
+        content+=       '<label for="file' + i + '">Datoteka ' + i + ':<span>molimo odaberite datoteku</span></label>';
+        content+=       '<div class="input"><input type="file" name="files" id="file' + i + '" class="w70" /></div>';
+        content+=       '<div class="clear"></div>';
+        content+=   '</div>';
+
+        i++;
+
+        $(this).before(content);
+
+    })
+
+    $('#WorkTypeFK').change(function () {
+
+        var workSubtypesSelect  = $('#WorkSubtypeFK');
+        var selectedWorkType    = $(this).val();
+
+        DisplayLoader("WorkSubtypeFK");
+
+        if (selectedWorkType != null && selectedWorkType != '') {
+
+            $.getJSON('@Url.Action("GetWorkSubtypesByWorkType", "Ajax")',
+            { workType: selectedWorkType },
+
+            function (workSubtypes) {
+                workSubtypesSelect.empty();
+                workSubtypesSelect.append($('<option/>', {
+                    value: '',
+                    text: 'Odaberite vrstu posla' 
+                }));
+                $.each(workSubtypes, function (key, workSubtype) {
+                    workSubtypesSelect.append($('<option/>', {
+                        value: workSubtype.value,
+                        text: workSubtype.text
+                    }));
+                });
+            });
+
+        } else {
+            workSubtypesSelect.empty();
+            workSubtypesSelect.append($('<option/>', {
+                value: '',
+                text: '----' 
+            }));
+        }
+
+        HideLoader("WorkSubtypeFK");
+
+    }); 
+
+    $(".form-grid .delete").click(function() {
+
+        var thisButton = $(this);
+
+        var entry_name  = $(this).parent().parent().children("td:nth-child(2)").children().html();
+
+        if(entry_name == null) {
+            entry_name  = $(this).parent().parent().children("td:nth-child(2)").html();
+        }
+
+        var url         = $(this).attr("href");
+
+        $("body").append("<div id='dialog-confirm' title='Potvrda brisanja' class='error'>Jeste li sigurni da \u017eelite obrisati <b>" + entry_name + "</b>?</div>");
+
+        $("#dialog-confirm").dialog({
+			resizable: false,
+			height:140,
+			modal: true,
+			buttons: {
+				"Da, obri\u0161i zapis": function() {
+					
+                    $.getJSON(url, function(data) {
+
+                        if(data.success = true) {
+
+                            thisButton.parent().parent().remove();
+
+                        }
+
+                    });
+
+                    var tableRowsCount = thisButton.parent().parent().parent().children("tr").length;
+
+                    if(tableRowsCount - 1 == 1) {
+                        thisButton.parents(".form-grid").remove();
+                    }
+
+					$(this).dialog("close");
+                    $("#dialog-confirm").remove();
+				},
+				"Ne, otka\u017ei": function() {
+					$(this).dialog("close");
+                    $("#dialog-confirm").remove();
+				}
+			}
+		});
+
+        return false;
+
+    })
+
+</script>

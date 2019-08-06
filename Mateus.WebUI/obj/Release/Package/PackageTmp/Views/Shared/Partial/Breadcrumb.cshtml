@@ -1,0 +1,114 @@
+﻿@using System.Web
+@using Mateus.Model.EFModel
+@using Mateus.Model.EFModel.Repository.Concrete
+@using Mateus.Model.EFModel.Repository.Interface
+
+@{
+    string ControllerName   = HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString();
+    string ActionName       = HttpContext.Current.Request.RequestContext.RouteData.Values["action"].ToString();     
+    
+    string systemActionName = null;
+    
+    Mateus_wcEntities db = new Mateus_wcEntities();
+    ISystemControllersRepository systemControllersRepository  = new SystemControllersRepository(db); 
+    
+    SystemController systemController = systemControllersRepository.GetSystemControllerByName(ControllerName);
+    
+    Session["Theme"] = null;
+    
+    if(systemController != null)
+    {
+        Session["Theme"] = systemController.Theme;
+    }
+
+    if(ActionName != "Index") {
+        
+        ISystemActionsRepository systemActionsRepository  = new SystemActionsRepository(db);
+        SystemAction systemAction = null;
+        
+        if(systemController != null )
+        {
+            systemAction = systemActionsRepository.GetSystemActionByNameAndControllerFK(ActionName, systemController.SystemControllerPK);
+        }
+        
+        systemActionName    = systemAction != null && systemAction.DisplayName != null ? systemAction.DisplayName : "";
+        
+        Uri urlReferrer     = Request.UrlReferrer;
+        
+        // check for session variable and is urlReferrer
+        if((urlReferrer != null && urlReferrer.ToString().IndexOf("?") == -1) || Session["ControllerReferrer"] != null) {
+            
+            // declare
+            string controllerReferrer = null;            
+            
+            // check if exists in session
+            if(Session["ControllerReferrer"] != null) {
+                
+                controllerReferrer = Session["ControllerReferrer"].ToString();
+                
+            // if not find referrer
+            } else {
+                
+                string referrer     = urlReferrer.ToString();              
+        
+                string[] urlParts   = referrer.Split('/');
+                int numberOfParts   = urlParts.Count() - 1;
+        
+                controllerReferrer  = urlParts[numberOfParts];
+            
+                if(controllerReferrer.IndexOf("?") != -1) {
+                    controllerReferrer = urlParts[numberOfParts-1];
+                }
+                
+            }
+        
+            if(controllerReferrer != ControllerName) {
+                
+                systemController    = systemControllersRepository.GetSystemControllerByName(controllerReferrer);
+                ControllerName      = controllerReferrer;
+                
+            }
+            
+        } 
+                
+        if(Session["ControllerReferrer"] == null) {
+            Session["ControllerReferrer"] = ControllerName;
+        }
+        
+    } else {
+        
+        Session["ControllerReferrer"] = null;
+        
+    }
+} 
+    
+<h1>
+    @{
+        ControllerName = HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString();
+        systemController = systemControllersRepository.GetSystemControllerByName(ControllerName);
+        if (systemController != null && systemController.Name != "Report") 
+        {
+            @Html.ActionLink(systemController.DisplayName, "Index", ControllerName)
+        }
+    }
+       
+    @{
+        Session["PageTitle"] = systemController.DisplayName;
+        
+        if(systemController.Name == "Report") 
+        {
+              @MvcHtmlString.Create(systemActionName);
+
+              Session["PageTitle"] += " - " + systemActionName;
+        }
+        else
+        {
+            if (ActionName != "Index")
+            {
+                @MvcHtmlString.Create("> " + systemActionName);
+                                                          
+                Session["PageTitle"]+= " - " + systemActionName;
+            }
+        }
+    }
+</h1>

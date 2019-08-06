@@ -1,0 +1,110 @@
+﻿@model Mateus.Model.BussinesLogic.Views.WorkDoneAttachmentModel.WorkDoneAttachmentView
+
+<div id="controls-bar">
+    @Html.Partial("~/Views/Shared/Partial/Breadcrumb.cshtml")
+    <div>
+        @Html.ActionLink(" ", "Index", null, new { @class = "button back padding-right-0" })
+        <a href="#" class="button refresh padding-right-0 margin-right-15"></a>       
+        <input type="submit" class="button save" value="Spremi" />
+    </div>
+</div>
+
+<div id="content">
+
+    <div class="grid-5">
+        <div class="form">
+
+            <h2>Informacije o prilozima izvršenog posla</h2>
+                
+            <fieldset>
+                    
+                <div class="row">
+                    <label for="WorkDoneFK">Izvršeni posao:<b>*</b><span>molimo odaberite izvršeni posao</span></label>
+                    <div class="input">@Html.DropDownListFor(workDone => workDone.WorkDoneFK, Model.WorkDones, "Odaberite izvršeni posao", new { @class = "w100" })</div>
+                    <div class="error">@Html.ValidationMessageFor(workDone => workDone.WorkDoneFK)</div>
+                    <div class="clear"></div>
+                </div>
+
+            </fieldset>
+
+        </div>
+    </div>   
+
+    <div class="grid-5">
+        <div class="form">
+
+            <h2>Prilozi</h2>
+                
+            <fieldset>
+                
+                @{
+                    if(ViewBag.Attachments != null) {
+                        if(ViewBag.Attachments.Count > 0) {
+                            <table class="grid">
+                                <tr>
+                                    <th class="w6">#</th>
+                                    <th class="w58 left"><span>Datoteka</span></th>
+                                    <th class="w26"></th>
+                                    <th class="w10">Operacije</th>
+                                </tr>
+                                @{
+                                    int c = 1;
+                                    foreach (var attachment in ViewBag.Attachments)
+                                    {
+                                        <tr class="@if(c%2 != 0){ @MvcHtmlString.Create("odd"); }">
+                                            <td>@c.ToString()</td>
+                                            <td class="left">@attachment.AttachmentName</td>
+                                            <td>@Html.ActionLink("Preuzmi datoteku", "Download", "Attachment", new { attachmentPK = @attachment.AttachmentFK}, null)</td>
+                                            <td>@Html.ActionLink(" ", "Delete", "WorkDoneAttachment", new { workDoneAttachmentPK = @attachment.WorkDoneAttachmentPK}, new { @class = "delete" })</td>
+                                        </tr>
+                                        c++;
+                                    }
+                                }
+                            </table>
+                        }
+                    }
+                    
+                    
+                    int i;
+                    
+                    for(i = 1; i < 6; i++) {
+                        
+                        <div class="row">
+                            <label for="file@(i)">Datoteka @(i):<span>molimo odaberite datoteku</span></label>
+                            <div class="input"><input type="file" name="files" id="file@(i)" class="w100" /></div>
+                            <div class="clear"></div>
+                        </div>
+                    
+                    }
+                }
+
+                <a class="button new margin-top-10" id="add_attachment">Dodaj prilog</a>
+                
+            </fieldset>
+
+        </div>
+
+    </div>   
+    <div class="clear"></div>
+</div>  
+
+<script type="text/javascript">
+
+    var i = @i;
+
+    $("#add_attachment").click(function() {
+        
+        var content = "";
+        content =   '<div class="row">';
+        content+=       '<label for="file' + i + '">Datoteka ' + i + ':<span>molimo odaberite datoteku</span></label>';
+        content+=       '<div class="input"><input type="file" name="files" id="file' + i + '" class="w70" /></div>';
+        content+=       '<div class="clear"></div>';
+        content+=   '</div>';
+
+        i++;
+
+        $(this).before(content);
+
+    })
+
+</script>

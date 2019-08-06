@@ -1,0 +1,38 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+using Mateus.Model.EFModel;
+using Mateus.Model.EFModel.Repository.Interface;
+using Mateus.Model.EFModel.Repository.Concrete;
+using PITFramework.Support;
+using Mateus.Model.BussinesLogic.Views.LegalEntityOwnerModel;
+using System.Web.Routing;
+using Mateus.Support;
+using PITFramework.Support.Grid;
+using System.Data.Objects.SqlClient;
+using System.IO;
+
+namespace Mateus.Controllers
+{
+    public class CssController : Controller
+    {
+        #region Initalizers
+
+        Mateus_wcEntities db = null;
+        public CSSController()
+        {
+            db = new Mateus_wcEntities();
+        }
+
+        #endregion
+
+        [PITAuthorize(Roles = "add, edit, view, delete")]
+        public ActionResult Css()
+        {
+            //string css = "body{ background-color: red; }";
+            return View();
+        }
+    }
+}

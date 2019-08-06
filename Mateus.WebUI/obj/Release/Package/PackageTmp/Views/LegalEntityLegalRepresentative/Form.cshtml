@@ -1,0 +1,107 @@
+﻿@model Mateus.Model.BussinesLogic.Views.LegalEntityLegalRepresentativeModel.LegalEntityLegalRepresentativeView
+
+@using PITFramework.Security;
+
+@{
+    string[] userRoles = SecurityHelper.GetUserRolesFromCookie();
+}
+
+<div id="controls-bar">
+    @Html.Partial("~/Views/Shared/Partial/Breadcrumb.cshtml")
+    <div>
+        @Html.ActionLink(" ", "Index", Session["ControllerReferrer"].ToString(), null, new { @class = "button back padding-right-0" })
+        <a href="#" class="button refresh padding-right-0 margin-right-15"></a>       
+        <input type="submit" class="button save" value="Spremi" />
+    </div>
+</div>
+
+<div id="content">
+
+    <div class="grid-5">
+        <div class="form">
+
+            <h2>Osnovne informacije</h2>
+                
+            <fieldset>
+
+                <div class="row">
+                    <label for="LegalEntityFK">Tvrtka:<b>*</b><span>molimo odaberite tvrtku</span></label>
+                    <div class="input">
+                        @Html.TextBoxFor(legalEntityLegalRepresentative => legalEntityLegalRepresentative.LegalEntityName, new { @class = "w100 autocomplete-with-hidden-field", data_autocomplete_url = Url.Action("AutocompleteLegalEntitiesWithOIB", "Ajax", null), autocomplete = "off"})
+                        @Html.HiddenFor(legalEntityLegalRepresentative => legalEntityLegalRepresentative.LegalEntityFK)
+                    </div>
+                    <div class="error">@Html.ValidationMessageFor(legalEntityLegalRepresentative => legalEntityLegalRepresentative.LegalEntityFK)</div>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row">
+                    <label for="WayOfRepresentationFK">Način zastupanja:<b>*</b><span>molimo odaberite način zastupanja</span></label>
+                    <div class="input">@Html.DropDownListFor(legalEntityLegalRepresentative => legalEntityLegalRepresentative.WayOfRepresentationFK, Model.WaysOfRepresentation, "Odaberite način zastupanja", new { @class = "w100" })</div>
+                    <div class="error">@Html.ValidationMessageFor(legalEntityLegalRepresentative => legalEntityLegalRepresentative.WayOfRepresentationFK)</div>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="row">
+                    <label for="LegalRepresentativeFK">Pravni zastupnik:<b>*</b><span>molimo odaberite pravnog zastupnika</span></label>
+                    <div class="input">@Html.DropDownListFor(legalEntityLegalRepresentative => legalEntityLegalRepresentative.LegalRepresentativeFK, Model.LegalRepresentatives, "Odaberite pravnog zastupnika", new { @class = "w100" })</div>
+                    <div class="error">@Html.ValidationMessageFor(legalEntityLegalRepresentative => legalEntityLegalRepresentative.LegalRepresentativeFK)</div>
+                    <div class="clear"></div>
+                </div>
+
+            </fieldset>
+
+        </div>
+
+    </div>
+
+    <div class="grid-5">
+
+        <div class="form">
+
+            <h2>Podaci o unosu</h2>
+
+            <fieldset>
+
+                <div class="row">
+                    <label for="IdentityCardNumber">Datum unosa:<b>*</b><span>molimo unesite datum unosa</span></label>
+                    <div class="input">
+                        @if(Model.ChangeDate != null)
+                        {
+                            @Html.TextBoxFor(legalEntityLegalRepresentative => legalEntityLegalRepresentative.ChangeDate, new { @class = "w50 datepicker", @Value = Model.ChangeDate.Value.ToString("dd.MM.yyyy.") })
+                        } 
+                        else
+                        {
+                            @Html.TextBoxFor(legalEntityLegalRepresentative => legalEntityLegalRepresentative.ChangeDate, new { @class = "w50 datepicker" })
+                        } 
+                    </div>
+                    <div class="error">@Html.ValidationMessageFor(legalEntityLegalRepresentative => legalEntityLegalRepresentative.ChangeDate)</div> 
+                    <div class="clear"></div>
+                </div>
+
+            </fieldset>
+
+        </div>
+
+        @if (userRoles.Contains("delete"))
+        {
+            <div class="form margin-top-20">
+
+                <h2>Brisanje</h2>
+
+                <fieldset>
+
+                    <div class="row">
+                        <label for="Deleted">Obrisano:<span>obriši zapis</span></label>
+                        <div class="input">@Html.CheckBox("Deleted")</div>
+                        <div class="clear"></div>
+                    </div>
+
+                </fieldset>
+
+            </div>
+        }
+    </div>
+
+    <div class="clear"></div>
+
+</div>

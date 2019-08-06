@@ -1,0 +1,274 @@
+﻿@model List<Mateus.Model.BussinesLogic.Views.WorkDoneModel.WorkDoneView>
+           
+@using PITFramework.Security;
+@using PITFramework.Support.Grid;
+
+@{
+    string[] userRoles = SecurityHelper.GetUserRolesFromCookie(); 
+
+    bool firstRequest = false;
+    
+    if(Request.QueryString["toDoListFK"] == null &&
+        Request.QueryString["legalEntityFK"] == null && 
+        Request.QueryString["workTypeFK"] == null && 
+        Request.QueryString["workSubtypeFK"] == null && 
+        Request.QueryString["userFK"] == null && 
+        Request.QueryString["date"] == null && 
+        Request.QueryString["creationDate"] == null && 
+        Request.QueryString["timeSpentFrom"] == null && 
+        Request.QueryString["timeSpentTo"] == null && 
+        Request.QueryString["numberOfAttachmentsFrom"] == null && 
+        Request.QueryString["numberOfAttachmentsTo"] == null && 
+        Request.QueryString["description"] == null) 
+    {
+        firstRequest = true;
+    } 
+    
+    string toDoListFK = Request.QueryString["toDoListFK"] != null ? Request.QueryString["toDoListFK"] : "";
+    string legalEntityFK = Request.QueryString["legalEntityFK"] != null ? Request.QueryString["legalEntityFK"] : "";
+    string workTypeFK = Request.QueryString["workTypeFK"] != null ? Request.QueryString["workTypeFK"] : "";
+    string workSubtypeFK = Request.QueryString["workSubtypeFK"] != null ? Request.QueryString["workSubtypeFK"] : "";
+    string userFK = Request.QueryString["userFK"] != null ? Request.QueryString["userFK"] : "";
+    string dateFrom = Request.QueryString["dateFrom"] != null ? Request.QueryString["dateFrom"] : "";
+    string dateTo = Request.QueryString["dateTo"] != null ? Request.QueryString["dateTo"] : "";
+    string creationDate = Request.QueryString["creationDate"] != null ? Request.QueryString["creationDate"] : "";
+    string timeSpentFrom = Request.QueryString["timeSpentFrom"] != null ? Request.QueryString["timeSpentFrom"] : "";
+    string timeSpentTo = Request.QueryString["timeSpentTo"] != null ? Request.QueryString["timeSpentTo"] : "";
+    string numberOfAttachmentsFrom = Request.QueryString["numberOfAttachmentsFrom"] != null ? Request.QueryString["numberOfAttachmentsFrom"] : "";
+    string numberOfAttachmentsTo = Request.QueryString["numberOfAttachmentsTo"] != null ? Request.QueryString["numberOfAttachmentsTo"] : "";
+    string description = Request.QueryString["description"] != null ? Request.QueryString["description"] : "";
+    
+    bool showGrid = false;
+    
+    if( Request.QueryString["ShowOrdinal"] != null || 
+        Request.QueryString["ShowID"] != null ||
+        Request.QueryString["ShowToDoList"] != null || 
+        Request.QueryString["ShowLegalEntity"] != null || 
+        Request.QueryString["ShowWorkType"] != null || 
+        Request.QueryString["ShowWorkSubtype"] != null || 
+        Request.QueryString["ShowServiceType"] != null || 
+        Request.QueryString["ShowDate"] != null || 
+        Request.QueryString["ShowDescription"] != null || 
+        Request.QueryString["ShowTimeSpent"] != null || 
+        Request.QueryString["ShowComment"] != null || 
+        Request.QueryString["ShowAttachments"] != null)
+    {
+        showGrid = true;
+    }
+}
+
+<div id="controls-bar">
+    @Html.Partial("~/Views/Shared/Partial/Breadcrumb.cshtml")
+</div>
+<div id="content">
+    @using (Html.BeginForm("WorkDone", "Report", FormMethod.Get))
+    {
+        <div id="report-controls">
+            <div class="grid-5 text-left no-print">
+                <div class="filter-text">Molimo odaberite filter:</div> 
+                <div class="inputs">
+
+                    @Html.DropDownList("legalEntityFK", ViewBag.LegalEntities as SelectList, "Odaberite tvrtku", new { @class = "w40 margin-right-10" })
+                    @Html.DropDownList("toDoListFK", ViewBag.ToDoLists as SelectList, "Odaberite obavezu", new { @class = "w40" })<br />
+                    @Html.DropDownList("workTypeFK", ViewBag.WorkTypes as SelectList, "Odaberite vrstu rada", new { @class = "w40 margin-right-10" })
+                    @Html.DropDownList("workSubtypeFK", ViewBag.WorkSubtypes as SelectList, "Odaberite vrstu posla", new { @class = "w40" })<br />
+                    @Html.DropDownList("serviceTypeFK", ViewBag.ServiceTypes as SelectList, "Odaberite vrstu usluge", new { @class = "w40 margin-right-10" })
+                    @Html.DropDownList("userFK", ViewBag.Users as SelectList, "Odaberite korisnika", new { @class = "w40" })<br /><br />
+                    
+                    @Html.TextBox("dateFrom", Request.QueryString["dateFrom"], new { @class = "w40 datepicker margin-right-10", placeholder = "Datum izvršenja od" })
+                    @Html.TextBox("dateTo", Request.QueryString["dateTo"], new { @class = "w40 datepicker", placeholder = "Datum izvršenja do" })<br />
+                                  
+                    @Html.TextBox("timeSpentFrom", Request.QueryString["timeSpentFrom"], new { @class = "w40 margin-right-10", placeholder = "Utrošeno vrijeme od" })
+                    @Html.TextBox("timeSpentTo", Request.QueryString["timeSpentTo"], new { @class = "w40", placeholder = "Utrošeno vrijeme do" })<br />    
+                                                  
+                    @Html.TextBox("numberOfAttachmentsFrom", Request.QueryString["numberOfAttachmentsFrom"], new { @class = "w40 margin-right-10", placeholder = "Broj priloga od" })
+                    @Html.TextBox("numberOfAttachmentsTo", Request.QueryString["numberOfAttachmentsTo"], new { @class = "w40", placeholder = "Broj priloga do" })<br />
+
+                    @Html.TextBox("description", Request.QueryString["description"], new { @class = "w40", placeholder = "Opis" })<br />
+
+                    <input type="submit" value="Pretraži" class="button search margin-top-20" />
+                    @Html.ActionLink("Očisti odabir", "ClearReport", null, new { @class = "button margin-top-20"})
+
+                </div>
+            </div>
+            <div class="grid-5 text-left no-print">
+
+                <div class="filter-text">Molimo odaberite polja:</div> 
+
+                <div class="inputs">
+
+                    <label for="ShowBasicInfo"><b>Osnovne informacije</b></label>
+                    @Html.CheckBox("ShowBasicInfo", LinkHelper.isChecked(Request.QueryString["ShowBasicInfo"]))<br />
+
+                    @Html.Label("ShowOrdinal", "#")
+                    @Html.CheckBox("ShowOrdinal", LinkHelper.isChecked(Request.QueryString["ShowOrdinal"]), new { @class = "basic-info-checkbox" })
+
+                    @Html.Label("ShowID", "ID")
+                    @Html.CheckBox("ShowID", LinkHelper.isChecked(Request.QueryString["ShowID"]), new { @class = "basic-info-checkbox" })<br />
+
+                    @Html.Label("ShowToDoList", "Obaveza")
+                    @Html.CheckBox("ShowToDoList", LinkHelper.isChecked(Request.QueryString["ShowToDoList"]), new { @class = "basic-info-checkbox" })
+
+                    @Html.Label("ShowLegalEntity", "Tvrtka")
+                    @Html.CheckBox("ShowLegalEntity", LinkHelper.isChecked(Request.QueryString["ShowLegalEntity"]), new { @class = "basic-info-checkbox" })<br />
+
+                    @Html.Label("ShowWorkType", "Vrsta rada")
+                    @Html.CheckBox("ShowWorkType", LinkHelper.isChecked(Request.QueryString["ShowWorkType"]), new { @class = "basic-info-checkbox" })
+
+                    @Html.Label("ShowWorkSubtype", "Vrsta posla")
+                    @Html.CheckBox("ShowWorkSubtype", LinkHelper.isChecked(Request.QueryString["ShowWorkSubtype"]), new { @class = "basic-info-checkbox" })<br />
+
+                    @Html.Label("ShowServiceType", "Vrsta usluge")
+                    @Html.CheckBox("ShowServiceType", LinkHelper.isChecked(Request.QueryString["ShowServiceType"]), new { @class = "basic-info-checkbox" })
+
+                    @Html.Label("ShowDate", "Datum izvršenja")
+                    @Html.CheckBox("ShowDate", LinkHelper.isChecked(Request.QueryString["ShowDate"]), new { @class = "basic-info-checkbox" })<br />
+
+                    @Html.Label("ShowUsername", "Korisnik")
+                    @Html.CheckBox("ShowUsername", LinkHelper.isChecked(Request.QueryString["ShowUsername"]), new { @class = "basic-info-checkbox" })
+
+                    @Html.Label("ShowDescription", "Opis posla")
+                    @Html.CheckBox("ShowDescription", LinkHelper.isChecked(Request.QueryString["ShowDescription"]), new { @class = "basic-info-checkbox" })<br />
+
+                    @Html.Label("ShowTimeSpent", "Utrošeno vrijeme")
+                    @Html.CheckBox("ShowTimeSpent", LinkHelper.isChecked(Request.QueryString["ShowTimeSpent"]), new { @class = "basic-info-checkbox" })
+
+                    @Html.Label("ShowComment", "Važna napomena")
+                    @Html.CheckBox("ShowComment", LinkHelper.isChecked(Request.QueryString["ShowComment"]), new { @class = "basic-info-checkbox" })<br />
+
+                    @Html.Label("ShowAttachments", "Prilozi")
+                    @Html.CheckBox("ShowAttachments", LinkHelper.isChecked(Request.QueryString["ShowAttachments"]), new { @class = "basic-info-checkbox" })<br />
+
+                </div>
+            </div>
+
+            <div class="clear"></div>
+
+            <div class="report-stats print-only">
+                <h2>Vrijeme kreiranja reporta: @DateTime.Now</h2>
+                                          
+                @if(legalEntityFK != "") { <text><div class="row"><span>Tvrtka:</span><b>@ViewBag.LegalEntity</b></div></text> }
+                @if(toDoListFK != "") { <text><div class="row"><span>Porez:</span><b>@ViewBag.ToDoList</b></div></text> }
+                @if(workTypeFK != "") { <text><div class="row"><span>Oblik:</span><b>@ViewBag.WorkType</b></div></text> }
+                @if(workSubtypeFK != "") { <text><div class="row"><span>Djelatnost:</span><b>@ViewBag.WorkSubtype</b></div></text> }
+                @if(userFK != "") { <text><div class="row"><span>Korisnik:</span><b>@ViewBag.User</b></div></text> }
+                                                                                                                   
+                @if(dateFrom != "") { <text><div class="row"><span>Datum izvršenja od:</span><b>@dateFrom</b></div></text> }
+                @if(dateTo != "") { <text><div class="row"><span>Datum izvršenja do:</span><b>@dateTo</b></div></text> }
+                                                                                                         
+                @if(timeSpentFrom != "") { <text><div class="row"><span>Utrošeno vrijeme(min) od:</span><b>@timeSpentFrom</b></div></text> }
+                @if(timeSpentTo != "") { <text><div class="row"><span>Utrošeno vrijeme(min) do:</span><b>@timeSpentTo</b></div></text> }
+                                                                                                         
+                @if(numberOfAttachmentsFrom != "") { <text><div class="row"><span>Broj priloga od:</span><b>@numberOfAttachmentsFrom</b></div></text> }
+                @if(numberOfAttachmentsTo != "") { <text><div class="row"><span>Broj priloga do:</span><b>@numberOfAttachmentsTo</b></div></text> }
+                                                                                                         
+                @if(description != "") { <text><div class="row"><span>Korisnik:</span><b>@description</b></div></text> }
+            </div>
+        </div>
+        if(firstRequest == false) {
+            <div id="grid-controls">
+                <div class="grid-10 text-right">
+                    <a href="#" class="button print icon"></a>
+                </div>
+                <div class="clear"></div>
+            </div>
+        }
+    }
+
+    @if(firstRequest == false) {
+        <div class="grid-10">
+            <div class="grid-holder">
+                <table class="grid">
+                    @if(Model.Count() > 0 && showGrid == true) {
+                        <tr>
+                            @if(LinkHelper.isChecked(Request.QueryString["ShowOrdinal"])) { <th class="w2">#</th> }
+                            @if(LinkHelper.isChecked(Request.QueryString["ShowID"])) { <th class="w2">@MvcHtmlString.Create(LinkHelper.GetSortLink("ID", "WorkDonePK"))</th> }
+                            @if(LinkHelper.isChecked(Request.QueryString["ShowToDoList"])) { <th class="left w8">@MvcHtmlString.Create(LinkHelper.GetSortLink("Obaveza", "ToDoListName"))</th> }
+                            @if(LinkHelper.isChecked(Request.QueryString["ShowLegalEntity"])) { <th class="left w8">@MvcHtmlString.Create(LinkHelper.GetSortLink("Tvrtka", "LegalEntityName"))</th> }
+                            @if(LinkHelper.isChecked(Request.QueryString["ShowWorkType"])) { <th class="left w8">@MvcHtmlString.Create(LinkHelper.GetSortLink("Vrsta rada", "WorkTypeName"))</th> }                                                                                                                           
+                            @if(LinkHelper.isChecked(Request.QueryString["ShowWorkSubtype"])) { <th class="left w8">@MvcHtmlString.Create(LinkHelper.GetSortLink("Vrsta posla", "WorkSubtypeName"))</th> }
+                            @if(LinkHelper.isChecked(Request.QueryString["ShowServiceType"])) { <th class="left w8">@MvcHtmlString.Create(LinkHelper.GetSortLink("Vrsta usluge", "ServiceTypeName"))</th> }
+                            @if(LinkHelper.isChecked(Request.QueryString["ShowDate"])) { <th class="left w8">@MvcHtmlString.Create(LinkHelper.GetSortLink("Datum izvršenja", "Date"))</th> }
+                            @if(LinkHelper.isChecked(Request.QueryString["ShowUsername"])) { <th class="left w8">@MvcHtmlString.Create(LinkHelper.GetSortLink("Korisnik", "UserUsername"))</th> }
+                            @if(LinkHelper.isChecked(Request.QueryString["ShowDescription"])) { <th class="left w8">@MvcHtmlString.Create(LinkHelper.GetSortLink("Opis", "Description"))</th> }
+                            @if(LinkHelper.isChecked(Request.QueryString["ShowTimeSpent"])) { <th class="left w8">@MvcHtmlString.Create(LinkHelper.GetSortLink("Utrošeno vrijeme", "TimeSpent"))</th> }
+                            @if(LinkHelper.isChecked(Request.QueryString["ShowComment"])) { <th class="left w8">@MvcHtmlString.Create(LinkHelper.GetSortLink("Važna napomena", "Comment"))</th> }
+                            @if(LinkHelper.isChecked(Request.QueryString["ShowAttachments"])) { <th class="w8">@MvcHtmlString.Create(LinkHelper.GetSortLink("Prilozi", "WorkDoneAttachmentsCount"))</th> }
+                            @if(userRoles.Contains("delete")) { <th class="w8 no-print">Operacije</th> }
+                        </tr>
+                
+                        int i = 1; 
+                        int timeSpentTotal = 0; 
+                
+                        foreach (var item in Model)
+                        {
+                            <tr class="@if(i%2 != 0){ @MvcHtmlString.Create("odd"); }">
+                                @if(LinkHelper.isChecked(Request.QueryString["ShowOrdinal"])) { <td>@i.ToString()</td> }
+                                @if(LinkHelper.isChecked(Request.QueryString["ShowID"])) { <td class="@LinkHelper.getIsSorted("WorkDonePK")">@item.WorkDonePK.ToString()</td> }
+                                @if(LinkHelper.isChecked(Request.QueryString["ShowToDoList"])) { <td class="left @LinkHelper.getIsSorted("ToDoListName")">@item.ToDoListName.ToString()</td> }
+                                @if(LinkHelper.isChecked(Request.QueryString["ShowLegalEntity"])) { <td class="left @LinkHelper.getIsSorted("LegalEntityName")">@item.LegalEntityName</td> }
+                                @if(LinkHelper.isChecked(Request.QueryString["ShowWorkType"])) { <td class="left @LinkHelper.getIsSorted("WorkTypeName")">@item.WorkTypeName</td> }
+                                @if(LinkHelper.isChecked(Request.QueryString["ShowWorkSubtype"])) { <td class="left @LinkHelper.getIsSorted("WorkSubtypeName")">@item.WorkSubtypeName</td> }
+                                @if(LinkHelper.isChecked(Request.QueryString["ShowServiceType"])) { <td class="left @LinkHelper.getIsSorted("ServiceTypeName")">@item.ServiceTypeName</td> }
+                                @if(LinkHelper.isChecked(Request.QueryString["ShowDate"])) { <td class="left @LinkHelper.getIsSorted("Date")">@if (@item.Date != null) { @item.Date.Value.ToString("dd.MM.yyyy.") }</td> }
+                                @if(LinkHelper.isChecked(Request.QueryString["ShowUsername"])) { <td class="left @LinkHelper.getIsSorted("UserUsername")">@item.UserUsername</td> }
+                                @if(LinkHelper.isChecked(Request.QueryString["ShowDescription"])) { <td class="left @LinkHelper.getIsSorted("Description")">@if (!String.IsNullOrWhiteSpace(@item.Description)) { @item.Description }</td> }
+                                @if(LinkHelper.isChecked(Request.QueryString["ShowTimeSpent"])) 
+                                {  
+                                    timeSpentTotal = timeSpentTotal + (item.TimeSpent == null ? 0 : (int)item.TimeSpent);
+                            
+                                    int timeSpentHours = item.TimeSpent == null ? 0 : (int)item.TimeSpent / 60;
+                                    int timeSpentMinutes = (item.TimeSpent == null ? 0 : (int)item.TimeSpent) - (timeSpentHours*60);
+                        
+                                    <td class="left @LinkHelper.getIsSorted("TimeSpent")">@(timeSpentHours.ToString() + "h " + timeSpentMinutes.ToString() + "min")</td>
+                                }
+                                @if(LinkHelper.isChecked(Request.QueryString["ShowComment"])) { <td class="left @LinkHelper.getIsSorted("Comment")">@if (!String.IsNullOrWhiteSpace(@item.Comment)) { @item.Comment }</td> }
+                                @if(LinkHelper.isChecked(Request.QueryString["ShowAttachments"])) { <td class="@LinkHelper.getIsSorted("WorkDoneAttachmentsCount")">@item.WorkDoneAttachmentsCount.ToString()</td> }
+                                @if(userRoles.Contains("delete"))
+                                {  
+                                    <td class="no-print">
+                                         @if (userRoles.Contains("delete"))
+                                        {
+                                            @Html.ActionLink(" ", "DeleteTemporaryWorkDone", new { workDonePK = @item.WorkDonePK }, new { @class = "delete" })
+                                        }
+                                    </td>
+                                }
+                            </tr>
+                            i++;
+                        }
+                
+                        if(LinkHelper.isChecked(Request.QueryString["ShowTimeSpent"])) 
+                        {
+                            int timeSpentHoursTotal = timeSpentTotal == null ? 0 : (int)timeSpentTotal/60;
+                            int timeSpentMinutesTotal = timeSpentTotal == null ? 0 : (int)timeSpentTotal - (timeSpentHoursTotal*60);
+                    
+                            <tr>
+                                <td colspan="14">@(timeSpentHoursTotal.ToString() + "h " + timeSpentMinutesTotal.ToString() + "min")</td>
+                            </tr>
+                        }
+
+                    }
+                    else if(showGrid == false)
+                    {
+                        <tr>
+                            <td class="no-records">Molimo odaberite polja za prikaz</td>
+                        </tr>
+                    }
+                    else
+                    {
+                        <tr>
+                            <td class="no-records">Nema zapisa</td>
+                        </tr>
+                    }
+                </table>
+            </div>
+        </div>
+        <div class="clear"></div>
+    }
+</div>
+
+<script type="text/javascript">
+
+    showCheckboxesGroups("ShowBasicInfo", "basic-info-checkbox");
+
+</script>

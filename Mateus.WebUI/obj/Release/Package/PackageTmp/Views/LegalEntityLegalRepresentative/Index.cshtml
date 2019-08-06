@@ -1,0 +1,99 @@
+﻿@model List<Mateus.Model.BussinesLogic.Views.LegalEntityLegalRepresentativeModel.LegalEntityLegalRepresentativeView>
+           
+@using PITFramework.Security;
+@using PITFramework.Support.Grid;
+
+@{ string[] userRoles = SecurityHelper.GetUserRolesFromCookie(); }
+
+<div id="controls-bar">
+    @Html.Partial("~/Views/Shared/Partial/Breadcrumb.cshtml")
+    <div>  
+        @if (userRoles.Contains("add"))
+        { 
+            @Html.ActionLink("Novi zakonski zastupnik", "Add", null, new { @class = "button new" })
+        }
+    </div>
+</div>
+
+<div id="content">
+
+    @using (Html.BeginForm("Index", "LegalEntityLegalRepresentative", FormMethod.Get))
+    {
+        <div id="grid-controls">
+            <div class="grid-3 text-left">
+                Molimo odaberite filter: @Html.DropDownList("legalEntityFK", ViewBag.LegalEntities as SelectList, "Odaberite tvrtku", new { @class = "w30 margin-left-10" })
+            </div>
+            <div class="grid-4 text-center">
+                @Html.TextBox("searchString", Request.QueryString["searchString"], new { placeholder = "Upišite pojam za pretragu", @class = "w40" })
+                <input type="submit" value="Pretraži" class="button search" />
+            </div>
+            <div class="grid-3 text-right">
+                <a href="#" class="button print icon"></a>
+            </div>
+            <div class="clear"></div>
+        </div>
+    }
+
+    <div class="grid-10">
+        <div class="grid-holder">
+            <table class="grid">
+                @if(Model.Count() > 0) {
+                    <tr>
+                        <th class="w2">#</th>
+                        <th class="w2">@MvcHtmlString.Create(LinkHelper.GetSortLink("ID", "LegalEntityLegalRepresentativePK"))</th>
+                        <th class="w43 left">@MvcHtmlString.Create(LinkHelper.GetSortLink("Pravni zastupnik", "LegalRepresentativeName"))</th>
+                        <th class="w43 left">@MvcHtmlString.Create(LinkHelper.GetSortLink("Tvrtka", "LegalEntityName"))</th>
+                        @if (userRoles.Contains("edit") || userRoles.Contains("view"))
+                        { 
+                            <th class="w10 no-print">Operacije</th>
+                        }
+                    </tr>
+                
+                    int i = 1; 
+                
+                    foreach (var item in Model)
+                    {
+                        <tr class="@if(i%2 != 0){ @MvcHtmlString.Create("odd"); }">
+                            <td>@i.ToString()</td>
+                            <td class="@LinkHelper.getIsSorted("LegalEntityLegalRepresentativePK")">@item.LegalEntityLegalRepresentativePK.ToString()</td>
+                            <td class="left @LinkHelper.getIsSorted("LegalRepresentativeName")">
+                            @if (userRoles.Contains("edit"))
+                            {
+                                @Html.ActionLink(@item.LegalRepresentativeName, "Edit", new { legalEntityLegalRepresentativePK = @item.LegalEntityLegalRepresentativePK})
+                            }    
+                            else
+                            {
+                                @item.LegalRepresentativeName
+                            }
+                            </td>
+                            <td class="left @LinkHelper.getIsSorted("LegalEntityName")">@item.LegalEntityName</td>
+                            @if (userRoles.Contains("view") || userRoles.Contains("delete"))
+                            {  
+                                <td class="no-print">
+                                    @if (userRoles.Contains("view"))
+                                    {
+                                        @Html.ActionLink(" ", "Audit", new { legalEntityLegalRepresentativePK = @item.LegalEntityLegalRepresentativePK}, new { @class = "stats" })
+                                    }
+                                    @if (userRoles.Contains("edit"))
+                                    {
+                                        @Html.ActionLink(" ", "Edit", new { legalEntityLegalRepresentativePK = @item.LegalEntityLegalRepresentativePK}, new { @class = "edit" })
+                                    }
+                                </td>
+                            }
+                        </tr>
+                        i++;
+                    }
+
+                }
+                else 
+                {
+                    <tr>
+                        <td class="no-records">Nema zapisa</td>
+                    </tr>
+                }            
+            </table>
+            @Html.Partial("~/Views/Shared/Partial/Pager.cshtml")
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>

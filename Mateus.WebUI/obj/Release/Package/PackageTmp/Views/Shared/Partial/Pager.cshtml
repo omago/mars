@@ -1,0 +1,84 @@
+﻿@using PITFramework.Support.Grid;
+
+@{       
+    string url = LinkHelper.getQueryStringArray(new string[] { "page", "pageSize" });
+            
+    int page = !String.IsNullOrWhiteSpace(Request.QueryString["page"]) ? Convert.ToInt32(Request.QueryString["page"]) : 1;
+    int pageSize = !String.IsNullOrWhiteSpace(Request.QueryString["pageSize"]) ? Convert.ToInt32(Request.QueryString["pageSize"]) : Convert.ToInt32(System.Configuration.ConfigurationManager.AppSettings["ResultsPerPage"]);
+    int numberOfRecords     = (int)ViewData["numberOfRecords"];   
+    
+    bool showPager          = true;
+    bool showPagerInfo      = true;
+    bool showPages          = true;
+    
+    if(page < 1) { page = 1; }        
+    
+    int from                = (page*pageSize) - pageSize;
+    int to                  = page*pageSize;
+
+    int numberOfPages       = (numberOfRecords + pageSize - 1) / pageSize;
+            
+    int firstPage           = 1;
+    int previousPage        = page - 1;
+    if(previousPage < firstPage) { previousPage = firstPage; }
+            
+    int lastPage            = numberOfPages;
+    int nextPage            = page + 1;
+    if(nextPage > lastPage) { nextPage = lastPage; }
+            
+    int minMaxRange         = 4;
+    int centerRange         = 2;
+    
+    if(page == lastPage) { to = numberOfRecords; }
+
+    
+    if(pageSize < numberOfRecords && showPager == true) 
+    {
+        <div id="pager">
+            @if(showPagerInfo == true) 
+            {
+                <div id="pager_info">Prikazujem @from-@to od @numberOfRecords zapisa</div>
+            }
+            @if(showPages == true) 
+            {
+                <div id="pages">
+
+                    <a href="?@(url)page=@firstPage&pageSize=@pageSize">Prva</a>
+                    <a href="?@(url)page=@previousPage&pageSize=@pageSize" class="margin-right-20">Prethodna</a> 
+
+                    @for(int i = 1; i <= numberOfPages; i++) 
+                    {
+
+                        if(i <= minMaxRange || i > numberOfPages-minMaxRange || (i > page-centerRange-1 && i < page+centerRange + 1))
+                        {    
+                            if(i == page) 
+                            {
+                                <a class="current">@i</a> 
+                            } 
+                            else if(i == minMaxRange && page > minMaxRange+centerRange + 1) 
+                            {
+                                <a href="?@(url)page=@i&pageSize=@pageSize" class="margin-right-5">@i</a>
+                                <span class="margin-right-5">...</span>
+                            } 
+                            else if(i == numberOfPages + 1 - minMaxRange && page < numberOfPages - minMaxRange - centerRange) 
+                            {
+                                <span class="margin-left-5">...</span>
+                                <a href="?@(url)page=@i&pageSize=@pageSize" class="margin-left-5">@i</a>
+                            } 
+                            else 
+                            {
+                                <a href="?@(url)page=@i&pageSize=@pageSize">@i</a>
+                            }
+                                    
+                        }
+                                  
+                    }
+
+                    <a href="?@(url)page=@nextPage&pageSize=@pageSize" class="margin-left-20">Sljedeća</a>
+                    <a href="?@(url)page=@lastPage&pageSize=@pageSize">Zadnja</a>
+
+                </div>
+            }
+        </div>
+    }
+}

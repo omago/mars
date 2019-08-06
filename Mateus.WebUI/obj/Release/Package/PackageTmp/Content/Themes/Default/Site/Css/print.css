@@ -1,0 +1,267 @@
+/* 
+    Document   : print
+    Created on : 12.07.2012., 10:06:51
+    Author     : Domagoj Kovač
+*/
+
+* { margin: 0px; padding: 0px; font-family: "Arial"; font-size: 11px; color: Black; }
+
+a { text-decoration: none; }
+.clear { clear: both; }
+
+html,
+body { height: 100%; }
+
+.display-none { display: none; }
+.clear-both { clear: both!important; }
+.float-left { float: left; }
+.float-right{ float: right; }
+
+h2 { font-size: 20px; margin-top: 30px; }
+
+.container { min-height: 100%; position: relative; }
+
+@page { size : a4 landscape; margin: 10mm; }
+
+#header,
+#controls-bar div,
+#grid-controls,
+#footer { display: none; }
+
+.no-print { display: none; }
+
+h1,
+h1 a { font-size: 18pt; }
+
+.form-grid *,
+.grid * { font-size: 6pt; }
+.form-grid,
+.grid { width: 100%; border-collapse: collapse; border: 1px solid Black; margin-top: 20px; }
+.form-grid { margin-bottom: 40px; }
+.grid td,
+.grid th,
+.form-grid td,
+.form-grid th { padding: 3px; text-align: center; background: Black }
+.form-grid th,
+.form-grid th a,
+.grid th { border-left: 1px solid Black; border-bottom: 1px solid Black; }
+.grid th a { display: block; }
+.grid tr td.deleted-entry{ font-size: 18px; text-transform: uppercase; }
+
+.form-grid td a,
+.grid td a { font-weight: bold; }
+
+.grid tr.selected td.no-records,
+.grid tr td.no-records:hover,
+.grid tr td.no-records { padding: 20px; font-size: 18px; }
+
+/* paddings */
+.padding-0 { padding: 0px!important; }
+.padding-5 { padding: 5px!important; }
+.padding-10 { padding: 10px!important; }
+.padding-15 { padding: 15px!important; }
+.padding-20 { padding: 20px!important; }
+.padding-top-0 { padding-top: 0px!important; }
+.padding-top-5 { padding-top: 5px!important; }
+.padding-top-10 { padding-top: 10px!important; }
+.padding-top-15 { padding-top: 15px!important; }
+.padding-top-20 { padding-top: 20px!important; }
+.padding-left-0 { padding-left: 0px!important; }
+.padding-left-5 { padding-left: 5px!important; }
+.padding-left-10 { padding-left: 10px!important; }
+.padding-left-15 { padding-left: 15px!important; }
+.padding-left-20 { padding-left: 20px!important; }
+.padding-bottom-0 { padding-bottom: 0px!important; }
+.padding-bottom-5 { padding-bottom: 5px!important; }
+.padding-bottom-10 { padding-bottom: 10px!important; }
+.padding-bottom-15 { padding-bottom: 15px!important; }
+.padding-bottom-20 { padding-bottom: 20px!important; }
+.padding-right-0 { padding-right: 0px!important; }
+.padding-right-5 { padding-right: 5px!important; }
+.padding-right-10 { padding-right: 10px!important; }
+.padding-right-15 { padding-right: 15px!important; }
+.padding-right-20 { padding-right: 20px!important; }
+
+/* margins */
+.margin-0 { margin: 0px!important; }
+.margin-5 { margin: 5px!important; }
+.margin-10 { margin: 10px!important; }
+.margin-15 { margin: 15px!important; }
+.margin-20 { margin: 20px!important; }
+.margin-30 { margin: 30px!important; }
+.margin-40 { margin: 40px!important; }
+.margin-top-0 { margin-top: 0px!important; }
+.margin-top-5 { margin-top: 5px!important; }
+.margin-top-10 { margin-top: 10px!important; }
+.margin-top-15 { margin-top: 15px!important; }
+.margin-top-20 { margin-top: 20px!important; }
+.margin-top-30 { margin-top: 30px!important; }
+.margin-top-40 { margin-top: 40px!important; }
+.margin-left-0 { margin-left: 0px!important; }
+.margin-left-5 { margin-left: 5px!important; }
+.margin-left-10 { margin-left: 10px!important; }
+.margin-left-15 { margin-left: 15px!important; }
+.margin-left-20 { margin-left: 20px!important; }
+.margin-left-30 { margin-left: 30px!important; }
+.margin-left-40 { margin-left: 40px!important; }
+.margin-bottom-0 { margin-bottom: 0px!important; }
+.margin-bottom-5 { margin-bottom: 5px!important; }
+.margin-bottom-10 { margin-bottom: 10px!important; }
+.margin-bottom-15 { margin-bottom: 15px!important; }
+.margin-bottom-20 { margin-bottom: 20px!important; }
+.margin-bottom-30 { margin-bottom: 30px!important; }
+.margin-bottom-40 { margin-bottom: 40px!important; }
+.margin-right-0 { margin-right: 0px!important; }
+.margin-right-5 { margin-right: 5px!important; }
+.margin-right-10 { margin-right: 10px!important; }
+.margin-right-15 { margin-right: 15px!important; }
+.margin-right-20 { margin-right: 20px!important; }
+.margin-right-30 { margin-right: 30px!important; }
+.margin-right-40 { margin-right: 40px!important; }
+
+.grid .left *,
+.grid .left { text-align: left; }
+.grid .right *,
+.grid .right { text-align: right; }
+.grid .w1 { width: 1%!important; }
+.grid .w2 { width: 2%!important; }
+.grid .w3 { width: 3%!important; }
+.grid .w4 { width: 4%!important; }
+.grid .w5 { width: 5%!important; }
+.grid .w6 { width: 6%!important; }
+.grid .w7 { width: 7%!important; }
+.grid .w8 { width: 8%!important; }
+.grid .w9 { width: 9%!important; }
+.grid .w10 { width: 10%!important; }
+.grid .w11 { width: 11%!important; }
+.grid .w12 { width: 12%!important; }
+.grid .w13 { width: 13%!important; }
+.grid .w14 { width: 14%!important; }
+.grid .w15 { width: 15%!important; }
+.grid .w16 { width: 16%!important; }
+.grid .w17 { width: 17%!important; }
+.grid .w18 { width: 18%!important; }
+.grid .w19 { width: 19%!important; }
+.grid .w20 { width: 20%!important; }
+.grid .w21 { width: 21%!important; }
+.grid .w22 { width: 22%!important; }
+.grid .w23 { width: 23%!important; }
+.grid .w24 { width: 24%!important; }
+.grid .w25 { width: 25%!important; }
+.grid .w26 { width: 26%!important; }
+.grid .w27 { width: 27%!important; }
+.grid .w28 { width: 28%!important; }
+.grid .w29 { width: 29%!important; }
+.grid .w30 { width: 30%!important; }
+.grid .w31 { width: 31%!important; }
+.grid .w32 { width: 32%!important; }
+.grid .w33 { width: 33%!important; }
+.grid .w34 { width: 34%!important; }
+.grid .w35 { width: 35%!important; }
+.grid .w36 { width: 35%!important; }
+.grid .w37 { width: 35%!important; }
+.grid .w38 { width: 35%!important; }
+.grid .w39 { width: 35%!important; }
+.grid .w40 { width: 40%!important; }
+.grid .w41 { width: 41%!important; }
+.grid .w42 { width: 42%!important; }
+.grid .w43 { width: 43%!important; }
+.grid .w44 { width: 44%!important; }
+.grid .w45 { width: 45%!important; }
+.grid .w46 { width: 46%!important; }
+.grid .w47 { width: 47%!important; }
+.grid .w48 { width: 48%!important; }
+.grid .w49 { width: 49%!important; }
+.grid .w50 { width: 50%!important; }
+.grid .w55 { width: 55%!important; }
+.grid .w60 { width: 60%!important; }
+.grid .w65 { width: 65%!important; }
+.grid .w70 { width: 70%!important; }
+.grid .w75 { width: 75%!important; }
+.grid .w80 { width: 80%!important; }
+.grid .w85 { width: 85%!important; }
+.grid .w90 { width: 90%!important; }
+.grid .w95 { width: 95%!important; }
+
+.form-grid .left *,
+.form-grid .left { text-align: left; }
+.form-grid .right *,
+.form-grid .right { text-align: right; }
+.form-grid .w1 { width: 1%!important; }
+.form-grid .w2 { width: 2%!important; }
+.form-grid .w3 { width: 3%!important; }
+.form-grid .w4 { width: 4%!important; }
+.form-grid .w5 { width: 5%!important; }
+.form-grid .w6 { width: 6%!important; }
+.form-grid .w7 { width: 7%!important; }
+.form-grid .w8 { width: 8%!important; }
+.form-grid .w9 { width: 9%!important; }
+.form-grid .w10 { width: 10%!important; }
+.form-grid .w11 { width: 11%!important; }
+.form-grid .w12 { width: 12%!important; }
+.form-grid .w13 { width: 13%!important; }
+.form-grid .w14 { width: 14%!important; }
+.form-grid .w15 { width: 15%!important; }
+.form-grid .w16 { width: 16%!important; }
+.form-grid .w17 { width: 17%!important; }
+.form-grid .w18 { width: 18%!important; }
+.form-grid .w19 { width: 19%!important; }
+.form-grid .w20 { width: 20%!important; }
+.form-grid .w21 { width: 21%!important; }
+.form-grid .w22 { width: 22%!important; }
+.form-grid .w23 { width: 23%!important; }
+.form-grid .w24 { width: 24%!important; }
+.form-grid .w25 { width: 25%!important; }
+.form-grid .w26 { width: 26%!important; }
+.form-grid .w27 { width: 27%!important; }
+.form-grid .w28 { width: 28%!important; }
+.form-grid .w29 { width: 29%!important; }
+.form-grid .w30 { width: 30%!important; }
+.form-grid .w31 { width: 31%!important; }
+.form-grid .w32 { width: 32%!important; }
+.form-grid .w33 { width: 33%!important; }
+.form-grid .w34 { width: 34%!important; }
+.form-grid .w35 { width: 35%!important; }
+.form-grid .w36 { width: 35%!important; }
+.form-grid .w37 { width: 35%!important; }
+.form-grid .w38 { width: 35%!important; }
+.form-grid .w39 { width: 35%!important; }
+.form-grid .w40 { width: 40%!important; }
+.form-grid .w41 { width: 41%!important; }
+.form-grid .w42 { width: 42%!important; }
+.form-grid .w43 { width: 43%!important; }
+.form-grid .w44 { width: 44%!important; }
+.form-grid .w45 { width: 45%!important; }
+.form-grid .w46 { width: 46%!important; }
+.form-grid .w47 { width: 47%!important; }
+.form-grid .w48 { width: 48%!important; }
+.form-grid .w49 { width: 49%!important; }
+.form-grid .w50 { width: 50%!important; }
+.form-grid .w55 { width: 55%!important; }
+.form-grid .w60 { width: 60%!important; }
+.form-grid .w65 { width: 65%!important; }
+.form-grid .w70 { width: 70%!important; }
+.form-grid .w75 { width: 75%!important; }
+.form-grid .w80 { width: 80%!important; }
+.form-grid .w85 { width: 85%!important; }
+.form-grid .w90 { width: 90%!important; }
+.form-grid .w95 { width: 95%!important; }
+
+#pager { display: none; } 
+
+#report-controls .report-stats h2 { font-size: 12pt; margin-top: 10pt; margin-bottom: 0pt; }
+
+#report-controls .report-stats div.row,
+#report-controls .report-stats div.row * { font-size: 8pt; }
+#report-controls .report-stats div.row span { display: inline-block; width: 15%; font-weight: bold; }
+#report-controls .report-stats div.row b { display: inline-block; margin-left: 30px; }
+
+.form { background-color: #F6F6F6; padding: 35px 0px 0px 0px; position: relative; }
+.form fieldset { padding: 20px 0px 0px 0px; border: 0px; }
+.form h2, 
+.form fieldset legend { font-weight: bold; margin: 0 0 30px 0; line-height: 20px; font-size: 13pt; color: black; padding: 6px 0px; position: absolute; top: 15px; left: 0px; }
+
+.form .row { width: 100%; clear: both; position: relative; text-align: right; margin-bottom: 10px; }
+.form .row * { font-size: 7pt; }
+.form .row label { color: #434343; width: 30%; font-weight: bold; position: absolute; text-align: left; top: 2px; left: 0px; }
+.form .row .text { float: left; margin-left: 31%; width: 75%; text-align: left; position: relative; }

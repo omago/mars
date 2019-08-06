@@ -1,0 +1,152 @@
+﻿@model List<Mateus.Model.BussinesLogic.Views.PhysicalEntityModel.PhysicalEntityView>
+           
+@using PITFramework.Security;
+@using PITFramework.Support.Grid;
+
+@{ string[] userRoles = SecurityHelper.GetUserRolesFromCookie(); }
+
+<div id="controls-bar">
+    @Html.Partial("~/Views/Shared/Partial/Breadcrumb.cshtml")
+    <div>  
+        @if (userRoles.Contains("add"))
+        { 
+            @Html.ActionLink("Nova fizička osoba", "Add", null, new { @class = "button new" })
+        }
+    </div>
+</div>
+
+<div id="content">
+
+    @using (Html.BeginForm("Index", "PhysicalEntity", FormMethod.Get))
+    {
+        <div id="grid-controls">
+            <div class="grid-3 text-left">
+                Molimo odaberite filter:
+                @Html.TextBox("dateOfBirth", Request.QueryString["dateOfBirth"], new { placeholder = "Datum rođendana", @class = "w30 datepicker margin-left-10" })
+                @Html.TextBox("dateOfBirthTo", Request.QueryString["dateOfBirthTo"], new { placeholder = "Datum rođendana do", @class = "w30 datepicker margin-left-10" })
+            </div>
+            <div class="grid-4 text-center">
+                @Html.TextBox("searchString", Request.QueryString["searchString"], new { placeholder = "Upišite pojam za pretragu", @class = "w40" })
+                <input type="submit" value="Pretraži" class="button search" />
+            </div>
+            <div class="grid-3 text-right">
+                <a href="#" class="button print icon"></a>
+            </div>
+            <div class="clear"></div>
+        </div>
+    }
+
+    <div class="grid-10">
+        <div class="grid-holder">
+            <table class="grid">
+                @if(Model.Count() > 0) {
+                    <tr>
+                        <th class="w2">#</th>
+                        <th class="w2">@MvcHtmlString.Create(LinkHelper.GetSortLink("ID", "PhysicalEntityPK"))</th>
+                        <th class="w18 left">@MvcHtmlString.Create(LinkHelper.GetSortLink("Ime", "FirstName"))</th>
+                        <th class="w18 left">@MvcHtmlString.Create(LinkHelper.GetSortLink("Prezime", "LastName"))</th>
+                        <th class="w10 left">@MvcHtmlString.Create(LinkHelper.GetSortLink("OIB", "OIB"))</th>
+                        <th class="w10 left">@MvcHtmlString.Create(LinkHelper.GetSortLink("Datum rođenja", "DateOfBirth"))</th>
+                        <th class="w10">@MvcHtmlString.Create(LinkHelper.GetSortLink("Vlasnik", "Owner"))</th>
+                        <th class="w10">@MvcHtmlString.Create(LinkHelper.GetSortLink("Pravni zastupnik", "LegalRepresentative"))</th>
+                        <th class="w10">@MvcHtmlString.Create(LinkHelper.GetSortLink("Referent", "Referent"))</th>
+                        @if (userRoles.Contains("edit") || userRoles.Contains("delete") || userRoles.Contains("view"))
+                        { 
+                            <th class="w10 no-print">Operacije</th>
+                        }
+                    </tr>
+                
+                    int i = 1; 
+                
+                    foreach (var item in Model)
+                    {
+                        <tr class="@if(i%2 != 0){ @MvcHtmlString.Create("odd"); }">
+                            <td>@i.ToString()</td>
+                            <td class="@LinkHelper.getIsSorted("PhysicalEntityPK")">@item.PhysicalEntityPK.ToString()</td>
+                            <td class="left @LinkHelper.getIsSorted("FirstName")">
+                                @if (userRoles.Contains("edit"))
+                                {
+                                    if (!String.IsNullOrWhiteSpace(@item.Firstname))
+                                    { 
+                                        @Html.ActionLink(@item.Firstname, "Edit", new { physicalEntityPK = @item.PhysicalEntityPK })
+                                    }
+                                }
+                                else
+                                {
+                                    if (!String.IsNullOrWhiteSpace(@item.Firstname))
+                                    { 
+                                        @item.Firstname
+                                    }
+                                }
+                            </td>
+                            <td class="left @LinkHelper.getIsSorted("Lastname")">@item.Lastname</td>
+                            <td class="left @LinkHelper.getIsSorted("OIB")">@item.OIB</td>
+                            <td class="left @LinkHelper.getIsSorted("DateOfBirth")">
+                                @if(item.DateOfBirth != null) { 
+                                    @(item.DateOfBirth.Value.ToString("dd.MM.yyyy.")); 
+                                }
+                            </td>
+                            <td class="@LinkHelper.getIsSorted("Owner")">
+                                @if (@item.Owner != null && @item.Owner == true)
+                                { 
+                                    <span class="yes">DA</span>
+                                }
+                                else
+                                {
+                                    <span class="no">NE</span>
+                                }
+                            </td>
+                            <td class="@LinkHelper.getIsSorted("LegalRepresentative")">
+                                @if (@item.LegalRepresentative != null && @item.LegalRepresentative == true)
+                                { 
+                                    <span class="yes">DA</span>
+                                }
+                                else
+                                {
+                                    <span class="no">NE</span>
+                                }
+                            </td>
+                            <td class="@LinkHelper.getIsSorted("Referent")">
+                                @if (@item.Referent != null && @item.Referent == true)
+                                { 
+                                    <span class="yes">DA</span>
+                                }
+                                else
+                                {
+                                    <span class="no">NE</span>
+                                }
+                            </td>
+                            @if (userRoles.Contains("view") || userRoles.Contains("edit") || userRoles.Contains("delete"))
+                            {  
+                                <td class="no-print">
+                                    @if (userRoles.Contains("view"))
+                                    {
+                                        @Html.ActionLink(" ", "Audit", new { physicalEntityPK = @item.PhysicalEntityPK}, new { @class = "stats" })
+                                    }
+                                    @if (userRoles.Contains("edit"))
+                                    {
+                                        @Html.ActionLink(" ", "Edit", new { physicalEntityPK = @item.PhysicalEntityPK}, new { @class = "edit" })
+                                    }
+                                    @if (userRoles.Contains("delete"))
+                                    {
+                                        @Html.ActionLink(" ", "Delete", new { physicalEntityPK = @item.PhysicalEntityPK}, new { @class = "delete" })
+                                    }
+                                </td>
+                            }
+                        </tr>
+                        i++;
+                    }
+
+                }
+                else 
+                {
+                    <tr>
+                        <td class="no-records">Nema zapisa</td>
+                    </tr>
+                }            
+            </table>
+            @Html.Partial("~/Views/Shared/Partial/Pager.cshtml")
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>

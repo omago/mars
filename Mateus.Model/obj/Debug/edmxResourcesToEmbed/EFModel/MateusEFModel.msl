@@ -1,0 +1,656 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Mateus_wcModelStoreContainer" CdmEntityContainer="Mateus_wcEntities">
+    <EntitySetMapping Name="Activities">
+      <EntityTypeMapping TypeName="Mateus_wcModel.Activity">
+        <MappingFragment StoreEntitySet="Activities">
+          <ScalarProperty Name="ActivityPK" ColumnName="ActivityPK" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="HighRisk" ColumnName="HighRisk" />
+          <ScalarProperty Name="LowRisk" ColumnName="LowRisk" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AdditionalFactors">
+      <EntityTypeMapping TypeName="Mateus_wcModel.AdditionalFactor">
+        <MappingFragment StoreEntitySet="AdditionalFactors">
+          <ScalarProperty Name="AdditionalFactorPK" ColumnName="AdditionalFactorPK" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AssessmentAnswers">
+      <EntityTypeMapping TypeName="Mateus_wcModel.AssessmentAnswers">
+        <MappingFragment StoreEntitySet="AssessmentAnswers">
+          <ScalarProperty Name="AssessmentAnswerPK" ColumnName="AssessmentAnswerPK" />
+          <ScalarProperty Name="AssessmentAnswer" ColumnName="AssessmentAnswer" />
+          <ScalarProperty Name="AssessmentQuestionFK" ColumnName="AssessmentQuestionFK" />
+          <ScalarProperty Name="AssessmentFK" ColumnName="AssessmentFK" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AssessmentGroups">
+      <EntityTypeMapping TypeName="Mateus_wcModel.AssessmentGroup">
+        <MappingFragment StoreEntitySet="AssessmentGroups">
+          <ScalarProperty Name="AssessmentGroupPK" ColumnName="AssessmentGroupPK" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="AssessmentTypeFK" ColumnName="AssessmentTypeFK" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AssessmentQuestions">
+      <EntityTypeMapping TypeName="Mateus_wcModel.AssessmentQuestion">
+        <MappingFragment StoreEntitySet="AssessmentQuestions">
+          <ScalarProperty Name="AssessmentQuestionPK" ColumnName="AssessmentQuestionPK" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="AssessmentGroupFK" ColumnName="AssessmentGroupFK" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AssessmentTypes">
+      <EntityTypeMapping TypeName="Mateus_wcModel.AssessmentType">
+        <MappingFragment StoreEntitySet="AssessmentTypes">
+          <ScalarProperty Name="AssessmentTypePK" ColumnName="AssessmentTypePK" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Attachments">
+      <EntityTypeMapping TypeName="Mateus_wcModel.Attachment">
+        <MappingFragment StoreEntitySet="Attachments">
+          <ScalarProperty Name="AttachmentPK" ColumnName="AttachmentPK" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Filename" ColumnName="Filename" />
+          <ScalarProperty Name="Extension" ColumnName="Extension" />
+          <ScalarProperty Name="ContentType" ColumnName="ContentType" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AuditingDetails">
+      <EntityTypeMapping TypeName="Mateus_wcModel.AuditingDetail">
+        <MappingFragment StoreEntitySet="AuditingDetails">
+          <ScalarProperty Name="AuditingDetailPK" ColumnName="AuditingDetailPK" />
+          <ScalarProperty Name="AuditingMasterFK" ColumnName="AuditingMasterFK" />
+          <ScalarProperty Name="ColumnName" ColumnName="ColumnName" />
+          <ScalarProperty Name="OldValue" ColumnName="OldValue" />
+          <ScalarProperty Name="NewValue" ColumnName="NewValue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AuditingMasters">
+      <EntityTypeMapping TypeName="Mateus_wcModel.AuditingMaster">
+        <MappingFragment StoreEntitySet="AuditingMaster">
+          <ScalarProperty Name="AuditingMasterPK" ColumnName="AuditingMasterPK" />
+          <ScalarProperty Name="UserFK" ColumnName="UserFK" />
+          <ScalarProperty Name="DBName" ColumnName="DBName" />
+          <ScalarProperty Name="TableName" ColumnName="TableName" />
+          <ScalarProperty Name="TableNameFK" ColumnName="TableNameFK" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Operation" ColumnName="Operation" />
+          <ScalarProperty Name="ServerName" ColumnName="ServerName" />
+          <ScalarProperty Name="SessionToken" ColumnName="SessionToken" />
+          <ScalarProperty Name="RelatedEntityPK" ColumnName="RelatedEntityPK" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Banks">
+      <EntityTypeMapping TypeName="Mateus_wcModel.Bank">
+        <MappingFragment StoreEntitySet="Banks">
+          <ScalarProperty Name="BankPK" ColumnName="BankPK" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="AccountNumber" ColumnName="AccountNumber" />
+          <ScalarProperty Name="Swift" ColumnName="Swift" />
+          <ScalarProperty Name="Oib" ColumnName="Oib" />
+          <ScalarProperty Name="Iban" ColumnName="Iban" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BussinesShareBurdens">
+      <EntityTypeMapping TypeName="Mateus_wcModel.BussinesShareBurden">
+        <MappingFragment StoreEntitySet="BussinesShareBurdens">
+          <ScalarProperty Name="BussinesShareBurdenPK" ColumnName="BussinesShareBurdenPK" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ChangeTypes">
+      <EntityTypeMapping TypeName="Mateus_wcModel.ChangeType">
+        <MappingFragment StoreEntitySet="ChangeTypes">
+          <ScalarProperty Name="ChangeTypePK" ColumnName="ChangeTypePK" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CommercialCourts">
+      <EntityTypeMapping TypeName="Mateus_wcModel.CommercialCourt">
+        <MappingFragment StoreEntitySet="CommercialCourts">
+          <ScalarProperty Name="CommercialCourtPK" ColumnName="CommercialCourtPK" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ContractValidities">
+      <EntityTypeMapping TypeName="Mateus_wcModel.ContractValidity">
+        <MappingFragment StoreEntitySet="ContractValidities">
+          <ScalarProperty Name="ContractValidityPK" ColumnName="ContractValidityPK" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Counties">
+      <EntityTypeMapping TypeName="Mateus_wcModel.County">
+        <MappingFragment StoreEntitySet="Counties">
+          <ScalarProperty Name="CountyPK" ColumnName="CountyPK" />
+          <ScalarProperty Name="CountryFK" ColumnName="CountryFK" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Countries">
+      <EntityTypeMapping TypeName="Mateus_wcModel.Country">
+        <MappingFragment StoreEntitySet="Countries">
+          <ScalarProperty Name="CountryPK" ColumnName="CountryPK" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="NameEn" ColumnName="NameEn" />
+          <ScalarProperty Name="Citizenship" ColumnName="Citizenship" />
+          <ScalarProperty Name="Alpha2Code" ColumnName="Alpha2Code" />
+          <ScalarProperty Name="Alpha3Code" ColumnName="Alpha3Code" />
+          <ScalarProperty Name="NumericCode" ColumnName="NumericCode" />
+          <ScalarProperty Name="Risk" ColumnName="Risk" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Currencies">
+      <EntityTypeMapping TypeName="Mateus_wcModel.Currency">
+        <MappingFragment StoreEntitySet="Currencies">
+          <ScalarProperty Name="CurrencyPK" ColumnName="CurrencyPK" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Sign" ColumnName="Sign" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Forms">
+      <EntityTypeMapping TypeName="Mateus_wcModel.Form">
+        <MappingFragment StoreEntitySet="Forms">
+          <ScalarProperty Name="FormPK" ColumnName="FormPK" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FulfilledFactors">
+      <EntityTypeMapping TypeName="Mateus_wcModel.FulfilledFactor">
+        <MappingFragment StoreEntitySet="FulfilledFactors">
+          <ScalarProperty Name="FulfilledFactorPK" ColumnName="FulfilledFactorPK" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OwnerTypes">
+      <EntityTypeMapping TypeName="Mateus_wcModel.OwnerType">
+        <MappingFragment StoreEntitySet="OwnerTypes">
+          <ScalarProperty Name="OwnerTypePK" ColumnName="OwnerTypePK" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Places">
+      <EntityTypeMapping TypeName="Mateus_wcModel.Place">
+        <MappingFragment StoreEntitySet="Places">
+          <ScalarProperty Name="PlacePK" ColumnName="PlacePK" />
+          <ScalarProperty Name="PostalOfficeFK" ColumnName="PostalOfficeFK" />
+          <ScalarProperty Name="Ordinal" ColumnName="Ordinal" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PostalOffices">
+      <EntityTypeMapping TypeName="Mateus_wcModel.PostalOffice">
+        <MappingFragment StoreEntitySet="PostalOffices">
+          <ScalarProperty Name="PostalOfficePK" ColumnName="PostalOfficePK" />
+          <ScalarProperty Name="CountyFK" ColumnName="CountyFK" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RegionalOffices">
+      <EntityTypeMapping TypeName="Mateus_wcModel.RegionalOffice">
+        <MappingFragment StoreEntitySet="RegionalOffices">
+          <ScalarProperty Name="RegionalOfficePK" ColumnName="RegionalOfficePK" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Risks">
+      <EntityTypeMapping TypeName="Mateus_wcModel.Risk">
+        <MappingFragment StoreEntitySet="Risks">
+          <ScalarProperty Name="RiskPK" ColumnName="RiskPK" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="Mateus_wcModel.Role">
+        <MappingFragment StoreEntitySet="Roles">
+          <ScalarProperty Name="RolePK" ColumnName="RolePK" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ServiceTypes">
+      <EntityTypeMapping TypeName="Mateus_wcModel.ServiceType">
+        <MappingFragment StoreEntitySet="ServiceTypes">
+          <ScalarProperty Name="ServiceTypePK" ColumnName="ServiceTypePK" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Substations">
+      <EntityTypeMapping TypeName="Mateus_wcModel.Substation">
+        <MappingFragment StoreEntitySet="Substations">
+          <ScalarProperty Name="SubstationPK" ColumnName="SubstationPK" />
+          <ScalarProperty Name="RegionalOfficeFK" ColumnName="RegionalOfficeFK" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SystemActions">
+      <EntityTypeMapping TypeName="Mateus_wcModel.SystemAction">
+        <MappingFragment StoreEntitySet="SystemActions">
+          <ScalarProperty Name="SystemActionPK" ColumnName="SystemActionPK" />
+          <ScalarProperty Name="SystemControllerFK" ColumnName="SystemControllerFK" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SystemControllers">
+      <EntityTypeMapping TypeName="Mateus_wcModel.SystemController">
+        <MappingFragment StoreEntitySet="SystemControllers">
+          <ScalarProperty Name="SystemControllerPK" ColumnName="SystemControllerPK" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+          <ScalarProperty Name="Theme" ColumnName="Theme" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Taxes">
+      <EntityTypeMapping TypeName="Mateus_wcModel.Tax">
+        <MappingFragment StoreEntitySet="Taxes">
+          <ScalarProperty Name="TaxPK" ColumnName="TaxPK" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ToDoLists">
+      <EntityTypeMapping TypeName="Mateus_wcModel.ToDoList">
+        <MappingFragment StoreEntitySet="ToDoLists">
+          <ScalarProperty Name="ToDoListPK" ColumnName="ToDoListPK" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Deadline" ColumnName="Deadline" />
+          <ScalarProperty Name="Finished" ColumnName="Finished" />
+          <ScalarProperty Name="UserFK" ColumnName="UserFK" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserActivities">
+      <EntityTypeMapping TypeName="Mateus_wcModel.UserActivity">
+        <MappingFragment StoreEntitySet="UserActivities">
+          <ScalarProperty Name="UserActivityPK" ColumnName="UserActivityPK" />
+          <ScalarProperty Name="UserFK" ColumnName="UserFK" />
+          <ScalarProperty Name="ActivityTime" ColumnName="ActivityTime" />
+          <ScalarProperty Name="ActivityDescription" ColumnName="ActivityDescription" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UsersInRoles">
+      <EntityTypeMapping TypeName="Mateus_wcModel.UserInRole">
+        <MappingFragment StoreEntitySet="UsersInRoles">
+          <ScalarProperty Name="UserInRolePK" ColumnName="UserInRolePK" />
+          <ScalarProperty Name="UserFK" ColumnName="UserFK" />
+          <ScalarProperty Name="RoleFK" ColumnName="RoleFK" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WaysOfRepresentations">
+      <EntityTypeMapping TypeName="Mateus_wcModel.WayOfRepresentation">
+        <MappingFragment StoreEntitySet="WaysOfRepresentation">
+          <ScalarProperty Name="WayOfRepresentationPK" ColumnName="WayOfRepresentationPK" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WorkDoneAttachments">
+      <EntityTypeMapping TypeName="Mateus_wcModel.WorkDoneAttachment">
+        <MappingFragment StoreEntitySet="WorkDoneAttachments">
+          <ScalarProperty Name="WorkDoneAttachmentPK" ColumnName="WorkDoneAttachmentPK" />
+          <ScalarProperty Name="WorkDoneFK" ColumnName="WorkDoneFK" />
+          <ScalarProperty Name="AttachmentFK" ColumnName="AttachmentFK" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WorkSubtypes">
+      <EntityTypeMapping TypeName="Mateus_wcModel.WorkSubtype">
+        <MappingFragment StoreEntitySet="WorkSubtypes">
+          <ScalarProperty Name="WorkSubtypePK" ColumnName="WorkSubtypePK" />
+          <ScalarProperty Name="WorkTypeFK" ColumnName="WorkTypeFK" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WorkTypes">
+      <EntityTypeMapping TypeName="Mateus_wcModel.WorkType">
+        <MappingFragment StoreEntitySet="WorkTypes">
+          <ScalarProperty Name="WorkTypePK" ColumnName="WorkTypePK" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LegalEntityBanks">
+      <EntityTypeMapping TypeName="Mateus_wcModel.LegalEntityBank">
+        <MappingFragment StoreEntitySet="LegalEntityBanks">
+          <ScalarProperty Name="Iban" ColumnName="Iban" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="ChangeDate" ColumnName="ChangeDate" />
+          <ScalarProperty Name="BankFK" ColumnName="BankFK" />
+          <ScalarProperty Name="LegalEntityFK" ColumnName="LegalEntityFK" />
+          <ScalarProperty Name="LegalEntityBankPK" ColumnName="LegalEntityBankPK" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LegalEntityLegalRepresentatives">
+      <EntityTypeMapping TypeName="Mateus_wcModel.LegalEntityLegalRepresentative">
+        <MappingFragment StoreEntitySet="LegalEntityLegalRepresentatives">
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="ChangeDate" ColumnName="ChangeDate" />
+          <ScalarProperty Name="LegalRepresentativeFK" ColumnName="LegalRepresentativeFK" />
+          <ScalarProperty Name="WayOfRepresentationFK" ColumnName="WayOfRepresentationFK" />
+          <ScalarProperty Name="LegalEntityFK" ColumnName="LegalEntityFK" />
+          <ScalarProperty Name="LegalEntityLegalRepresentativePK" ColumnName="LegalEntityLegalRepresentativePK" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LegalEntityOwners">
+      <EntityTypeMapping TypeName="Mateus_wcModel.LegalEntityOwner">
+        <MappingFragment StoreEntitySet="LegalEntityOwners">
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="ChangeDate" ColumnName="ChangeDate" />
+          <ScalarProperty Name="ChangeTypeFK" ColumnName="ChangeTypeFK" />
+          <ScalarProperty Name="NumberOfVotes" ColumnName="NumberOfVotes" />
+          <ScalarProperty Name="BussinesShareBurdenFK" ColumnName="BussinesShareBurdenFK" />
+          <ScalarProperty Name="FulfilledFactorFK" ColumnName="FulfilledFactorFK" />
+          <ScalarProperty Name="AdditionalFactorFK" ColumnName="AdditionalFactorFK" />
+          <ScalarProperty Name="NominalBussinesShareAmount" ColumnName="NominalBussinesShareAmount" />
+          <ScalarProperty Name="PaidBussinesShareAmount" ColumnName="PaidBussinesShareAmount" />
+          <ScalarProperty Name="BusinessShareAmount" ColumnName="BusinessShareAmount" />
+          <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+          <ScalarProperty Name="OwnerType" ColumnName="OwnerType" />
+          <ScalarProperty Name="OwnerFK" ColumnName="OwnerFK" />
+          <ScalarProperty Name="LegalEntityFK" ColumnName="LegalEntityFK" />
+          <ScalarProperty Name="LegalEntityOwnerPK" ColumnName="LegalEntityOwnerPK" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="Mateus_wcModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="Salt" ColumnName="Salt" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="RegistrationDate" ColumnName="RegistrationDate" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="UserPK" ColumnName="UserPK" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WorkDones">
+      <EntityTypeMapping TypeName="Mateus_wcModel.WorkDone">
+        <MappingFragment StoreEntitySet="WorkDones">
+          <ScalarProperty Name="CreatedWithToDo" ColumnName="CreatedWithToDo" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="UserFK" ColumnName="UserFK" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="TimeSpent" ColumnName="TimeSpent" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ServiceTypeFK" ColumnName="ServiceTypeFK" />
+          <ScalarProperty Name="WorkSubtypeFK" ColumnName="WorkSubtypeFK" />
+          <ScalarProperty Name="WorkTypeFK" ColumnName="WorkTypeFK" />
+          <ScalarProperty Name="LegalEntityFK" ColumnName="LegalEntityFK" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="ToDoListFK" ColumnName="ToDoListFK" />
+          <ScalarProperty Name="WorkDonePK" ColumnName="WorkDonePK" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Assessments">
+      <EntityTypeMapping TypeName="Mateus_wcModel.Assessment">
+        <MappingFragment StoreEntitySet="Assessments">
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="ChangeDate" ColumnName="ChangeDate" />
+          <ScalarProperty Name="AssessmentDate" ColumnName="AssessmentDate" />
+          <ScalarProperty Name="AssessmentComment" ColumnName="AssessmentComment" />
+          <ScalarProperty Name="AssessmentTypeFK" ColumnName="AssessmentTypeFK" />
+          <ScalarProperty Name="RiskFK" ColumnName="RiskFK" />
+          <ScalarProperty Name="LegalEntityFK" ColumnName="LegalEntityFK" />
+          <ScalarProperty Name="AssessmentPK" ColumnName="AssessmentPK" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CityCommunities">
+      <EntityTypeMapping TypeName="Mateus_wcModel.CityCommunity">
+        <MappingFragment StoreEntitySet="CitiesCommunities">
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="CountyFK" ColumnName="CountyFK" />
+          <ScalarProperty Name="CityCommunityPK" ColumnName="CityCommunityPK" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LegalEntities">
+      <EntityTypeMapping TypeName="Mateus_wcModel.LegalEntity">
+        <MappingFragment StoreEntitySet="LegalEntities">
+          <ScalarProperty Name="ReferentFK" ColumnName="ReferentFK" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Company" ColumnName="Company" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="ChangeDate" ColumnName="ChangeDate" />
+          <ScalarProperty Name="HZZOBussinesEntityCode" ColumnName="HZZOBussinesEntityCode" />
+          <ScalarProperty Name="HZZOObligationNumber" ColumnName="HZZOObligationNumber" />
+          <ScalarProperty Name="MIORRegistrationNumber" ColumnName="MIORRegistrationNumber" />
+          <ScalarProperty Name="NumberOfEmployees" ColumnName="NumberOfEmployees" />
+          <ScalarProperty Name="MonumentAnnuityDescription" ColumnName="MonumentAnnuityDescription" />
+          <ScalarProperty Name="MonumentAnnuity" ColumnName="MonumentAnnuity" />
+          <ScalarProperty Name="TouristOfficeDescription" ColumnName="TouristOfficeDescription" />
+          <ScalarProperty Name="TouristOffice" ColumnName="TouristOffice" />
+          <ScalarProperty Name="FirstContactDate" ColumnName="FirstContactDate" />
+          <ScalarProperty Name="EMail" ColumnName="EMail" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="TaxFK" ColumnName="TaxFK" />
+          <ScalarProperty Name="CommercialCourtFK" ColumnName="CommercialCourtFK" />
+          <ScalarProperty Name="DateOfRegistration" ColumnName="DateOfRegistration" />
+          <ScalarProperty Name="SubstationFK" ColumnName="SubstationFK" />
+          <ScalarProperty Name="RegionalOfficeFK" ColumnName="RegionalOfficeFK" />
+          <ScalarProperty Name="Place" ColumnName="Place" />
+          <ScalarProperty Name="PlaceFK" ColumnName="PlaceFK" />
+          <ScalarProperty Name="PostalOfficeFK" ColumnName="PostalOfficeFK" />
+          <ScalarProperty Name="StreetName" ColumnName="StreetName" />
+          <ScalarProperty Name="CityCommunityFK" ColumnName="CityCommunityFK" />
+          <ScalarProperty Name="CountyFK" ColumnName="CountyFK" />
+          <ScalarProperty Name="CountryFK" ColumnName="CountryFK" />
+          <ScalarProperty Name="FundamentalCapital" ColumnName="FundamentalCapital" />
+          <ScalarProperty Name="FormFK" ColumnName="FormFK" />
+          <ScalarProperty Name="ActivityDescription" ColumnName="ActivityDescription" />
+          <ScalarProperty Name="ActivityFK" ColumnName="ActivityFK" />
+          <ScalarProperty Name="MBS" ColumnName="MBS" />
+          <ScalarProperty Name="MB" ColumnName="MB" />
+          <ScalarProperty Name="OIB" ColumnName="OIB" />
+          <ScalarProperty Name="ShortName" ColumnName="ShortName" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="LegalEntityPK" ColumnName="LegalEntityPK" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LegalEntityBranches">
+      <EntityTypeMapping TypeName="Mateus_wcModel.LegalEntityBranch">
+        <MappingFragment StoreEntitySet="LegalEntityBranches">
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="ChangeDate" ColumnName="ChangeDate" />
+          <ScalarProperty Name="EMail" ColumnName="EMail" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="StreetName" ColumnName="StreetName" />
+          <ScalarProperty Name="PlaceFK" ColumnName="PlaceFK" />
+          <ScalarProperty Name="PostalOfficeFK" ColumnName="PostalOfficeFK" />
+          <ScalarProperty Name="CityCommunityFK" ColumnName="CityCommunityFK" />
+          <ScalarProperty Name="CountyFK" ColumnName="CountyFK" />
+          <ScalarProperty Name="CountryFK" ColumnName="CountryFK" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="LegalEntityFK" ColumnName="LegalEntityFK" />
+          <ScalarProperty Name="LegalEntityBranchPK" ColumnName="LegalEntityBranchPK" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PhysicalEntities">
+      <EntityTypeMapping TypeName="Mateus_wcModel.PhysicalEntity">
+        <MappingFragment StoreEntitySet="PhysicalEntities">
+          <ScalarProperty Name="ReferentSubstationFK" ColumnName="ReferentSubstationFK" />
+          <ScalarProperty Name="ReferentRegionalOfficeFK" ColumnName="ReferentRegionalOfficeFK" />
+          <ScalarProperty Name="EMail" ColumnName="EMail" />
+          <ScalarProperty Name="Referent" ColumnName="Referent" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="LegalRepresentative" ColumnName="LegalRepresentative" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="ChangeDate" ColumnName="ChangeDate" />
+          <ScalarProperty Name="PassportPlaceOfIssue" ColumnName="PassportPlaceOfIssue" />
+          <ScalarProperty Name="PassportCountryOfIssueFK" ColumnName="PassportCountryOfIssueFK" />
+          <ScalarProperty Name="PassportDateTillValid" ColumnName="PassportDateTillValid" />
+          <ScalarProperty Name="PassportDateOfIssue" ColumnName="PassportDateOfIssue" />
+          <ScalarProperty Name="PassportNumber" ColumnName="PassportNumber" />
+          <ScalarProperty Name="IdentityCardDateTillValid" ColumnName="IdentityCardDateTillValid" />
+          <ScalarProperty Name="IdentityCardRegionalOfficeFK" ColumnName="IdentityCardRegionalOfficeFK" />
+          <ScalarProperty Name="IdentityCardDateOfIssue" ColumnName="IdentityCardDateOfIssue" />
+          <ScalarProperty Name="IdentityCardNumber" ColumnName="IdentityCardNumber" />
+          <ScalarProperty Name="WayOfRepresentationFK" ColumnName="WayOfRepresentationFK" />
+          <ScalarProperty Name="ResidenceStreetName" ColumnName="ResidenceStreetName" />
+          <ScalarProperty Name="ResidencePlace" ColumnName="ResidencePlace" />
+          <ScalarProperty Name="ResidencePlaceFK" ColumnName="ResidencePlaceFK" />
+          <ScalarProperty Name="ResidencePostalOfficeFK" ColumnName="ResidencePostalOfficeFK" />
+          <ScalarProperty Name="ResidenceCityCommunityFK" ColumnName="ResidenceCityCommunityFK" />
+          <ScalarProperty Name="ResidenceCountyFK" ColumnName="ResidenceCountyFK" />
+          <ScalarProperty Name="ResidenceCountryFK" ColumnName="ResidenceCountryFK" />
+          <ScalarProperty Name="BirthPlace" ColumnName="BirthPlace" />
+          <ScalarProperty Name="BirthCityCommunityFK" ColumnName="BirthCityCommunityFK" />
+          <ScalarProperty Name="BirthCountyFK" ColumnName="BirthCountyFK" />
+          <ScalarProperty Name="BirthCountryFK" ColumnName="BirthCountryFK" />
+          <ScalarProperty Name="CitizenshipFK" ColumnName="CitizenshipFK" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="JMBG" ColumnName="JMBG" />
+          <ScalarProperty Name="OIB" ColumnName="OIB" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="PhysicalEntityPK" ColumnName="PhysicalEntityPK" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AnnexContracts">
+      <EntityTypeMapping TypeName="Mateus_wcModel.AnnexContract">
+        <MappingFragment StoreEntitySet="AnnexContracts">
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="AUP" ColumnName="AUP" />
+          <ScalarProperty Name="OPL" ColumnName="OPL" />
+          <ScalarProperty Name="GZR" ColumnName="GZR" />
+          <ScalarProperty Name="TSI" ColumnName="TSI" />
+          <ScalarProperty Name="MIO" ColumnName="MIO" />
+          <ScalarProperty Name="CurrencyFK" ColumnName="CurrencyFK" />
+          <ScalarProperty Name="Terminated" ColumnName="Terminated" />
+          <ScalarProperty Name="TerminationDescription" ColumnName="TerminationDescription" />
+          <ScalarProperty Name="TerminationDate" ColumnName="TerminationDate" />
+          <ScalarProperty Name="AnnexContractEnd" ColumnName="AnnexContractEnd" />
+          <ScalarProperty Name="AnnexContractBegin" ColumnName="AnnexContractBegin" />
+          <ScalarProperty Name="ContractValidityFK" ColumnName="ContractValidityFK" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ContractFK" ColumnName="ContractFK" />
+          <ScalarProperty Name="AnnexContractPK" ColumnName="AnnexContractPK" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Contracts">
+      <EntityTypeMapping TypeName="Mateus_wcModel.Contract">
+        <MappingFragment StoreEntitySet="Contracts">
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="ChangeDate" ColumnName="ChangeDate" />
+          <ScalarProperty Name="AUP" ColumnName="AUP" />
+          <ScalarProperty Name="OPL" ColumnName="OPL" />
+          <ScalarProperty Name="GZR" ColumnName="GZR" />
+          <ScalarProperty Name="TSI" ColumnName="TSI" />
+          <ScalarProperty Name="MIO" ColumnName="MIO" />
+          <ScalarProperty Name="CurrencyFK" ColumnName="CurrencyFK" />
+          <ScalarProperty Name="Terminated" ColumnName="Terminated" />
+          <ScalarProperty Name="TerminationDescription" ColumnName="TerminationDescription" />
+          <ScalarProperty Name="TerminationDate" ColumnName="TerminationDate" />
+          <ScalarProperty Name="ContractEnd" ColumnName="ContractEnd" />
+          <ScalarProperty Name="ContractBegin" ColumnName="ContractBegin" />
+          <ScalarProperty Name="ContractValidityFK" ColumnName="ContractValidityFK" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="LegalEntityFK" ColumnName="LegalEntityFK" />
+          <ScalarProperty Name="ContractPK" ColumnName="ContractPK" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

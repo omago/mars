@@ -1,0 +1,116 @@
+﻿@model List<Mateus.Model.BussinesLogic.Views.AssessmentGroupModel.AssessmentGroupView>
+
+@using PITFramework.Security;
+@using PITFramework.Support.Grid;
+
+@{ string[] userRoles = SecurityHelper.GetUserRolesFromCookie(); }
+
+<div id="controls-bar">
+    @Html.Partial("~/Views/Shared/Partial/Breadcrumb.cshtml")
+    <div>
+        @if (userRoles.Contains("add"))
+        { 
+            @Html.ActionLink("Nova grupa procjene", "Add", null, new { @class = "button new" })
+        }
+    </div>
+</div>
+
+<div id="content">
+
+    @using (Html.BeginForm("Index", "AssessmentGroup", FormMethod.Get))
+    {
+        <div id="grid-controls">
+            <div class="grid-3 text-left">
+                Molimo odaberite filter: @Html.DropDownList("assessmentTypeFK", ViewBag.AssessmentTypes as SelectList, "Odaberite tip procjene", new { @class = "w30 margin-left-10" })
+            </div>
+            <div class="grid-4 text-center">
+                @Html.TextBox("searchString", Request.QueryString["searchString"], new { placeholder = "Upišite pojam za pretragu", @class = "w40" })
+                <input type="submit" value="Pretraži" class="button search" />
+            </div>
+            <div class="grid-3 text-right">
+                <a href="#" class="button print icon"></a>
+            </div>
+            <div class="clear"></div>
+        </div>
+    }
+
+    <div class="grid-10">
+        <div class="grid-holder">
+            <table class="grid">
+                @if(Model.Count() > 0) {
+                    <tr>
+                        <th class="w2">#</th>
+                        <th class="w2">@MvcHtmlString.Create(LinkHelper.GetSortLink("ID", "AssessmentGroupPK"))</th>
+                        <th class="w36 left">@MvcHtmlString.Create(LinkHelper.GetSortLink("Naziv", "Name"))</th>
+                        <th class="w20 left">@MvcHtmlString.Create(LinkHelper.GetSortLink("Tip procjene", "AssessmentTypeName"))</th>
+                        <th class="w20">@MvcHtmlString.Create(LinkHelper.GetSortLink("Pitanja procjene", "AssessmentQuestionCount"))</th>
+                        @if (userRoles.Contains("edit") || userRoles.Contains("delete"))
+                        { 
+                            <th class="w10 no-print">Operacije</th>
+                        }
+                    </tr>
+
+                    int i = 1;
+                    string url = LinkHelper.getQueryStringArray();
+
+                    foreach (var item in Model)
+                    {
+                        <tr class="@if (i % 2 != 0)
+                                    { @MvcHtmlString.Create("odd");
+                                    }">
+                            <td>@i.ToString()</td>
+                            <td class="@LinkHelper.getIsSorted("AssessmentGroupPK")">@item.AssessmentGroupPK.ToString()</td>
+                            <td class="left @LinkHelper.getIsSorted("Name")">
+                                @if (userRoles.Contains("edit"))
+                                {
+                                    if (!String.IsNullOrWhiteSpace(@item.Name))
+                                    { 
+                                        @Html.ActionLink(@item.Name, "Edit", new { assessmentGroupPK = @item.AssessmentGroupPK })
+                                    }
+                                }
+                                else
+                                {
+                                    if (!String.IsNullOrWhiteSpace(@item.Name))
+                                    { 
+                                        @item.Name
+                                    }
+                                }
+                            </td>
+                            <td class="left @LinkHelper.getIsSorted("AssessmentTypeName")">@item.AssessmentTypeName</td>
+                            <td class="@LinkHelper.getIsSorted("AssessmentQuestionCount")">
+                                @Html.ActionLink(@item.AssessmentQuestionCount.ToString(), "Index", "AssessmentQuestion", new { assessmentGroupFK = @item.AssessmentGroupPK }, null)
+                                @if (userRoles.Contains("add"))
+                                {   
+                                    @: | 
+                                    @Html.ActionLink("Dodaj", "Add", "AssessmentQuestion", new { assessmentGroupFK = @item.AssessmentGroupPK }, null)
+                                }
+                            </td>
+                            @if (userRoles.Contains("edit") || userRoles.Contains("delete"))
+                            {  
+                                <td class="no-print">
+                                    @if (userRoles.Contains("edit"))
+                                    {
+                                        @Html.ActionLink(" ", "Edit", new { assessmentGroupPK = @item.AssessmentGroupPK }, new { @class = "edit" })
+                                    }
+                                    @if (userRoles.Contains("delete"))
+                                    {
+                                        @Html.ActionLink(" ", "Delete", new { assessmentGroupPK = @item.AssessmentGroupPK }, new { @class = "delete" })
+                                    }
+                                </td>
+                            }
+                        </tr>
+                        i++;
+                    }
+                }
+                else 
+                {
+                    <tr>
+                        <td class="no-records">Nema zapisa</td>
+                    </tr>
+                }  
+            </table>
+            @Html.Partial("~/Views/Shared/Partial/Pager.cshtml")
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
