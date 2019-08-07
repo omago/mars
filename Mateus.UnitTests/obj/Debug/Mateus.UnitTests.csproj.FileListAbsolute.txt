@@ -1,5 +1,0 @@
-C:\Users\Domagoj\Desktop\mars_source\Solution\Mateus.UnitTests\bin\Debug\Mateus.UnitTests.dll
-C:\Users\Domagoj\Desktop\mars_source\Solution\Mateus.UnitTests\bin\Debug\Mateus.UnitTests.pdb
-C:\Users\Domagoj\Desktop\mars_source\Solution\Mateus.UnitTests\obj\Debug\Mateus.UnitTests.csprojResolveAssemblyReference.cache
-C:\Users\Domagoj\Desktop\mars_source\Solution\Mateus.UnitTests\obj\Debug\Mateus.UnitTests.dll
-C:\Users\Domagoj\Desktop\mars_source\Solution\Mateus.UnitTests\obj\Debug\Mateus.UnitTests.pdb

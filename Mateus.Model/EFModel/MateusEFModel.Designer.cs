@@ -1344,7 +1344,7 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-        #region Primitive Properties
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -1363,7 +1363,7 @@ namespace Mateus.Model.EFModel
                 {
                     OnActivityPKChanging(value);
                     ReportPropertyChanging("ActivityPK");
-                    _ActivityPK = StructuralObject.SetValidValue(value);
+                    _ActivityPK = StructuralObject.SetValidValue(value, "ActivityPK");
                     ReportPropertyChanged("ActivityPK");
                     OnActivityPKChanged();
                 }
@@ -1388,7 +1388,7 @@ namespace Mateus.Model.EFModel
             {
                 OnCodeChanging(value);
                 ReportPropertyChanging("Code");
-                _Code = StructuralObject.SetValidValue(value, true);
+                _Code = StructuralObject.SetValidValue(value, true, "Code");
                 ReportPropertyChanged("Code");
                 OnCodeChanged();
             }
@@ -1412,7 +1412,7 @@ namespace Mateus.Model.EFModel
             {
                 OnNameChanging(value);
                 ReportPropertyChanging("Name");
-                _Name = StructuralObject.SetValidValue(value, true);
+                _Name = StructuralObject.SetValidValue(value, true, "Name");
                 ReportPropertyChanged("Name");
                 OnNameChanged();
             }
@@ -1436,7 +1436,7 @@ namespace Mateus.Model.EFModel
             {
                 OnHighRiskChanging(value);
                 ReportPropertyChanging("HighRisk");
-                _HighRisk = StructuralObject.SetValidValue(value);
+                _HighRisk = StructuralObject.SetValidValue(value, "HighRisk");
                 ReportPropertyChanged("HighRisk");
                 OnHighRiskChanged();
             }
@@ -1460,7 +1460,7 @@ namespace Mateus.Model.EFModel
             {
                 OnLowRiskChanging(value);
                 ReportPropertyChanging("LowRisk");
-                _LowRisk = StructuralObject.SetValidValue(value);
+                _LowRisk = StructuralObject.SetValidValue(value, "LowRisk");
                 ReportPropertyChanged("LowRisk");
                 OnLowRiskChanged();
             }
@@ -1484,7 +1484,7 @@ namespace Mateus.Model.EFModel
             {
                 OnDeletedChanging(value);
                 ReportPropertyChanging("Deleted");
-                _Deleted = StructuralObject.SetValidValue(value);
+                _Deleted = StructuralObject.SetValidValue(value, "Deleted");
                 ReportPropertyChanged("Deleted");
                 OnDeletedChanged();
             }
@@ -1495,7 +1495,6 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-    
         #region Navigation Properties
     
         /// <summary>
@@ -1547,7 +1546,7 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-        #region Primitive Properties
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -1566,7 +1565,7 @@ namespace Mateus.Model.EFModel
                 {
                     OnAdditionalFactorPKChanging(value);
                     ReportPropertyChanging("AdditionalFactorPK");
-                    _AdditionalFactorPK = StructuralObject.SetValidValue(value);
+                    _AdditionalFactorPK = StructuralObject.SetValidValue(value, "AdditionalFactorPK");
                     ReportPropertyChanged("AdditionalFactorPK");
                     OnAdditionalFactorPKChanged();
                 }
@@ -1591,7 +1590,7 @@ namespace Mateus.Model.EFModel
             {
                 OnNameChanging(value);
                 ReportPropertyChanging("Name");
-                _Name = StructuralObject.SetValidValue(value, true);
+                _Name = StructuralObject.SetValidValue(value, true, "Name");
                 ReportPropertyChanged("Name");
                 OnNameChanged();
             }
@@ -1615,7 +1614,7 @@ namespace Mateus.Model.EFModel
             {
                 OnDeletedChanging(value);
                 ReportPropertyChanging("Deleted");
-                _Deleted = StructuralObject.SetValidValue(value);
+                _Deleted = StructuralObject.SetValidValue(value, "Deleted");
                 ReportPropertyChanged("Deleted");
                 OnDeletedChanged();
             }
@@ -1626,7 +1625,6 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-    
     }
     
     /// <summary>
@@ -1652,7 +1650,7 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-        #region Primitive Properties
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -1671,7 +1669,7 @@ namespace Mateus.Model.EFModel
                 {
                     OnAnnexContractPKChanging(value);
                     ReportPropertyChanging("AnnexContractPK");
-                    _AnnexContractPK = StructuralObject.SetValidValue(value);
+                    _AnnexContractPK = StructuralObject.SetValidValue(value, "AnnexContractPK");
                     ReportPropertyChanged("AnnexContractPK");
                     OnAnnexContractPKChanged();
                 }
@@ -1696,7 +1694,7 @@ namespace Mateus.Model.EFModel
             {
                 OnContractFKChanging(value);
                 ReportPropertyChanging("ContractFK");
-                _ContractFK = StructuralObject.SetValidValue(value);
+                _ContractFK = StructuralObject.SetValidValue(value, "ContractFK");
                 ReportPropertyChanged("ContractFK");
                 OnContractFKChanged();
             }
@@ -1720,7 +1718,7 @@ namespace Mateus.Model.EFModel
             {
                 OnNameChanging(value);
                 ReportPropertyChanging("Name");
-                _Name = StructuralObject.SetValidValue(value, true);
+                _Name = StructuralObject.SetValidValue(value, true, "Name");
                 ReportPropertyChanged("Name");
                 OnNameChanged();
             }
@@ -1744,7 +1742,7 @@ namespace Mateus.Model.EFModel
             {
                 OnNumberChanging(value);
                 ReportPropertyChanging("Number");
-                _Number = StructuralObject.SetValidValue(value, true);
+                _Number = StructuralObject.SetValidValue(value, true, "Number");
                 ReportPropertyChanged("Number");
                 OnNumberChanged();
             }
@@ -1768,7 +1766,7 @@ namespace Mateus.Model.EFModel
             {
                 OnDateChanging(value);
                 ReportPropertyChanging("Date");
-                _Date = StructuralObject.SetValidValue(value);
+                _Date = StructuralObject.SetValidValue(value, "Date");
                 ReportPropertyChanged("Date");
                 OnDateChanged();
             }
@@ -1792,7 +1790,7 @@ namespace Mateus.Model.EFModel
             {
                 OnContractValidityFKChanging(value);
                 ReportPropertyChanging("ContractValidityFK");
-                _ContractValidityFK = StructuralObject.SetValidValue(value);
+                _ContractValidityFK = StructuralObject.SetValidValue(value, "ContractValidityFK");
                 ReportPropertyChanged("ContractValidityFK");
                 OnContractValidityFKChanged();
             }
@@ -1816,7 +1814,7 @@ namespace Mateus.Model.EFModel
             {
                 OnAnnexContractBeginChanging(value);
                 ReportPropertyChanging("AnnexContractBegin");
-                _AnnexContractBegin = StructuralObject.SetValidValue(value);
+                _AnnexContractBegin = StructuralObject.SetValidValue(value, "AnnexContractBegin");
                 ReportPropertyChanged("AnnexContractBegin");
                 OnAnnexContractBeginChanged();
             }
@@ -1840,7 +1838,7 @@ namespace Mateus.Model.EFModel
             {
                 OnAnnexContractEndChanging(value);
                 ReportPropertyChanging("AnnexContractEnd");
-                _AnnexContractEnd = StructuralObject.SetValidValue(value);
+                _AnnexContractEnd = StructuralObject.SetValidValue(value, "AnnexContractEnd");
                 ReportPropertyChanged("AnnexContractEnd");
                 OnAnnexContractEndChanged();
             }
@@ -1864,7 +1862,7 @@ namespace Mateus.Model.EFModel
             {
                 OnTerminationDateChanging(value);
                 ReportPropertyChanging("TerminationDate");
-                _TerminationDate = StructuralObject.SetValidValue(value);
+                _TerminationDate = StructuralObject.SetValidValue(value, "TerminationDate");
                 ReportPropertyChanged("TerminationDate");
                 OnTerminationDateChanged();
             }
@@ -1888,7 +1886,7 @@ namespace Mateus.Model.EFModel
             {
                 OnTerminationDescriptionChanging(value);
                 ReportPropertyChanging("TerminationDescription");
-                _TerminationDescription = StructuralObject.SetValidValue(value, true);
+                _TerminationDescription = StructuralObject.SetValidValue(value, true, "TerminationDescription");
                 ReportPropertyChanged("TerminationDescription");
                 OnTerminationDescriptionChanged();
             }
@@ -1912,7 +1910,7 @@ namespace Mateus.Model.EFModel
             {
                 OnTerminatedChanging(value);
                 ReportPropertyChanging("Terminated");
-                _Terminated = StructuralObject.SetValidValue(value);
+                _Terminated = StructuralObject.SetValidValue(value, "Terminated");
                 ReportPropertyChanged("Terminated");
                 OnTerminatedChanged();
             }
@@ -1936,7 +1934,7 @@ namespace Mateus.Model.EFModel
             {
                 OnCurrencyFKChanging(value);
                 ReportPropertyChanging("CurrencyFK");
-                _CurrencyFK = StructuralObject.SetValidValue(value);
+                _CurrencyFK = StructuralObject.SetValidValue(value, "CurrencyFK");
                 ReportPropertyChanged("CurrencyFK");
                 OnCurrencyFKChanged();
             }
@@ -1960,7 +1958,7 @@ namespace Mateus.Model.EFModel
             {
                 OnMIOChanging(value);
                 ReportPropertyChanging("MIO");
-                _MIO = StructuralObject.SetValidValue(value);
+                _MIO = StructuralObject.SetValidValue(value, "MIO");
                 ReportPropertyChanged("MIO");
                 OnMIOChanged();
             }
@@ -1984,7 +1982,7 @@ namespace Mateus.Model.EFModel
             {
                 OnTSIChanging(value);
                 ReportPropertyChanging("TSI");
-                _TSI = StructuralObject.SetValidValue(value);
+                _TSI = StructuralObject.SetValidValue(value, "TSI");
                 ReportPropertyChanged("TSI");
                 OnTSIChanged();
             }
@@ -2008,7 +2006,7 @@ namespace Mateus.Model.EFModel
             {
                 OnGZRChanging(value);
                 ReportPropertyChanging("GZR");
-                _GZR = StructuralObject.SetValidValue(value);
+                _GZR = StructuralObject.SetValidValue(value, "GZR");
                 ReportPropertyChanged("GZR");
                 OnGZRChanged();
             }
@@ -2032,7 +2030,7 @@ namespace Mateus.Model.EFModel
             {
                 OnOPLChanging(value);
                 ReportPropertyChanging("OPL");
-                _OPL = StructuralObject.SetValidValue(value);
+                _OPL = StructuralObject.SetValidValue(value, "OPL");
                 ReportPropertyChanged("OPL");
                 OnOPLChanged();
             }
@@ -2056,7 +2054,7 @@ namespace Mateus.Model.EFModel
             {
                 OnAUPChanging(value);
                 ReportPropertyChanging("AUP");
-                _AUP = StructuralObject.SetValidValue(value);
+                _AUP = StructuralObject.SetValidValue(value, "AUP");
                 ReportPropertyChanged("AUP");
                 OnAUPChanged();
             }
@@ -2080,7 +2078,7 @@ namespace Mateus.Model.EFModel
             {
                 OnDeletedChanging(value);
                 ReportPropertyChanging("Deleted");
-                _Deleted = StructuralObject.SetValidValue(value);
+                _Deleted = StructuralObject.SetValidValue(value, "Deleted");
                 ReportPropertyChanged("Deleted");
                 OnDeletedChanged();
             }
@@ -2091,7 +2089,6 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-    
         #region Navigation Properties
     
         /// <summary>
@@ -2197,7 +2194,7 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-        #region Primitive Properties
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -2216,7 +2213,7 @@ namespace Mateus.Model.EFModel
                 {
                     OnAssessmentPKChanging(value);
                     ReportPropertyChanging("AssessmentPK");
-                    _AssessmentPK = StructuralObject.SetValidValue(value);
+                    _AssessmentPK = StructuralObject.SetValidValue(value, "AssessmentPK");
                     ReportPropertyChanged("AssessmentPK");
                     OnAssessmentPKChanged();
                 }
@@ -2241,7 +2238,7 @@ namespace Mateus.Model.EFModel
             {
                 OnLegalEntityFKChanging(value);
                 ReportPropertyChanging("LegalEntityFK");
-                _LegalEntityFK = StructuralObject.SetValidValue(value);
+                _LegalEntityFK = StructuralObject.SetValidValue(value, "LegalEntityFK");
                 ReportPropertyChanged("LegalEntityFK");
                 OnLegalEntityFKChanged();
             }
@@ -2265,7 +2262,7 @@ namespace Mateus.Model.EFModel
             {
                 OnRiskFKChanging(value);
                 ReportPropertyChanging("RiskFK");
-                _RiskFK = StructuralObject.SetValidValue(value);
+                _RiskFK = StructuralObject.SetValidValue(value, "RiskFK");
                 ReportPropertyChanged("RiskFK");
                 OnRiskFKChanged();
             }
@@ -2289,7 +2286,7 @@ namespace Mateus.Model.EFModel
             {
                 OnAssessmentTypeFKChanging(value);
                 ReportPropertyChanging("AssessmentTypeFK");
-                _AssessmentTypeFK = StructuralObject.SetValidValue(value);
+                _AssessmentTypeFK = StructuralObject.SetValidValue(value, "AssessmentTypeFK");
                 ReportPropertyChanged("AssessmentTypeFK");
                 OnAssessmentTypeFKChanged();
             }
@@ -2313,7 +2310,7 @@ namespace Mateus.Model.EFModel
             {
                 OnAssessmentCommentChanging(value);
                 ReportPropertyChanging("AssessmentComment");
-                _AssessmentComment = StructuralObject.SetValidValue(value, true);
+                _AssessmentComment = StructuralObject.SetValidValue(value, true, "AssessmentComment");
                 ReportPropertyChanged("AssessmentComment");
                 OnAssessmentCommentChanged();
             }
@@ -2337,7 +2334,7 @@ namespace Mateus.Model.EFModel
             {
                 OnAssessmentDateChanging(value);
                 ReportPropertyChanging("AssessmentDate");
-                _AssessmentDate = StructuralObject.SetValidValue(value);
+                _AssessmentDate = StructuralObject.SetValidValue(value, "AssessmentDate");
                 ReportPropertyChanged("AssessmentDate");
                 OnAssessmentDateChanged();
             }
@@ -2361,7 +2358,7 @@ namespace Mateus.Model.EFModel
             {
                 OnChangeDateChanging(value);
                 ReportPropertyChanging("ChangeDate");
-                _ChangeDate = StructuralObject.SetValidValue(value);
+                _ChangeDate = StructuralObject.SetValidValue(value, "ChangeDate");
                 ReportPropertyChanged("ChangeDate");
                 OnChangeDateChanged();
             }
@@ -2385,7 +2382,7 @@ namespace Mateus.Model.EFModel
             {
                 OnDeletedChanging(value);
                 ReportPropertyChanging("Deleted");
-                _Deleted = StructuralObject.SetValidValue(value);
+                _Deleted = StructuralObject.SetValidValue(value, "Deleted");
                 ReportPropertyChanged("Deleted");
                 OnDeletedChanged();
             }
@@ -2396,7 +2393,6 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-    
         #region Navigation Properties
     
         /// <summary>
@@ -2524,7 +2520,7 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-        #region Primitive Properties
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -2543,7 +2539,7 @@ namespace Mateus.Model.EFModel
                 {
                     OnAssessmentAnswerPKChanging(value);
                     ReportPropertyChanging("AssessmentAnswerPK");
-                    _AssessmentAnswerPK = StructuralObject.SetValidValue(value);
+                    _AssessmentAnswerPK = StructuralObject.SetValidValue(value, "AssessmentAnswerPK");
                     ReportPropertyChanged("AssessmentAnswerPK");
                     OnAssessmentAnswerPKChanged();
                 }
@@ -2568,7 +2564,7 @@ namespace Mateus.Model.EFModel
             {
                 OnAssessmentAnswerChanging(value);
                 ReportPropertyChanging("AssessmentAnswer");
-                _AssessmentAnswer = StructuralObject.SetValidValue(value);
+                _AssessmentAnswer = StructuralObject.SetValidValue(value, "AssessmentAnswer");
                 ReportPropertyChanged("AssessmentAnswer");
                 OnAssessmentAnswerChanged();
             }
@@ -2592,7 +2588,7 @@ namespace Mateus.Model.EFModel
             {
                 OnAssessmentQuestionFKChanging(value);
                 ReportPropertyChanging("AssessmentQuestionFK");
-                _AssessmentQuestionFK = StructuralObject.SetValidValue(value);
+                _AssessmentQuestionFK = StructuralObject.SetValidValue(value, "AssessmentQuestionFK");
                 ReportPropertyChanged("AssessmentQuestionFK");
                 OnAssessmentQuestionFKChanged();
             }
@@ -2616,7 +2612,7 @@ namespace Mateus.Model.EFModel
             {
                 OnAssessmentFKChanging(value);
                 ReportPropertyChanging("AssessmentFK");
-                _AssessmentFK = StructuralObject.SetValidValue(value);
+                _AssessmentFK = StructuralObject.SetValidValue(value, "AssessmentFK");
                 ReportPropertyChanged("AssessmentFK");
                 OnAssessmentFKChanged();
             }
@@ -2640,7 +2636,7 @@ namespace Mateus.Model.EFModel
             {
                 OnDeletedChanging(value);
                 ReportPropertyChanging("Deleted");
-                _Deleted = StructuralObject.SetValidValue(value);
+                _Deleted = StructuralObject.SetValidValue(value, "Deleted");
                 ReportPropertyChanged("Deleted");
                 OnDeletedChanged();
             }
@@ -2651,7 +2647,6 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-    
         #region Navigation Properties
     
         /// <summary>
@@ -2757,7 +2752,7 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-        #region Primitive Properties
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -2776,7 +2771,7 @@ namespace Mateus.Model.EFModel
                 {
                     OnAssessmentGroupPKChanging(value);
                     ReportPropertyChanging("AssessmentGroupPK");
-                    _AssessmentGroupPK = StructuralObject.SetValidValue(value);
+                    _AssessmentGroupPK = StructuralObject.SetValidValue(value, "AssessmentGroupPK");
                     ReportPropertyChanged("AssessmentGroupPK");
                     OnAssessmentGroupPKChanged();
                 }
@@ -2801,7 +2796,7 @@ namespace Mateus.Model.EFModel
             {
                 OnNameChanging(value);
                 ReportPropertyChanging("Name");
-                _Name = StructuralObject.SetValidValue(value, true);
+                _Name = StructuralObject.SetValidValue(value, true, "Name");
                 ReportPropertyChanged("Name");
                 OnNameChanged();
             }
@@ -2825,7 +2820,7 @@ namespace Mateus.Model.EFModel
             {
                 OnDeletedChanging(value);
                 ReportPropertyChanging("Deleted");
-                _Deleted = StructuralObject.SetValidValue(value);
+                _Deleted = StructuralObject.SetValidValue(value, "Deleted");
                 ReportPropertyChanged("Deleted");
                 OnDeletedChanged();
             }
@@ -2849,7 +2844,7 @@ namespace Mateus.Model.EFModel
             {
                 OnAssessmentTypeFKChanging(value);
                 ReportPropertyChanging("AssessmentTypeFK");
-                _AssessmentTypeFK = StructuralObject.SetValidValue(value);
+                _AssessmentTypeFK = StructuralObject.SetValidValue(value, "AssessmentTypeFK");
                 ReportPropertyChanged("AssessmentTypeFK");
                 OnAssessmentTypeFKChanged();
             }
@@ -2860,7 +2855,6 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-    
         #region Navigation Properties
     
         /// <summary>
@@ -2950,7 +2944,7 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-        #region Primitive Properties
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -2969,7 +2963,7 @@ namespace Mateus.Model.EFModel
                 {
                     OnAssessmentQuestionPKChanging(value);
                     ReportPropertyChanging("AssessmentQuestionPK");
-                    _AssessmentQuestionPK = StructuralObject.SetValidValue(value);
+                    _AssessmentQuestionPK = StructuralObject.SetValidValue(value, "AssessmentQuestionPK");
                     ReportPropertyChanged("AssessmentQuestionPK");
                     OnAssessmentQuestionPKChanged();
                 }
@@ -2994,7 +2988,7 @@ namespace Mateus.Model.EFModel
             {
                 OnNameChanging(value);
                 ReportPropertyChanging("Name");
-                _Name = StructuralObject.SetValidValue(value, true);
+                _Name = StructuralObject.SetValidValue(value, true, "Name");
                 ReportPropertyChanged("Name");
                 OnNameChanged();
             }
@@ -3018,7 +3012,7 @@ namespace Mateus.Model.EFModel
             {
                 OnDeletedChanging(value);
                 ReportPropertyChanging("Deleted");
-                _Deleted = StructuralObject.SetValidValue(value);
+                _Deleted = StructuralObject.SetValidValue(value, "Deleted");
                 ReportPropertyChanged("Deleted");
                 OnDeletedChanged();
             }
@@ -3042,7 +3036,7 @@ namespace Mateus.Model.EFModel
             {
                 OnAssessmentGroupFKChanging(value);
                 ReportPropertyChanging("AssessmentGroupFK");
-                _AssessmentGroupFK = StructuralObject.SetValidValue(value);
+                _AssessmentGroupFK = StructuralObject.SetValidValue(value, "AssessmentGroupFK");
                 ReportPropertyChanged("AssessmentGroupFK");
                 OnAssessmentGroupFKChanged();
             }
@@ -3053,7 +3047,6 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-    
         #region Navigation Properties
     
         /// <summary>
@@ -3143,7 +3136,7 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-        #region Primitive Properties
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -3162,7 +3155,7 @@ namespace Mateus.Model.EFModel
                 {
                     OnAssessmentTypePKChanging(value);
                     ReportPropertyChanging("AssessmentTypePK");
-                    _AssessmentTypePK = StructuralObject.SetValidValue(value);
+                    _AssessmentTypePK = StructuralObject.SetValidValue(value, "AssessmentTypePK");
                     ReportPropertyChanged("AssessmentTypePK");
                     OnAssessmentTypePKChanged();
                 }
@@ -3187,7 +3180,7 @@ namespace Mateus.Model.EFModel
             {
                 OnNameChanging(value);
                 ReportPropertyChanging("Name");
-                _Name = StructuralObject.SetValidValue(value, true);
+                _Name = StructuralObject.SetValidValue(value, true, "Name");
                 ReportPropertyChanged("Name");
                 OnNameChanged();
             }
@@ -3211,7 +3204,7 @@ namespace Mateus.Model.EFModel
             {
                 OnDeletedChanging(value);
                 ReportPropertyChanging("Deleted");
-                _Deleted = StructuralObject.SetValidValue(value);
+                _Deleted = StructuralObject.SetValidValue(value, "Deleted");
                 ReportPropertyChanged("Deleted");
                 OnDeletedChanged();
             }
@@ -3222,7 +3215,6 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-    
         #region Navigation Properties
     
         /// <summary>
@@ -3296,7 +3288,7 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-        #region Primitive Properties
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -3315,7 +3307,7 @@ namespace Mateus.Model.EFModel
                 {
                     OnAttachmentPKChanging(value);
                     ReportPropertyChanging("AttachmentPK");
-                    _AttachmentPK = StructuralObject.SetValidValue(value);
+                    _AttachmentPK = StructuralObject.SetValidValue(value, "AttachmentPK");
                     ReportPropertyChanged("AttachmentPK");
                     OnAttachmentPKChanged();
                 }
@@ -3340,7 +3332,7 @@ namespace Mateus.Model.EFModel
             {
                 OnNameChanging(value);
                 ReportPropertyChanging("Name");
-                _Name = StructuralObject.SetValidValue(value, true);
+                _Name = StructuralObject.SetValidValue(value, true, "Name");
                 ReportPropertyChanged("Name");
                 OnNameChanged();
             }
@@ -3364,7 +3356,7 @@ namespace Mateus.Model.EFModel
             {
                 OnFilenameChanging(value);
                 ReportPropertyChanging("Filename");
-                _Filename = StructuralObject.SetValidValue(value, true);
+                _Filename = StructuralObject.SetValidValue(value, true, "Filename");
                 ReportPropertyChanged("Filename");
                 OnFilenameChanged();
             }
@@ -3388,7 +3380,7 @@ namespace Mateus.Model.EFModel
             {
                 OnExtensionChanging(value);
                 ReportPropertyChanging("Extension");
-                _Extension = StructuralObject.SetValidValue(value, true);
+                _Extension = StructuralObject.SetValidValue(value, true, "Extension");
                 ReportPropertyChanged("Extension");
                 OnExtensionChanged();
             }
@@ -3412,7 +3404,7 @@ namespace Mateus.Model.EFModel
             {
                 OnContentTypeChanging(value);
                 ReportPropertyChanging("ContentType");
-                _ContentType = StructuralObject.SetValidValue(value, true);
+                _ContentType = StructuralObject.SetValidValue(value, true, "ContentType");
                 ReportPropertyChanged("ContentType");
                 OnContentTypeChanged();
             }
@@ -3436,7 +3428,7 @@ namespace Mateus.Model.EFModel
             {
                 OnDeletedChanging(value);
                 ReportPropertyChanging("Deleted");
-                _Deleted = StructuralObject.SetValidValue(value);
+                _Deleted = StructuralObject.SetValidValue(value, "Deleted");
                 ReportPropertyChanged("Deleted");
                 OnDeletedChanged();
             }
@@ -3447,7 +3439,6 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-    
         #region Navigation Properties
     
         /// <summary>
@@ -3499,7 +3490,7 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-        #region Primitive Properties
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -3518,7 +3509,7 @@ namespace Mateus.Model.EFModel
                 {
                     OnAuditingDetailPKChanging(value);
                     ReportPropertyChanging("AuditingDetailPK");
-                    _AuditingDetailPK = StructuralObject.SetValidValue(value);
+                    _AuditingDetailPK = StructuralObject.SetValidValue(value, "AuditingDetailPK");
                     ReportPropertyChanged("AuditingDetailPK");
                     OnAuditingDetailPKChanged();
                 }
@@ -3543,7 +3534,7 @@ namespace Mateus.Model.EFModel
             {
                 OnAuditingMasterFKChanging(value);
                 ReportPropertyChanging("AuditingMasterFK");
-                _AuditingMasterFK = StructuralObject.SetValidValue(value);
+                _AuditingMasterFK = StructuralObject.SetValidValue(value, "AuditingMasterFK");
                 ReportPropertyChanged("AuditingMasterFK");
                 OnAuditingMasterFKChanged();
             }
@@ -3567,7 +3558,7 @@ namespace Mateus.Model.EFModel
             {
                 OnColumnNameChanging(value);
                 ReportPropertyChanging("ColumnName");
-                _ColumnName = StructuralObject.SetValidValue(value, true);
+                _ColumnName = StructuralObject.SetValidValue(value, true, "ColumnName");
                 ReportPropertyChanged("ColumnName");
                 OnColumnNameChanged();
             }
@@ -3591,7 +3582,7 @@ namespace Mateus.Model.EFModel
             {
                 OnOldValueChanging(value);
                 ReportPropertyChanging("OldValue");
-                _OldValue = StructuralObject.SetValidValue(value, true);
+                _OldValue = StructuralObject.SetValidValue(value, true, "OldValue");
                 ReportPropertyChanged("OldValue");
                 OnOldValueChanged();
             }
@@ -3615,7 +3606,7 @@ namespace Mateus.Model.EFModel
             {
                 OnNewValueChanging(value);
                 ReportPropertyChanging("NewValue");
-                _NewValue = StructuralObject.SetValidValue(value, true);
+                _NewValue = StructuralObject.SetValidValue(value, true, "NewValue");
                 ReportPropertyChanged("NewValue");
                 OnNewValueChanged();
             }
@@ -3626,7 +3617,6 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-    
         #region Navigation Properties
     
         /// <summary>
@@ -3694,7 +3684,7 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-        #region Primitive Properties
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -3713,7 +3703,7 @@ namespace Mateus.Model.EFModel
                 {
                     OnAuditingMasterPKChanging(value);
                     ReportPropertyChanging("AuditingMasterPK");
-                    _AuditingMasterPK = StructuralObject.SetValidValue(value);
+                    _AuditingMasterPK = StructuralObject.SetValidValue(value, "AuditingMasterPK");
                     ReportPropertyChanged("AuditingMasterPK");
                     OnAuditingMasterPKChanged();
                 }
@@ -3738,7 +3728,7 @@ namespace Mateus.Model.EFModel
             {
                 OnUserFKChanging(value);
                 ReportPropertyChanging("UserFK");
-                _UserFK = StructuralObject.SetValidValue(value);
+                _UserFK = StructuralObject.SetValidValue(value, "UserFK");
                 ReportPropertyChanged("UserFK");
                 OnUserFKChanged();
             }
@@ -3762,7 +3752,7 @@ namespace Mateus.Model.EFModel
             {
                 OnDBNameChanging(value);
                 ReportPropertyChanging("DBName");
-                _DBName = StructuralObject.SetValidValue(value, true);
+                _DBName = StructuralObject.SetValidValue(value, true, "DBName");
                 ReportPropertyChanged("DBName");
                 OnDBNameChanged();
             }
@@ -3786,7 +3776,7 @@ namespace Mateus.Model.EFModel
             {
                 OnTableNameChanging(value);
                 ReportPropertyChanging("TableName");
-                _TableName = StructuralObject.SetValidValue(value, true);
+                _TableName = StructuralObject.SetValidValue(value, true, "TableName");
                 ReportPropertyChanged("TableName");
                 OnTableNameChanged();
             }
@@ -3810,7 +3800,7 @@ namespace Mateus.Model.EFModel
             {
                 OnTableNameFKChanging(value);
                 ReportPropertyChanging("TableNameFK");
-                _TableNameFK = StructuralObject.SetValidValue(value);
+                _TableNameFK = StructuralObject.SetValidValue(value, "TableNameFK");
                 ReportPropertyChanged("TableNameFK");
                 OnTableNameFKChanged();
             }
@@ -3834,7 +3824,7 @@ namespace Mateus.Model.EFModel
             {
                 OnDateChanging(value);
                 ReportPropertyChanging("Date");
-                _Date = StructuralObject.SetValidValue(value);
+                _Date = StructuralObject.SetValidValue(value, "Date");
                 ReportPropertyChanged("Date");
                 OnDateChanged();
             }
@@ -3858,7 +3848,7 @@ namespace Mateus.Model.EFModel
             {
                 OnOperationChanging(value);
                 ReportPropertyChanging("Operation");
-                _Operation = StructuralObject.SetValidValue(value, true);
+                _Operation = StructuralObject.SetValidValue(value, true, "Operation");
                 ReportPropertyChanged("Operation");
                 OnOperationChanged();
             }
@@ -3882,7 +3872,7 @@ namespace Mateus.Model.EFModel
             {
                 OnServerNameChanging(value);
                 ReportPropertyChanging("ServerName");
-                _ServerName = StructuralObject.SetValidValue(value, true);
+                _ServerName = StructuralObject.SetValidValue(value, true, "ServerName");
                 ReportPropertyChanged("ServerName");
                 OnServerNameChanged();
             }
@@ -3906,7 +3896,7 @@ namespace Mateus.Model.EFModel
             {
                 OnSessionTokenChanging(value);
                 ReportPropertyChanging("SessionToken");
-                _SessionToken = StructuralObject.SetValidValue(value, true);
+                _SessionToken = StructuralObject.SetValidValue(value, true, "SessionToken");
                 ReportPropertyChanged("SessionToken");
                 OnSessionTokenChanged();
             }
@@ -3930,7 +3920,7 @@ namespace Mateus.Model.EFModel
             {
                 OnRelatedEntityPKChanging(value);
                 ReportPropertyChanging("RelatedEntityPK");
-                _RelatedEntityPK = StructuralObject.SetValidValue(value);
+                _RelatedEntityPK = StructuralObject.SetValidValue(value, "RelatedEntityPK");
                 ReportPropertyChanged("RelatedEntityPK");
                 OnRelatedEntityPKChanged();
             }
@@ -3941,7 +3931,6 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-    
         #region Navigation Properties
     
         /// <summary>
@@ -3993,7 +3982,7 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-        #region Primitive Properties
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -4012,7 +4001,7 @@ namespace Mateus.Model.EFModel
                 {
                     OnBankPKChanging(value);
                     ReportPropertyChanging("BankPK");
-                    _BankPK = StructuralObject.SetValidValue(value);
+                    _BankPK = StructuralObject.SetValidValue(value, "BankPK");
                     ReportPropertyChanged("BankPK");
                     OnBankPKChanged();
                 }
@@ -4037,7 +4026,7 @@ namespace Mateus.Model.EFModel
             {
                 OnNameChanging(value);
                 ReportPropertyChanging("Name");
-                _Name = StructuralObject.SetValidValue(value, true);
+                _Name = StructuralObject.SetValidValue(value, true, "Name");
                 ReportPropertyChanged("Name");
                 OnNameChanged();
             }
@@ -4061,7 +4050,7 @@ namespace Mateus.Model.EFModel
             {
                 OnAccountNumberChanging(value);
                 ReportPropertyChanging("AccountNumber");
-                _AccountNumber = StructuralObject.SetValidValue(value, true);
+                _AccountNumber = StructuralObject.SetValidValue(value, true, "AccountNumber");
                 ReportPropertyChanged("AccountNumber");
                 OnAccountNumberChanged();
             }
@@ -4085,7 +4074,7 @@ namespace Mateus.Model.EFModel
             {
                 OnSwiftChanging(value);
                 ReportPropertyChanging("Swift");
-                _Swift = StructuralObject.SetValidValue(value, true);
+                _Swift = StructuralObject.SetValidValue(value, true, "Swift");
                 ReportPropertyChanged("Swift");
                 OnSwiftChanged();
             }
@@ -4109,7 +4098,7 @@ namespace Mateus.Model.EFModel
             {
                 OnOibChanging(value);
                 ReportPropertyChanging("Oib");
-                _Oib = StructuralObject.SetValidValue(value, true);
+                _Oib = StructuralObject.SetValidValue(value, true, "Oib");
                 ReportPropertyChanged("Oib");
                 OnOibChanged();
             }
@@ -4133,7 +4122,7 @@ namespace Mateus.Model.EFModel
             {
                 OnIbanChanging(value);
                 ReportPropertyChanging("Iban");
-                _Iban = StructuralObject.SetValidValue(value, true);
+                _Iban = StructuralObject.SetValidValue(value, true, "Iban");
                 ReportPropertyChanged("Iban");
                 OnIbanChanged();
             }
@@ -4157,7 +4146,7 @@ namespace Mateus.Model.EFModel
             {
                 OnDeletedChanging(value);
                 ReportPropertyChanging("Deleted");
-                _Deleted = StructuralObject.SetValidValue(value);
+                _Deleted = StructuralObject.SetValidValue(value, "Deleted");
                 ReportPropertyChanged("Deleted");
                 OnDeletedChanged();
             }
@@ -4168,7 +4157,6 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-    
         #region Navigation Properties
     
         /// <summary>
@@ -4220,7 +4208,7 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-        #region Primitive Properties
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -4239,7 +4227,7 @@ namespace Mateus.Model.EFModel
                 {
                     OnBussinesShareBurdenPKChanging(value);
                     ReportPropertyChanging("BussinesShareBurdenPK");
-                    _BussinesShareBurdenPK = StructuralObject.SetValidValue(value);
+                    _BussinesShareBurdenPK = StructuralObject.SetValidValue(value, "BussinesShareBurdenPK");
                     ReportPropertyChanged("BussinesShareBurdenPK");
                     OnBussinesShareBurdenPKChanged();
                 }
@@ -4264,7 +4252,7 @@ namespace Mateus.Model.EFModel
             {
                 OnNameChanging(value);
                 ReportPropertyChanging("Name");
-                _Name = StructuralObject.SetValidValue(value, true);
+                _Name = StructuralObject.SetValidValue(value, true, "Name");
                 ReportPropertyChanged("Name");
                 OnNameChanged();
             }
@@ -4288,7 +4276,7 @@ namespace Mateus.Model.EFModel
             {
                 OnDeletedChanging(value);
                 ReportPropertyChanging("Deleted");
-                _Deleted = StructuralObject.SetValidValue(value);
+                _Deleted = StructuralObject.SetValidValue(value, "Deleted");
                 ReportPropertyChanged("Deleted");
                 OnDeletedChanged();
             }
@@ -4299,7 +4287,6 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-    
     }
     
     /// <summary>
@@ -4325,7 +4312,7 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-        #region Primitive Properties
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -4344,7 +4331,7 @@ namespace Mateus.Model.EFModel
                 {
                     OnChangeTypePKChanging(value);
                     ReportPropertyChanging("ChangeTypePK");
-                    _ChangeTypePK = StructuralObject.SetValidValue(value);
+                    _ChangeTypePK = StructuralObject.SetValidValue(value, "ChangeTypePK");
                     ReportPropertyChanged("ChangeTypePK");
                     OnChangeTypePKChanged();
                 }
@@ -4369,7 +4356,7 @@ namespace Mateus.Model.EFModel
             {
                 OnNameChanging(value);
                 ReportPropertyChanging("Name");
-                _Name = StructuralObject.SetValidValue(value, true);
+                _Name = StructuralObject.SetValidValue(value, true, "Name");
                 ReportPropertyChanged("Name");
                 OnNameChanged();
             }
@@ -4393,7 +4380,7 @@ namespace Mateus.Model.EFModel
             {
                 OnDeletedChanging(value);
                 ReportPropertyChanging("Deleted");
-                _Deleted = StructuralObject.SetValidValue(value);
+                _Deleted = StructuralObject.SetValidValue(value, "Deleted");
                 ReportPropertyChanged("Deleted");
                 OnDeletedChanged();
             }
@@ -4404,7 +4391,6 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-    
     }
     
     /// <summary>
@@ -4430,7 +4416,7 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-        #region Primitive Properties
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -4449,7 +4435,7 @@ namespace Mateus.Model.EFModel
                 {
                     OnCityCommunityPKChanging(value);
                     ReportPropertyChanging("CityCommunityPK");
-                    _CityCommunityPK = StructuralObject.SetValidValue(value);
+                    _CityCommunityPK = StructuralObject.SetValidValue(value, "CityCommunityPK");
                     ReportPropertyChanged("CityCommunityPK");
                     OnCityCommunityPKChanged();
                 }
@@ -4474,7 +4460,7 @@ namespace Mateus.Model.EFModel
             {
                 OnCountyFKChanging(value);
                 ReportPropertyChanging("CountyFK");
-                _CountyFK = StructuralObject.SetValidValue(value);
+                _CountyFK = StructuralObject.SetValidValue(value, "CountyFK");
                 ReportPropertyChanged("CountyFK");
                 OnCountyFKChanged();
             }
@@ -4498,7 +4484,7 @@ namespace Mateus.Model.EFModel
             {
                 OnNameChanging(value);
                 ReportPropertyChanging("Name");
-                _Name = StructuralObject.SetValidValue(value, true);
+                _Name = StructuralObject.SetValidValue(value, true, "Name");
                 ReportPropertyChanged("Name");
                 OnNameChanged();
             }
@@ -4522,7 +4508,7 @@ namespace Mateus.Model.EFModel
             {
                 OnCodeChanging(value);
                 ReportPropertyChanging("Code");
-                _Code = StructuralObject.SetValidValue(value);
+                _Code = StructuralObject.SetValidValue(value, "Code");
                 ReportPropertyChanged("Code");
                 OnCodeChanged();
             }
@@ -4546,7 +4532,7 @@ namespace Mateus.Model.EFModel
             {
                 OnDeletedChanging(value);
                 ReportPropertyChanging("Deleted");
-                _Deleted = StructuralObject.SetValidValue(value);
+                _Deleted = StructuralObject.SetValidValue(value, "Deleted");
                 ReportPropertyChanged("Deleted");
                 OnDeletedChanged();
             }
@@ -4557,7 +4543,6 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-    
         #region Navigation Properties
     
         /// <summary>
@@ -4713,7 +4698,7 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-        #region Primitive Properties
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -4732,7 +4717,7 @@ namespace Mateus.Model.EFModel
                 {
                     OnCommercialCourtPKChanging(value);
                     ReportPropertyChanging("CommercialCourtPK");
-                    _CommercialCourtPK = StructuralObject.SetValidValue(value);
+                    _CommercialCourtPK = StructuralObject.SetValidValue(value, "CommercialCourtPK");
                     ReportPropertyChanged("CommercialCourtPK");
                     OnCommercialCourtPKChanged();
                 }
@@ -4757,7 +4742,7 @@ namespace Mateus.Model.EFModel
             {
                 OnNameChanging(value);
                 ReportPropertyChanging("Name");
-                _Name = StructuralObject.SetValidValue(value, true);
+                _Name = StructuralObject.SetValidValue(value, true, "Name");
                 ReportPropertyChanged("Name");
                 OnNameChanged();
             }
@@ -4781,7 +4766,7 @@ namespace Mateus.Model.EFModel
             {
                 OnDeletedChanging(value);
                 ReportPropertyChanging("Deleted");
-                _Deleted = StructuralObject.SetValidValue(value);
+                _Deleted = StructuralObject.SetValidValue(value, "Deleted");
                 ReportPropertyChanged("Deleted");
                 OnDeletedChanged();
             }
@@ -4792,7 +4777,6 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-    
         #region Navigation Properties
     
         /// <summary>
@@ -4844,7 +4828,7 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-        #region Primitive Properties
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -4863,7 +4847,7 @@ namespace Mateus.Model.EFModel
                 {
                     OnContractPKChanging(value);
                     ReportPropertyChanging("ContractPK");
-                    _ContractPK = StructuralObject.SetValidValue(value);
+                    _ContractPK = StructuralObject.SetValidValue(value, "ContractPK");
                     ReportPropertyChanged("ContractPK");
                     OnContractPKChanged();
                 }
@@ -4888,7 +4872,7 @@ namespace Mateus.Model.EFModel
             {
                 OnLegalEntityFKChanging(value);
                 ReportPropertyChanging("LegalEntityFK");
-                _LegalEntityFK = StructuralObject.SetValidValue(value);
+                _LegalEntityFK = StructuralObject.SetValidValue(value, "LegalEntityFK");
                 ReportPropertyChanged("LegalEntityFK");
                 OnLegalEntityFKChanged();
             }
@@ -4912,7 +4896,7 @@ namespace Mateus.Model.EFModel
             {
                 OnNameChanging(value);
                 ReportPropertyChanging("Name");
-                _Name = StructuralObject.SetValidValue(value, true);
+                _Name = StructuralObject.SetValidValue(value, true, "Name");
                 ReportPropertyChanged("Name");
                 OnNameChanged();
             }
@@ -4936,7 +4920,7 @@ namespace Mateus.Model.EFModel
             {
                 OnNumberChanging(value);
                 ReportPropertyChanging("Number");
-                _Number = StructuralObject.SetValidValue(value, true);
+                _Number = StructuralObject.SetValidValue(value, true, "Number");
                 ReportPropertyChanged("Number");
                 OnNumberChanged();
             }
@@ -4960,7 +4944,7 @@ namespace Mateus.Model.EFModel
             {
                 OnDateChanging(value);
                 ReportPropertyChanging("Date");
-                _Date = StructuralObject.SetValidValue(value);
+                _Date = StructuralObject.SetValidValue(value, "Date");
                 ReportPropertyChanged("Date");
                 OnDateChanged();
             }
@@ -4984,7 +4968,7 @@ namespace Mateus.Model.EFModel
             {
                 OnContractValidityFKChanging(value);
                 ReportPropertyChanging("ContractValidityFK");
-                _ContractValidityFK = StructuralObject.SetValidValue(value);
+                _ContractValidityFK = StructuralObject.SetValidValue(value, "ContractValidityFK");
                 ReportPropertyChanged("ContractValidityFK");
                 OnContractValidityFKChanged();
             }
@@ -5008,7 +4992,7 @@ namespace Mateus.Model.EFModel
             {
                 OnContractBeginChanging(value);
                 ReportPropertyChanging("ContractBegin");
-                _ContractBegin = StructuralObject.SetValidValue(value);
+                _ContractBegin = StructuralObject.SetValidValue(value, "ContractBegin");
                 ReportPropertyChanged("ContractBegin");
                 OnContractBeginChanged();
             }
@@ -5032,7 +5016,7 @@ namespace Mateus.Model.EFModel
             {
                 OnContractEndChanging(value);
                 ReportPropertyChanging("ContractEnd");
-                _ContractEnd = StructuralObject.SetValidValue(value);
+                _ContractEnd = StructuralObject.SetValidValue(value, "ContractEnd");
                 ReportPropertyChanged("ContractEnd");
                 OnContractEndChanged();
             }
@@ -5056,7 +5040,7 @@ namespace Mateus.Model.EFModel
             {
                 OnTerminationDateChanging(value);
                 ReportPropertyChanging("TerminationDate");
-                _TerminationDate = StructuralObject.SetValidValue(value);
+                _TerminationDate = StructuralObject.SetValidValue(value, "TerminationDate");
                 ReportPropertyChanged("TerminationDate");
                 OnTerminationDateChanged();
             }
@@ -5080,7 +5064,7 @@ namespace Mateus.Model.EFModel
             {
                 OnTerminationDescriptionChanging(value);
                 ReportPropertyChanging("TerminationDescription");
-                _TerminationDescription = StructuralObject.SetValidValue(value, true);
+                _TerminationDescription = StructuralObject.SetValidValue(value, true, "TerminationDescription");
                 ReportPropertyChanged("TerminationDescription");
                 OnTerminationDescriptionChanged();
             }
@@ -5104,7 +5088,7 @@ namespace Mateus.Model.EFModel
             {
                 OnTerminatedChanging(value);
                 ReportPropertyChanging("Terminated");
-                _Terminated = StructuralObject.SetValidValue(value);
+                _Terminated = StructuralObject.SetValidValue(value, "Terminated");
                 ReportPropertyChanged("Terminated");
                 OnTerminatedChanged();
             }
@@ -5128,7 +5112,7 @@ namespace Mateus.Model.EFModel
             {
                 OnCurrencyFKChanging(value);
                 ReportPropertyChanging("CurrencyFK");
-                _CurrencyFK = StructuralObject.SetValidValue(value);
+                _CurrencyFK = StructuralObject.SetValidValue(value, "CurrencyFK");
                 ReportPropertyChanged("CurrencyFK");
                 OnCurrencyFKChanged();
             }
@@ -5152,7 +5136,7 @@ namespace Mateus.Model.EFModel
             {
                 OnMIOChanging(value);
                 ReportPropertyChanging("MIO");
-                _MIO = StructuralObject.SetValidValue(value);
+                _MIO = StructuralObject.SetValidValue(value, "MIO");
                 ReportPropertyChanged("MIO");
                 OnMIOChanged();
             }
@@ -5176,7 +5160,7 @@ namespace Mateus.Model.EFModel
             {
                 OnTSIChanging(value);
                 ReportPropertyChanging("TSI");
-                _TSI = StructuralObject.SetValidValue(value);
+                _TSI = StructuralObject.SetValidValue(value, "TSI");
                 ReportPropertyChanged("TSI");
                 OnTSIChanged();
             }
@@ -5200,7 +5184,7 @@ namespace Mateus.Model.EFModel
             {
                 OnGZRChanging(value);
                 ReportPropertyChanging("GZR");
-                _GZR = StructuralObject.SetValidValue(value);
+                _GZR = StructuralObject.SetValidValue(value, "GZR");
                 ReportPropertyChanged("GZR");
                 OnGZRChanged();
             }
@@ -5224,7 +5208,7 @@ namespace Mateus.Model.EFModel
             {
                 OnOPLChanging(value);
                 ReportPropertyChanging("OPL");
-                _OPL = StructuralObject.SetValidValue(value);
+                _OPL = StructuralObject.SetValidValue(value, "OPL");
                 ReportPropertyChanged("OPL");
                 OnOPLChanged();
             }
@@ -5248,7 +5232,7 @@ namespace Mateus.Model.EFModel
             {
                 OnAUPChanging(value);
                 ReportPropertyChanging("AUP");
-                _AUP = StructuralObject.SetValidValue(value);
+                _AUP = StructuralObject.SetValidValue(value, "AUP");
                 ReportPropertyChanged("AUP");
                 OnAUPChanged();
             }
@@ -5272,7 +5256,7 @@ namespace Mateus.Model.EFModel
             {
                 OnChangeDateChanging(value);
                 ReportPropertyChanging("ChangeDate");
-                _ChangeDate = StructuralObject.SetValidValue(value);
+                _ChangeDate = StructuralObject.SetValidValue(value, "ChangeDate");
                 ReportPropertyChanged("ChangeDate");
                 OnChangeDateChanged();
             }
@@ -5296,7 +5280,7 @@ namespace Mateus.Model.EFModel
             {
                 OnDeletedChanging(value);
                 ReportPropertyChanging("Deleted");
-                _Deleted = StructuralObject.SetValidValue(value);
+                _Deleted = StructuralObject.SetValidValue(value, "Deleted");
                 ReportPropertyChanged("Deleted");
                 OnDeletedChanged();
             }
@@ -5307,7 +5291,6 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-    
         #region Navigation Properties
     
         /// <summary>
@@ -5397,7 +5380,7 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-        #region Primitive Properties
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -5416,7 +5399,7 @@ namespace Mateus.Model.EFModel
                 {
                     OnContractValidityPKChanging(value);
                     ReportPropertyChanging("ContractValidityPK");
-                    _ContractValidityPK = StructuralObject.SetValidValue(value);
+                    _ContractValidityPK = StructuralObject.SetValidValue(value, "ContractValidityPK");
                     ReportPropertyChanged("ContractValidityPK");
                     OnContractValidityPKChanged();
                 }
@@ -5441,7 +5424,7 @@ namespace Mateus.Model.EFModel
             {
                 OnNameChanging(value);
                 ReportPropertyChanging("Name");
-                _Name = StructuralObject.SetValidValue(value, true);
+                _Name = StructuralObject.SetValidValue(value, true, "Name");
                 ReportPropertyChanged("Name");
                 OnNameChanged();
             }
@@ -5465,7 +5448,7 @@ namespace Mateus.Model.EFModel
             {
                 OnDeletedChanging(value);
                 ReportPropertyChanging("Deleted");
-                _Deleted = StructuralObject.SetValidValue(value);
+                _Deleted = StructuralObject.SetValidValue(value, "Deleted");
                 ReportPropertyChanged("Deleted");
                 OnDeletedChanged();
             }
@@ -5476,7 +5459,6 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-    
         #region Navigation Properties
     
         /// <summary>
@@ -5550,7 +5532,7 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-        #region Primitive Properties
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -5569,7 +5551,7 @@ namespace Mateus.Model.EFModel
                 {
                     OnCountryPKChanging(value);
                     ReportPropertyChanging("CountryPK");
-                    _CountryPK = StructuralObject.SetValidValue(value);
+                    _CountryPK = StructuralObject.SetValidValue(value, "CountryPK");
                     ReportPropertyChanged("CountryPK");
                     OnCountryPKChanged();
                 }
@@ -5594,7 +5576,7 @@ namespace Mateus.Model.EFModel
             {
                 OnNameChanging(value);
                 ReportPropertyChanging("Name");
-                _Name = StructuralObject.SetValidValue(value, true);
+                _Name = StructuralObject.SetValidValue(value, true, "Name");
                 ReportPropertyChanged("Name");
                 OnNameChanged();
             }
@@ -5618,7 +5600,7 @@ namespace Mateus.Model.EFModel
             {
                 OnNameEnChanging(value);
                 ReportPropertyChanging("NameEn");
-                _NameEn = StructuralObject.SetValidValue(value, true);
+                _NameEn = StructuralObject.SetValidValue(value, true, "NameEn");
                 ReportPropertyChanged("NameEn");
                 OnNameEnChanged();
             }
@@ -5642,7 +5624,7 @@ namespace Mateus.Model.EFModel
             {
                 OnCitizenshipChanging(value);
                 ReportPropertyChanging("Citizenship");
-                _Citizenship = StructuralObject.SetValidValue(value, true);
+                _Citizenship = StructuralObject.SetValidValue(value, true, "Citizenship");
                 ReportPropertyChanged("Citizenship");
                 OnCitizenshipChanged();
             }
@@ -5666,7 +5648,7 @@ namespace Mateus.Model.EFModel
             {
                 OnAlpha2CodeChanging(value);
                 ReportPropertyChanging("Alpha2Code");
-                _Alpha2Code = StructuralObject.SetValidValue(value, true);
+                _Alpha2Code = StructuralObject.SetValidValue(value, true, "Alpha2Code");
                 ReportPropertyChanged("Alpha2Code");
                 OnAlpha2CodeChanged();
             }
@@ -5690,7 +5672,7 @@ namespace Mateus.Model.EFModel
             {
                 OnAlpha3CodeChanging(value);
                 ReportPropertyChanging("Alpha3Code");
-                _Alpha3Code = StructuralObject.SetValidValue(value, true);
+                _Alpha3Code = StructuralObject.SetValidValue(value, true, "Alpha3Code");
                 ReportPropertyChanged("Alpha3Code");
                 OnAlpha3CodeChanged();
             }
@@ -5714,7 +5696,7 @@ namespace Mateus.Model.EFModel
             {
                 OnNumericCodeChanging(value);
                 ReportPropertyChanging("NumericCode");
-                _NumericCode = StructuralObject.SetValidValue(value, true);
+                _NumericCode = StructuralObject.SetValidValue(value, true, "NumericCode");
                 ReportPropertyChanged("NumericCode");
                 OnNumericCodeChanged();
             }
@@ -5738,7 +5720,7 @@ namespace Mateus.Model.EFModel
             {
                 OnRiskChanging(value);
                 ReportPropertyChanging("Risk");
-                _Risk = StructuralObject.SetValidValue(value);
+                _Risk = StructuralObject.SetValidValue(value, "Risk");
                 ReportPropertyChanged("Risk");
                 OnRiskChanged();
             }
@@ -5762,7 +5744,7 @@ namespace Mateus.Model.EFModel
             {
                 OnDeletedChanging(value);
                 ReportPropertyChanging("Deleted");
-                _Deleted = StructuralObject.SetValidValue(value);
+                _Deleted = StructuralObject.SetValidValue(value, "Deleted");
                 ReportPropertyChanged("Deleted");
                 OnDeletedChanged();
             }
@@ -5773,7 +5755,6 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-    
         #region Navigation Properties
     
         /// <summary>
@@ -5957,7 +5938,7 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-        #region Primitive Properties
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -5976,7 +5957,7 @@ namespace Mateus.Model.EFModel
                 {
                     OnCountyPKChanging(value);
                     ReportPropertyChanging("CountyPK");
-                    _CountyPK = StructuralObject.SetValidValue(value);
+                    _CountyPK = StructuralObject.SetValidValue(value, "CountyPK");
                     ReportPropertyChanged("CountyPK");
                     OnCountyPKChanged();
                 }
@@ -6001,7 +5982,7 @@ namespace Mateus.Model.EFModel
             {
                 OnCountryFKChanging(value);
                 ReportPropertyChanging("CountryFK");
-                _CountryFK = StructuralObject.SetValidValue(value);
+                _CountryFK = StructuralObject.SetValidValue(value, "CountryFK");
                 ReportPropertyChanged("CountryFK");
                 OnCountryFKChanged();
             }
@@ -6025,7 +6006,7 @@ namespace Mateus.Model.EFModel
             {
                 OnNameChanging(value);
                 ReportPropertyChanging("Name");
-                _Name = StructuralObject.SetValidValue(value, true);
+                _Name = StructuralObject.SetValidValue(value, true, "Name");
                 ReportPropertyChanged("Name");
                 OnNameChanged();
             }
@@ -6049,7 +6030,7 @@ namespace Mateus.Model.EFModel
             {
                 OnDeletedChanging(value);
                 ReportPropertyChanging("Deleted");
-                _Deleted = StructuralObject.SetValidValue(value);
+                _Deleted = StructuralObject.SetValidValue(value, "Deleted");
                 ReportPropertyChanged("Deleted");
                 OnDeletedChanged();
             }
@@ -6060,7 +6041,6 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-    
         #region Navigation Properties
     
         /// <summary>
@@ -6260,7 +6240,7 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-        #region Primitive Properties
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -6279,7 +6259,7 @@ namespace Mateus.Model.EFModel
                 {
                     OnCurrencyPKChanging(value);
                     ReportPropertyChanging("CurrencyPK");
-                    _CurrencyPK = StructuralObject.SetValidValue(value);
+                    _CurrencyPK = StructuralObject.SetValidValue(value, "CurrencyPK");
                     ReportPropertyChanged("CurrencyPK");
                     OnCurrencyPKChanged();
                 }
@@ -6304,7 +6284,7 @@ namespace Mateus.Model.EFModel
             {
                 OnNameChanging(value);
                 ReportPropertyChanging("Name");
-                _Name = StructuralObject.SetValidValue(value, true);
+                _Name = StructuralObject.SetValidValue(value, true, "Name");
                 ReportPropertyChanged("Name");
                 OnNameChanged();
             }
@@ -6328,7 +6308,7 @@ namespace Mateus.Model.EFModel
             {
                 OnSignChanging(value);
                 ReportPropertyChanging("Sign");
-                _Sign = StructuralObject.SetValidValue(value, true);
+                _Sign = StructuralObject.SetValidValue(value, true, "Sign");
                 ReportPropertyChanged("Sign");
                 OnSignChanged();
             }
@@ -6352,7 +6332,7 @@ namespace Mateus.Model.EFModel
             {
                 OnDeletedChanging(value);
                 ReportPropertyChanging("Deleted");
-                _Deleted = StructuralObject.SetValidValue(value);
+                _Deleted = StructuralObject.SetValidValue(value, "Deleted");
                 ReportPropertyChanged("Deleted");
                 OnDeletedChanged();
             }
@@ -6363,7 +6343,6 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-    
     }
     
     /// <summary>
@@ -6389,7 +6368,7 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-        #region Primitive Properties
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -6408,7 +6387,7 @@ namespace Mateus.Model.EFModel
                 {
                     OnFormPKChanging(value);
                     ReportPropertyChanging("FormPK");
-                    _FormPK = StructuralObject.SetValidValue(value);
+                    _FormPK = StructuralObject.SetValidValue(value, "FormPK");
                     ReportPropertyChanged("FormPK");
                     OnFormPKChanged();
                 }
@@ -6433,7 +6412,7 @@ namespace Mateus.Model.EFModel
             {
                 OnNameChanging(value);
                 ReportPropertyChanging("Name");
-                _Name = StructuralObject.SetValidValue(value, true);
+                _Name = StructuralObject.SetValidValue(value, true, "Name");
                 ReportPropertyChanged("Name");
                 OnNameChanged();
             }
@@ -6457,7 +6436,7 @@ namespace Mateus.Model.EFModel
             {
                 OnDeletedChanging(value);
                 ReportPropertyChanging("Deleted");
-                _Deleted = StructuralObject.SetValidValue(value);
+                _Deleted = StructuralObject.SetValidValue(value, "Deleted");
                 ReportPropertyChanged("Deleted");
                 OnDeletedChanged();
             }
@@ -6468,7 +6447,6 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-    
         #region Navigation Properties
     
         /// <summary>
@@ -6520,7 +6498,7 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-        #region Primitive Properties
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -6539,7 +6517,7 @@ namespace Mateus.Model.EFModel
                 {
                     OnFulfilledFactorPKChanging(value);
                     ReportPropertyChanging("FulfilledFactorPK");
-                    _FulfilledFactorPK = StructuralObject.SetValidValue(value);
+                    _FulfilledFactorPK = StructuralObject.SetValidValue(value, "FulfilledFactorPK");
                     ReportPropertyChanged("FulfilledFactorPK");
                     OnFulfilledFactorPKChanged();
                 }
@@ -6564,7 +6542,7 @@ namespace Mateus.Model.EFModel
             {
                 OnNameChanging(value);
                 ReportPropertyChanging("Name");
-                _Name = StructuralObject.SetValidValue(value, true);
+                _Name = StructuralObject.SetValidValue(value, true, "Name");
                 ReportPropertyChanged("Name");
                 OnNameChanged();
             }
@@ -6588,7 +6566,7 @@ namespace Mateus.Model.EFModel
             {
                 OnDeletedChanging(value);
                 ReportPropertyChanging("Deleted");
-                _Deleted = StructuralObject.SetValidValue(value);
+                _Deleted = StructuralObject.SetValidValue(value, "Deleted");
                 ReportPropertyChanged("Deleted");
                 OnDeletedChanged();
             }
@@ -6599,7 +6577,6 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-    
     }
     
     /// <summary>
@@ -6625,7 +6602,7 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-        #region Primitive Properties
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -6644,7 +6621,7 @@ namespace Mateus.Model.EFModel
                 {
                     OnLegalEntityPKChanging(value);
                     ReportPropertyChanging("LegalEntityPK");
-                    _LegalEntityPK = StructuralObject.SetValidValue(value);
+                    _LegalEntityPK = StructuralObject.SetValidValue(value, "LegalEntityPK");
                     ReportPropertyChanged("LegalEntityPK");
                     OnLegalEntityPKChanged();
                 }
@@ -6669,7 +6646,7 @@ namespace Mateus.Model.EFModel
             {
                 OnNameChanging(value);
                 ReportPropertyChanging("Name");
-                _Name = StructuralObject.SetValidValue(value, true);
+                _Name = StructuralObject.SetValidValue(value, true, "Name");
                 ReportPropertyChanged("Name");
                 OnNameChanged();
             }
@@ -6693,7 +6670,7 @@ namespace Mateus.Model.EFModel
             {
                 OnShortNameChanging(value);
                 ReportPropertyChanging("ShortName");
-                _ShortName = StructuralObject.SetValidValue(value, true);
+                _ShortName = StructuralObject.SetValidValue(value, true, "ShortName");
                 ReportPropertyChanged("ShortName");
                 OnShortNameChanged();
             }
@@ -6717,7 +6694,7 @@ namespace Mateus.Model.EFModel
             {
                 OnOIBChanging(value);
                 ReportPropertyChanging("OIB");
-                _OIB = StructuralObject.SetValidValue(value, true);
+                _OIB = StructuralObject.SetValidValue(value, true, "OIB");
                 ReportPropertyChanged("OIB");
                 OnOIBChanged();
             }
@@ -6741,7 +6718,7 @@ namespace Mateus.Model.EFModel
             {
                 OnMBChanging(value);
                 ReportPropertyChanging("MB");
-                _MB = StructuralObject.SetValidValue(value, true);
+                _MB = StructuralObject.SetValidValue(value, true, "MB");
                 ReportPropertyChanged("MB");
                 OnMBChanged();
             }
@@ -6765,7 +6742,7 @@ namespace Mateus.Model.EFModel
             {
                 OnMBSChanging(value);
                 ReportPropertyChanging("MBS");
-                _MBS = StructuralObject.SetValidValue(value, true);
+                _MBS = StructuralObject.SetValidValue(value, true, "MBS");
                 ReportPropertyChanged("MBS");
                 OnMBSChanged();
             }
@@ -6789,7 +6766,7 @@ namespace Mateus.Model.EFModel
             {
                 OnActivityFKChanging(value);
                 ReportPropertyChanging("ActivityFK");
-                _ActivityFK = StructuralObject.SetValidValue(value);
+                _ActivityFK = StructuralObject.SetValidValue(value, "ActivityFK");
                 ReportPropertyChanged("ActivityFK");
                 OnActivityFKChanged();
             }
@@ -6813,7 +6790,7 @@ namespace Mateus.Model.EFModel
             {
                 OnActivityDescriptionChanging(value);
                 ReportPropertyChanging("ActivityDescription");
-                _ActivityDescription = StructuralObject.SetValidValue(value, true);
+                _ActivityDescription = StructuralObject.SetValidValue(value, true, "ActivityDescription");
                 ReportPropertyChanged("ActivityDescription");
                 OnActivityDescriptionChanged();
             }
@@ -6837,7 +6814,7 @@ namespace Mateus.Model.EFModel
             {
                 OnFormFKChanging(value);
                 ReportPropertyChanging("FormFK");
-                _FormFK = StructuralObject.SetValidValue(value);
+                _FormFK = StructuralObject.SetValidValue(value, "FormFK");
                 ReportPropertyChanged("FormFK");
                 OnFormFKChanged();
             }
@@ -6861,7 +6838,7 @@ namespace Mateus.Model.EFModel
             {
                 OnFundamentalCapitalChanging(value);
                 ReportPropertyChanging("FundamentalCapital");
-                _FundamentalCapital = StructuralObject.SetValidValue(value);
+                _FundamentalCapital = StructuralObject.SetValidValue(value, "FundamentalCapital");
                 ReportPropertyChanged("FundamentalCapital");
                 OnFundamentalCapitalChanged();
             }
@@ -6885,7 +6862,7 @@ namespace Mateus.Model.EFModel
             {
                 OnCountryFKChanging(value);
                 ReportPropertyChanging("CountryFK");
-                _CountryFK = StructuralObject.SetValidValue(value);
+                _CountryFK = StructuralObject.SetValidValue(value, "CountryFK");
                 ReportPropertyChanged("CountryFK");
                 OnCountryFKChanged();
             }
@@ -6909,7 +6886,7 @@ namespace Mateus.Model.EFModel
             {
                 OnCountyFKChanging(value);
                 ReportPropertyChanging("CountyFK");
-                _CountyFK = StructuralObject.SetValidValue(value);
+                _CountyFK = StructuralObject.SetValidValue(value, "CountyFK");
                 ReportPropertyChanged("CountyFK");
                 OnCountyFKChanged();
             }
@@ -6933,7 +6910,7 @@ namespace Mateus.Model.EFModel
             {
                 OnCityCommunityFKChanging(value);
                 ReportPropertyChanging("CityCommunityFK");
-                _CityCommunityFK = StructuralObject.SetValidValue(value);
+                _CityCommunityFK = StructuralObject.SetValidValue(value, "CityCommunityFK");
                 ReportPropertyChanged("CityCommunityFK");
                 OnCityCommunityFKChanged();
             }
@@ -6957,7 +6934,7 @@ namespace Mateus.Model.EFModel
             {
                 OnStreetNameChanging(value);
                 ReportPropertyChanging("StreetName");
-                _StreetName = StructuralObject.SetValidValue(value, true);
+                _StreetName = StructuralObject.SetValidValue(value, true, "StreetName");
                 ReportPropertyChanged("StreetName");
                 OnStreetNameChanged();
             }
@@ -6981,7 +6958,7 @@ namespace Mateus.Model.EFModel
             {
                 OnPostalOfficeFKChanging(value);
                 ReportPropertyChanging("PostalOfficeFK");
-                _PostalOfficeFK = StructuralObject.SetValidValue(value);
+                _PostalOfficeFK = StructuralObject.SetValidValue(value, "PostalOfficeFK");
                 ReportPropertyChanged("PostalOfficeFK");
                 OnPostalOfficeFKChanged();
             }
@@ -7005,7 +6982,7 @@ namespace Mateus.Model.EFModel
             {
                 OnPlaceFKChanging(value);
                 ReportPropertyChanging("PlaceFK");
-                _PlaceFK = StructuralObject.SetValidValue(value);
+                _PlaceFK = StructuralObject.SetValidValue(value, "PlaceFK");
                 ReportPropertyChanged("PlaceFK");
                 OnPlaceFKChanged();
             }
@@ -7029,7 +7006,7 @@ namespace Mateus.Model.EFModel
             {
                 OnPlaceChanging(value);
                 ReportPropertyChanging("Place");
-                _Place = StructuralObject.SetValidValue(value, true);
+                _Place = StructuralObject.SetValidValue(value, true, "Place");
                 ReportPropertyChanged("Place");
                 OnPlaceChanged();
             }
@@ -7053,7 +7030,7 @@ namespace Mateus.Model.EFModel
             {
                 OnRegionalOfficeFKChanging(value);
                 ReportPropertyChanging("RegionalOfficeFK");
-                _RegionalOfficeFK = StructuralObject.SetValidValue(value);
+                _RegionalOfficeFK = StructuralObject.SetValidValue(value, "RegionalOfficeFK");
                 ReportPropertyChanged("RegionalOfficeFK");
                 OnRegionalOfficeFKChanged();
             }
@@ -7077,7 +7054,7 @@ namespace Mateus.Model.EFModel
             {
                 OnSubstationFKChanging(value);
                 ReportPropertyChanging("SubstationFK");
-                _SubstationFK = StructuralObject.SetValidValue(value);
+                _SubstationFK = StructuralObject.SetValidValue(value, "SubstationFK");
                 ReportPropertyChanged("SubstationFK");
                 OnSubstationFKChanged();
             }
@@ -7101,7 +7078,7 @@ namespace Mateus.Model.EFModel
             {
                 OnDateOfRegistrationChanging(value);
                 ReportPropertyChanging("DateOfRegistration");
-                _DateOfRegistration = StructuralObject.SetValidValue(value);
+                _DateOfRegistration = StructuralObject.SetValidValue(value, "DateOfRegistration");
                 ReportPropertyChanged("DateOfRegistration");
                 OnDateOfRegistrationChanged();
             }
@@ -7125,7 +7102,7 @@ namespace Mateus.Model.EFModel
             {
                 OnCommercialCourtFKChanging(value);
                 ReportPropertyChanging("CommercialCourtFK");
-                _CommercialCourtFK = StructuralObject.SetValidValue(value);
+                _CommercialCourtFK = StructuralObject.SetValidValue(value, "CommercialCourtFK");
                 ReportPropertyChanged("CommercialCourtFK");
                 OnCommercialCourtFKChanged();
             }
@@ -7149,7 +7126,7 @@ namespace Mateus.Model.EFModel
             {
                 OnTaxFKChanging(value);
                 ReportPropertyChanging("TaxFK");
-                _TaxFK = StructuralObject.SetValidValue(value);
+                _TaxFK = StructuralObject.SetValidValue(value, "TaxFK");
                 ReportPropertyChanged("TaxFK");
                 OnTaxFKChanged();
             }
@@ -7173,7 +7150,7 @@ namespace Mateus.Model.EFModel
             {
                 OnPhoneChanging(value);
                 ReportPropertyChanging("Phone");
-                _Phone = StructuralObject.SetValidValue(value, true);
+                _Phone = StructuralObject.SetValidValue(value, true, "Phone");
                 ReportPropertyChanged("Phone");
                 OnPhoneChanged();
             }
@@ -7197,7 +7174,7 @@ namespace Mateus.Model.EFModel
             {
                 OnFaxChanging(value);
                 ReportPropertyChanging("Fax");
-                _Fax = StructuralObject.SetValidValue(value, true);
+                _Fax = StructuralObject.SetValidValue(value, true, "Fax");
                 ReportPropertyChanged("Fax");
                 OnFaxChanged();
             }
@@ -7221,7 +7198,7 @@ namespace Mateus.Model.EFModel
             {
                 OnMobileChanging(value);
                 ReportPropertyChanging("Mobile");
-                _Mobile = StructuralObject.SetValidValue(value, true);
+                _Mobile = StructuralObject.SetValidValue(value, true, "Mobile");
                 ReportPropertyChanged("Mobile");
                 OnMobileChanged();
             }
@@ -7245,7 +7222,7 @@ namespace Mateus.Model.EFModel
             {
                 OnEMailChanging(value);
                 ReportPropertyChanging("EMail");
-                _EMail = StructuralObject.SetValidValue(value, true);
+                _EMail = StructuralObject.SetValidValue(value, true, "EMail");
                 ReportPropertyChanged("EMail");
                 OnEMailChanged();
             }
@@ -7269,7 +7246,7 @@ namespace Mateus.Model.EFModel
             {
                 OnFirstContactDateChanging(value);
                 ReportPropertyChanging("FirstContactDate");
-                _FirstContactDate = StructuralObject.SetValidValue(value);
+                _FirstContactDate = StructuralObject.SetValidValue(value, "FirstContactDate");
                 ReportPropertyChanged("FirstContactDate");
                 OnFirstContactDateChanged();
             }
@@ -7293,7 +7270,7 @@ namespace Mateus.Model.EFModel
             {
                 OnTouristOfficeChanging(value);
                 ReportPropertyChanging("TouristOffice");
-                _TouristOffice = StructuralObject.SetValidValue(value);
+                _TouristOffice = StructuralObject.SetValidValue(value, "TouristOffice");
                 ReportPropertyChanged("TouristOffice");
                 OnTouristOfficeChanged();
             }
@@ -7317,7 +7294,7 @@ namespace Mateus.Model.EFModel
             {
                 OnTouristOfficeDescriptionChanging(value);
                 ReportPropertyChanging("TouristOfficeDescription");
-                _TouristOfficeDescription = StructuralObject.SetValidValue(value, true);
+                _TouristOfficeDescription = StructuralObject.SetValidValue(value, true, "TouristOfficeDescription");
                 ReportPropertyChanged("TouristOfficeDescription");
                 OnTouristOfficeDescriptionChanged();
             }
@@ -7341,7 +7318,7 @@ namespace Mateus.Model.EFModel
             {
                 OnMonumentAnnuityChanging(value);
                 ReportPropertyChanging("MonumentAnnuity");
-                _MonumentAnnuity = StructuralObject.SetValidValue(value);
+                _MonumentAnnuity = StructuralObject.SetValidValue(value, "MonumentAnnuity");
                 ReportPropertyChanged("MonumentAnnuity");
                 OnMonumentAnnuityChanged();
             }
@@ -7365,7 +7342,7 @@ namespace Mateus.Model.EFModel
             {
                 OnMonumentAnnuityDescriptionChanging(value);
                 ReportPropertyChanging("MonumentAnnuityDescription");
-                _MonumentAnnuityDescription = StructuralObject.SetValidValue(value, true);
+                _MonumentAnnuityDescription = StructuralObject.SetValidValue(value, true, "MonumentAnnuityDescription");
                 ReportPropertyChanged("MonumentAnnuityDescription");
                 OnMonumentAnnuityDescriptionChanged();
             }
@@ -7389,7 +7366,7 @@ namespace Mateus.Model.EFModel
             {
                 OnNumberOfEmployeesChanging(value);
                 ReportPropertyChanging("NumberOfEmployees");
-                _NumberOfEmployees = StructuralObject.SetValidValue(value);
+                _NumberOfEmployees = StructuralObject.SetValidValue(value, "NumberOfEmployees");
                 ReportPropertyChanged("NumberOfEmployees");
                 OnNumberOfEmployeesChanged();
             }
@@ -7413,7 +7390,7 @@ namespace Mateus.Model.EFModel
             {
                 OnMIORRegistrationNumberChanging(value);
                 ReportPropertyChanging("MIORRegistrationNumber");
-                _MIORRegistrationNumber = StructuralObject.SetValidValue(value, true);
+                _MIORRegistrationNumber = StructuralObject.SetValidValue(value, true, "MIORRegistrationNumber");
                 ReportPropertyChanged("MIORRegistrationNumber");
                 OnMIORRegistrationNumberChanged();
             }
@@ -7437,7 +7414,7 @@ namespace Mateus.Model.EFModel
             {
                 OnHZZOObligationNumberChanging(value);
                 ReportPropertyChanging("HZZOObligationNumber");
-                _HZZOObligationNumber = StructuralObject.SetValidValue(value, true);
+                _HZZOObligationNumber = StructuralObject.SetValidValue(value, true, "HZZOObligationNumber");
                 ReportPropertyChanged("HZZOObligationNumber");
                 OnHZZOObligationNumberChanged();
             }
@@ -7461,7 +7438,7 @@ namespace Mateus.Model.EFModel
             {
                 OnHZZOBussinesEntityCodeChanging(value);
                 ReportPropertyChanging("HZZOBussinesEntityCode");
-                _HZZOBussinesEntityCode = StructuralObject.SetValidValue(value, true);
+                _HZZOBussinesEntityCode = StructuralObject.SetValidValue(value, true, "HZZOBussinesEntityCode");
                 ReportPropertyChanged("HZZOBussinesEntityCode");
                 OnHZZOBussinesEntityCodeChanged();
             }
@@ -7485,7 +7462,7 @@ namespace Mateus.Model.EFModel
             {
                 OnChangeDateChanging(value);
                 ReportPropertyChanging("ChangeDate");
-                _ChangeDate = StructuralObject.SetValidValue(value);
+                _ChangeDate = StructuralObject.SetValidValue(value, "ChangeDate");
                 ReportPropertyChanged("ChangeDate");
                 OnChangeDateChanged();
             }
@@ -7509,7 +7486,7 @@ namespace Mateus.Model.EFModel
             {
                 OnOwnerChanging(value);
                 ReportPropertyChanging("Owner");
-                _Owner = StructuralObject.SetValidValue(value);
+                _Owner = StructuralObject.SetValidValue(value, "Owner");
                 ReportPropertyChanged("Owner");
                 OnOwnerChanged();
             }
@@ -7533,7 +7510,7 @@ namespace Mateus.Model.EFModel
             {
                 OnCompanyChanging(value);
                 ReportPropertyChanging("Company");
-                _Company = StructuralObject.SetValidValue(value);
+                _Company = StructuralObject.SetValidValue(value, "Company");
                 ReportPropertyChanged("Company");
                 OnCompanyChanged();
             }
@@ -7557,7 +7534,7 @@ namespace Mateus.Model.EFModel
             {
                 OnActiveChanging(value);
                 ReportPropertyChanging("Active");
-                _Active = StructuralObject.SetValidValue(value);
+                _Active = StructuralObject.SetValidValue(value, "Active");
                 ReportPropertyChanged("Active");
                 OnActiveChanged();
             }
@@ -7581,7 +7558,7 @@ namespace Mateus.Model.EFModel
             {
                 OnDeletedChanging(value);
                 ReportPropertyChanging("Deleted");
-                _Deleted = StructuralObject.SetValidValue(value);
+                _Deleted = StructuralObject.SetValidValue(value, "Deleted");
                 ReportPropertyChanged("Deleted");
                 OnDeletedChanged();
             }
@@ -7605,7 +7582,7 @@ namespace Mateus.Model.EFModel
             {
                 OnReferentFKChanging(value);
                 ReportPropertyChanging("ReferentFK");
-                _ReferentFK = StructuralObject.SetValidValue(value);
+                _ReferentFK = StructuralObject.SetValidValue(value, "ReferentFK");
                 ReportPropertyChanged("ReferentFK");
                 OnReferentFKChanged();
             }
@@ -7616,7 +7593,6 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-    
         #region Navigation Properties
     
         /// <summary>
@@ -8168,7 +8144,7 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-        #region Primitive Properties
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -8187,7 +8163,7 @@ namespace Mateus.Model.EFModel
                 {
                     OnLegalEntityBankPKChanging(value);
                     ReportPropertyChanging("LegalEntityBankPK");
-                    _LegalEntityBankPK = StructuralObject.SetValidValue(value);
+                    _LegalEntityBankPK = StructuralObject.SetValidValue(value, "LegalEntityBankPK");
                     ReportPropertyChanged("LegalEntityBankPK");
                     OnLegalEntityBankPKChanged();
                 }
@@ -8212,7 +8188,7 @@ namespace Mateus.Model.EFModel
             {
                 OnLegalEntityFKChanging(value);
                 ReportPropertyChanging("LegalEntityFK");
-                _LegalEntityFK = StructuralObject.SetValidValue(value);
+                _LegalEntityFK = StructuralObject.SetValidValue(value, "LegalEntityFK");
                 ReportPropertyChanged("LegalEntityFK");
                 OnLegalEntityFKChanged();
             }
@@ -8236,7 +8212,7 @@ namespace Mateus.Model.EFModel
             {
                 OnBankFKChanging(value);
                 ReportPropertyChanging("BankFK");
-                _BankFK = StructuralObject.SetValidValue(value);
+                _BankFK = StructuralObject.SetValidValue(value, "BankFK");
                 ReportPropertyChanged("BankFK");
                 OnBankFKChanged();
             }
@@ -8260,7 +8236,7 @@ namespace Mateus.Model.EFModel
             {
                 OnChangeDateChanging(value);
                 ReportPropertyChanging("ChangeDate");
-                _ChangeDate = StructuralObject.SetValidValue(value);
+                _ChangeDate = StructuralObject.SetValidValue(value, "ChangeDate");
                 ReportPropertyChanged("ChangeDate");
                 OnChangeDateChanged();
             }
@@ -8284,7 +8260,7 @@ namespace Mateus.Model.EFModel
             {
                 OnDeletedChanging(value);
                 ReportPropertyChanging("Deleted");
-                _Deleted = StructuralObject.SetValidValue(value);
+                _Deleted = StructuralObject.SetValidValue(value, "Deleted");
                 ReportPropertyChanged("Deleted");
                 OnDeletedChanged();
             }
@@ -8308,7 +8284,7 @@ namespace Mateus.Model.EFModel
             {
                 OnIbanChanging(value);
                 ReportPropertyChanging("Iban");
-                _Iban = StructuralObject.SetValidValue(value, true);
+                _Iban = StructuralObject.SetValidValue(value, true, "Iban");
                 ReportPropertyChanged("Iban");
                 OnIbanChanged();
             }
@@ -8319,7 +8295,6 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-    
         #region Navigation Properties
     
         /// <summary>
@@ -8425,7 +8400,7 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-        #region Primitive Properties
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -8444,7 +8419,7 @@ namespace Mateus.Model.EFModel
                 {
                     OnLegalEntityBranchPKChanging(value);
                     ReportPropertyChanging("LegalEntityBranchPK");
-                    _LegalEntityBranchPK = StructuralObject.SetValidValue(value);
+                    _LegalEntityBranchPK = StructuralObject.SetValidValue(value, "LegalEntityBranchPK");
                     ReportPropertyChanged("LegalEntityBranchPK");
                     OnLegalEntityBranchPKChanged();
                 }
@@ -8469,7 +8444,7 @@ namespace Mateus.Model.EFModel
             {
                 OnLegalEntityFKChanging(value);
                 ReportPropertyChanging("LegalEntityFK");
-                _LegalEntityFK = StructuralObject.SetValidValue(value);
+                _LegalEntityFK = StructuralObject.SetValidValue(value, "LegalEntityFK");
                 ReportPropertyChanged("LegalEntityFK");
                 OnLegalEntityFKChanged();
             }
@@ -8493,7 +8468,7 @@ namespace Mateus.Model.EFModel
             {
                 OnNameChanging(value);
                 ReportPropertyChanging("Name");
-                _Name = StructuralObject.SetValidValue(value, true);
+                _Name = StructuralObject.SetValidValue(value, true, "Name");
                 ReportPropertyChanged("Name");
                 OnNameChanged();
             }
@@ -8517,7 +8492,7 @@ namespace Mateus.Model.EFModel
             {
                 OnCountryFKChanging(value);
                 ReportPropertyChanging("CountryFK");
-                _CountryFK = StructuralObject.SetValidValue(value);
+                _CountryFK = StructuralObject.SetValidValue(value, "CountryFK");
                 ReportPropertyChanged("CountryFK");
                 OnCountryFKChanged();
             }
@@ -8541,7 +8516,7 @@ namespace Mateus.Model.EFModel
             {
                 OnCountyFKChanging(value);
                 ReportPropertyChanging("CountyFK");
-                _CountyFK = StructuralObject.SetValidValue(value);
+                _CountyFK = StructuralObject.SetValidValue(value, "CountyFK");
                 ReportPropertyChanged("CountyFK");
                 OnCountyFKChanged();
             }
@@ -8565,7 +8540,7 @@ namespace Mateus.Model.EFModel
             {
                 OnCityCommunityFKChanging(value);
                 ReportPropertyChanging("CityCommunityFK");
-                _CityCommunityFK = StructuralObject.SetValidValue(value);
+                _CityCommunityFK = StructuralObject.SetValidValue(value, "CityCommunityFK");
                 ReportPropertyChanged("CityCommunityFK");
                 OnCityCommunityFKChanged();
             }
@@ -8589,7 +8564,7 @@ namespace Mateus.Model.EFModel
             {
                 OnPostalOfficeFKChanging(value);
                 ReportPropertyChanging("PostalOfficeFK");
-                _PostalOfficeFK = StructuralObject.SetValidValue(value);
+                _PostalOfficeFK = StructuralObject.SetValidValue(value, "PostalOfficeFK");
                 ReportPropertyChanged("PostalOfficeFK");
                 OnPostalOfficeFKChanged();
             }
@@ -8613,7 +8588,7 @@ namespace Mateus.Model.EFModel
             {
                 OnPlaceFKChanging(value);
                 ReportPropertyChanging("PlaceFK");
-                _PlaceFK = StructuralObject.SetValidValue(value);
+                _PlaceFK = StructuralObject.SetValidValue(value, "PlaceFK");
                 ReportPropertyChanged("PlaceFK");
                 OnPlaceFKChanged();
             }
@@ -8637,7 +8612,7 @@ namespace Mateus.Model.EFModel
             {
                 OnStreetNameChanging(value);
                 ReportPropertyChanging("StreetName");
-                _StreetName = StructuralObject.SetValidValue(value, true);
+                _StreetName = StructuralObject.SetValidValue(value, true, "StreetName");
                 ReportPropertyChanged("StreetName");
                 OnStreetNameChanged();
             }
@@ -8661,7 +8636,7 @@ namespace Mateus.Model.EFModel
             {
                 OnPhoneChanging(value);
                 ReportPropertyChanging("Phone");
-                _Phone = StructuralObject.SetValidValue(value, true);
+                _Phone = StructuralObject.SetValidValue(value, true, "Phone");
                 ReportPropertyChanged("Phone");
                 OnPhoneChanged();
             }
@@ -8685,7 +8660,7 @@ namespace Mateus.Model.EFModel
             {
                 OnFaxChanging(value);
                 ReportPropertyChanging("Fax");
-                _Fax = StructuralObject.SetValidValue(value, true);
+                _Fax = StructuralObject.SetValidValue(value, true, "Fax");
                 ReportPropertyChanged("Fax");
                 OnFaxChanged();
             }
@@ -8709,7 +8684,7 @@ namespace Mateus.Model.EFModel
             {
                 OnMobileChanging(value);
                 ReportPropertyChanging("Mobile");
-                _Mobile = StructuralObject.SetValidValue(value, true);
+                _Mobile = StructuralObject.SetValidValue(value, true, "Mobile");
                 ReportPropertyChanged("Mobile");
                 OnMobileChanged();
             }
@@ -8733,7 +8708,7 @@ namespace Mateus.Model.EFModel
             {
                 OnEMailChanging(value);
                 ReportPropertyChanging("EMail");
-                _EMail = StructuralObject.SetValidValue(value, true);
+                _EMail = StructuralObject.SetValidValue(value, true, "EMail");
                 ReportPropertyChanged("EMail");
                 OnEMailChanged();
             }
@@ -8757,7 +8732,7 @@ namespace Mateus.Model.EFModel
             {
                 OnChangeDateChanging(value);
                 ReportPropertyChanging("ChangeDate");
-                _ChangeDate = StructuralObject.SetValidValue(value);
+                _ChangeDate = StructuralObject.SetValidValue(value, "ChangeDate");
                 ReportPropertyChanged("ChangeDate");
                 OnChangeDateChanged();
             }
@@ -8781,7 +8756,7 @@ namespace Mateus.Model.EFModel
             {
                 OnDeletedChanging(value);
                 ReportPropertyChanging("Deleted");
-                _Deleted = StructuralObject.SetValidValue(value);
+                _Deleted = StructuralObject.SetValidValue(value, "Deleted");
                 ReportPropertyChanged("Deleted");
                 OnDeletedChanged();
             }
@@ -8792,7 +8767,6 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-    
         #region Navigation Properties
     
         /// <summary>
@@ -9050,7 +9024,7 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-        #region Primitive Properties
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -9069,7 +9043,7 @@ namespace Mateus.Model.EFModel
                 {
                     OnLegalEntityLegalRepresentativePKChanging(value);
                     ReportPropertyChanging("LegalEntityLegalRepresentativePK");
-                    _LegalEntityLegalRepresentativePK = StructuralObject.SetValidValue(value);
+                    _LegalEntityLegalRepresentativePK = StructuralObject.SetValidValue(value, "LegalEntityLegalRepresentativePK");
                     ReportPropertyChanged("LegalEntityLegalRepresentativePK");
                     OnLegalEntityLegalRepresentativePKChanged();
                 }
@@ -9094,7 +9068,7 @@ namespace Mateus.Model.EFModel
             {
                 OnLegalEntityFKChanging(value);
                 ReportPropertyChanging("LegalEntityFK");
-                _LegalEntityFK = StructuralObject.SetValidValue(value);
+                _LegalEntityFK = StructuralObject.SetValidValue(value, "LegalEntityFK");
                 ReportPropertyChanged("LegalEntityFK");
                 OnLegalEntityFKChanged();
             }
@@ -9118,7 +9092,7 @@ namespace Mateus.Model.EFModel
             {
                 OnWayOfRepresentationFKChanging(value);
                 ReportPropertyChanging("WayOfRepresentationFK");
-                _WayOfRepresentationFK = StructuralObject.SetValidValue(value);
+                _WayOfRepresentationFK = StructuralObject.SetValidValue(value, "WayOfRepresentationFK");
                 ReportPropertyChanged("WayOfRepresentationFK");
                 OnWayOfRepresentationFKChanged();
             }
@@ -9142,7 +9116,7 @@ namespace Mateus.Model.EFModel
             {
                 OnLegalRepresentativeFKChanging(value);
                 ReportPropertyChanging("LegalRepresentativeFK");
-                _LegalRepresentativeFK = StructuralObject.SetValidValue(value);
+                _LegalRepresentativeFK = StructuralObject.SetValidValue(value, "LegalRepresentativeFK");
                 ReportPropertyChanged("LegalRepresentativeFK");
                 OnLegalRepresentativeFKChanged();
             }
@@ -9166,7 +9140,7 @@ namespace Mateus.Model.EFModel
             {
                 OnChangeDateChanging(value);
                 ReportPropertyChanging("ChangeDate");
-                _ChangeDate = StructuralObject.SetValidValue(value);
+                _ChangeDate = StructuralObject.SetValidValue(value, "ChangeDate");
                 ReportPropertyChanged("ChangeDate");
                 OnChangeDateChanged();
             }
@@ -9190,7 +9164,7 @@ namespace Mateus.Model.EFModel
             {
                 OnDeletedChanging(value);
                 ReportPropertyChanging("Deleted");
-                _Deleted = StructuralObject.SetValidValue(value);
+                _Deleted = StructuralObject.SetValidValue(value, "Deleted");
                 ReportPropertyChanged("Deleted");
                 OnDeletedChanged();
             }
@@ -9201,7 +9175,6 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-    
         #region Navigation Properties
     
         /// <summary>
@@ -9345,7 +9318,7 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-        #region Primitive Properties
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -9364,7 +9337,7 @@ namespace Mateus.Model.EFModel
                 {
                     OnLegalEntityOwnerPKChanging(value);
                     ReportPropertyChanging("LegalEntityOwnerPK");
-                    _LegalEntityOwnerPK = StructuralObject.SetValidValue(value);
+                    _LegalEntityOwnerPK = StructuralObject.SetValidValue(value, "LegalEntityOwnerPK");
                     ReportPropertyChanged("LegalEntityOwnerPK");
                     OnLegalEntityOwnerPKChanged();
                 }
@@ -9389,7 +9362,7 @@ namespace Mateus.Model.EFModel
             {
                 OnLegalEntityFKChanging(value);
                 ReportPropertyChanging("LegalEntityFK");
-                _LegalEntityFK = StructuralObject.SetValidValue(value);
+                _LegalEntityFK = StructuralObject.SetValidValue(value, "LegalEntityFK");
                 ReportPropertyChanged("LegalEntityFK");
                 OnLegalEntityFKChanged();
             }
@@ -9413,7 +9386,7 @@ namespace Mateus.Model.EFModel
             {
                 OnOwnerFKChanging(value);
                 ReportPropertyChanging("OwnerFK");
-                _OwnerFK = StructuralObject.SetValidValue(value);
+                _OwnerFK = StructuralObject.SetValidValue(value, "OwnerFK");
                 ReportPropertyChanged("OwnerFK");
                 OnOwnerFKChanged();
             }
@@ -9437,7 +9410,7 @@ namespace Mateus.Model.EFModel
             {
                 OnOwnerTypeChanging(value);
                 ReportPropertyChanging("OwnerType");
-                _OwnerType = StructuralObject.SetValidValue(value, true);
+                _OwnerType = StructuralObject.SetValidValue(value, true, "OwnerType");
                 ReportPropertyChanged("OwnerType");
                 OnOwnerTypeChanged();
             }
@@ -9461,7 +9434,7 @@ namespace Mateus.Model.EFModel
             {
                 OnEntryDateChanging(value);
                 ReportPropertyChanging("EntryDate");
-                _EntryDate = StructuralObject.SetValidValue(value);
+                _EntryDate = StructuralObject.SetValidValue(value, "EntryDate");
                 ReportPropertyChanged("EntryDate");
                 OnEntryDateChanged();
             }
@@ -9485,7 +9458,7 @@ namespace Mateus.Model.EFModel
             {
                 OnBusinessShareAmountChanging(value);
                 ReportPropertyChanging("BusinessShareAmount");
-                _BusinessShareAmount = StructuralObject.SetValidValue(value);
+                _BusinessShareAmount = StructuralObject.SetValidValue(value, "BusinessShareAmount");
                 ReportPropertyChanged("BusinessShareAmount");
                 OnBusinessShareAmountChanged();
             }
@@ -9509,7 +9482,7 @@ namespace Mateus.Model.EFModel
             {
                 OnPaidBussinesShareAmountChanging(value);
                 ReportPropertyChanging("PaidBussinesShareAmount");
-                _PaidBussinesShareAmount = StructuralObject.SetValidValue(value);
+                _PaidBussinesShareAmount = StructuralObject.SetValidValue(value, "PaidBussinesShareAmount");
                 ReportPropertyChanged("PaidBussinesShareAmount");
                 OnPaidBussinesShareAmountChanged();
             }
@@ -9533,7 +9506,7 @@ namespace Mateus.Model.EFModel
             {
                 OnNominalBussinesShareAmountChanging(value);
                 ReportPropertyChanging("NominalBussinesShareAmount");
-                _NominalBussinesShareAmount = StructuralObject.SetValidValue(value);
+                _NominalBussinesShareAmount = StructuralObject.SetValidValue(value, "NominalBussinesShareAmount");
                 ReportPropertyChanged("NominalBussinesShareAmount");
                 OnNominalBussinesShareAmountChanged();
             }
@@ -9557,7 +9530,7 @@ namespace Mateus.Model.EFModel
             {
                 OnAdditionalFactorFKChanging(value);
                 ReportPropertyChanging("AdditionalFactorFK");
-                _AdditionalFactorFK = StructuralObject.SetValidValue(value);
+                _AdditionalFactorFK = StructuralObject.SetValidValue(value, "AdditionalFactorFK");
                 ReportPropertyChanged("AdditionalFactorFK");
                 OnAdditionalFactorFKChanged();
             }
@@ -9581,7 +9554,7 @@ namespace Mateus.Model.EFModel
             {
                 OnFulfilledFactorFKChanging(value);
                 ReportPropertyChanging("FulfilledFactorFK");
-                _FulfilledFactorFK = StructuralObject.SetValidValue(value);
+                _FulfilledFactorFK = StructuralObject.SetValidValue(value, "FulfilledFactorFK");
                 ReportPropertyChanged("FulfilledFactorFK");
                 OnFulfilledFactorFKChanged();
             }
@@ -9605,7 +9578,7 @@ namespace Mateus.Model.EFModel
             {
                 OnBussinesShareBurdenFKChanging(value);
                 ReportPropertyChanging("BussinesShareBurdenFK");
-                _BussinesShareBurdenFK = StructuralObject.SetValidValue(value);
+                _BussinesShareBurdenFK = StructuralObject.SetValidValue(value, "BussinesShareBurdenFK");
                 ReportPropertyChanged("BussinesShareBurdenFK");
                 OnBussinesShareBurdenFKChanged();
             }
@@ -9629,7 +9602,7 @@ namespace Mateus.Model.EFModel
             {
                 OnNumberOfVotesChanging(value);
                 ReportPropertyChanging("NumberOfVotes");
-                _NumberOfVotes = StructuralObject.SetValidValue(value);
+                _NumberOfVotes = StructuralObject.SetValidValue(value, "NumberOfVotes");
                 ReportPropertyChanged("NumberOfVotes");
                 OnNumberOfVotesChanged();
             }
@@ -9653,7 +9626,7 @@ namespace Mateus.Model.EFModel
             {
                 OnChangeTypeFKChanging(value);
                 ReportPropertyChanging("ChangeTypeFK");
-                _ChangeTypeFK = StructuralObject.SetValidValue(value);
+                _ChangeTypeFK = StructuralObject.SetValidValue(value, "ChangeTypeFK");
                 ReportPropertyChanged("ChangeTypeFK");
                 OnChangeTypeFKChanged();
             }
@@ -9677,7 +9650,7 @@ namespace Mateus.Model.EFModel
             {
                 OnChangeDateChanging(value);
                 ReportPropertyChanging("ChangeDate");
-                _ChangeDate = StructuralObject.SetValidValue(value);
+                _ChangeDate = StructuralObject.SetValidValue(value, "ChangeDate");
                 ReportPropertyChanged("ChangeDate");
                 OnChangeDateChanged();
             }
@@ -9701,7 +9674,7 @@ namespace Mateus.Model.EFModel
             {
                 OnDeletedChanging(value);
                 ReportPropertyChanging("Deleted");
-                _Deleted = StructuralObject.SetValidValue(value);
+                _Deleted = StructuralObject.SetValidValue(value, "Deleted");
                 ReportPropertyChanged("Deleted");
                 OnDeletedChanged();
             }
@@ -9712,7 +9685,6 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-    
     }
     
     /// <summary>
@@ -9738,7 +9710,7 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-        #region Primitive Properties
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -9757,7 +9729,7 @@ namespace Mateus.Model.EFModel
                 {
                     OnOwnerTypePKChanging(value);
                     ReportPropertyChanging("OwnerTypePK");
-                    _OwnerTypePK = StructuralObject.SetValidValue(value);
+                    _OwnerTypePK = StructuralObject.SetValidValue(value, "OwnerTypePK");
                     ReportPropertyChanged("OwnerTypePK");
                     OnOwnerTypePKChanged();
                 }
@@ -9782,7 +9754,7 @@ namespace Mateus.Model.EFModel
             {
                 OnNameChanging(value);
                 ReportPropertyChanging("Name");
-                _Name = StructuralObject.SetValidValue(value, true);
+                _Name = StructuralObject.SetValidValue(value, true, "Name");
                 ReportPropertyChanged("Name");
                 OnNameChanged();
             }
@@ -9806,7 +9778,7 @@ namespace Mateus.Model.EFModel
             {
                 OnDeletedChanging(value);
                 ReportPropertyChanging("Deleted");
-                _Deleted = StructuralObject.SetValidValue(value);
+                _Deleted = StructuralObject.SetValidValue(value, "Deleted");
                 ReportPropertyChanged("Deleted");
                 OnDeletedChanged();
             }
@@ -9817,7 +9789,6 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-    
     }
     
     /// <summary>
@@ -9843,7 +9814,7 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-        #region Primitive Properties
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -9862,7 +9833,7 @@ namespace Mateus.Model.EFModel
                 {
                     OnPhysicalEntityPKChanging(value);
                     ReportPropertyChanging("PhysicalEntityPK");
-                    _PhysicalEntityPK = StructuralObject.SetValidValue(value);
+                    _PhysicalEntityPK = StructuralObject.SetValidValue(value, "PhysicalEntityPK");
                     ReportPropertyChanged("PhysicalEntityPK");
                     OnPhysicalEntityPKChanged();
                 }
@@ -9887,7 +9858,7 @@ namespace Mateus.Model.EFModel
             {
                 OnFirstnameChanging(value);
                 ReportPropertyChanging("Firstname");
-                _Firstname = StructuralObject.SetValidValue(value, true);
+                _Firstname = StructuralObject.SetValidValue(value, true, "Firstname");
                 ReportPropertyChanged("Firstname");
                 OnFirstnameChanged();
             }
@@ -9911,7 +9882,7 @@ namespace Mateus.Model.EFModel
             {
                 OnLastnameChanging(value);
                 ReportPropertyChanging("Lastname");
-                _Lastname = StructuralObject.SetValidValue(value, true);
+                _Lastname = StructuralObject.SetValidValue(value, true, "Lastname");
                 ReportPropertyChanged("Lastname");
                 OnLastnameChanged();
             }
@@ -9935,7 +9906,7 @@ namespace Mateus.Model.EFModel
             {
                 OnGenderChanging(value);
                 ReportPropertyChanging("Gender");
-                _Gender = StructuralObject.SetValidValue(value, true);
+                _Gender = StructuralObject.SetValidValue(value, true, "Gender");
                 ReportPropertyChanged("Gender");
                 OnGenderChanged();
             }
@@ -9959,7 +9930,7 @@ namespace Mateus.Model.EFModel
             {
                 OnOIBChanging(value);
                 ReportPropertyChanging("OIB");
-                _OIB = StructuralObject.SetValidValue(value, true);
+                _OIB = StructuralObject.SetValidValue(value, true, "OIB");
                 ReportPropertyChanged("OIB");
                 OnOIBChanged();
             }
@@ -9983,7 +9954,7 @@ namespace Mateus.Model.EFModel
             {
                 OnJMBGChanging(value);
                 ReportPropertyChanging("JMBG");
-                _JMBG = StructuralObject.SetValidValue(value, true);
+                _JMBG = StructuralObject.SetValidValue(value, true, "JMBG");
                 ReportPropertyChanged("JMBG");
                 OnJMBGChanged();
             }
@@ -10007,7 +9978,7 @@ namespace Mateus.Model.EFModel
             {
                 OnDateOfBirthChanging(value);
                 ReportPropertyChanging("DateOfBirth");
-                _DateOfBirth = StructuralObject.SetValidValue(value);
+                _DateOfBirth = StructuralObject.SetValidValue(value, "DateOfBirth");
                 ReportPropertyChanged("DateOfBirth");
                 OnDateOfBirthChanged();
             }
@@ -10031,7 +10002,7 @@ namespace Mateus.Model.EFModel
             {
                 OnCitizenshipFKChanging(value);
                 ReportPropertyChanging("CitizenshipFK");
-                _CitizenshipFK = StructuralObject.SetValidValue(value);
+                _CitizenshipFK = StructuralObject.SetValidValue(value, "CitizenshipFK");
                 ReportPropertyChanged("CitizenshipFK");
                 OnCitizenshipFKChanged();
             }
@@ -10055,7 +10026,7 @@ namespace Mateus.Model.EFModel
             {
                 OnBirthCountryFKChanging(value);
                 ReportPropertyChanging("BirthCountryFK");
-                _BirthCountryFK = StructuralObject.SetValidValue(value);
+                _BirthCountryFK = StructuralObject.SetValidValue(value, "BirthCountryFK");
                 ReportPropertyChanged("BirthCountryFK");
                 OnBirthCountryFKChanged();
             }
@@ -10079,7 +10050,7 @@ namespace Mateus.Model.EFModel
             {
                 OnBirthCountyFKChanging(value);
                 ReportPropertyChanging("BirthCountyFK");
-                _BirthCountyFK = StructuralObject.SetValidValue(value);
+                _BirthCountyFK = StructuralObject.SetValidValue(value, "BirthCountyFK");
                 ReportPropertyChanged("BirthCountyFK");
                 OnBirthCountyFKChanged();
             }
@@ -10103,7 +10074,7 @@ namespace Mateus.Model.EFModel
             {
                 OnBirthCityCommunityFKChanging(value);
                 ReportPropertyChanging("BirthCityCommunityFK");
-                _BirthCityCommunityFK = StructuralObject.SetValidValue(value);
+                _BirthCityCommunityFK = StructuralObject.SetValidValue(value, "BirthCityCommunityFK");
                 ReportPropertyChanged("BirthCityCommunityFK");
                 OnBirthCityCommunityFKChanged();
             }
@@ -10127,7 +10098,7 @@ namespace Mateus.Model.EFModel
             {
                 OnBirthPlaceChanging(value);
                 ReportPropertyChanging("BirthPlace");
-                _BirthPlace = StructuralObject.SetValidValue(value, true);
+                _BirthPlace = StructuralObject.SetValidValue(value, true, "BirthPlace");
                 ReportPropertyChanged("BirthPlace");
                 OnBirthPlaceChanged();
             }
@@ -10151,7 +10122,7 @@ namespace Mateus.Model.EFModel
             {
                 OnResidenceCountryFKChanging(value);
                 ReportPropertyChanging("ResidenceCountryFK");
-                _ResidenceCountryFK = StructuralObject.SetValidValue(value);
+                _ResidenceCountryFK = StructuralObject.SetValidValue(value, "ResidenceCountryFK");
                 ReportPropertyChanged("ResidenceCountryFK");
                 OnResidenceCountryFKChanged();
             }
@@ -10175,7 +10146,7 @@ namespace Mateus.Model.EFModel
             {
                 OnResidenceCountyFKChanging(value);
                 ReportPropertyChanging("ResidenceCountyFK");
-                _ResidenceCountyFK = StructuralObject.SetValidValue(value);
+                _ResidenceCountyFK = StructuralObject.SetValidValue(value, "ResidenceCountyFK");
                 ReportPropertyChanged("ResidenceCountyFK");
                 OnResidenceCountyFKChanged();
             }
@@ -10199,7 +10170,7 @@ namespace Mateus.Model.EFModel
             {
                 OnResidenceCityCommunityFKChanging(value);
                 ReportPropertyChanging("ResidenceCityCommunityFK");
-                _ResidenceCityCommunityFK = StructuralObject.SetValidValue(value);
+                _ResidenceCityCommunityFK = StructuralObject.SetValidValue(value, "ResidenceCityCommunityFK");
                 ReportPropertyChanged("ResidenceCityCommunityFK");
                 OnResidenceCityCommunityFKChanged();
             }
@@ -10223,7 +10194,7 @@ namespace Mateus.Model.EFModel
             {
                 OnResidencePostalOfficeFKChanging(value);
                 ReportPropertyChanging("ResidencePostalOfficeFK");
-                _ResidencePostalOfficeFK = StructuralObject.SetValidValue(value);
+                _ResidencePostalOfficeFK = StructuralObject.SetValidValue(value, "ResidencePostalOfficeFK");
                 ReportPropertyChanged("ResidencePostalOfficeFK");
                 OnResidencePostalOfficeFKChanged();
             }
@@ -10247,7 +10218,7 @@ namespace Mateus.Model.EFModel
             {
                 OnResidencePlaceFKChanging(value);
                 ReportPropertyChanging("ResidencePlaceFK");
-                _ResidencePlaceFK = StructuralObject.SetValidValue(value);
+                _ResidencePlaceFK = StructuralObject.SetValidValue(value, "ResidencePlaceFK");
                 ReportPropertyChanged("ResidencePlaceFK");
                 OnResidencePlaceFKChanged();
             }
@@ -10271,7 +10242,7 @@ namespace Mateus.Model.EFModel
             {
                 OnResidencePlaceChanging(value);
                 ReportPropertyChanging("ResidencePlace");
-                _ResidencePlace = StructuralObject.SetValidValue(value, true);
+                _ResidencePlace = StructuralObject.SetValidValue(value, true, "ResidencePlace");
                 ReportPropertyChanged("ResidencePlace");
                 OnResidencePlaceChanged();
             }
@@ -10295,7 +10266,7 @@ namespace Mateus.Model.EFModel
             {
                 OnResidenceStreetNameChanging(value);
                 ReportPropertyChanging("ResidenceStreetName");
-                _ResidenceStreetName = StructuralObject.SetValidValue(value, true);
+                _ResidenceStreetName = StructuralObject.SetValidValue(value, true, "ResidenceStreetName");
                 ReportPropertyChanged("ResidenceStreetName");
                 OnResidenceStreetNameChanged();
             }
@@ -10319,7 +10290,7 @@ namespace Mateus.Model.EFModel
             {
                 OnWayOfRepresentationFKChanging(value);
                 ReportPropertyChanging("WayOfRepresentationFK");
-                _WayOfRepresentationFK = StructuralObject.SetValidValue(value);
+                _WayOfRepresentationFK = StructuralObject.SetValidValue(value, "WayOfRepresentationFK");
                 ReportPropertyChanged("WayOfRepresentationFK");
                 OnWayOfRepresentationFKChanged();
             }
@@ -10343,7 +10314,7 @@ namespace Mateus.Model.EFModel
             {
                 OnIdentityCardNumberChanging(value);
                 ReportPropertyChanging("IdentityCardNumber");
-                _IdentityCardNumber = StructuralObject.SetValidValue(value, true);
+                _IdentityCardNumber = StructuralObject.SetValidValue(value, true, "IdentityCardNumber");
                 ReportPropertyChanged("IdentityCardNumber");
                 OnIdentityCardNumberChanged();
             }
@@ -10367,7 +10338,7 @@ namespace Mateus.Model.EFModel
             {
                 OnIdentityCardDateOfIssueChanging(value);
                 ReportPropertyChanging("IdentityCardDateOfIssue");
-                _IdentityCardDateOfIssue = StructuralObject.SetValidValue(value);
+                _IdentityCardDateOfIssue = StructuralObject.SetValidValue(value, "IdentityCardDateOfIssue");
                 ReportPropertyChanged("IdentityCardDateOfIssue");
                 OnIdentityCardDateOfIssueChanged();
             }
@@ -10391,7 +10362,7 @@ namespace Mateus.Model.EFModel
             {
                 OnIdentityCardRegionalOfficeFKChanging(value);
                 ReportPropertyChanging("IdentityCardRegionalOfficeFK");
-                _IdentityCardRegionalOfficeFK = StructuralObject.SetValidValue(value);
+                _IdentityCardRegionalOfficeFK = StructuralObject.SetValidValue(value, "IdentityCardRegionalOfficeFK");
                 ReportPropertyChanged("IdentityCardRegionalOfficeFK");
                 OnIdentityCardRegionalOfficeFKChanged();
             }
@@ -10415,7 +10386,7 @@ namespace Mateus.Model.EFModel
             {
                 OnIdentityCardDateTillValidChanging(value);
                 ReportPropertyChanging("IdentityCardDateTillValid");
-                _IdentityCardDateTillValid = StructuralObject.SetValidValue(value);
+                _IdentityCardDateTillValid = StructuralObject.SetValidValue(value, "IdentityCardDateTillValid");
                 ReportPropertyChanged("IdentityCardDateTillValid");
                 OnIdentityCardDateTillValidChanged();
             }
@@ -10439,7 +10410,7 @@ namespace Mateus.Model.EFModel
             {
                 OnPassportNumberChanging(value);
                 ReportPropertyChanging("PassportNumber");
-                _PassportNumber = StructuralObject.SetValidValue(value, true);
+                _PassportNumber = StructuralObject.SetValidValue(value, true, "PassportNumber");
                 ReportPropertyChanged("PassportNumber");
                 OnPassportNumberChanged();
             }
@@ -10463,7 +10434,7 @@ namespace Mateus.Model.EFModel
             {
                 OnPassportDateOfIssueChanging(value);
                 ReportPropertyChanging("PassportDateOfIssue");
-                _PassportDateOfIssue = StructuralObject.SetValidValue(value);
+                _PassportDateOfIssue = StructuralObject.SetValidValue(value, "PassportDateOfIssue");
                 ReportPropertyChanged("PassportDateOfIssue");
                 OnPassportDateOfIssueChanged();
             }
@@ -10487,7 +10458,7 @@ namespace Mateus.Model.EFModel
             {
                 OnPassportDateTillValidChanging(value);
                 ReportPropertyChanging("PassportDateTillValid");
-                _PassportDateTillValid = StructuralObject.SetValidValue(value);
+                _PassportDateTillValid = StructuralObject.SetValidValue(value, "PassportDateTillValid");
                 ReportPropertyChanged("PassportDateTillValid");
                 OnPassportDateTillValidChanged();
             }
@@ -10511,7 +10482,7 @@ namespace Mateus.Model.EFModel
             {
                 OnPassportCountryOfIssueFKChanging(value);
                 ReportPropertyChanging("PassportCountryOfIssueFK");
-                _PassportCountryOfIssueFK = StructuralObject.SetValidValue(value);
+                _PassportCountryOfIssueFK = StructuralObject.SetValidValue(value, "PassportCountryOfIssueFK");
                 ReportPropertyChanged("PassportCountryOfIssueFK");
                 OnPassportCountryOfIssueFKChanged();
             }
@@ -10535,7 +10506,7 @@ namespace Mateus.Model.EFModel
             {
                 OnPassportPlaceOfIssueChanging(value);
                 ReportPropertyChanging("PassportPlaceOfIssue");
-                _PassportPlaceOfIssue = StructuralObject.SetValidValue(value, true);
+                _PassportPlaceOfIssue = StructuralObject.SetValidValue(value, true, "PassportPlaceOfIssue");
                 ReportPropertyChanged("PassportPlaceOfIssue");
                 OnPassportPlaceOfIssueChanged();
             }
@@ -10559,7 +10530,7 @@ namespace Mateus.Model.EFModel
             {
                 OnChangeDateChanging(value);
                 ReportPropertyChanging("ChangeDate");
-                _ChangeDate = StructuralObject.SetValidValue(value);
+                _ChangeDate = StructuralObject.SetValidValue(value, "ChangeDate");
                 ReportPropertyChanged("ChangeDate");
                 OnChangeDateChanged();
             }
@@ -10583,7 +10554,7 @@ namespace Mateus.Model.EFModel
             {
                 OnOwnerChanging(value);
                 ReportPropertyChanging("Owner");
-                _Owner = StructuralObject.SetValidValue(value);
+                _Owner = StructuralObject.SetValidValue(value, "Owner");
                 ReportPropertyChanged("Owner");
                 OnOwnerChanged();
             }
@@ -10607,7 +10578,7 @@ namespace Mateus.Model.EFModel
             {
                 OnLegalRepresentativeChanging(value);
                 ReportPropertyChanging("LegalRepresentative");
-                _LegalRepresentative = StructuralObject.SetValidValue(value);
+                _LegalRepresentative = StructuralObject.SetValidValue(value, "LegalRepresentative");
                 ReportPropertyChanged("LegalRepresentative");
                 OnLegalRepresentativeChanged();
             }
@@ -10631,7 +10602,7 @@ namespace Mateus.Model.EFModel
             {
                 OnDeletedChanging(value);
                 ReportPropertyChanging("Deleted");
-                _Deleted = StructuralObject.SetValidValue(value);
+                _Deleted = StructuralObject.SetValidValue(value, "Deleted");
                 ReportPropertyChanged("Deleted");
                 OnDeletedChanged();
             }
@@ -10655,7 +10626,7 @@ namespace Mateus.Model.EFModel
             {
                 OnReferentChanging(value);
                 ReportPropertyChanging("Referent");
-                _Referent = StructuralObject.SetValidValue(value);
+                _Referent = StructuralObject.SetValidValue(value, "Referent");
                 ReportPropertyChanged("Referent");
                 OnReferentChanged();
             }
@@ -10679,7 +10650,7 @@ namespace Mateus.Model.EFModel
             {
                 OnEMailChanging(value);
                 ReportPropertyChanging("EMail");
-                _EMail = StructuralObject.SetValidValue(value, true);
+                _EMail = StructuralObject.SetValidValue(value, true, "EMail");
                 ReportPropertyChanged("EMail");
                 OnEMailChanged();
             }
@@ -10703,7 +10674,7 @@ namespace Mateus.Model.EFModel
             {
                 OnReferentRegionalOfficeFKChanging(value);
                 ReportPropertyChanging("ReferentRegionalOfficeFK");
-                _ReferentRegionalOfficeFK = StructuralObject.SetValidValue(value);
+                _ReferentRegionalOfficeFK = StructuralObject.SetValidValue(value, "ReferentRegionalOfficeFK");
                 ReportPropertyChanged("ReferentRegionalOfficeFK");
                 OnReferentRegionalOfficeFKChanged();
             }
@@ -10727,7 +10698,7 @@ namespace Mateus.Model.EFModel
             {
                 OnReferentSubstationFKChanging(value);
                 ReportPropertyChanging("ReferentSubstationFK");
-                _ReferentSubstationFK = StructuralObject.SetValidValue(value);
+                _ReferentSubstationFK = StructuralObject.SetValidValue(value, "ReferentSubstationFK");
                 ReportPropertyChanged("ReferentSubstationFK");
                 OnReferentSubstationFKChanged();
             }
@@ -10738,7 +10709,6 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-    
         #region Navigation Properties
     
         /// <summary>
@@ -11344,7 +11314,7 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-        #region Primitive Properties
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -11363,7 +11333,7 @@ namespace Mateus.Model.EFModel
                 {
                     OnPlacePKChanging(value);
                     ReportPropertyChanging("PlacePK");
-                    _PlacePK = StructuralObject.SetValidValue(value);
+                    _PlacePK = StructuralObject.SetValidValue(value, "PlacePK");
                     ReportPropertyChanged("PlacePK");
                     OnPlacePKChanged();
                 }
@@ -11388,7 +11358,7 @@ namespace Mateus.Model.EFModel
             {
                 OnPostalOfficeFKChanging(value);
                 ReportPropertyChanging("PostalOfficeFK");
-                _PostalOfficeFK = StructuralObject.SetValidValue(value);
+                _PostalOfficeFK = StructuralObject.SetValidValue(value, "PostalOfficeFK");
                 ReportPropertyChanged("PostalOfficeFK");
                 OnPostalOfficeFKChanged();
             }
@@ -11412,7 +11382,7 @@ namespace Mateus.Model.EFModel
             {
                 OnOrdinalChanging(value);
                 ReportPropertyChanging("Ordinal");
-                _Ordinal = StructuralObject.SetValidValue(value);
+                _Ordinal = StructuralObject.SetValidValue(value, "Ordinal");
                 ReportPropertyChanged("Ordinal");
                 OnOrdinalChanged();
             }
@@ -11436,7 +11406,7 @@ namespace Mateus.Model.EFModel
             {
                 OnNameChanging(value);
                 ReportPropertyChanging("Name");
-                _Name = StructuralObject.SetValidValue(value, true);
+                _Name = StructuralObject.SetValidValue(value, true, "Name");
                 ReportPropertyChanged("Name");
                 OnNameChanged();
             }
@@ -11460,7 +11430,7 @@ namespace Mateus.Model.EFModel
             {
                 OnDeletedChanging(value);
                 ReportPropertyChanging("Deleted");
-                _Deleted = StructuralObject.SetValidValue(value);
+                _Deleted = StructuralObject.SetValidValue(value, "Deleted");
                 ReportPropertyChanged("Deleted");
                 OnDeletedChanged();
             }
@@ -11471,7 +11441,6 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-    
         #region Navigation Properties
     
         /// <summary>
@@ -11605,7 +11574,7 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-        #region Primitive Properties
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -11624,7 +11593,7 @@ namespace Mateus.Model.EFModel
                 {
                     OnPostalOfficePKChanging(value);
                     ReportPropertyChanging("PostalOfficePK");
-                    _PostalOfficePK = StructuralObject.SetValidValue(value);
+                    _PostalOfficePK = StructuralObject.SetValidValue(value, "PostalOfficePK");
                     ReportPropertyChanged("PostalOfficePK");
                     OnPostalOfficePKChanged();
                 }
@@ -11649,7 +11618,7 @@ namespace Mateus.Model.EFModel
             {
                 OnCountyFKChanging(value);
                 ReportPropertyChanging("CountyFK");
-                _CountyFK = StructuralObject.SetValidValue(value);
+                _CountyFK = StructuralObject.SetValidValue(value, "CountyFK");
                 ReportPropertyChanged("CountyFK");
                 OnCountyFKChanged();
             }
@@ -11673,7 +11642,7 @@ namespace Mateus.Model.EFModel
             {
                 OnNumberChanging(value);
                 ReportPropertyChanging("Number");
-                _Number = StructuralObject.SetValidValue(value);
+                _Number = StructuralObject.SetValidValue(value, "Number");
                 ReportPropertyChanged("Number");
                 OnNumberChanged();
             }
@@ -11697,7 +11666,7 @@ namespace Mateus.Model.EFModel
             {
                 OnNameChanging(value);
                 ReportPropertyChanging("Name");
-                _Name = StructuralObject.SetValidValue(value, true);
+                _Name = StructuralObject.SetValidValue(value, true, "Name");
                 ReportPropertyChanged("Name");
                 OnNameChanged();
             }
@@ -11721,7 +11690,7 @@ namespace Mateus.Model.EFModel
             {
                 OnDeletedChanging(value);
                 ReportPropertyChanging("Deleted");
-                _Deleted = StructuralObject.SetValidValue(value);
+                _Deleted = StructuralObject.SetValidValue(value, "Deleted");
                 ReportPropertyChanged("Deleted");
                 OnDeletedChanged();
             }
@@ -11732,7 +11701,6 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-    
         #region Navigation Properties
     
         /// <summary>
@@ -11888,7 +11856,7 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-        #region Primitive Properties
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -11907,7 +11875,7 @@ namespace Mateus.Model.EFModel
                 {
                     OnRegionalOfficePKChanging(value);
                     ReportPropertyChanging("RegionalOfficePK");
-                    _RegionalOfficePK = StructuralObject.SetValidValue(value);
+                    _RegionalOfficePK = StructuralObject.SetValidValue(value, "RegionalOfficePK");
                     ReportPropertyChanged("RegionalOfficePK");
                     OnRegionalOfficePKChanged();
                 }
@@ -11932,7 +11900,7 @@ namespace Mateus.Model.EFModel
             {
                 OnNameChanging(value);
                 ReportPropertyChanging("Name");
-                _Name = StructuralObject.SetValidValue(value, true);
+                _Name = StructuralObject.SetValidValue(value, true, "Name");
                 ReportPropertyChanged("Name");
                 OnNameChanged();
             }
@@ -11956,7 +11924,7 @@ namespace Mateus.Model.EFModel
             {
                 OnDeletedChanging(value);
                 ReportPropertyChanging("Deleted");
-                _Deleted = StructuralObject.SetValidValue(value);
+                _Deleted = StructuralObject.SetValidValue(value, "Deleted");
                 ReportPropertyChanged("Deleted");
                 OnDeletedChanged();
             }
@@ -11967,7 +11935,6 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-    
         #region Navigation Properties
     
         /// <summary>
@@ -12085,7 +12052,7 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-        #region Primitive Properties
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -12104,7 +12071,7 @@ namespace Mateus.Model.EFModel
                 {
                     OnRiskPKChanging(value);
                     ReportPropertyChanging("RiskPK");
-                    _RiskPK = StructuralObject.SetValidValue(value);
+                    _RiskPK = StructuralObject.SetValidValue(value, "RiskPK");
                     ReportPropertyChanged("RiskPK");
                     OnRiskPKChanged();
                 }
@@ -12129,7 +12096,7 @@ namespace Mateus.Model.EFModel
             {
                 OnNameChanging(value);
                 ReportPropertyChanging("Name");
-                _Name = StructuralObject.SetValidValue(value, true);
+                _Name = StructuralObject.SetValidValue(value, true, "Name");
                 ReportPropertyChanged("Name");
                 OnNameChanged();
             }
@@ -12153,7 +12120,7 @@ namespace Mateus.Model.EFModel
             {
                 OnDeletedChanging(value);
                 ReportPropertyChanging("Deleted");
-                _Deleted = StructuralObject.SetValidValue(value);
+                _Deleted = StructuralObject.SetValidValue(value, "Deleted");
                 ReportPropertyChanged("Deleted");
                 OnDeletedChanged();
             }
@@ -12164,7 +12131,6 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-    
         #region Navigation Properties
     
         /// <summary>
@@ -12216,7 +12182,7 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-        #region Primitive Properties
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -12235,7 +12201,7 @@ namespace Mateus.Model.EFModel
                 {
                     OnRolePKChanging(value);
                     ReportPropertyChanging("RolePK");
-                    _RolePK = StructuralObject.SetValidValue(value);
+                    _RolePK = StructuralObject.SetValidValue(value, "RolePK");
                     ReportPropertyChanged("RolePK");
                     OnRolePKChanged();
                 }
@@ -12260,7 +12226,7 @@ namespace Mateus.Model.EFModel
             {
                 OnNameChanging(value);
                 ReportPropertyChanging("Name");
-                _Name = StructuralObject.SetValidValue(value, true);
+                _Name = StructuralObject.SetValidValue(value, true, "Name");
                 ReportPropertyChanged("Name");
                 OnNameChanged();
             }
@@ -12284,7 +12250,7 @@ namespace Mateus.Model.EFModel
             {
                 OnDescriptionChanging(value);
                 ReportPropertyChanging("Description");
-                _Description = StructuralObject.SetValidValue(value, true);
+                _Description = StructuralObject.SetValidValue(value, true, "Description");
                 ReportPropertyChanged("Description");
                 OnDescriptionChanged();
             }
@@ -12308,7 +12274,7 @@ namespace Mateus.Model.EFModel
             {
                 OnDisplayNameChanging(value);
                 ReportPropertyChanging("DisplayName");
-                _DisplayName = StructuralObject.SetValidValue(value, true);
+                _DisplayName = StructuralObject.SetValidValue(value, true, "DisplayName");
                 ReportPropertyChanged("DisplayName");
                 OnDisplayNameChanged();
             }
@@ -12332,7 +12298,7 @@ namespace Mateus.Model.EFModel
             {
                 OnActiveChanging(value);
                 ReportPropertyChanging("Active");
-                _Active = StructuralObject.SetValidValue(value);
+                _Active = StructuralObject.SetValidValue(value, "Active");
                 ReportPropertyChanged("Active");
                 OnActiveChanged();
             }
@@ -12356,7 +12322,7 @@ namespace Mateus.Model.EFModel
             {
                 OnDeletedChanging(value);
                 ReportPropertyChanging("Deleted");
-                _Deleted = StructuralObject.SetValidValue(value);
+                _Deleted = StructuralObject.SetValidValue(value, "Deleted");
                 ReportPropertyChanged("Deleted");
                 OnDeletedChanged();
             }
@@ -12367,7 +12333,6 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-    
         #region Navigation Properties
     
         /// <summary>
@@ -12419,7 +12384,7 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-        #region Primitive Properties
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -12438,7 +12403,7 @@ namespace Mateus.Model.EFModel
                 {
                     OnServiceTypePKChanging(value);
                     ReportPropertyChanging("ServiceTypePK");
-                    _ServiceTypePK = StructuralObject.SetValidValue(value);
+                    _ServiceTypePK = StructuralObject.SetValidValue(value, "ServiceTypePK");
                     ReportPropertyChanged("ServiceTypePK");
                     OnServiceTypePKChanged();
                 }
@@ -12463,7 +12428,7 @@ namespace Mateus.Model.EFModel
             {
                 OnNameChanging(value);
                 ReportPropertyChanging("Name");
-                _Name = StructuralObject.SetValidValue(value, true);
+                _Name = StructuralObject.SetValidValue(value, true, "Name");
                 ReportPropertyChanged("Name");
                 OnNameChanged();
             }
@@ -12487,7 +12452,7 @@ namespace Mateus.Model.EFModel
             {
                 OnDeletedChanging(value);
                 ReportPropertyChanging("Deleted");
-                _Deleted = StructuralObject.SetValidValue(value);
+                _Deleted = StructuralObject.SetValidValue(value, "Deleted");
                 ReportPropertyChanged("Deleted");
                 OnDeletedChanged();
             }
@@ -12498,7 +12463,6 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-    
         #region Navigation Properties
     
         /// <summary>
@@ -12550,7 +12514,7 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-        #region Primitive Properties
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -12569,7 +12533,7 @@ namespace Mateus.Model.EFModel
                 {
                     OnSubstationPKChanging(value);
                     ReportPropertyChanging("SubstationPK");
-                    _SubstationPK = StructuralObject.SetValidValue(value);
+                    _SubstationPK = StructuralObject.SetValidValue(value, "SubstationPK");
                     ReportPropertyChanged("SubstationPK");
                     OnSubstationPKChanged();
                 }
@@ -12594,7 +12558,7 @@ namespace Mateus.Model.EFModel
             {
                 OnRegionalOfficeFKChanging(value);
                 ReportPropertyChanging("RegionalOfficeFK");
-                _RegionalOfficeFK = StructuralObject.SetValidValue(value);
+                _RegionalOfficeFK = StructuralObject.SetValidValue(value, "RegionalOfficeFK");
                 ReportPropertyChanged("RegionalOfficeFK");
                 OnRegionalOfficeFKChanged();
             }
@@ -12618,7 +12582,7 @@ namespace Mateus.Model.EFModel
             {
                 OnNameChanging(value);
                 ReportPropertyChanging("Name");
-                _Name = StructuralObject.SetValidValue(value, true);
+                _Name = StructuralObject.SetValidValue(value, true, "Name");
                 ReportPropertyChanged("Name");
                 OnNameChanged();
             }
@@ -12642,7 +12606,7 @@ namespace Mateus.Model.EFModel
             {
                 OnDeletedChanging(value);
                 ReportPropertyChanging("Deleted");
-                _Deleted = StructuralObject.SetValidValue(value);
+                _Deleted = StructuralObject.SetValidValue(value, "Deleted");
                 ReportPropertyChanged("Deleted");
                 OnDeletedChanged();
             }
@@ -12653,7 +12617,6 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-    
         #region Navigation Properties
     
         /// <summary>
@@ -12765,7 +12728,7 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-        #region Primitive Properties
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -12784,7 +12747,7 @@ namespace Mateus.Model.EFModel
                 {
                     OnSystemActionPKChanging(value);
                     ReportPropertyChanging("SystemActionPK");
-                    _SystemActionPK = StructuralObject.SetValidValue(value);
+                    _SystemActionPK = StructuralObject.SetValidValue(value, "SystemActionPK");
                     ReportPropertyChanged("SystemActionPK");
                     OnSystemActionPKChanged();
                 }
@@ -12809,7 +12772,7 @@ namespace Mateus.Model.EFModel
             {
                 OnSystemControllerFKChanging(value);
                 ReportPropertyChanging("SystemControllerFK");
-                _SystemControllerFK = StructuralObject.SetValidValue(value);
+                _SystemControllerFK = StructuralObject.SetValidValue(value, "SystemControllerFK");
                 ReportPropertyChanged("SystemControllerFK");
                 OnSystemControllerFKChanged();
             }
@@ -12833,7 +12796,7 @@ namespace Mateus.Model.EFModel
             {
                 OnNameChanging(value);
                 ReportPropertyChanging("Name");
-                _Name = StructuralObject.SetValidValue(value, true);
+                _Name = StructuralObject.SetValidValue(value, true, "Name");
                 ReportPropertyChanged("Name");
                 OnNameChanged();
             }
@@ -12857,7 +12820,7 @@ namespace Mateus.Model.EFModel
             {
                 OnDisplayNameChanging(value);
                 ReportPropertyChanging("DisplayName");
-                _DisplayName = StructuralObject.SetValidValue(value, true);
+                _DisplayName = StructuralObject.SetValidValue(value, true, "DisplayName");
                 ReportPropertyChanged("DisplayName");
                 OnDisplayNameChanged();
             }
@@ -12881,7 +12844,7 @@ namespace Mateus.Model.EFModel
             {
                 OnDeletedChanging(value);
                 ReportPropertyChanging("Deleted");
-                _Deleted = StructuralObject.SetValidValue(value);
+                _Deleted = StructuralObject.SetValidValue(value, "Deleted");
                 ReportPropertyChanged("Deleted");
                 OnDeletedChanged();
             }
@@ -12892,7 +12855,6 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-    
         #region Navigation Properties
     
         /// <summary>
@@ -12960,7 +12922,7 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-        #region Primitive Properties
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -12979,7 +12941,7 @@ namespace Mateus.Model.EFModel
                 {
                     OnSystemControllerPKChanging(value);
                     ReportPropertyChanging("SystemControllerPK");
-                    _SystemControllerPK = StructuralObject.SetValidValue(value);
+                    _SystemControllerPK = StructuralObject.SetValidValue(value, "SystemControllerPK");
                     ReportPropertyChanged("SystemControllerPK");
                     OnSystemControllerPKChanged();
                 }
@@ -13004,7 +12966,7 @@ namespace Mateus.Model.EFModel
             {
                 OnNameChanging(value);
                 ReportPropertyChanging("Name");
-                _Name = StructuralObject.SetValidValue(value, true);
+                _Name = StructuralObject.SetValidValue(value, true, "Name");
                 ReportPropertyChanged("Name");
                 OnNameChanged();
             }
@@ -13028,7 +12990,7 @@ namespace Mateus.Model.EFModel
             {
                 OnDisplayNameChanging(value);
                 ReportPropertyChanging("DisplayName");
-                _DisplayName = StructuralObject.SetValidValue(value, true);
+                _DisplayName = StructuralObject.SetValidValue(value, true, "DisplayName");
                 ReportPropertyChanged("DisplayName");
                 OnDisplayNameChanged();
             }
@@ -13052,7 +13014,7 @@ namespace Mateus.Model.EFModel
             {
                 OnThemeChanging(value);
                 ReportPropertyChanging("Theme");
-                _Theme = StructuralObject.SetValidValue(value, true);
+                _Theme = StructuralObject.SetValidValue(value, true, "Theme");
                 ReportPropertyChanged("Theme");
                 OnThemeChanged();
             }
@@ -13076,7 +13038,7 @@ namespace Mateus.Model.EFModel
             {
                 OnDeletedChanging(value);
                 ReportPropertyChanging("Deleted");
-                _Deleted = StructuralObject.SetValidValue(value);
+                _Deleted = StructuralObject.SetValidValue(value, "Deleted");
                 ReportPropertyChanged("Deleted");
                 OnDeletedChanged();
             }
@@ -13087,7 +13049,6 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-    
         #region Navigation Properties
     
         /// <summary>
@@ -13139,7 +13100,7 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-        #region Primitive Properties
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -13158,7 +13119,7 @@ namespace Mateus.Model.EFModel
                 {
                     OnTaxPKChanging(value);
                     ReportPropertyChanging("TaxPK");
-                    _TaxPK = StructuralObject.SetValidValue(value);
+                    _TaxPK = StructuralObject.SetValidValue(value, "TaxPK");
                     ReportPropertyChanged("TaxPK");
                     OnTaxPKChanged();
                 }
@@ -13183,7 +13144,7 @@ namespace Mateus.Model.EFModel
             {
                 OnNameChanging(value);
                 ReportPropertyChanging("Name");
-                _Name = StructuralObject.SetValidValue(value, true);
+                _Name = StructuralObject.SetValidValue(value, true, "Name");
                 ReportPropertyChanged("Name");
                 OnNameChanged();
             }
@@ -13207,7 +13168,7 @@ namespace Mateus.Model.EFModel
             {
                 OnDeletedChanging(value);
                 ReportPropertyChanging("Deleted");
-                _Deleted = StructuralObject.SetValidValue(value);
+                _Deleted = StructuralObject.SetValidValue(value, "Deleted");
                 ReportPropertyChanged("Deleted");
                 OnDeletedChanged();
             }
@@ -13218,7 +13179,6 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-    
         #region Navigation Properties
     
         /// <summary>
@@ -13270,7 +13230,7 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-        #region Primitive Properties
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -13289,7 +13249,7 @@ namespace Mateus.Model.EFModel
                 {
                     OnToDoListPKChanging(value);
                     ReportPropertyChanging("ToDoListPK");
-                    _ToDoListPK = StructuralObject.SetValidValue(value);
+                    _ToDoListPK = StructuralObject.SetValidValue(value, "ToDoListPK");
                     ReportPropertyChanged("ToDoListPK");
                     OnToDoListPKChanged();
                 }
@@ -13314,7 +13274,7 @@ namespace Mateus.Model.EFModel
             {
                 OnNameChanging(value);
                 ReportPropertyChanging("Name");
-                _Name = StructuralObject.SetValidValue(value, true);
+                _Name = StructuralObject.SetValidValue(value, true, "Name");
                 ReportPropertyChanged("Name");
                 OnNameChanged();
             }
@@ -13338,7 +13298,7 @@ namespace Mateus.Model.EFModel
             {
                 OnDateChanging(value);
                 ReportPropertyChanging("Date");
-                _Date = StructuralObject.SetValidValue(value);
+                _Date = StructuralObject.SetValidValue(value, "Date");
                 ReportPropertyChanged("Date");
                 OnDateChanged();
             }
@@ -13362,7 +13322,7 @@ namespace Mateus.Model.EFModel
             {
                 OnDeadlineChanging(value);
                 ReportPropertyChanging("Deadline");
-                _Deadline = StructuralObject.SetValidValue(value);
+                _Deadline = StructuralObject.SetValidValue(value, "Deadline");
                 ReportPropertyChanged("Deadline");
                 OnDeadlineChanged();
             }
@@ -13386,7 +13346,7 @@ namespace Mateus.Model.EFModel
             {
                 OnFinishedChanging(value);
                 ReportPropertyChanging("Finished");
-                _Finished = StructuralObject.SetValidValue(value);
+                _Finished = StructuralObject.SetValidValue(value, "Finished");
                 ReportPropertyChanged("Finished");
                 OnFinishedChanged();
             }
@@ -13410,7 +13370,7 @@ namespace Mateus.Model.EFModel
             {
                 OnUserFKChanging(value);
                 ReportPropertyChanging("UserFK");
-                _UserFK = StructuralObject.SetValidValue(value);
+                _UserFK = StructuralObject.SetValidValue(value, "UserFK");
                 ReportPropertyChanged("UserFK");
                 OnUserFKChanged();
             }
@@ -13434,7 +13394,7 @@ namespace Mateus.Model.EFModel
             {
                 OnCreationDateChanging(value);
                 ReportPropertyChanging("CreationDate");
-                _CreationDate = StructuralObject.SetValidValue(value);
+                _CreationDate = StructuralObject.SetValidValue(value, "CreationDate");
                 ReportPropertyChanged("CreationDate");
                 OnCreationDateChanged();
             }
@@ -13458,7 +13418,7 @@ namespace Mateus.Model.EFModel
             {
                 OnDeletedChanging(value);
                 ReportPropertyChanging("Deleted");
-                _Deleted = StructuralObject.SetValidValue(value);
+                _Deleted = StructuralObject.SetValidValue(value, "Deleted");
                 ReportPropertyChanged("Deleted");
                 OnDeletedChanged();
             }
@@ -13469,7 +13429,6 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-    
         #region Navigation Properties
     
         /// <summary>
@@ -13559,7 +13518,7 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-        #region Primitive Properties
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -13578,7 +13537,7 @@ namespace Mateus.Model.EFModel
                 {
                     OnUserPKChanging(value);
                     ReportPropertyChanging("UserPK");
-                    _UserPK = StructuralObject.SetValidValue(value);
+                    _UserPK = StructuralObject.SetValidValue(value, "UserPK");
                     ReportPropertyChanged("UserPK");
                     OnUserPKChanged();
                 }
@@ -13603,7 +13562,7 @@ namespace Mateus.Model.EFModel
             {
                 OnUsernameChanging(value);
                 ReportPropertyChanging("Username");
-                _Username = StructuralObject.SetValidValue(value, true);
+                _Username = StructuralObject.SetValidValue(value, true, "Username");
                 ReportPropertyChanged("Username");
                 OnUsernameChanged();
             }
@@ -13627,7 +13586,7 @@ namespace Mateus.Model.EFModel
             {
                 OnPasswordChanging(value);
                 ReportPropertyChanging("Password");
-                _Password = StructuralObject.SetValidValue(value, true);
+                _Password = StructuralObject.SetValidValue(value, true, "Password");
                 ReportPropertyChanged("Password");
                 OnPasswordChanged();
             }
@@ -13651,7 +13610,7 @@ namespace Mateus.Model.EFModel
             {
                 OnFirstNameChanging(value);
                 ReportPropertyChanging("FirstName");
-                _FirstName = StructuralObject.SetValidValue(value, true);
+                _FirstName = StructuralObject.SetValidValue(value, true, "FirstName");
                 ReportPropertyChanged("FirstName");
                 OnFirstNameChanged();
             }
@@ -13675,7 +13634,7 @@ namespace Mateus.Model.EFModel
             {
                 OnLastNameChanging(value);
                 ReportPropertyChanging("LastName");
-                _LastName = StructuralObject.SetValidValue(value, true);
+                _LastName = StructuralObject.SetValidValue(value, true, "LastName");
                 ReportPropertyChanged("LastName");
                 OnLastNameChanged();
             }
@@ -13699,7 +13658,7 @@ namespace Mateus.Model.EFModel
             {
                 OnEmailChanging(value);
                 ReportPropertyChanging("Email");
-                _Email = StructuralObject.SetValidValue(value, true);
+                _Email = StructuralObject.SetValidValue(value, true, "Email");
                 ReportPropertyChanged("Email");
                 OnEmailChanged();
             }
@@ -13723,7 +13682,7 @@ namespace Mateus.Model.EFModel
             {
                 OnRegistrationDateChanging(value);
                 ReportPropertyChanging("RegistrationDate");
-                _RegistrationDate = StructuralObject.SetValidValue(value);
+                _RegistrationDate = StructuralObject.SetValidValue(value, "RegistrationDate");
                 ReportPropertyChanged("RegistrationDate");
                 OnRegistrationDateChanged();
             }
@@ -13747,7 +13706,7 @@ namespace Mateus.Model.EFModel
             {
                 OnActiveChanging(value);
                 ReportPropertyChanging("Active");
-                _Active = StructuralObject.SetValidValue(value);
+                _Active = StructuralObject.SetValidValue(value, "Active");
                 ReportPropertyChanged("Active");
                 OnActiveChanged();
             }
@@ -13771,7 +13730,7 @@ namespace Mateus.Model.EFModel
             {
                 OnDeletedChanging(value);
                 ReportPropertyChanging("Deleted");
-                _Deleted = StructuralObject.SetValidValue(value);
+                _Deleted = StructuralObject.SetValidValue(value, "Deleted");
                 ReportPropertyChanged("Deleted");
                 OnDeletedChanged();
             }
@@ -13795,7 +13754,7 @@ namespace Mateus.Model.EFModel
             {
                 OnSaltChanging(value);
                 ReportPropertyChanging("Salt");
-                _Salt = StructuralObject.SetValidValue(value, true);
+                _Salt = StructuralObject.SetValidValue(value, true, "Salt");
                 ReportPropertyChanged("Salt");
                 OnSaltChanged();
             }
@@ -13806,7 +13765,6 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-    
         #region Navigation Properties
     
         /// <summary>
@@ -13902,7 +13860,7 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-        #region Primitive Properties
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -13921,7 +13879,7 @@ namespace Mateus.Model.EFModel
                 {
                     OnUserActivityPKChanging(value);
                     ReportPropertyChanging("UserActivityPK");
-                    _UserActivityPK = StructuralObject.SetValidValue(value);
+                    _UserActivityPK = StructuralObject.SetValidValue(value, "UserActivityPK");
                     ReportPropertyChanged("UserActivityPK");
                     OnUserActivityPKChanged();
                 }
@@ -13946,7 +13904,7 @@ namespace Mateus.Model.EFModel
             {
                 OnUserFKChanging(value);
                 ReportPropertyChanging("UserFK");
-                _UserFK = StructuralObject.SetValidValue(value);
+                _UserFK = StructuralObject.SetValidValue(value, "UserFK");
                 ReportPropertyChanged("UserFK");
                 OnUserFKChanged();
             }
@@ -13970,7 +13928,7 @@ namespace Mateus.Model.EFModel
             {
                 OnActivityTimeChanging(value);
                 ReportPropertyChanging("ActivityTime");
-                _ActivityTime = StructuralObject.SetValidValue(value);
+                _ActivityTime = StructuralObject.SetValidValue(value, "ActivityTime");
                 ReportPropertyChanged("ActivityTime");
                 OnActivityTimeChanged();
             }
@@ -13994,7 +13952,7 @@ namespace Mateus.Model.EFModel
             {
                 OnActivityDescriptionChanging(value);
                 ReportPropertyChanging("ActivityDescription");
-                _ActivityDescription = StructuralObject.SetValidValue(value, true);
+                _ActivityDescription = StructuralObject.SetValidValue(value, true, "ActivityDescription");
                 ReportPropertyChanged("ActivityDescription");
                 OnActivityDescriptionChanged();
             }
@@ -14018,7 +13976,7 @@ namespace Mateus.Model.EFModel
             {
                 OnDeletedChanging(value);
                 ReportPropertyChanging("Deleted");
-                _Deleted = StructuralObject.SetValidValue(value);
+                _Deleted = StructuralObject.SetValidValue(value, "Deleted");
                 ReportPropertyChanged("Deleted");
                 OnDeletedChanged();
             }
@@ -14029,7 +13987,6 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-    
         #region Navigation Properties
     
         /// <summary>
@@ -14101,7 +14058,7 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-        #region Primitive Properties
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -14120,7 +14077,7 @@ namespace Mateus.Model.EFModel
                 {
                     OnUserInRolePKChanging(value);
                     ReportPropertyChanging("UserInRolePK");
-                    _UserInRolePK = StructuralObject.SetValidValue(value);
+                    _UserInRolePK = StructuralObject.SetValidValue(value, "UserInRolePK");
                     ReportPropertyChanged("UserInRolePK");
                     OnUserInRolePKChanged();
                 }
@@ -14145,7 +14102,7 @@ namespace Mateus.Model.EFModel
             {
                 OnUserFKChanging(value);
                 ReportPropertyChanging("UserFK");
-                _UserFK = StructuralObject.SetValidValue(value);
+                _UserFK = StructuralObject.SetValidValue(value, "UserFK");
                 ReportPropertyChanged("UserFK");
                 OnUserFKChanged();
             }
@@ -14169,7 +14126,7 @@ namespace Mateus.Model.EFModel
             {
                 OnRoleFKChanging(value);
                 ReportPropertyChanging("RoleFK");
-                _RoleFK = StructuralObject.SetValidValue(value);
+                _RoleFK = StructuralObject.SetValidValue(value, "RoleFK");
                 ReportPropertyChanged("RoleFK");
                 OnRoleFKChanged();
             }
@@ -14180,7 +14137,6 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-    
         #region Navigation Properties
     
         /// <summary>
@@ -14248,7 +14204,7 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-        #region Primitive Properties
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -14267,7 +14223,7 @@ namespace Mateus.Model.EFModel
                 {
                     OnWayOfRepresentationPKChanging(value);
                     ReportPropertyChanging("WayOfRepresentationPK");
-                    _WayOfRepresentationPK = StructuralObject.SetValidValue(value);
+                    _WayOfRepresentationPK = StructuralObject.SetValidValue(value, "WayOfRepresentationPK");
                     ReportPropertyChanged("WayOfRepresentationPK");
                     OnWayOfRepresentationPKChanged();
                 }
@@ -14292,7 +14248,7 @@ namespace Mateus.Model.EFModel
             {
                 OnNameChanging(value);
                 ReportPropertyChanging("Name");
-                _Name = StructuralObject.SetValidValue(value, true);
+                _Name = StructuralObject.SetValidValue(value, true, "Name");
                 ReportPropertyChanged("Name");
                 OnNameChanged();
             }
@@ -14316,7 +14272,7 @@ namespace Mateus.Model.EFModel
             {
                 OnDeletedChanging(value);
                 ReportPropertyChanging("Deleted");
-                _Deleted = StructuralObject.SetValidValue(value);
+                _Deleted = StructuralObject.SetValidValue(value, "Deleted");
                 ReportPropertyChanged("Deleted");
                 OnDeletedChanged();
             }
@@ -14327,7 +14283,6 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-    
         #region Navigation Properties
     
         /// <summary>
@@ -14401,7 +14356,7 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-        #region Primitive Properties
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -14420,7 +14375,7 @@ namespace Mateus.Model.EFModel
                 {
                     OnWorkDonePKChanging(value);
                     ReportPropertyChanging("WorkDonePK");
-                    _WorkDonePK = StructuralObject.SetValidValue(value);
+                    _WorkDonePK = StructuralObject.SetValidValue(value, "WorkDonePK");
                     ReportPropertyChanged("WorkDonePK");
                     OnWorkDonePKChanged();
                 }
@@ -14445,7 +14400,7 @@ namespace Mateus.Model.EFModel
             {
                 OnToDoListFKChanging(value);
                 ReportPropertyChanging("ToDoListFK");
-                _ToDoListFK = StructuralObject.SetValidValue(value);
+                _ToDoListFK = StructuralObject.SetValidValue(value, "ToDoListFK");
                 ReportPropertyChanged("ToDoListFK");
                 OnToDoListFKChanged();
             }
@@ -14469,7 +14424,7 @@ namespace Mateus.Model.EFModel
             {
                 OnDateChanging(value);
                 ReportPropertyChanging("Date");
-                _Date = StructuralObject.SetValidValue(value);
+                _Date = StructuralObject.SetValidValue(value, "Date");
                 ReportPropertyChanged("Date");
                 OnDateChanged();
             }
@@ -14493,7 +14448,7 @@ namespace Mateus.Model.EFModel
             {
                 OnLegalEntityFKChanging(value);
                 ReportPropertyChanging("LegalEntityFK");
-                _LegalEntityFK = StructuralObject.SetValidValue(value);
+                _LegalEntityFK = StructuralObject.SetValidValue(value, "LegalEntityFK");
                 ReportPropertyChanged("LegalEntityFK");
                 OnLegalEntityFKChanged();
             }
@@ -14517,7 +14472,7 @@ namespace Mateus.Model.EFModel
             {
                 OnWorkTypeFKChanging(value);
                 ReportPropertyChanging("WorkTypeFK");
-                _WorkTypeFK = StructuralObject.SetValidValue(value);
+                _WorkTypeFK = StructuralObject.SetValidValue(value, "WorkTypeFK");
                 ReportPropertyChanged("WorkTypeFK");
                 OnWorkTypeFKChanged();
             }
@@ -14541,7 +14496,7 @@ namespace Mateus.Model.EFModel
             {
                 OnWorkSubtypeFKChanging(value);
                 ReportPropertyChanging("WorkSubtypeFK");
-                _WorkSubtypeFK = StructuralObject.SetValidValue(value);
+                _WorkSubtypeFK = StructuralObject.SetValidValue(value, "WorkSubtypeFK");
                 ReportPropertyChanged("WorkSubtypeFK");
                 OnWorkSubtypeFKChanged();
             }
@@ -14565,7 +14520,7 @@ namespace Mateus.Model.EFModel
             {
                 OnServiceTypeFKChanging(value);
                 ReportPropertyChanging("ServiceTypeFK");
-                _ServiceTypeFK = StructuralObject.SetValidValue(value);
+                _ServiceTypeFK = StructuralObject.SetValidValue(value, "ServiceTypeFK");
                 ReportPropertyChanged("ServiceTypeFK");
                 OnServiceTypeFKChanged();
             }
@@ -14589,7 +14544,7 @@ namespace Mateus.Model.EFModel
             {
                 OnDescriptionChanging(value);
                 ReportPropertyChanging("Description");
-                _Description = StructuralObject.SetValidValue(value, true);
+                _Description = StructuralObject.SetValidValue(value, true, "Description");
                 ReportPropertyChanged("Description");
                 OnDescriptionChanged();
             }
@@ -14613,7 +14568,7 @@ namespace Mateus.Model.EFModel
             {
                 OnTimeSpentChanging(value);
                 ReportPropertyChanging("TimeSpent");
-                _TimeSpent = StructuralObject.SetValidValue(value);
+                _TimeSpent = StructuralObject.SetValidValue(value, "TimeSpent");
                 ReportPropertyChanged("TimeSpent");
                 OnTimeSpentChanged();
             }
@@ -14637,7 +14592,7 @@ namespace Mateus.Model.EFModel
             {
                 OnCommentChanging(value);
                 ReportPropertyChanging("Comment");
-                _Comment = StructuralObject.SetValidValue(value, true);
+                _Comment = StructuralObject.SetValidValue(value, true, "Comment");
                 ReportPropertyChanged("Comment");
                 OnCommentChanged();
             }
@@ -14661,7 +14616,7 @@ namespace Mateus.Model.EFModel
             {
                 OnUserFKChanging(value);
                 ReportPropertyChanging("UserFK");
-                _UserFK = StructuralObject.SetValidValue(value);
+                _UserFK = StructuralObject.SetValidValue(value, "UserFK");
                 ReportPropertyChanged("UserFK");
                 OnUserFKChanged();
             }
@@ -14685,7 +14640,7 @@ namespace Mateus.Model.EFModel
             {
                 OnCreationDateChanging(value);
                 ReportPropertyChanging("CreationDate");
-                _CreationDate = StructuralObject.SetValidValue(value);
+                _CreationDate = StructuralObject.SetValidValue(value, "CreationDate");
                 ReportPropertyChanged("CreationDate");
                 OnCreationDateChanged();
             }
@@ -14709,7 +14664,7 @@ namespace Mateus.Model.EFModel
             {
                 OnDeletedChanging(value);
                 ReportPropertyChanging("Deleted");
-                _Deleted = StructuralObject.SetValidValue(value);
+                _Deleted = StructuralObject.SetValidValue(value, "Deleted");
                 ReportPropertyChanged("Deleted");
                 OnDeletedChanged();
             }
@@ -14733,7 +14688,7 @@ namespace Mateus.Model.EFModel
             {
                 OnCreatedWithToDoChanging(value);
                 ReportPropertyChanging("CreatedWithToDo");
-                _CreatedWithToDo = StructuralObject.SetValidValue(value);
+                _CreatedWithToDo = StructuralObject.SetValidValue(value, "CreatedWithToDo");
                 ReportPropertyChanged("CreatedWithToDo");
                 OnCreatedWithToDoChanged();
             }
@@ -14744,7 +14699,6 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-    
         #region Navigation Properties
     
         /// <summary>
@@ -14964,7 +14918,7 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-        #region Primitive Properties
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -14983,7 +14937,7 @@ namespace Mateus.Model.EFModel
                 {
                     OnWorkDoneAttachmentPKChanging(value);
                     ReportPropertyChanging("WorkDoneAttachmentPK");
-                    _WorkDoneAttachmentPK = StructuralObject.SetValidValue(value);
+                    _WorkDoneAttachmentPK = StructuralObject.SetValidValue(value, "WorkDoneAttachmentPK");
                     ReportPropertyChanged("WorkDoneAttachmentPK");
                     OnWorkDoneAttachmentPKChanged();
                 }
@@ -15008,7 +14962,7 @@ namespace Mateus.Model.EFModel
             {
                 OnWorkDoneFKChanging(value);
                 ReportPropertyChanging("WorkDoneFK");
-                _WorkDoneFK = StructuralObject.SetValidValue(value);
+                _WorkDoneFK = StructuralObject.SetValidValue(value, "WorkDoneFK");
                 ReportPropertyChanged("WorkDoneFK");
                 OnWorkDoneFKChanged();
             }
@@ -15032,7 +14986,7 @@ namespace Mateus.Model.EFModel
             {
                 OnAttachmentFKChanging(value);
                 ReportPropertyChanging("AttachmentFK");
-                _AttachmentFK = StructuralObject.SetValidValue(value);
+                _AttachmentFK = StructuralObject.SetValidValue(value, "AttachmentFK");
                 ReportPropertyChanged("AttachmentFK");
                 OnAttachmentFKChanged();
             }
@@ -15056,7 +15010,7 @@ namespace Mateus.Model.EFModel
             {
                 OnDeletedChanging(value);
                 ReportPropertyChanging("Deleted");
-                _Deleted = StructuralObject.SetValidValue(value);
+                _Deleted = StructuralObject.SetValidValue(value, "Deleted");
                 ReportPropertyChanged("Deleted");
                 OnDeletedChanged();
             }
@@ -15067,7 +15021,6 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-    
         #region Navigation Properties
     
         /// <summary>
@@ -15135,7 +15088,7 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-        #region Primitive Properties
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -15154,7 +15107,7 @@ namespace Mateus.Model.EFModel
                 {
                     OnWorkSubtypePKChanging(value);
                     ReportPropertyChanging("WorkSubtypePK");
-                    _WorkSubtypePK = StructuralObject.SetValidValue(value);
+                    _WorkSubtypePK = StructuralObject.SetValidValue(value, "WorkSubtypePK");
                     ReportPropertyChanged("WorkSubtypePK");
                     OnWorkSubtypePKChanged();
                 }
@@ -15179,7 +15132,7 @@ namespace Mateus.Model.EFModel
             {
                 OnWorkTypeFKChanging(value);
                 ReportPropertyChanging("WorkTypeFK");
-                _WorkTypeFK = StructuralObject.SetValidValue(value);
+                _WorkTypeFK = StructuralObject.SetValidValue(value, "WorkTypeFK");
                 ReportPropertyChanged("WorkTypeFK");
                 OnWorkTypeFKChanged();
             }
@@ -15203,7 +15156,7 @@ namespace Mateus.Model.EFModel
             {
                 OnNameChanging(value);
                 ReportPropertyChanging("Name");
-                _Name = StructuralObject.SetValidValue(value, true);
+                _Name = StructuralObject.SetValidValue(value, true, "Name");
                 ReportPropertyChanged("Name");
                 OnNameChanged();
             }
@@ -15227,7 +15180,7 @@ namespace Mateus.Model.EFModel
             {
                 OnDeletedChanging(value);
                 ReportPropertyChanging("Deleted");
-                _Deleted = StructuralObject.SetValidValue(value);
+                _Deleted = StructuralObject.SetValidValue(value, "Deleted");
                 ReportPropertyChanged("Deleted");
                 OnDeletedChanged();
             }
@@ -15238,7 +15191,6 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-    
         #region Navigation Properties
     
         /// <summary>
@@ -15328,7 +15280,7 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-        #region Primitive Properties
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -15347,7 +15299,7 @@ namespace Mateus.Model.EFModel
                 {
                     OnWorkTypePKChanging(value);
                     ReportPropertyChanging("WorkTypePK");
-                    _WorkTypePK = StructuralObject.SetValidValue(value);
+                    _WorkTypePK = StructuralObject.SetValidValue(value, "WorkTypePK");
                     ReportPropertyChanged("WorkTypePK");
                     OnWorkTypePKChanged();
                 }
@@ -15372,7 +15324,7 @@ namespace Mateus.Model.EFModel
             {
                 OnNameChanging(value);
                 ReportPropertyChanging("Name");
-                _Name = StructuralObject.SetValidValue(value, true);
+                _Name = StructuralObject.SetValidValue(value, true, "Name");
                 ReportPropertyChanged("Name");
                 OnNameChanged();
             }
@@ -15396,7 +15348,7 @@ namespace Mateus.Model.EFModel
             {
                 OnDeletedChanging(value);
                 ReportPropertyChanging("Deleted");
-                _Deleted = StructuralObject.SetValidValue(value);
+                _Deleted = StructuralObject.SetValidValue(value, "Deleted");
                 ReportPropertyChanged("Deleted");
                 OnDeletedChanged();
             }
@@ -15407,7 +15359,6 @@ namespace Mateus.Model.EFModel
 
         #endregion
 
-    
         #region Navigation Properties
     
         /// <summary>
@@ -15460,5 +15411,4 @@ namespace Mateus.Model.EFModel
 
     #endregion
 
-    
 }

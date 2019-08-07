@@ -1,6 +1,0 @@
-C:\Users\Domagoj\Desktop\mars_source\Solution\PITFramework\bin\Release\PITFramework.dll.config
-C:\Users\Domagoj\Desktop\mars_source\Solution\PITFramework\bin\Release\PITFramework.dll
-C:\Users\Domagoj\Desktop\mars_source\Solution\PITFramework\bin\Release\PITFramework.pdb
-C:\Users\Domagoj\Desktop\mars_source\Solution\PITFramework\obj\Release\PITFramework.csprojResolveAssemblyReference.cache
-C:\Users\Domagoj\Desktop\mars_source\Solution\PITFramework\obj\Release\PITFramework.dll
-C:\Users\Domagoj\Desktop\mars_source\Solution\PITFramework\obj\Release\PITFramework.pdb

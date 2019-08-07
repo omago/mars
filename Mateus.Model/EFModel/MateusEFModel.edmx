@@ -1,60 +1,60 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
   <!-- EF Runtime content -->
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="Mateus_wcModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+    <Schema Namespace="Mateus_wcModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityContainer Name="Mateus_wcModelStoreContainer">
-          <EntitySet Name="Activities" EntityType="Mateus_wcModel.Store.Activities" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="AdditionalFactors" EntityType="Mateus_wcModel.Store.AdditionalFactors" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="AnnexContracts" EntityType="Mateus_wcModel.Store.AnnexContracts" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="AssessmentAnswers" EntityType="Mateus_wcModel.Store.AssessmentAnswers" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="AssessmentGroups" EntityType="Mateus_wcModel.Store.AssessmentGroups" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="AssessmentQuestions" EntityType="Mateus_wcModel.Store.AssessmentQuestions" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Assessments" EntityType="Mateus_wcModel.Store.Assessments" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="AssessmentTypes" EntityType="Mateus_wcModel.Store.AssessmentTypes" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Attachments" EntityType="Mateus_wcModel.Store.Attachments" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="AuditingDetails" EntityType="Mateus_wcModel.Store.AuditingDetails" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="AuditingMaster" EntityType="Mateus_wcModel.Store.AuditingMaster" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Banks" EntityType="Mateus_wcModel.Store.Banks" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="BussinesShareBurdens" EntityType="Mateus_wcModel.Store.BussinesShareBurdens" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="ChangeTypes" EntityType="Mateus_wcModel.Store.ChangeTypes" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="CitiesCommunities" EntityType="Mateus_wcModel.Store.CitiesCommunities" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="CommercialCourts" EntityType="Mateus_wcModel.Store.CommercialCourts" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Contracts" EntityType="Mateus_wcModel.Store.Contracts" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="ContractValidities" EntityType="Mateus_wcModel.Store.ContractValidities" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Counties" EntityType="Mateus_wcModel.Store.Counties" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Countries" EntityType="Mateus_wcModel.Store.Countries" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Currencies" EntityType="Mateus_wcModel.Store.Currencies" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Forms" EntityType="Mateus_wcModel.Store.Forms" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="FulfilledFactors" EntityType="Mateus_wcModel.Store.FulfilledFactors" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="LegalEntities" EntityType="Mateus_wcModel.Store.LegalEntities" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="LegalEntityBanks" EntityType="Mateus_wcModel.Store.LegalEntityBanks" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="LegalEntityBranches" EntityType="Mateus_wcModel.Store.LegalEntityBranches" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="LegalEntityLegalRepresentatives" EntityType="Mateus_wcModel.Store.LegalEntityLegalRepresentatives" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="LegalEntityOwners" EntityType="Mateus_wcModel.Store.LegalEntityOwners" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="OwnerTypes" EntityType="Mateus_wcModel.Store.OwnerTypes" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="PhysicalEntities" EntityType="Mateus_wcModel.Store.PhysicalEntities" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Places" EntityType="Mateus_wcModel.Store.Places" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="PostalOffices" EntityType="Mateus_wcModel.Store.PostalOffices" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="RegionalOffices" EntityType="Mateus_wcModel.Store.RegionalOffices" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Risks" EntityType="Mateus_wcModel.Store.Risks" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Roles" EntityType="Mateus_wcModel.Store.Roles" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="ServiceTypes" EntityType="Mateus_wcModel.Store.ServiceTypes" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Substations" EntityType="Mateus_wcModel.Store.Substations" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="SystemActions" EntityType="Mateus_wcModel.Store.SystemActions" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="SystemControllers" EntityType="Mateus_wcModel.Store.SystemControllers" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Taxes" EntityType="Mateus_wcModel.Store.Taxes" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="ToDoLists" EntityType="Mateus_wcModel.Store.ToDoLists" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="UserActivities" EntityType="Mateus_wcModel.Store.UserActivities" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Users" EntityType="Mateus_wcModel.Store.Users" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="UsersInRoles" EntityType="Mateus_wcModel.Store.UsersInRoles" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="WaysOfRepresentation" EntityType="Mateus_wcModel.Store.WaysOfRepresentation" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="WorkDoneAttachments" EntityType="Mateus_wcModel.Store.WorkDoneAttachments" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="WorkDones" EntityType="Mateus_wcModel.Store.WorkDones" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="WorkSubtypes" EntityType="Mateus_wcModel.Store.WorkSubtypes" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="WorkTypes" EntityType="Mateus_wcModel.Store.WorkTypes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Activities" EntityType="Mateus_wcModel.Store.Activities" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="AdditionalFactors" EntityType="Mateus_wcModel.Store.AdditionalFactors" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="AnnexContracts" EntityType="Mateus_wcModel.Store.AnnexContracts" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="AssessmentAnswers" EntityType="Mateus_wcModel.Store.AssessmentAnswers" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="AssessmentGroups" EntityType="Mateus_wcModel.Store.AssessmentGroups" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="AssessmentQuestions" EntityType="Mateus_wcModel.Store.AssessmentQuestions" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Assessments" EntityType="Mateus_wcModel.Store.Assessments" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="AssessmentTypes" EntityType="Mateus_wcModel.Store.AssessmentTypes" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Attachments" EntityType="Mateus_wcModel.Store.Attachments" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="AuditingDetails" EntityType="Mateus_wcModel.Store.AuditingDetails" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="AuditingMaster" EntityType="Mateus_wcModel.Store.AuditingMaster" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Banks" EntityType="Mateus_wcModel.Store.Banks" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="BussinesShareBurdens" EntityType="Mateus_wcModel.Store.BussinesShareBurdens" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="ChangeTypes" EntityType="Mateus_wcModel.Store.ChangeTypes" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="CitiesCommunities" EntityType="Mateus_wcModel.Store.CitiesCommunities" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="CommercialCourts" EntityType="Mateus_wcModel.Store.CommercialCourts" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Contracts" EntityType="Mateus_wcModel.Store.Contracts" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="ContractValidities" EntityType="Mateus_wcModel.Store.ContractValidities" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Counties" EntityType="Mateus_wcModel.Store.Counties" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Countries" EntityType="Mateus_wcModel.Store.Countries" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Currencies" EntityType="Mateus_wcModel.Store.Currencies" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Forms" EntityType="Mateus_wcModel.Store.Forms" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="FulfilledFactors" EntityType="Mateus_wcModel.Store.FulfilledFactors" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="LegalEntities" EntityType="Mateus_wcModel.Store.LegalEntities" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="LegalEntityBanks" EntityType="Mateus_wcModel.Store.LegalEntityBanks" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="LegalEntityBranches" EntityType="Mateus_wcModel.Store.LegalEntityBranches" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="LegalEntityLegalRepresentatives" EntityType="Mateus_wcModel.Store.LegalEntityLegalRepresentatives" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="LegalEntityOwners" EntityType="Mateus_wcModel.Store.LegalEntityOwners" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="OwnerTypes" EntityType="Mateus_wcModel.Store.OwnerTypes" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="PhysicalEntities" EntityType="Mateus_wcModel.Store.PhysicalEntities" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Places" EntityType="Mateus_wcModel.Store.Places" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="PostalOffices" EntityType="Mateus_wcModel.Store.PostalOffices" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="RegionalOffices" EntityType="Mateus_wcModel.Store.RegionalOffices" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Risks" EntityType="Mateus_wcModel.Store.Risks" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Roles" EntityType="Mateus_wcModel.Store.Roles" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="ServiceTypes" EntityType="Mateus_wcModel.Store.ServiceTypes" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Substations" EntityType="Mateus_wcModel.Store.Substations" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="SystemActions" EntityType="Mateus_wcModel.Store.SystemActions" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="SystemControllers" EntityType="Mateus_wcModel.Store.SystemControllers" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Taxes" EntityType="Mateus_wcModel.Store.Taxes" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="ToDoLists" EntityType="Mateus_wcModel.Store.ToDoLists" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="UserActivities" EntityType="Mateus_wcModel.Store.UserActivities" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Users" EntityType="Mateus_wcModel.Store.Users" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="UsersInRoles" EntityType="Mateus_wcModel.Store.UsersInRoles" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="WaysOfRepresentation" EntityType="Mateus_wcModel.Store.WaysOfRepresentation" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="WorkDoneAttachments" EntityType="Mateus_wcModel.Store.WorkDoneAttachments" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="WorkDones" EntityType="Mateus_wcModel.Store.WorkDones" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="WorkSubtypes" EntityType="Mateus_wcModel.Store.WorkSubtypes" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="WorkTypes" EntityType="Mateus_wcModel.Store.WorkTypes" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
           <AssociationSet Name="FK_Actions_Controllers" Association="Mateus_wcModel.Store.FK_Actions_Controllers">
             <End Role="SystemControllers" EntitySet="SystemControllers" />
             <End Role="SystemActions" EntitySet="SystemActions" />
@@ -1675,8 +1675,8 @@
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="Mateus_wcModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
-        <EntityContainer Name="Mateus_wcEntities" annotation:LazyLoadingEnabled="true">
+      <Schema Namespace="Mateus_wcModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+        <EntityContainer Name="Mateus_wcEntities" annotation:LazyLoadingEnabled="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
           <EntitySet Name="Activities" EntityType="Mateus_wcModel.Activity" />
           <EntitySet Name="AdditionalFactors" EntityType="Mateus_wcModel.AdditionalFactor" />
           <EntitySet Name="AssessmentAnswers" EntityType="Mateus_wcModel.AssessmentAnswers" />
@@ -1983,7 +1983,7 @@
           <Key>
             <PropertyRef Name="ActivityPK" />
           </Key>
-          <Property Name="ActivityPK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ActivityPK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Name="Code" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
           <Property Name="Name" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
           <Property Name="HighRisk" Type="Boolean" />
@@ -1995,7 +1995,7 @@
           <Key>
             <PropertyRef Name="AdditionalFactorPK" />
           </Key>
-          <Property Name="AdditionalFactorPK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AdditionalFactorPK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Name="Name" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
           <Property Name="Deleted" Type="Boolean" />
         </EntityType>
@@ -2003,7 +2003,7 @@
           <Key>
             <PropertyRef Name="AssessmentAnswerPK" />
           </Key>
-          <Property Name="AssessmentAnswerPK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AssessmentAnswerPK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Name="AssessmentAnswer" Type="Boolean" />
           <Property Name="AssessmentQuestionFK" Type="Int32" />
           <Property Name="AssessmentFK" Type="Int32" />
@@ -2015,7 +2015,7 @@
           <Key>
             <PropertyRef Name="AssessmentGroupPK" />
           </Key>
-          <Property Name="AssessmentGroupPK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AssessmentGroupPK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Name="Name" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
           <Property Name="Deleted" Type="Boolean" />
           <Property Name="AssessmentTypeFK" Type="Int32" />
@@ -2026,7 +2026,7 @@
           <Key>
             <PropertyRef Name="AssessmentQuestionPK" />
           </Key>
-          <Property Name="AssessmentQuestionPK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AssessmentQuestionPK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Name="Name" Type="String" MaxLength="2000" Unicode="true" FixedLength="false" />
           <Property Name="Deleted" Type="Boolean" />
           <Property Name="AssessmentGroupFK" Type="Int32" />
@@ -2037,7 +2037,7 @@
           <Key>
             <PropertyRef Name="AssessmentTypePK" />
           </Key>
-          <Property Name="AssessmentTypePK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AssessmentTypePK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Name="Name" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
           <Property Name="Deleted" Type="Boolean" />
           <NavigationProperty Name="AssessmentGroups" Relationship="Mateus_wcModel.FK_AssessmentGroups_AssessmentTypes" FromRole="AssessmentTypes" ToRole="AssessmentGroups" />
@@ -2047,7 +2047,7 @@
           <Key>
             <PropertyRef Name="AttachmentPK" />
           </Key>
-          <Property Name="AttachmentPK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AttachmentPK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Name="Name" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
           <Property Name="Filename" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
           <Property Name="Extension" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
@@ -2059,7 +2059,7 @@
           <Key>
             <PropertyRef Name="AuditingDetailPK" />
           </Key>
-          <Property Name="AuditingDetailPK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AuditingDetailPK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Name="AuditingMasterFK" Type="Int32" />
           <Property Name="ColumnName" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
           <Property Name="OldValue" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
@@ -2070,7 +2070,7 @@
           <Key>
             <PropertyRef Name="AuditingMasterPK" />
           </Key>
-          <Property Name="AuditingMasterPK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AuditingMasterPK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Name="UserFK" Type="Int32" />
           <Property Name="DBName" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
           <Property Name="TableName" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
@@ -2086,7 +2086,7 @@
           <Key>
             <PropertyRef Name="BankPK" />
           </Key>
-          <Property Name="BankPK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BankPK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Name="Name" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
           <Property Name="AccountNumber" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
           <Property Name="Swift" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
@@ -2099,7 +2099,7 @@
           <Key>
             <PropertyRef Name="BussinesShareBurdenPK" />
           </Key>
-          <Property Name="BussinesShareBurdenPK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BussinesShareBurdenPK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Name="Name" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
           <Property Name="Deleted" Type="Boolean" />
         </EntityType>
@@ -2107,7 +2107,7 @@
           <Key>
             <PropertyRef Name="ChangeTypePK" />
           </Key>
-          <Property Name="ChangeTypePK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ChangeTypePK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Name="Name" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
           <Property Name="Deleted" Type="Boolean" />
         </EntityType>
@@ -2115,7 +2115,7 @@
           <Key>
             <PropertyRef Name="CommercialCourtPK" />
           </Key>
-          <Property Name="CommercialCourtPK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CommercialCourtPK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Name="Name" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
           <Property Name="Deleted" Type="Boolean" />
           <NavigationProperty Name="LegalEntities" Relationship="Mateus_wcModel.FK_LegalEntities_CommercialCourts" FromRole="CommercialCourt" ToRole="LegalEntity" />
@@ -2124,7 +2124,7 @@
           <Key>
             <PropertyRef Name="ContractValidityPK" />
           </Key>
-          <Property Name="ContractValidityPK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ContractValidityPK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Name="Name" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
           <Property Name="Deleted" Type="Boolean" />
           <NavigationProperty Name="AnnexContracts" Relationship="Mateus_wcModel.FK_AnnexContracts_ContractValidities" FromRole="ContractValidity" ToRole="AnnexContract" />
@@ -2134,7 +2134,7 @@
           <Key>
             <PropertyRef Name="CountyPK" />
           </Key>
-          <Property Name="CountyPK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CountyPK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Name="CountryFK" Type="Int32" />
           <Property Name="Name" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
           <Property Name="Deleted" Type="Boolean" />
@@ -2150,7 +2150,7 @@
           <Key>
             <PropertyRef Name="CountryPK" />
           </Key>
-          <Property Name="CountryPK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CountryPK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Name="Name" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
           <Property Name="NameEn" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
           <Property Name="Citizenship" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
@@ -2171,7 +2171,7 @@
           <Key>
             <PropertyRef Name="CurrencyPK" />
           </Key>
-          <Property Name="CurrencyPK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CurrencyPK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Name="Name" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
           <Property Name="Sign" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
           <Property Name="Deleted" Type="Boolean" />
@@ -2180,7 +2180,7 @@
           <Key>
             <PropertyRef Name="FormPK" />
           </Key>
-          <Property Name="FormPK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FormPK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Name="Name" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
           <Property Name="Deleted" Type="Boolean" />
           <NavigationProperty Name="LegalEntities" Relationship="Mateus_wcModel.FK_LegalEntities_Forms" FromRole="Form" ToRole="LegalEntity" />
@@ -2189,7 +2189,7 @@
           <Key>
             <PropertyRef Name="FulfilledFactorPK" />
           </Key>
-          <Property Name="FulfilledFactorPK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FulfilledFactorPK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Name="Name" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
           <Property Name="Deleted" Type="Boolean" />
         </EntityType>
@@ -2197,7 +2197,7 @@
           <Key>
             <PropertyRef Name="OwnerTypePK" />
           </Key>
-          <Property Name="OwnerTypePK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OwnerTypePK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Name="Name" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
           <Property Name="Deleted" Type="Boolean" />
         </EntityType>
@@ -2205,7 +2205,7 @@
           <Key>
             <PropertyRef Name="PlacePK" />
           </Key>
-          <Property Name="PlacePK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PlacePK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Name="PostalOfficeFK" Type="Int32" />
           <Property Name="Ordinal" Type="Int32" />
           <Property Name="Name" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
@@ -2219,7 +2219,7 @@
           <Key>
             <PropertyRef Name="PostalOfficePK" />
           </Key>
-          <Property Name="PostalOfficePK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PostalOfficePK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Name="CountyFK" Type="Int32" />
           <Property Name="Number" Type="Int32" />
           <Property Name="Name" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
@@ -2234,7 +2234,7 @@
           <Key>
             <PropertyRef Name="RegionalOfficePK" />
           </Key>
-          <Property Name="RegionalOfficePK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RegionalOfficePK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Name="Name" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
           <Property Name="Deleted" Type="Boolean" />
           <NavigationProperty Name="Substations" Relationship="Mateus_wcModel.FK_Substations_RegionalOffices" FromRole="RegionalOffices" ToRole="Substations" />
@@ -2246,7 +2246,7 @@
           <Key>
             <PropertyRef Name="RiskPK" />
           </Key>
-          <Property Name="RiskPK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RiskPK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Name="Name" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
           <Property Name="Deleted" Type="Boolean" />
           <NavigationProperty Name="Assessments" Relationship="Mateus_wcModel.FK_Assessments_Risks" FromRole="Risk" ToRole="Assessment" />
@@ -2255,7 +2255,7 @@
           <Key>
             <PropertyRef Name="RolePK" />
           </Key>
-          <Property Name="RolePK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RolePK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Name="Name" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
           <Property Name="Description" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
           <Property Name="DisplayName" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
@@ -2267,7 +2267,7 @@
           <Key>
             <PropertyRef Name="ServiceTypePK" />
           </Key>
-          <Property Name="ServiceTypePK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ServiceTypePK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Name="Name" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
           <Property Name="Deleted" Type="Boolean" />
           <NavigationProperty Name="WorkDones" Relationship="Mateus_wcModel.FK_WorkDones_ServiceTypes" FromRole="ServiceType" ToRole="WorkDones" />
@@ -2276,7 +2276,7 @@
           <Key>
             <PropertyRef Name="SubstationPK" />
           </Key>
-          <Property Name="SubstationPK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SubstationPK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Name="RegionalOfficeFK" Type="Int32" />
           <Property Name="Name" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
           <Property Name="Deleted" Type="Boolean" />
@@ -2288,7 +2288,7 @@
           <Key>
             <PropertyRef Name="SystemActionPK" />
           </Key>
-          <Property Name="SystemActionPK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SystemActionPK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Name="SystemControllerFK" Type="Int32" />
           <Property Name="Name" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
           <Property Name="DisplayName" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
@@ -2299,7 +2299,7 @@
           <Key>
             <PropertyRef Name="SystemControllerPK" />
           </Key>
-          <Property Name="SystemControllerPK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SystemControllerPK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Name="Name" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
           <Property Name="DisplayName" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
           <Property Name="Theme" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
@@ -2310,7 +2310,7 @@
           <Key>
             <PropertyRef Name="TaxPK" />
           </Key>
-          <Property Name="TaxPK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TaxPK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Name="Name" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
           <Property Name="Deleted" Type="Boolean" />
           <NavigationProperty Name="LegalEntities" Relationship="Mateus_wcModel.FK_LegalEntities_Taxes" FromRole="Tax" ToRole="LegalEntity" />
@@ -2319,7 +2319,7 @@
           <Key>
             <PropertyRef Name="ToDoListPK" />
           </Key>
-          <Property Name="ToDoListPK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ToDoListPK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Name="Name" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
           <Property Name="Date" Type="DateTime" />
           <Property Name="Deadline" Type="DateTime" />
@@ -2334,7 +2334,7 @@
           <Key>
             <PropertyRef Name="UserActivityPK" />
           </Key>
-          <Property Name="UserActivityPK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserActivityPK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Name="UserFK" Type="Int32" />
           <Property Name="ActivityTime" Type="DateTime" />
           <Property Name="ActivityDescription" Type="String" MaxLength="1024" Unicode="true" FixedLength="false" />
@@ -2345,7 +2345,7 @@
           <Key>
             <PropertyRef Name="UserInRolePK" />
           </Key>
-          <Property Name="UserInRolePK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserInRolePK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Name="UserFK" Type="Int32" Nullable="false" />
           <Property Name="RoleFK" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Role" Relationship="Mateus_wcModel.FK_UsersInRoles_Roles" FromRole="UsersInRoles" ToRole="Roles" />
@@ -2354,7 +2354,7 @@
           <Key>
             <PropertyRef Name="WayOfRepresentationPK" />
           </Key>
-          <Property Name="WayOfRepresentationPK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="WayOfRepresentationPK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Name="Name" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
           <Property Name="Deleted" Type="Boolean" />
           <NavigationProperty Name="LegalEntityLegalRepresentatives" Relationship="Mateus_wcModel.FK_CompanyLegalRepresentative_WaysOfRepresentation" FromRole="WayOfRepresentation" ToRole="LegalEntityLegalRepresentatives" />
@@ -2364,7 +2364,7 @@
           <Key>
             <PropertyRef Name="WorkDoneAttachmentPK" />
           </Key>
-          <Property Name="WorkDoneAttachmentPK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="WorkDoneAttachmentPK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Name="WorkDoneFK" Type="Int32" />
           <Property Name="AttachmentFK" Type="Int32" />
           <Property Name="Deleted" Type="Boolean" />
@@ -2374,7 +2374,7 @@
           <Key>
             <PropertyRef Name="WorkSubtypePK" />
           </Key>
-          <Property Name="WorkSubtypePK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="WorkSubtypePK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Name="WorkTypeFK" Type="Int32" />
           <Property Name="Name" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
           <Property Name="Deleted" Type="Boolean" />
@@ -2385,7 +2385,7 @@
           <Key>
             <PropertyRef Name="WorkTypePK" />
           </Key>
-          <Property Name="WorkTypePK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="WorkTypePK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Name="Name" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
           <Property Name="Deleted" Type="Boolean" />
           <NavigationProperty Name="WorkSubtypes" Relationship="Mateus_wcModel.FK_WorkSubtypes_WorkTypes" FromRole="WorkTypes" ToRole="WorkSubtypes" />
@@ -2541,7 +2541,7 @@
           <Key>
             <PropertyRef Name="LegalEntityBankPK" />
           </Key>
-          <Property Type="Int32" Name="LegalEntityBankPK" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="LegalEntityBankPK" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Type="Int32" Name="LegalEntityFK" />
           <Property Type="Int32" Name="BankFK" />
           <Property Type="DateTime" Name="ChangeDate" />
@@ -2554,7 +2554,7 @@
           <Key>
             <PropertyRef Name="LegalEntityLegalRepresentativePK" />
           </Key>
-          <Property Type="Int32" Name="LegalEntityLegalRepresentativePK" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="LegalEntityLegalRepresentativePK" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Type="Int32" Name="LegalEntityFK" />
           <Property Type="Int32" Name="WayOfRepresentationFK" />
           <Property Type="Int32" Name="LegalRepresentativeFK" />
@@ -2568,7 +2568,7 @@
           <Key>
             <PropertyRef Name="LegalEntityOwnerPK" />
           </Key>
-          <Property Type="Int32" Name="LegalEntityOwnerPK" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="LegalEntityOwnerPK" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Type="Int32" Name="LegalEntityFK" />
           <Property Type="Int32" Name="OwnerFK" />
           <Property Type="String" Name="OwnerType" MaxLength="10" FixedLength="true" Unicode="true" />
@@ -2588,7 +2588,7 @@
           <Key>
             <PropertyRef Name="UserPK" />
           </Key>
-          <Property Type="Int32" Name="UserPK" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="UserPK" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Type="String" Name="Username" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="Password" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="FirstName" MaxLength="250" FixedLength="false" Unicode="true" />
@@ -2606,7 +2606,7 @@
           <Key>
             <PropertyRef Name="WorkDonePK" />
           </Key>
-          <Property Type="Int32" Name="WorkDonePK" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="WorkDonePK" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Type="Int32" Name="ToDoListFK" />
           <Property Type="DateTime" Name="Date" />
           <Property Type="Int32" Name="LegalEntityFK" />
@@ -2738,7 +2738,7 @@
           <Key>
             <PropertyRef Name="AssessmentPK" />
           </Key>
-          <Property Type="Int32" Name="AssessmentPK" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="AssessmentPK" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Type="Int32" Name="LegalEntityFK" />
           <Property Type="Int32" Name="RiskFK" />
           <Property Type="Int32" Name="AssessmentTypeFK" />
@@ -2790,7 +2790,7 @@
           <Key>
             <PropertyRef Name="CityCommunityPK" />
           </Key>
-          <Property Type="Int32" Name="CityCommunityPK" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="CityCommunityPK" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Type="Int32" Name="CountyFK" />
           <Property Type="String" Name="Name" MaxLength="256" FixedLength="false" Unicode="true" />
           <Property Type="Int32" Name="Code" />
@@ -2817,7 +2817,7 @@
           <Key>
             <PropertyRef Name="LegalEntityPK" />
           </Key>
-          <Property Type="Int32" Name="LegalEntityPK" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="LegalEntityPK" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Type="String" Name="Name" MaxLength="256" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="ShortName" MaxLength="3" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="OIB" MaxLength="11" FixedLength="false" Unicode="true" />
@@ -2878,7 +2878,7 @@
           <Key>
             <PropertyRef Name="LegalEntityBranchPK" />
           </Key>
-          <Property Type="Int32" Name="LegalEntityBranchPK" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="LegalEntityBranchPK" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Type="Int32" Name="LegalEntityFK" />
           <Property Type="String" Name="Name" MaxLength="256" FixedLength="false" Unicode="true" />
           <Property Type="Int32" Name="CountryFK" />
@@ -2904,7 +2904,7 @@
           <Key>
             <PropertyRef Name="PhysicalEntityPK" />
           </Key>
-          <Property Type="Int32" Name="PhysicalEntityPK" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="PhysicalEntityPK" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Type="String" Name="Firstname" MaxLength="256" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="Lastname" MaxLength="256" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="Gender" MaxLength="1" FixedLength="false" Unicode="true" />
@@ -3382,7 +3382,7 @@
           <Key>
             <PropertyRef Name="AnnexContractPK" />
           </Key>
-          <Property Type="Int32" Name="AnnexContractPK" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="AnnexContractPK" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Type="Int32" Name="ContractFK" />
           <Property Type="String" Name="Name" MaxLength="256" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="Number" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -3407,7 +3407,7 @@
           <Key>
             <PropertyRef Name="ContractPK" />
           </Key>
-          <Property Type="Int32" Name="ContractPK" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="ContractPK" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Type="Int32" Name="LegalEntityFK" />
           <Property Type="String" Name="Name" MaxLength="256" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="Number" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -3469,7 +3469,7 @@
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
-      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="Mateus_wcModelStoreContainer" CdmEntityContainer="Mateus_wcEntities">
           <EntitySetMapping Name="Activities"><EntityTypeMapping TypeName="Mateus_wcModel.Activity"><MappingFragment StoreEntitySet="Activities">
             <ScalarProperty Name="ActivityPK" ColumnName="ActivityPK" />
@@ -3979,7 +3979,7 @@
     </edmx:Mappings>
   </edmx:Runtime>
   <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
-  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <Connection>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
@@ -4094,7 +4094,7 @@
         <EntityTypeShape EntityType="Mateus_wcModel.LegalEntityOwner" Width="1.5" PointX="20.375" PointY="0.75" Height="3.9033007812499996" />
         <EntityTypeShape EntityType="Mateus_wcModel.User" Width="1.5" PointX="18" PointY="8.5" Height="3.5186979166666106" />
         <EntityTypeShape EntityType="Mateus_wcModel.WorkDone" Width="1.5" PointX="22.5" PointY="9.375" Height="4.4802050781249818" />
-        <AssociationConnector Association="Mateus_wcModel.FK_LegalEntityBanks_Banks" >
+        <AssociationConnector Association="Mateus_wcModel.FK_LegalEntityBanks_Banks">
           <ConnectorPoint PointX="12.15625" PointY="10.307190755208332" />
           <ConnectorPoint PointX="12.15625" PointY="21.195590333363612" />
           <ConnectorPoint PointX="12.872963736979168" PointY="21.195590333363612" />
@@ -4107,27 +4107,27 @@
           <ConnectorPoint PointX="17.752948941619874" PointY="21.195590333363612" />
           <ConnectorPoint PointX="18" PointY="21.195590333363612" />
         </AssociationConnector>
-        <AssociationConnector Association="Mateus_wcModel.FK_CompanyLegalRepresentative_WaysOfRepresentation" >
+        <AssociationConnector Association="Mateus_wcModel.FK_CompanyLegalRepresentative_WaysOfRepresentation">
           <ConnectorPoint PointX="15" PointY="19.17018717447916" />
           <ConnectorPoint PointX="17.510416666666668" PointY="19.17018717447916" />
           <ConnectorPoint PointX="17.677083333333332" PointY="19.17018717447916" />
           <ConnectorPoint PointX="21.75" PointY="19.17018717447916" />
           <ConnectorPoint PointX="21.75" PointY="23.5" />
         </AssociationConnector>
-        <AssociationConnector Association="Mateus_wcModel.FK_WorkDones_ServiceTypes" >
+        <AssociationConnector Association="Mateus_wcModel.FK_WorkDones_ServiceTypes">
           <ConnectorPoint PointX="19.5" PointY="5.2518929036458335" />
           <ConnectorPoint PointX="23.25" PointY="5.2518929036458335" />
           <ConnectorPoint PointX="23.25" PointY="9.375" />
         </AssociationConnector>
-        <AssociationConnector Association="Mateus_wcModel.FK_ToDoLists_Users" >
+        <AssociationConnector Association="Mateus_wcModel.FK_ToDoLists_Users">
           <ConnectorPoint PointX="19.5" PointY="11.4131982421875" />
           <ConnectorPoint PointX="20.25" PointY="11.4131982421875" />
         </AssociationConnector>
-        <AssociationConnector Association="Mateus_wcModel.FK_WorkDones_ToDoLists" >
+        <AssociationConnector Association="Mateus_wcModel.FK_WorkDones_ToDoLists">
           <ConnectorPoint PointX="21.75" PointY="12.427602539062491" />
           <ConnectorPoint PointX="22.5" PointY="12.427602539062491" />
         </AssociationConnector>
-        <AssociationConnector Association="Mateus_wcModel.FK_UserActivities_Users" >
+        <AssociationConnector Association="Mateus_wcModel.FK_UserActivities_Users">
           <ConnectorPoint PointX="19.5" PointY="11.826396484375" />
           <ConnectorPoint PointX="19.875" PointY="12.201396484375" />
           <ConnectorPoint PointX="19.875" PointY="15.836293945312505" />
@@ -4135,16 +4135,16 @@
           <ConnectorPoint PointX="20.083333333333332" PointY="15.836293945312505" />
           <ConnectorPoint PointX="20.25" PointY="15.836293945312505" />
         </AssociationConnector>
-        <AssociationConnector Association="Mateus_wcModel.FK_WorkDones_Users" >
+        <AssociationConnector Association="Mateus_wcModel.FK_WorkDones_Users">
           <ConnectorPoint PointX="19.5" PointY="10.15625" />
           <ConnectorPoint PointX="22.5" PointY="10.15625" />
         </AssociationConnector>
-        <AssociationConnector Association="Mateus_wcModel.FK_WorkDones_WorkSubtypes" >
+        <AssociationConnector Association="Mateus_wcModel.FK_WorkDones_WorkSubtypes">
           <ConnectorPoint PointX="19.5" PointY="18.049988606770835" />
           <ConnectorPoint PointX="23.25" PointY="18.049988606770835" />
           <ConnectorPoint PointX="23.25" PointY="13.855205078124982" />
         </AssociationConnector>
-        <AssociationConnector Association="Mateus_wcModel.FK_WorkDones_WorkTypes" >
+        <AssociationConnector Association="Mateus_wcModel.FK_WorkDones_WorkTypes">
           <ConnectorPoint PointX="17.25" PointY="17.338819614583336" />
           <ConnectorPoint PointX="17.666666666666668" PointY="17.338819614583336" />
           <ConnectorPoint PointX="17.833333333333332" PointY="17.338819614583336" />
@@ -4156,25 +4156,25 @@
           <ConnectorPoint PointX="22.843747999999998" PointY="13.855205078124982" />
         </AssociationConnector>
         <EntityTypeShape EntityType="Mateus_wcModel.Assessment" Width="1.5" PointX="3" PointY="1" Height="3.1340950520833246" />
-        <AssociationConnector Association="Mateus_wcModel.FK_AssessmentAnswers_Assessments" >
+        <AssociationConnector Association="Mateus_wcModel.FK_AssessmentAnswers_Assessments">
           <ConnectorPoint PointX="4.5" PointY="2.5670475260416623" />
           <ConnectorPoint PointX="8.5625" PointY="2.5670475260416623" />
           <ConnectorPoint PointX="8.5625" PointY="5.125" />
         </AssociationConnector>
-        <AssociationConnector Association="Mateus_wcModel.FK_Assessments_AssessmentTypes" >
+        <AssociationConnector Association="Mateus_wcModel.FK_Assessments_AssessmentTypes">
           <ConnectorPoint PointX="2.25" PointY="5.375" />
           <ConnectorPoint PointX="2.625" PointY="5" />
           <ConnectorPoint PointX="2.625" PointY="2.5670475260416623" />
           <ConnectorPoint PointX="3" PointY="2.5670475260416623" />
         </AssociationConnector>
-        <AssociationConnector Association="Mateus_wcModel.FK_Assessments_Risks" >
+        <AssociationConnector Association="Mateus_wcModel.FK_Assessments_Risks">
           <ConnectorPoint PointX="2.25" PointY="3.1775162760416649" />
           <ConnectorPoint PointX="2.5416666666666665" PointY="3.1775162760416644" />
           <ConnectorPoint PointX="2.7083333333333335" PointY="3.1775162760416649" />
           <ConnectorPoint PointX="3" PointY="3.1775162760416649" />
         </AssociationConnector>
         <EntityTypeShape EntityType="Mateus_wcModel.CityCommunity" Width="2.5" PointX="5.25" PointY="34.375" Height="2.9417936197916674" />
-        <AssociationConnector Association="Mateus_wcModel.FK_Cities_Counties1" >
+        <AssociationConnector Association="Mateus_wcModel.FK_Cities_Counties1">
           <ConnectorPoint PointX="3.75" PointY="29.259095052083335" />
           <ConnectorPoint PointX="3.75" PointY="35.845896809895834" />
           <ConnectorPoint PointX="5.25" PointY="35.845896809895834" />
@@ -4182,7 +4182,7 @@
         <EntityTypeShape EntityType="Mateus_wcModel.LegalEntity" Width="2.125" PointX="12.75" PointY="22.25" Height="11.403056640624982" />
         <EntityTypeShape EntityType="Mateus_wcModel.LegalEntityBranch" Width="2.125" PointX="18" PointY="26.25" Height="5.0571093749999818" />
         <EntityTypeShape EntityType="Mateus_wcModel.PhysicalEntity" Width="2.125" PointX="15.75" PointY="22.375" Height="9.8646451822916674" />
-        <AssociationConnector Association="Mateus_wcModel.FK_LegalEntities_Activities" >
+        <AssociationConnector Association="Mateus_wcModel.FK_LegalEntities_Activities">
           <ConnectorPoint PointX="12" PointY="19.960896247983371" />
           <ConnectorPoint PointX="12.072916666666666" PointY="19.960896247983371" />
           <ConnectorPoint PointX="12.239583333333334" PointY="19.960896247983371" />
@@ -4191,7 +4191,7 @@
           <ConnectorPoint PointX="13.225099140625002" PointY="19.960896247983371" />
           <ConnectorPoint PointX="13.225099140625002" PointY="22.25" />
         </AssociationConnector>
-        <AssociationConnector Association="Mateus_wcModel.FK_Branches_Cities" >
+        <AssociationConnector Association="Mateus_wcModel.FK_Branches_Cities">
           <ConnectorPoint PointX="7.75" PointY="35.307444661458334" />
           <ConnectorPoint PointX="11.166666666666666" PointY="35.307444661458334" />
           <ConnectorPoint PointX="11.333333333333334" PointY="35.307444661458334" />
@@ -4206,7 +4206,7 @@
           <ConnectorPoint PointX="18.4999975" PointY="35.307444661458334" />
           <ConnectorPoint PointX="18.4999975" PointY="31.307109374999982" />
         </AssociationConnector>
-        <AssociationConnector Association="Mateus_wcModel.FK_LegalEntities_Cities" >
+        <AssociationConnector Association="Mateus_wcModel.FK_LegalEntities_Cities">
           <ConnectorPoint PointX="7.75" PointY="35.117411992187513" />
           <ConnectorPoint PointX="11.166666666666666" PointY="35.117411992187513" />
           <ConnectorPoint PointX="11.333333333333334" PointY="35.117411992187513" />
@@ -4215,7 +4215,7 @@
           <ConnectorPoint PointX="13.736327031250001" PointY="35.117411992187513" />
           <ConnectorPoint PointX="13.736327031250001" PointY="34.037659505208332" />
         </AssociationConnector>
-        <AssociationConnector Association="Mateus_wcModel.FK_PhysicalEntities_Cities" >
+        <AssociationConnector Association="Mateus_wcModel.FK_PhysicalEntities_Cities">
           <ConnectorPoint PointX="7.75" PointY="35.212428326822923" />
           <ConnectorPoint PointX="11.166666666666666" PointY="35.212428326822923" />
           <ConnectorPoint PointX="11.333333333333334" PointY="35.212428326822923" />
@@ -4226,7 +4226,7 @@
           <ConnectorPoint PointX="16.454558063964843" PointY="35.212428326822923" />
           <ConnectorPoint PointX="16.454558063964843" PointY="33.585755208333332" />
         </AssociationConnector>
-        <AssociationConnector Association="Mateus_wcModel.FK_PhysicalEntities_Cities1" >
+        <AssociationConnector Association="Mateus_wcModel.FK_PhysicalEntities_Cities1">
           <ConnectorPoint PointX="7.75" PointY="35.466224830729161" />
           <ConnectorPoint PointX="11.166666666666666" PointY="35.466224830729161" />
           <ConnectorPoint PointX="11.333333333333334" PointY="35.466224830729161" />
@@ -4237,14 +4237,14 @@
           <ConnectorPoint PointX="17.224092438964846" PointY="35.466224830729161" />
           <ConnectorPoint PointX="17.224092438964846" PointY="33.585755208333332" />
         </AssociationConnector>
-        <AssociationConnector Association="Mateus_wcModel.FK_LegalEntities_CommercialCourts" >
+        <AssociationConnector Association="Mateus_wcModel.FK_LegalEntities_CommercialCourts">
           <ConnectorPoint PointX="12" PointY="16.46875" />
           <ConnectorPoint PointX="12.072916666666666" PointY="16.46875" />
           <ConnectorPoint PointX="12.239583333333334" PointY="16.46875" />
           <ConnectorPoint PointX="12.956297070312502" PointY="16.46875" />
           <ConnectorPoint PointX="12.956297070312502" PointY="22.25" />
         </AssociationConnector>
-        <AssociationConnector Association="Mateus_wcModel.FK_Branches_Counties" >
+        <AssociationConnector Association="Mateus_wcModel.FK_Branches_Counties">
           <ConnectorPoint PointX="4.5" PointY="28.610828718243972" />
           <ConnectorPoint PointX="5.916666666666667" PointY="28.610828718243972" />
           <ConnectorPoint PointX="6.083333333333333" PointY="28.610828718243972" />
@@ -4275,7 +4275,7 @@
           <ConnectorPoint PointX="19.203125375" PointY="34.287659505208332" />
           <ConnectorPoint PointX="19.203125375" PointY="31.307109374999982" />
         </AssociationConnector>
-        <AssociationConnector Association="Mateus_wcModel.FK_LegalEntities_Counties" >
+        <AssociationConnector Association="Mateus_wcModel.FK_LegalEntities_Counties">
           <ConnectorPoint PointX="4.5" PointY="26.649850083162917" />
           <ConnectorPoint PointX="8.1666666666666661" PointY="26.649850083162917" />
           <ConnectorPoint PointX="8.3333333333333339" PointY="26.649850083162917" />
@@ -4285,7 +4285,7 @@
           <ConnectorPoint PointX="12.583333333333334" PointY="26.649850083162917" />
           <ConnectorPoint PointX="12.75" PointY="26.649850083162917" />
         </AssociationConnector>
-        <AssociationConnector Association="Mateus_wcModel.FK_PhysicalEntities_Counties" >
+        <AssociationConnector Association="Mateus_wcModel.FK_PhysicalEntities_Counties">
           <ConnectorPoint PointX="4.5" PointY="28.966213885163647" />
           <ConnectorPoint PointX="5.916666666666667" PointY="28.966213885163647" />
           <ConnectorPoint PointX="6.083333333333333" PointY="28.966213885163647" />
@@ -4312,7 +4312,7 @@
           <ConnectorPoint PointX="16.544611108286539" PointY="22" />
           <ConnectorPoint PointX="16.544611108286539" PointY="22.375" />
         </AssociationConnector>
-        <AssociationConnector Association="Mateus_wcModel.FK_PhysicalEntities_Counties1" >
+        <AssociationConnector Association="Mateus_wcModel.FK_PhysicalEntities_Counties1">
           <ConnectorPoint PointX="4.5" PointY="27.9552644422849" />
           <ConnectorPoint PointX="5.916666666666667" PointY="27.9552644422849" />
           <ConnectorPoint PointX="6.083333333333333" PointY="27.9552644422849" />
@@ -4337,7 +4337,7 @@
           <ConnectorPoint PointX="17.401726216573081" PointY="21.984375" />
           <ConnectorPoint PointX="17.401726216573081" PointY="22.375" />
         </AssociationConnector>
-        <AssociationConnector Association="Mateus_wcModel.FK_Branches_Countries" >
+        <AssociationConnector Association="Mateus_wcModel.FK_Branches_Countries">
           <ConnectorPoint PointX="2.25" PointY="21.543107666681806" />
           <ConnectorPoint PointX="12.872963736979168" PointY="21.543107666681806" />
           <ConnectorPoint PointX="13.039630403645836" PointY="21.543107666681806" />
@@ -4354,7 +4354,7 @@
           <ConnectorPoint PointX="19.0625" PointY="22.494690755208339" />
           <ConnectorPoint PointX="19.0625" PointY="26.25" />
         </AssociationConnector>
-        <AssociationConnector Association="Mateus_wcModel.FK_LegalEntities_Countries" >
+        <AssociationConnector Association="Mateus_wcModel.FK_LegalEntities_Countries">
           <ConnectorPoint PointX="2.25" PointY="23.766256510416667" />
           <ConnectorPoint PointX="8.1666666666666661" PointY="23.766256510416667" />
           <ConnectorPoint PointX="8.3333333333333339" PointY="23.766256510416667" />
@@ -4364,7 +4364,7 @@
           <ConnectorPoint PointX="12.583333333333334" PointY="23.766256510416667" />
           <ConnectorPoint PointX="12.75" PointY="23.766256510416667" />
         </AssociationConnector>
-        <AssociationConnector Association="Mateus_wcModel.FK_PhysicalEntities_Countries" >
+        <AssociationConnector Association="Mateus_wcModel.FK_PhysicalEntities_Countries">
           <ConnectorPoint PointX="2.25" PointY="21.748118833340897" />
           <ConnectorPoint PointX="12.872963736979168" PointY="21.748118833340897" />
           <ConnectorPoint PointX="13.039630403645836" PointY="21.748118833340897" />
@@ -4375,7 +4375,7 @@
           <ConnectorPoint PointX="16.116053054143268" PointY="21.748118833340897" />
           <ConnectorPoint PointX="16.116053054143268" PointY="22.375" />
         </AssociationConnector>
-        <AssociationConnector Association="Mateus_wcModel.FK_PhysicalEntities_Countries1" >
+        <AssociationConnector Association="Mateus_wcModel.FK_PhysicalEntities_Countries1">
           <ConnectorPoint PointX="2.25" PointY="21.338096500022715" />
           <ConnectorPoint PointX="12.872963736979168" PointY="21.338096500022715" />
           <ConnectorPoint PointX="13.039630403645836" PointY="21.338096500022715" />
@@ -4386,7 +4386,7 @@
           <ConnectorPoint PointX="16.97316866242981" PointY="21.338096500022715" />
           <ConnectorPoint PointX="16.97316866242981" PointY="22.375" />
         </AssociationConnector>
-        <AssociationConnector Association="Mateus_wcModel.FK_PhysicalEntities_Countries2" >
+        <AssociationConnector Association="Mateus_wcModel.FK_PhysicalEntities_Countries2">
           <ConnectorPoint PointX="2.25" PointY="22.09375" />
           <ConnectorPoint PointX="8.1666666666666661" PointY="22.09375" />
           <ConnectorPoint PointX="8.3333333333333339" PointY="22.09375" />
@@ -4405,7 +4405,7 @@
           <ConnectorPoint PointX="15.901774027071634" PointY="22.09375" />
           <ConnectorPoint PointX="15.901774027071634" PointY="22.375" />
         </AssociationConnector>
-        <AssociationConnector Association="Mateus_wcModel.FK_PhysicalEntities_Countries3" >
+        <AssociationConnector Association="Mateus_wcModel.FK_PhysicalEntities_Countries3">
           <ConnectorPoint PointX="1.9062519999999998" PointY="24.220602213541667" />
           <ConnectorPoint PointX="1.9062519999999998" PointY="29.5" />
           <ConnectorPoint PointX="3.6666666666666665" PointY="29.5" />
@@ -4428,13 +4428,13 @@
           <ConnectorPoint PointX="15.375" PointY="25.20824442069641" />
           <ConnectorPoint PointX="15.75" PointY="25.20824442069641" />
         </AssociationConnector>
-        <AssociationConnector Association="Mateus_wcModel.FK_LegalEntities_Forms" >
+        <AssociationConnector Association="Mateus_wcModel.FK_LegalEntities_Forms">
           <ConnectorPoint PointX="12" PointY="31.018992513020834" />
           <ConnectorPoint PointX="12.416666666666666" PointY="31.018992513020834" />
           <ConnectorPoint PointX="12.583333333333334" PointY="31.018992513020834" />
           <ConnectorPoint PointX="12.75" PointY="31.018992513020834" />
         </AssociationConnector>
-        <AssociationConnector Association="Mateus_wcModel.FK_CompanyLegalRepresentative_LegalEntities" >
+        <AssociationConnector Association="Mateus_wcModel.FK_CompanyLegalRepresentative_LegalEntities">
           <ConnectorPoint PointX="14.875" PointY="33.838368873865434" />
           <ConnectorPoint PointX="15.987693198649085" PointY="33.838368873865434" />
           <ConnectorPoint PointX="16.154359865315751" PointY="33.838368873865434" />
@@ -4453,7 +4453,7 @@
           <ConnectorPoint PointX="21.75" PointY="33.838368873865434" />
           <ConnectorPoint PointX="21.75" PointY="26.249492187499982" />
         </AssociationConnector>
-        <AssociationConnector Association="Mateus_wcModel.FK_LegalEntities_Places" >
+        <AssociationConnector Association="Mateus_wcModel.FK_LegalEntities_Places">
           <ConnectorPoint PointX="9" PointY="32.456238606770832" />
           <ConnectorPoint PointX="9.9166666666666661" PointY="32.456238606770832" />
           <ConnectorPoint PointX="10.083333333333334" PointY="32.456238606770832" />
@@ -4461,7 +4461,7 @@
           <ConnectorPoint PointX="12.583333333333334" PointY="32.456238606770832" />
           <ConnectorPoint PointX="12.75" PointY="32.456238606770832" />
         </AssociationConnector>
-        <AssociationConnector Association="Mateus_wcModel.FK_LegalEntities_PostalOffices" >
+        <AssociationConnector Association="Mateus_wcModel.FK_LegalEntities_PostalOffices">
           <ConnectorPoint PointX="6.75" PointY="29.78125" />
           <ConnectorPoint PointX="8.1666666666666661" PointY="29.78125" />
           <ConnectorPoint PointX="8.3333333333333339" PointY="29.78125" />
@@ -4469,32 +4469,32 @@
           <ConnectorPoint PointX="12.583333333333334" PointY="29.78125" />
           <ConnectorPoint PointX="12.75" PointY="29.78125" />
         </AssociationConnector>
-        <AssociationConnector Association="Mateus_wcModel.FK_LegalEntities_RegionalOffices" >
+        <AssociationConnector Association="Mateus_wcModel.FK_LegalEntities_RegionalOffices">
           <ConnectorPoint PointX="12" PointY="33.201528320312491" />
           <ConnectorPoint PointX="12.291666666666666" PointY="33.201528320312491" />
           <ConnectorPoint PointX="12.583333333333334" PointY="33.201528320312491" />
           <ConnectorPoint PointX="12.75" PointY="33.201528320312491" />
         </AssociationConnector>
-        <AssociationConnector Association="Mateus_wcModel.FK_LegalEntities_Substations" >
+        <AssociationConnector Association="Mateus_wcModel.FK_LegalEntities_Substations">
           <ConnectorPoint PointX="12" PointY="37.188678305664062" />
           <ConnectorPoint PointX="13.128577682291667" PointY="37.188678305664062" />
           <ConnectorPoint PointX="13.295244348958335" PointY="37.188678305664062" />
           <ConnectorPoint PointX="14.336916015625" PointY="37.188678305664062" />
           <ConnectorPoint PointX="14.336916015625" PointY="34.037659505208332" />
         </AssociationConnector>
-        <AssociationConnector Association="Mateus_wcModel.FK_LegalEntities_Taxes" >
+        <AssociationConnector Association="Mateus_wcModel.FK_LegalEntities_Taxes">
           <ConnectorPoint PointX="12" PointY="39.393992513020834" />
           <ConnectorPoint PointX="13.211911015625" PointY="39.393992513020834" />
           <ConnectorPoint PointX="13.211911015625" PointY="34.037659505208332" />
         </AssociationConnector>
-        <AssociationConnector Association="Mateus_wcModel.FK_LegalEntityBanks_LegalEntities" >
+        <AssociationConnector Association="Mateus_wcModel.FK_LegalEntityBanks_LegalEntities">
           <ConnectorPoint PointX="14.0813020703125" PointY="22.25" />
           <ConnectorPoint PointX="14.0813020703125" PointY="20.511193038061755" />
           <ConnectorPoint PointX="17.586282274953209" PointY="20.511193038061755" />
           <ConnectorPoint PointX="17.752948941619874" PointY="20.511193038061755" />
           <ConnectorPoint PointX="18" PointY="20.511193038061755" />
         </AssociationConnector>
-        <AssociationConnector Association="Mateus_wcModel.FK_LegalEntityBranches_LegalEntities" >
+        <AssociationConnector Association="Mateus_wcModel.FK_LegalEntityBranches_LegalEntities">
           <ConnectorPoint PointX="14.875" PointY="33.712059541099336" />
           <ConnectorPoint PointX="15.987693198649085" PointY="33.712059541099336" />
           <ConnectorPoint PointX="16.154359865315751" PointY="33.712059541099336" />
@@ -4517,7 +4517,7 @@
           <ConnectorPoint PointX="19.765627875" PointY="33.712059541099336" />
           <ConnectorPoint PointX="19.765627875" PointY="31.307109374999982" />
         </AssociationConnector>
-        <AssociationConnector Association="Mateus_wcModel.FK_Branches_Places" >
+        <AssociationConnector Association="Mateus_wcModel.FK_Branches_Places">
           <ConnectorPoint PointX="9" PointY="31.056242303385424" />
           <ConnectorPoint PointX="10.25" PointY="31.056242303385424" />
           <ConnectorPoint PointX="10.25" PointY="32.162985026041667" />
@@ -4538,7 +4538,7 @@
           <ConnectorPoint PointX="18.921874125" PointY="33.918681640624982" />
           <ConnectorPoint PointX="18.921874125" PointY="31.307109374999982" />
         </AssociationConnector>
-        <AssociationConnector Association="Mateus_wcModel.FK_Branches_PostalOffices" >
+        <AssociationConnector Association="Mateus_wcModel.FK_Branches_PostalOffices">
           <ConnectorPoint PointX="6.75" PointY="31.220896809895834" />
           <ConnectorPoint PointX="7.25" PointY="31.220896809895834" />
           <ConnectorPoint PointX="7.25" PointY="32.874492187499996" />
@@ -4561,13 +4561,13 @@
           <ConnectorPoint PointX="18.21874675" PointY="33.934306640624982" />
           <ConnectorPoint PointX="18.21874675" PointY="31.307109374999982" />
         </AssociationConnector>
-        <AssociationConnector Association="Mateus_wcModel.FK_CompanyLegalRepresentative_PhysicalEntities" >
+        <AssociationConnector Association="Mateus_wcModel.FK_CompanyLegalRepresentative_PhysicalEntities">
           <ConnectorPoint PointX="17.875" PointY="24.874746093749991" />
           <ConnectorPoint PointX="18.979166666666668" PointY="24.874746093749991" />
           <ConnectorPoint PointX="19.145833333333332" PointY="24.874746093749991" />
           <ConnectorPoint PointX="21" PointY="24.874746093749991" />
         </AssociationConnector>
-        <AssociationConnector Association="Mateus_wcModel.FK_PhysicalEntities_Places" >
+        <AssociationConnector Association="Mateus_wcModel.FK_PhysicalEntities_Places">
           <ConnectorPoint PointX="8.25" PointY="29.875" />
           <ConnectorPoint PointX="8.25" PointY="21.96875" />
           <ConnectorPoint PointX="12.872963736979168" PointY="21.96875" />
@@ -4580,7 +4580,7 @@
           <ConnectorPoint PointX="15.25" PointY="28.103992841392923" />
           <ConnectorPoint PointX="15.75" PointY="28.103992841392923" />
         </AssociationConnector>
-        <AssociationConnector Association="Mateus_wcModel.FK_PhysicalEntities_PostalOffices" >
+        <AssociationConnector Association="Mateus_wcModel.FK_PhysicalEntities_PostalOffices">
           <ConnectorPoint PointX="6.406252" PointY="29.75" />
           <ConnectorPoint PointX="6.406252" PointY="28.230377604166666" />
           <ConnectorPoint PointX="8.1666666666666661" PointY="28.230377604166666" />
@@ -4597,7 +4597,7 @@
           <ConnectorPoint PointX="15.125" PointY="30.025690835840255" />
           <ConnectorPoint PointX="15.75" PointY="30.025690835840255" />
         </AssociationConnector>
-        <AssociationConnector Association="Mateus_wcModel.FK_PhysicalEntities_RegionalOffices" >
+        <AssociationConnector Association="Mateus_wcModel.FK_PhysicalEntities_RegionalOffices">
           <ConnectorPoint PointX="12" PointY="34.732307644429063" />
           <ConnectorPoint PointX="13.128577682291667" PointY="34.732307644429063" />
           <ConnectorPoint PointX="13.295244348958335" PointY="34.732307644429063" />
@@ -4610,12 +4610,12 @@
           <ConnectorPoint PointX="16.839325251464842" PointY="34.732307644429063" />
           <ConnectorPoint PointX="16.839325251464842" PointY="33.585755208333332" />
         </AssociationConnector>
-        <AssociationConnector Association="Mateus_wcModel.FK_PhysicalEntities_WaysOfRepresentation" >
+        <AssociationConnector Association="Mateus_wcModel.FK_PhysicalEntities_WaysOfRepresentation">
           <ConnectorPoint PointX="15" PointY="19.012734316406249" />
           <ConnectorPoint PointX="17.669615608286541" PointY="19.012734316406249" />
           <ConnectorPoint PointX="17.669615608286541" PointY="22.375" />
         </AssociationConnector>
-        <AssociationConnector Association="Mateus_wcModel.FK_PhysicalEntities_RegionalOffices1" >
+        <AssociationConnector Association="Mateus_wcModel.FK_PhysicalEntities_RegionalOffices1">
           <ConnectorPoint PointX="12" PointY="34.384981074818704" />
           <ConnectorPoint PointX="13.128577682291667" PointY="34.384981074818704" />
           <ConnectorPoint PointX="13.295244348958335" PointY="34.384981074818704" />
@@ -4626,7 +4626,7 @@
           <ConnectorPoint PointX="16.071026531982419" PointY="34.384981074818704" />
           <ConnectorPoint PointX="16.071026531982419" PointY="33.585755208333332" />
         </AssociationConnector>
-        <AssociationConnector Association="Mateus_wcModel.FK_PhysicalEntities_Substations" >
+        <AssociationConnector Association="Mateus_wcModel.FK_PhysicalEntities_Substations">
           <ConnectorPoint PointX="12" PointY="36.375586652832041" />
           <ConnectorPoint PointX="13.128577682291667" PointY="36.375586652832041" />
           <ConnectorPoint PointX="13.295244348958335" PointY="36.375586652832041" />
@@ -4635,22 +4635,22 @@
           <ConnectorPoint PointX="17.580798719482424" PointY="36.375586652832041" />
           <ConnectorPoint PointX="17.580798719482424" PointY="33.585755208333332" />
         </AssociationConnector>
-        <AssociationConnector Association="Mateus_wcModel.FK_LegalEntities_PhysicalEntities" >
+        <AssociationConnector Association="Mateus_wcModel.FK_LegalEntities_PhysicalEntities">
           <ConnectorPoint PointX="15.75" PointY="32.201547063090658" />
           <ConnectorPoint PointX="14.875" PointY="32.201547063090658" />
         </AssociationConnector>
         <EntityTypeShape EntityType="Mateus_wcModel.AnnexContract" Width="1.5" PointX="7.625" PointY="15.375" Height="4.8648079427083353" />
         <EntityTypeShape EntityType="Mateus_wcModel.Contract" Width="1.5" PointX="5" PointY="15.125" Height="5.057109375" />
-        <AssociationConnector Association="Mateus_wcModel.FK_AnnexContracts_AnnexContracts" >
+        <AssociationConnector Association="Mateus_wcModel.FK_AnnexContracts_AnnexContracts">
           <ConnectorPoint PointX="6.5" PointY="17.778554687499998" />
           <ConnectorPoint PointX="7.625" PointY="17.778554687499998" />
         </AssociationConnector>
-        <AssociationConnector Association="Mateus_wcModel.FK_AnnexContracts_ContractValidities" >
+        <AssociationConnector Association="Mateus_wcModel.FK_AnnexContracts_ContractValidities">
           <ConnectorPoint PointX="4.25" PointY="14.735341796875002" />
           <ConnectorPoint PointX="8.5" PointY="14.735341796875002" />
           <ConnectorPoint PointX="8.5" PointY="15.375" />
         </AssociationConnector>
-        <AssociationConnector Association="Mateus_wcModel.FK_Contracts_ContractValidities" >
+        <AssociationConnector Association="Mateus_wcModel.FK_Contracts_ContractValidities">
           <ConnectorPoint PointX="4.25" PointY="15.427643229166666" />
           <ConnectorPoint PointX="5" PointY="15.427643229166666" />
         </AssociationConnector>

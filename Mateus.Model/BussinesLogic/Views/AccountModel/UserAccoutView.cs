@@ -23,7 +23,7 @@ namespace Mateus.Model.BussinesLogic.Views.Account
         public string Password { get; set; }
         public string Salt { get; set; }
 
-        [RequiredIf("ChangePassword", ErrorMessage = "Potvrda šifre je obavezna."), Display(Name = "Potvrda šifre"), DataType(DataType.Password), Compare("Password", ErrorMessage = "Unesene šifre nisu jednake.")]
+        [RequiredIf("ChangePassword", ErrorMessage = "Potvrda šifre je obavezna."), Display(Name = "Potvrda šifre"), DataType(DataType.Password), System.ComponentModel.DataAnnotations.Compare("Password", ErrorMessage = "Unesene šifre nisu jednake.")]
         public string ConfirmPassword { get; set; }
 
         [Required(ErrorMessage = "E-mail adresa je obavezna."), Display(Name = "E-Mail"), Email(ErrorMessage = "Email adresa nije ispravna.")]
