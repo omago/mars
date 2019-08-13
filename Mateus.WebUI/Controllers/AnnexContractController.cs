@@ -8,6 +8,7 @@ using PITFramework.Support;
 using Mateus.Model.BussinesLogic.Views.AnnexContractModel;
 using Mateus.Support;
 using PITFramework.Support.Grid;
+using PITFramework.Support;
 
 namespace Mateus.Controllers
 {
@@ -41,7 +42,7 @@ namespace Mateus.Controllers
             IQueryable<AnnexContractView> annexContracts = AnnexContractView.GetAnnexContractView(annexContractsRepository.GetValid(), contractsRepository.GetValid())
                                                         .OrderBy(ordering);
             //contracts ddl
-            ViewBag.Contracts = new SelectList(contractsRepository.GetValid().ToList(), "ContractPK", "Name", Request.QueryString["contractFK"]);
+            ViewBag.Contracts = new SelectList(contractsRepository.GetValid().OrderBy("Name ASC").ToList(), "ContractPK", "Name", Request.QueryString["contractFK"]);
 
             if (!String.IsNullOrWhiteSpace(Request.QueryString["searchString"]))
             {

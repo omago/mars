@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using Mateus.Model.EFModel.Repository.Interface;
 using Mateus.Model.EFModel.Repository.Concrete;
 using System.Data.Objects;
+using PITFramework.Support;
 
 namespace Mateus.Model.BussinesLogic.Views.PostalOfficeModel
 {
@@ -59,7 +60,7 @@ namespace Mateus.Model.BussinesLogic.Views.PostalOfficeModel
         {
             //countries ddl
             ICountriesRepository countriesRepository = new CountriesRepository(db);
-            postalOfficeView.Countries = new SelectList(countriesRepository.GetValid().ToList(), "CountryPK", "Name");    
+            postalOfficeView.Countries = new SelectList(countriesRepository.GetValid().OrderBy("Name ASC").ToList(), "CountryPK", "Name");    
 
             //counties ddl
             if (postalOfficeView.CountryFK != null)

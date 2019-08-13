@@ -22,10 +22,10 @@
         <div id="grid-controls">
             <div class="grid-3 text-left">
                 Molimo odaberite filter: 
-                <label class="margin-left-20" for="owner">Vlasnik</label>
-                @Html.CheckBox("owner", LinkHelper.isChecked(Request.QueryString["owner"]), new { @class = "w3 margin-left-5" })
                 <label class="margin-left-20" for="company">Tvrtka</label> 
                 @Html.CheckBox("company", LinkHelper.isChecked(Request.QueryString["company"]), new { @class = "w3 margin-left-5" })
+                <label class="margin-left-20" for="active">Aktivan</label>
+                @Html.CheckBox("active", LinkHelper.isChecked(Request.QueryString["active"]), new { @class = "w3 margin-left-5" })
             </div>
             <div class="grid-4 text-center">
                 @Html.TextBox("searchString", Request.QueryString["searchString"], new { placeholder = "Upišite pojam za pretragu", @class = "w40" })
@@ -46,7 +46,6 @@
                         <th class="w2">#</th>
                         <th class="w2">@MvcHtmlString.Create(LinkHelper.GetSortLink("ID", "LegalEntityPK"))</th>
                         <th class="w16 left">@MvcHtmlString.Create(LinkHelper.GetSortLink("Naziv", "Name"))</th>
-                        <th class="w5">@MvcHtmlString.Create(LinkHelper.GetSortLink("Vlasnik", "Owner"))</th>
                         <th class="w5">@MvcHtmlString.Create(LinkHelper.GetSortLink("Tvrtka", "Company"))</th>
                         <th class="w10">@MvcHtmlString.Create(LinkHelper.GetSortLink("Poslovnice", "BranchesCount"))</th>
                         <th class="w10">@MvcHtmlString.Create(LinkHelper.GetSortLink("Ugovori", "ContractsCount"))</th>
@@ -81,16 +80,6 @@
                                     { 
                                         @item.Name
                                     }
-                                }
-                            </td>
-                            <td class="@LinkHelper.getIsSorted("Owner")">
-                                @if (@item.Owner != null && @item.Owner == true)
-                                { 
-                                    <span class="yes">DA</span>
-                                }
-                                else
-                                {
-                                    <span class="no">NE</span>
                                 }
                             </td>
                             <td class="@LinkHelper.getIsSorted("Company")">

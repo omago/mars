@@ -10,6 +10,7 @@ using Mateus.Model.BussinesLogic.Views.LegalEntityOwnerModel;
 using Mateus.Support;
 using PITFramework.Support.Grid;
 using Mateus.Model.BussinesLogic.Views.AssessmentsModel;
+using PITFramework.Support;
 
 namespace Mateus.Controllers
 {
@@ -102,7 +103,7 @@ namespace Mateus.Controllers
            
             // Assessment types ddl
             IAssessmentTypesRepository assessmentTypesRepository = new AssessmentTypesRepository(db);
-            assessmentView.AssessmentTypes = new SelectList(assessmentTypesRepository.GetValid().ToList(), "AssessmentTypePK", "Name");
+            assessmentView.AssessmentTypes = new SelectList(assessmentTypesRepository.GetValid().OrderBy("Name ASC").ToList(), "AssessmentTypePK", "Name");
             
             //legalEntities ddl
             ILegalEntitiesRepository legalEntitiesRepository = new LegalEntitiesRepository(db);
@@ -257,7 +258,7 @@ namespace Mateus.Controllers
 
                 // Assessment types ddl
                 IAssessmentTypesRepository assessmentTypesRepository = new AssessmentTypesRepository(db);
-                assessmentView.AssessmentTypes = new SelectList(assessmentTypesRepository.GetValid().ToList(), "AssessmentTypePK", "Name");
+                assessmentView.AssessmentTypes = new SelectList(assessmentTypesRepository.GetValid().OrderBy("Name ASC").ToList(), "AssessmentTypePK", "Name");
                 
                 //legalEntities ddl
                 ILegalEntitiesRepository legalEntitiesRepository = new LegalEntitiesRepository(db);
@@ -286,7 +287,7 @@ namespace Mateus.Controllers
                 assessmentView.ConvertFrom(assessment, assessmentView);
 
                 IAssessmentTypesRepository assessmentTypesRepository = new AssessmentTypesRepository(db);
-                assessmentView.AssessmentTypes = new SelectList(assessmentTypesRepository.GetValid().ToList(), "AssessmentTypePK", "Name");
+                assessmentView.AssessmentTypes = new SelectList(assessmentTypesRepository.GetValid().OrderBy("Name ASC").ToList(), "AssessmentTypePK", "Name");
 
                 // Assessment types ddl
                 IAssessmentGroupsRepository assessmentGroupsRepository = new AssessmentGroupsRepository(db);
@@ -450,7 +451,7 @@ namespace Mateus.Controllers
 
                 //Assessment types ddl
                 IAssessmentTypesRepository assessmentTypesRepository = new AssessmentTypesRepository(db);
-                assessmentView.AssessmentTypes = new SelectList(assessmentTypesRepository.GetValid().ToList(), "AssessmentTypePK", "Name");
+                assessmentView.AssessmentTypes = new SelectList(assessmentTypesRepository.GetValid().OrderBy("Name ASC").ToList(), "AssessmentTypePK", "Name");
                 
                 //legalEntities ddl
                 ILegalEntitiesRepository legalEntitiesRepository = new LegalEntitiesRepository(db);

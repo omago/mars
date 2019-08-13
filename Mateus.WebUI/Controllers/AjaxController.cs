@@ -53,7 +53,7 @@ namespace Mateus.Controllers
         public ActionResult GetPlacesByPostalOffice(int postalOffice)
         {
             IPlacesRepository placesRepository = new PlacesRepository(db);
-            var places = placesRepository.GetPlacesByPostalOffice(postalOffice);
+            var places = placesRepository.GetPlacesByPostalOffice(postalOffice).OrderBy(x => x.Name);
 
             return Json(places.Select(c => new { value = c.PlacePK, text = c.Name }), JsonRequestBehavior.AllowGet);
         }
@@ -62,7 +62,7 @@ namespace Mateus.Controllers
         public ActionResult GetSubstationsByRegionalOffice(int regionalOffice)
         {
             ISubstationsRepository substationsRepository = new SubstationsRepository(db);
-            var substations = substationsRepository.GetValidByRegionalOffice(regionalOffice);
+            var substations = substationsRepository.GetValidByRegionalOffice(regionalOffice).OrderBy(x => x.Name);
 
             return Json(substations.Select(c => new { value = c.SubstationPK, text = c.Name }), JsonRequestBehavior.AllowGet);
         }
@@ -102,7 +102,7 @@ namespace Mateus.Controllers
         public ActionResult AutocompleteLegalEntities(string term) 
         { 
             ILegalEntitiesRepository legalEntitiesRepository = new LegalEntitiesRepository(db);
-            var legalEntities = legalEntitiesRepository.GetValid().Where(c => c.OIB.Contains(term) || c.Name.Contains(term));
+            var legalEntities = legalEntitiesRepository.GetValid().Where(c => c.OIB.Contains(term) || c.Name.Contains(term)).OrderBy(x => x.Name);
 
             return Json(legalEntities.Select(c => new { value = c.Name + " (" + c.OIB + ")", value_id = c.LegalEntityPK }), JsonRequestBehavior.AllowGet);
         }
@@ -111,7 +111,7 @@ namespace Mateus.Controllers
         public ActionResult AutocompleteLegalEntitiesWithOIB(string term) 
         { 
             ILegalEntitiesRepository legalEntitiesRepository = new LegalEntitiesRepository(db);
-            var legalEntities = legalEntitiesRepository.GetValidLegalEntities().Where(c => c.OIB.Contains(term) || c.Name.Contains(term));
+            var legalEntities = legalEntitiesRepository.GetValidLegalEntities().Where(c => c.OIB.Contains(term) || c.Name.Contains(term)).OrderBy(x => x.Name);
 
             return Json(legalEntities.Select(c => new { value = c.Name + " (" + c.OIB + ")", value_id = c.LegalEntityPK }), JsonRequestBehavior.AllowGet);
         }
@@ -120,7 +120,7 @@ namespace Mateus.Controllers
         public ActionResult AutocompleteLegalEntitiesName(string term) 
         { 
             ILegalEntitiesRepository legalEntitiesRepository = new LegalEntitiesRepository(db);
-            var legalEntities = legalEntitiesRepository.GetValidLegalEntities().Where(c => c.Name.Contains(term));
+            var legalEntities = legalEntitiesRepository.GetValidLegalEntities().Where(c => c.Name.Contains(term)).OrderBy(x => x.Name);
 
             return Json(legalEntities.Select(c => new { value = c.Name, value_id = c.LegalEntityPK }), JsonRequestBehavior.AllowGet);
         }
@@ -129,7 +129,7 @@ namespace Mateus.Controllers
         public ActionResult AutocompleteLegalEntitiesMB(string term) 
         { 
             ILegalEntitiesRepository legalEntitiesRepository = new LegalEntitiesRepository(db);
-            var legalEntities = legalEntitiesRepository.GetValidLegalEntities().Where(c => c.MB.Contains(term));
+            var legalEntities = legalEntitiesRepository.GetValidLegalEntities().Where(c => c.MB.Contains(term)).OrderBy(x => x.MB);
 
             return Json(legalEntities.Select(c => new { value = c.MB, value_id = c.LegalEntityPK }), JsonRequestBehavior.AllowGet);
         }
@@ -138,7 +138,7 @@ namespace Mateus.Controllers
         public ActionResult AutocompleteLegalEntitiesMBS(string term) 
         { 
             ILegalEntitiesRepository legalEntitiesRepository = new LegalEntitiesRepository(db);
-            var legalEntities = legalEntitiesRepository.GetValidLegalEntities().Where(c => c.MBS.Contains(term));
+            var legalEntities = legalEntitiesRepository.GetValidLegalEntities().Where(c => c.MBS.Contains(term)).OrderBy(x => x.MBS);
 
             return Json(legalEntities.Select(c => new { value = c.MBS, value_id = c.LegalEntityPK }), JsonRequestBehavior.AllowGet);
         }
@@ -147,7 +147,7 @@ namespace Mateus.Controllers
         public ActionResult AutocompleteLegalEntitiesOIB(string term) 
         { 
             ILegalEntitiesRepository legalEntitiesRepository = new LegalEntitiesRepository(db);
-            var legalEntities = legalEntitiesRepository.GetValidLegalEntities().Where(c => c.OIB.Contains(term));
+            var legalEntities = legalEntitiesRepository.GetValidLegalEntities().Where(c => c.OIB.Contains(term)).OrderBy(x => x.OIB);
 
             return Json(legalEntities.Select(c => new { value = c.OIB, value_id = c.LegalEntityPK }), JsonRequestBehavior.AllowGet);
         }
@@ -156,7 +156,7 @@ namespace Mateus.Controllers
         public ActionResult AutocompleteActivities(string term) 
         { 
             IActivitiesRepository activitiesRepository = new ActivitiesRepository(db);
-            var legalEntities = activitiesRepository.GetValid().Where(c => c.Name.Contains(term) || c.Code.Contains(term));
+            var legalEntities = activitiesRepository.GetValid().Where(c => c.Name.Contains(term) || c.Code.Contains(term)).OrderBy(x => x.Name);
 
             return Json(legalEntities.Select(c => new { value = c.Name + " (" + c.Code + ")", value_id = c.ActivityPK }), JsonRequestBehavior.AllowGet);
         }

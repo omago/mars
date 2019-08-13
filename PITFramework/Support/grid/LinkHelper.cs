@@ -79,12 +79,20 @@ namespace PITFramework.Support.Grid
         {
             bool isChecked = false;
 
-            if(checkboxValue != null && checkboxValue != "false")
+            if (checkboxValue != null && checkboxValue != "false")
             {
                 isChecked = true;
             }
 
-            return isChecked; 
+            return isChecked;
+        }
+
+        public static string  calculateTimeSpent(int? timeSpent)
+        {
+            int timeSpentHours = timeSpent == null ? 0 : (int)timeSpent / 60;
+            int timeSpentMinutes = (timeSpent == null ? 0 : (int)timeSpent) - (timeSpentHours * 60);
+
+            return timeSpentHours.ToString() + "h " + timeSpentMinutes.ToString() + "min";
         }
     }
 }

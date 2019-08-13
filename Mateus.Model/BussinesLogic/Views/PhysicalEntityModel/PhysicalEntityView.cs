@@ -10,6 +10,7 @@ using Mateus.Model.EFModel.Repository.Concrete;
 using System.Data.Objects;
 using System.Data.Objects.SqlClient;
 using Mateus.Model.BussinesLogic.Views.GeneratorModel;
+using PITFramework.Support;
 
 namespace Mateus.Model.BussinesLogic.Views.PhysicalEntityModel
 {
@@ -239,9 +240,9 @@ namespace Mateus.Model.BussinesLogic.Views.PhysicalEntityModel
             //countries ddl
             ICountriesRepository countriesRepository = new CountriesRepository(db);
             physicalEntityView.Citizenships = new SelectList(countriesRepository.GetCitizenships().ToList(), "CountryPK", "Citizenship");
-            physicalEntityView.BirthCountries = new SelectList(countriesRepository.GetValid().ToList(), "CountryPK", "Name");
-            physicalEntityView.ResidenceCountries = new SelectList(countriesRepository.GetValid().ToList(), "CountryPK", "Name");
-            physicalEntityView.PassportCountriesOfIssue = new SelectList(countriesRepository.GetValid().ToList(), "CountryPK", "Name");
+            physicalEntityView.BirthCountries = new SelectList(countriesRepository.GetValid().OrderBy("Name ASC").ToList(), "CountryPK", "Name");
+            physicalEntityView.ResidenceCountries = new SelectList(countriesRepository.GetValid().OrderBy("Name ASC").ToList(), "CountryPK", "Name");
+            physicalEntityView.PassportCountriesOfIssue = new SelectList(countriesRepository.GetValid().OrderBy("Name ASC").ToList(), "CountryPK", "Name");
 
             //counties ddl
             if (physicalEntityView.BirthCountryFK != null)

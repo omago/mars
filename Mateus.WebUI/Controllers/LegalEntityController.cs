@@ -68,14 +68,19 @@ namespace Mateus.Controllers
                 legalEntities = legalEntities.Where(c => c.Name.Contains(searchString));
             }
 
-            if (!String.IsNullOrWhiteSpace(Request.QueryString["owner"]) && Request.QueryString["owner"].Contains("true"))
-            {
-                legalEntities = legalEntities.Where(c => c.Owner == true);
-            }
-
             if (!String.IsNullOrWhiteSpace(Request.QueryString["company"]) && Request.QueryString["company"].Contains("true"))
             {
                 legalEntities = legalEntities.Where(c => c.Company == true);
+            }
+
+            if (String.IsNullOrWhiteSpace(Request.QueryString["active"]))
+            {
+                legalEntities = legalEntities.Where(c => c.Active == true);
+            }
+            else 
+            {
+                var active = Request.QueryString["active"].Contains("true");
+                legalEntities = legalEntities.Where(c => c.Active == active);
             }
 
             ViewData["numberOfRecords"] = legalEntities.Count();
@@ -128,7 +133,7 @@ namespace Mateus.Controllers
 
                 TempData["message"] = LayoutHelper.GetMessage("INSERT", legalEntity.LegalEntityPK);
 
-                return RedirectToAction("Index", "LegalEntity");
+                return RedirectToAction("Index", "LegalEntity", new { active = "true" });
             }
             else
             {
@@ -179,7 +184,7 @@ namespace Mateus.Controllers
 
                 TempData["message"] = LayoutHelper.GetMessage("UPDATE", legalEntity.LegalEntityPK);
 
-                return RedirectToAction("Index", "LegalEntity");
+                return RedirectToAction("Index", "LegalEntity", new { active = "true" });
             }
             else
             {

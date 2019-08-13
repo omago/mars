@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using Mateus.Model.EFModel.Repository.Interface;
 using Mateus.Model.EFModel.Repository.Concrete;
 using System.Data.Objects;
+using PITFramework.Support;
 
 namespace Mateus.Model.BussinesLogic.Views.CountyModel
 {
@@ -44,7 +45,7 @@ namespace Mateus.Model.BussinesLogic.Views.CountyModel
         public void BindDDLs(CountyView countyView, ObjectContext db) 
         {
             ICountriesRepository countriesRepository = new CountriesRepository(db);
-            countyView.Countries = new SelectList(countriesRepository.GetValid().ToList(), "CountryPK", "Name");
+            countyView.Countries = new SelectList(countriesRepository.GetValid().OrderBy("Name ASC").ToList(), "CountryPK", "Name");
         }
 
         public static IQueryable<CountyView> GetCountyView(IQueryable<County> countyTable, IQueryable<Country> countryTable) 

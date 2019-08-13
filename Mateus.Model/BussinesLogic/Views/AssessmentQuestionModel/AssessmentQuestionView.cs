@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using Mateus.Model.EFModel.Repository.Interface;
 using Mateus.Model.EFModel.Repository.Concrete;
 using System.Data.Objects;
+using PITFramework.Support;
 
 namespace Mateus.Model.BussinesLogic.Views.AssessmentQuestionModel
 {
@@ -56,7 +57,7 @@ namespace Mateus.Model.BussinesLogic.Views.AssessmentQuestionModel
         public void BindDDLs(AssessmentQuestionView assessmentQuestionView, ObjectContext db) 
         {
             IAssessmentTypesRepository assessmentTypesRepository = new AssessmentTypesRepository(db);
-            assessmentQuestionView.AssessmentTypes = new SelectList(assessmentTypesRepository.GetValid().ToList(), "AssessmentTypePK", "Name");
+            assessmentQuestionView.AssessmentTypes = new SelectList(assessmentTypesRepository.GetValid().OrderBy("Name ASC").ToList(), "AssessmentTypePK", "Name");
 
             //assement question ddl
             if (assessmentQuestionView.AssessmentTypeFK != null)

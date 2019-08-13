@@ -11,6 +11,7 @@ using Mateus.Model.EFModel.Repository.Interface;
 using Mateus.Model.EFModel.Repository.Concrete;
 using System.Data.Objects;
 using System.Data.Objects.SqlClient;
+using PITFramework.Support;
 
 namespace Mateus.Model.BussinesLogic.Views.LegalEntityOwnerModel
 {
@@ -134,24 +135,24 @@ namespace Mateus.Model.BussinesLogic.Views.LegalEntityOwnerModel
             IPhysicalEntitiesRepository physicalEntitesRepository = new PhysicalEntitiesRepository(db);
             ILegalEntitiesRepository legalEntitiesRepository = new LegalEntitiesRepository(db);
 
-            List<DDLHelper> owners = LegalEntityOwnerView.GetOwnersSelect(physicalEntitesRepository.GetValid(), legalEntitiesRepository.GetValidOwners()).ToList();
+            List<DDLHelper> owners = LegalEntityOwnerView.GetOwnersSelect(physicalEntitesRepository.GetValid(), legalEntitiesRepository.GetValidOwners()).OrderBy("Text ASC").ToList();
             legalEntityOwnerView.Owners = new SelectList(owners, "Value", "Text");
                 
             //AdditionalFactors ddl
             IAdditionalFactorsRepository additionalFactorsRepository = new AdditionalFactorsRepository(db);
-            legalEntityOwnerView.AdditionalFactors = new SelectList(additionalFactorsRepository.GetValid().ToList(), "AdditionalFactorPK", "Name");
+            legalEntityOwnerView.AdditionalFactors = new SelectList(additionalFactorsRepository.GetValid().OrderBy("Name ASC").ToList(), "AdditionalFactorPK", "Name");
 
             //FulfilledFactors ddl
             IFulfilledFactorsRepository fulfilledFactorsRepository = new FulfilledFactorsRepository(db);
-            legalEntityOwnerView.FulfilledFactors = new SelectList(fulfilledFactorsRepository.GetValid().ToList(), "FulfilledFactorPK", "Name");
+            legalEntityOwnerView.FulfilledFactors = new SelectList(fulfilledFactorsRepository.GetValid().OrderBy("Name ASC").ToList(), "FulfilledFactorPK", "Name");
 
             //BussinesShareBurdens ddl
             IBussinesShareBurdensRepository bussinesShareBurdensRepository = new BussinesShareBurdensRepository(db);
-            legalEntityOwnerView.BussinesShareBurdens = new SelectList(bussinesShareBurdensRepository.GetValid().ToList(), "BussinesShareBurdenPK", "Name");
+            legalEntityOwnerView.BussinesShareBurdens = new SelectList(bussinesShareBurdensRepository.GetValid().OrderBy("Name ASC").ToList(), "BussinesShareBurdenPK", "Name");
 
             //ChangeTypes ddl
             IChangeTypesRepository changeTypesRepository = new ChangeTypesRepository(db);
-            legalEntityOwnerView.ChangeTypes = new SelectList(changeTypesRepository.GetValid().ToList(), "ChangeTypePK", "Name");
+            legalEntityOwnerView.ChangeTypes = new SelectList(changeTypesRepository.GetValid().OrderBy("Name ASC").ToList(), "ChangeTypePK", "Name");
         }
 
         public static void Fill(List<LegalEntityOwner> list, List<LegalEntityOwner> all, LegalEntityOwner co) 

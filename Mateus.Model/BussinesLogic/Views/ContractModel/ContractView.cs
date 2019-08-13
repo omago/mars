@@ -8,6 +8,7 @@ using Mateus.Model.BussinesLogic.Support.Validation;
 using Mateus.Model.EFModel.Repository.Interface;
 using Mateus.Model.EFModel.Repository.Concrete;
 using System.Data.Objects;
+using PITFramework.Support;
 
 namespace Mateus.Model.BussinesLogic.Views.ContractModel
 {
@@ -112,7 +113,7 @@ namespace Mateus.Model.BussinesLogic.Views.ContractModel
         {
             //contract validities ddl
             IContractValiditiesRepository contractValiditiesRepository = new ContractValiditiesRepository(db);
-            contractView.ContractValidities = new SelectList(contractValiditiesRepository.GetValid().ToList(), "ContractValidityPK", "Name");
+            contractView.ContractValidities = new SelectList(contractValiditiesRepository.GetValid().OrderBy("Name ASC").ToList(), "ContractValidityPK", "Name");
 
             //currencies ddl
             ICurrenciesRepository currenciesRepository = new CurrenciesRepository(db);

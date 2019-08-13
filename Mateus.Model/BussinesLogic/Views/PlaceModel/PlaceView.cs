@@ -8,6 +8,7 @@ using Mateus.Model.EFModel.Repository.Interface;
 using Mateus.Model.EFModel.Repository.Concrete;
 using System.Data.Objects;
 using System.Data.Objects.SqlClient;
+using PITFramework.Support;
 
 namespace Mateus.Model.BussinesLogic.Views.PlaceModel
 {
@@ -71,13 +72,13 @@ namespace Mateus.Model.BussinesLogic.Views.PlaceModel
         {
             //countries ddl
             ICountriesRepository countriesRepository = new CountriesRepository(db);
-            placeView.Countries = new SelectList(countriesRepository.GetValid().ToList(), "CountryPK", "Name");
+            placeView.Countries = new SelectList(countriesRepository.GetValid().OrderBy("Name ASC").ToList(), "CountryPK", "Name");
 
             //counties ddl
             if (placeView.CountryFK != null)
             {
                 ICountiesRepository countiesRepository = new CountiesRepository(db);
-                placeView.Counties = new SelectList(countiesRepository.GetCountiesByCountry(Convert.ToInt32(placeView.CountryFK)), "CountyPK", "Name");
+                placeView.Counties = new SelectList(countiesRepository.GetCountiesByCountry(Convert.ToInt32(placeView.CountryFK)).OrderBy("Name ASC"), "CountyPK", "Name");
             }
             else
             {

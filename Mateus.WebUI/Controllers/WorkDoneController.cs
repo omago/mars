@@ -58,9 +58,9 @@ namespace Mateus.Controllers
                                                         .OrderBy(ordering);
 
             //grid filters ddl
-            ViewBag.ToDoLists = new SelectList(toDoListsRepository.GetValid().ToList(), "ToDoListPK", "Name", Request.QueryString["toDoListFK"]);
-            ViewBag.LegalEntities = new SelectList(legalEntitiesRepository.GetValidLegalEntities().OrderBy("name").ToList(), "LegalEntityPK", "Name", Request.QueryString["legalEntityFK"]);
-            ViewBag.WorkTypes = new SelectList(workTypesRepository.GetValid().OrderBy("name").ToList(), "WorkTypePK", "Name", Request.QueryString["workTypeFK"]);
+            ViewBag.ToDoLists = new SelectList(toDoListsRepository.GetValid().OrderBy("Name ASC").ToList(), "ToDoListPK", "Name", Request.QueryString["toDoListFK"]);
+            ViewBag.LegalEntities = new SelectList(legalEntitiesRepository.GetValidLegalEntities().OrderBy("Name ASC").OrderBy("name").ToList(), "LegalEntityPK", "Name", Request.QueryString["legalEntityFK"]);
+            ViewBag.WorkTypes = new SelectList(workTypesRepository.GetValid().OrderBy("name").OrderBy("Name ASC").ToList(), "WorkTypePK", "Name", Request.QueryString["workTypeFK"]);
             if (!String.IsNullOrWhiteSpace(Request.QueryString["workTypeFK"]))
             {
                 int workTypeFK = Convert.ToInt32(Request.QueryString["workTypeFK"]);
@@ -154,7 +154,7 @@ namespace Mateus.Controllers
 
             //to do list ddl
             IToDoListsRepository toDoListsRepository = new ToDoListsRepository(db);
-            workDoneView.ToDoLists = new SelectList(toDoListsRepository.GetNotFinished().ToList(), "ToDoListPK", "Name");
+            workDoneView.ToDoLists = new SelectList(toDoListsRepository.GetNotFinished().OrderBy("Name ASC").ToList(), "ToDoListPK", "Name");
 
             //legalEntities ddl
             ILegalEntitiesRepository legalEntitiesRepository = new LegalEntitiesRepository(db);
@@ -162,11 +162,11 @@ namespace Mateus.Controllers
 
             //service type ddl
             IServiceTypesRepository serviceTypesRepository = new ServiceTypesRepository(db);
-            workDoneView.ServiceTypes = new SelectList(serviceTypesRepository.GetValid().ToList(), "ServiceTypePK", "Name");
+            workDoneView.ServiceTypes = new SelectList(serviceTypesRepository.GetValid().OrderBy("Name ASC").ToList(), "ServiceTypePK", "Name");
 
             //Work type ddl
             IWorkTypesRepository workTypesRepository = new WorkTypesRepository(db);
-            workDoneView.WorkTypes = new SelectList(workTypesRepository.GetValid().ToList(), "WorkTypePK", "Name");
+            workDoneView.WorkTypes = new SelectList(workTypesRepository.GetValid().OrderBy("Name ASC").ToList(), "WorkTypePK", "Name");
 
             //worksubtypes ddl
             workDoneView.WorkSubtypes = new SelectList(new List<County>(), "WorkSubtypePK", "Name");
@@ -255,7 +255,7 @@ namespace Mateus.Controllers
             {
                 //to do list ddl
                 IToDoListsRepository toDoListsRepository = new ToDoListsRepository(db);
-                workDoneView.ToDoLists = new SelectList(toDoListsRepository.GetValid().ToList(), "ToDoListPK", "Name");
+                workDoneView.ToDoLists = new SelectList(toDoListsRepository.GetValid().OrderBy("Name ASC").ToList(), "ToDoListPK", "Name");
 
                 //legalEntities ddl
                 ILegalEntitiesRepository legalEntitiesRepository = new LegalEntitiesRepository(db);
@@ -263,11 +263,11 @@ namespace Mateus.Controllers
 
                 //service type ddl
                 IServiceTypesRepository serviceTypesRepository = new ServiceTypesRepository(db);
-                workDoneView.ServiceTypes = new SelectList(serviceTypesRepository.GetValid().ToList(), "ServiceTypePK", "Name");
+                workDoneView.ServiceTypes = new SelectList(serviceTypesRepository.GetValid().OrderBy("Name ASC").ToList(), "ServiceTypePK", "Name");
 
                 //Work done ddl
                 IWorkTypesRepository workTypesRepository = new WorkTypesRepository(db);
-                workDoneView.WorkTypes = new SelectList(workTypesRepository.GetValid().ToList(), "WorkTypePK", "Name");
+                workDoneView.WorkTypes = new SelectList(workTypesRepository.GetValid().OrderBy("Name ASC").ToList(), "WorkTypePK", "Name");
 
                 //worksubtypes ddl
                 if (!String.IsNullOrWhiteSpace(form["WorkTypeFK"]))
@@ -321,11 +321,11 @@ namespace Mateus.Controllers
 
                 //service type ddl
                 IServiceTypesRepository serviceTypesRepository = new ServiceTypesRepository(db);
-                workDoneView.ServiceTypes = new SelectList(serviceTypesRepository.GetValid().ToList(), "ServiceTypePK", "Name");
+                workDoneView.ServiceTypes = new SelectList(serviceTypesRepository.GetValid().OrderBy("Name ASC").ToList(), "ServiceTypePK", "Name");
 
                 //Work done ddl
                 IWorkTypesRepository workTypesRepository = new WorkTypesRepository(db);
-                workDoneView.WorkTypes = new SelectList(workTypesRepository.GetValid().ToList(), "WorkTypePK", "Name");
+                workDoneView.WorkTypes = new SelectList(workTypesRepository.GetValid().OrderBy("Name ASC").ToList(), "WorkTypePK", "Name");
 
                 //worksubtypes ddl
                 if (workDoneView.WorkTypeFK != null)
@@ -428,7 +428,7 @@ namespace Mateus.Controllers
             {
                 //to do list ddl
                 IToDoListsRepository toDoListsRepository = new ToDoListsRepository(db);
-                workDoneView.ToDoLists = new SelectList(toDoListsRepository.GetValid().ToList(), "ToDoListPK", "Name");
+                workDoneView.ToDoLists = new SelectList(toDoListsRepository.GetValid().OrderBy("Name ASC").ToList(), "ToDoListPK", "Name");
 
                 //legalEntities ddl
                 ILegalEntitiesRepository legalEntitiesRepository = new LegalEntitiesRepository(db);
@@ -436,11 +436,11 @@ namespace Mateus.Controllers
 
                 //service type ddl
                 IServiceTypesRepository serviceTypesRepository = new ServiceTypesRepository(db);
-                workDoneView.ServiceTypes = new SelectList(serviceTypesRepository.GetValid().ToList(), "ServiceTypePK", "Name");
+                workDoneView.ServiceTypes = new SelectList(serviceTypesRepository.GetValid().OrderBy("Name ASC").ToList(), "ServiceTypePK", "Name");
 
                 //Work done ddl
                 IWorkTypesRepository workTypesRepository = new WorkTypesRepository(db);
-                workDoneView.WorkTypes = new SelectList(workTypesRepository.GetValid().ToList(), "WorkTypePK", "Name");
+                workDoneView.WorkTypes = new SelectList(workTypesRepository.GetValid().OrderBy("Name ASC").ToList(), "WorkTypePK", "Name");
 
                 //worksubtypes ddl
                 if (!String.IsNullOrWhiteSpace(form["WorkTypeFK"]))

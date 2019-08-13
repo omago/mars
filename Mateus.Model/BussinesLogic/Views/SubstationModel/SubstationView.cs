@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using Mateus.Model.EFModel.Repository.Interface;
 using Mateus.Model.EFModel.Repository.Concrete;
 using System.Data.Objects;
+using PITFramework.Support;
 
 namespace Mateus.Model.BussinesLogic.Views.SubstationModel
 {
@@ -43,7 +44,7 @@ namespace Mateus.Model.BussinesLogic.Views.SubstationModel
         public void BindDDLs(SubstationView substationView, ObjectContext db) 
         {
             IRegionalOfficesRepository regionalOfficesRepository = new RegionalOfficesRepository(db);
-            substationView.RegionalOffices = new SelectList(regionalOfficesRepository.GetValid().ToList(), "RegionalOfficePK", "Name");
+            substationView.RegionalOffices = new SelectList(regionalOfficesRepository.GetValid().OrderBy("Name ASC").ToList(), "RegionalOfficePK", "Name");
         }
 
         public static IQueryable<SubstationView> GetSubstationView(IQueryable<Substation> substationTable, IQueryable<RegionalOffice> regionalOfficeTable) 

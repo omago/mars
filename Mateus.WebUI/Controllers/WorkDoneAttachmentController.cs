@@ -12,6 +12,7 @@ using Mateus.Support;
 using PITFramework.Support.Grid;
 using System.IO;
 using PITFramework.Auditing;
+using PITFramework.Support;
 
 namespace Mateus.Controllers
 {
@@ -99,7 +100,7 @@ namespace Mateus.Controllers
 
             //WorkDones ddl
             IWorkDonesRepository workDonesRepository = new WorkDonesRepository(db);
-            workDoneAttachmentView.WorkDones = new SelectList(workDonesRepository.GetValid().ToList(), "WorkDonePK", "Description");
+            workDoneAttachmentView.WorkDones = new SelectList(workDonesRepository.GetValid().OrderBy("Description ASC").ToList(), "WorkDonePK", "Description");
 
             if(workDoneFK != null) {
                 workDoneAttachmentView.WorkDoneFK = workDoneFK;
@@ -165,7 +166,7 @@ namespace Mateus.Controllers
             {
                 //WorkDones ddl
                 IWorkDonesRepository workDonesRepository = new WorkDonesRepository(db);
-                workDoneAttachmentView.WorkDones = new SelectList(workDonesRepository.GetValid().ToList(), "WorkDonePK", "Description");
+                workDoneAttachmentView.WorkDones = new SelectList(workDonesRepository.GetValid().OrderBy("Description ASC").ToList(), "WorkDonePK", "Description");
 
                 return View(workDoneAttachmentView);
             }
@@ -189,7 +190,7 @@ namespace Mateus.Controllers
 
                 //WorkDones ddl
                 IWorkDonesRepository workDonesRepository = new WorkDonesRepository(db);
-                workDoneAttachmentView.WorkDones = new SelectList(workDonesRepository.GetValid().ToList(), "WorkDonePK", "Description");
+                workDoneAttachmentView.WorkDones = new SelectList(workDonesRepository.GetValid().OrderBy("Description ASC").ToList(), "WorkDonePK", "Description");
 
                 return View(workDoneAttachmentView);
             }
@@ -256,7 +257,7 @@ namespace Mateus.Controllers
             {
                 //WorkDones ddl
                 IWorkDonesRepository workDonesRepository = new WorkDonesRepository(db);
-                workDoneAttachmentView.WorkDones = new SelectList(workDonesRepository.GetValid().ToList(), "WorkDonePK", "Description");
+                workDoneAttachmentView.WorkDones = new SelectList(workDonesRepository.GetValid().OrderBy("Description ASC").ToList(), "WorkDonePK", "Description");
 
                 return View(workDoneAttachmentView);
             }

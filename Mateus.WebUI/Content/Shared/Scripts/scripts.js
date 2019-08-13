@@ -1,4 +1,12 @@
-$(document).ready(function() {
+$(document).ready(function () {
+
+    $("#export-to-excel").on("click", function (e) {
+        e.preventDefault();
+        var oldAction = $('#work-done-form').attr('action');
+        $('#work-done-form').attr('action', "/Report/WorkDoneExportToExcel");
+        $('#work-done-form').submit();
+        $('#work-done-form').attr('action', oldAction);
+    });
 
     $(".grid tr, .form-grid tr").click(function() {
 

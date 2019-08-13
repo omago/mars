@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using Mateus.Model.EFModel.Repository.Interface;
 using Mateus.Model.EFModel.Repository.Concrete;
 using System.Data.Objects;
+using PITFramework.Support;
 
 namespace Mateus.Model.BussinesLogic.Views.CityCommunityModel
 {
@@ -58,13 +59,13 @@ namespace Mateus.Model.BussinesLogic.Views.CityCommunityModel
         {
             //countries ddl
             ICountriesRepository countriesRepository = new CountriesRepository(db);
-            cityCommunityView.Countries = new SelectList(countriesRepository.GetValid().ToList(), "CountryPK", "Name");    
+            cityCommunityView.Countries = new SelectList(countriesRepository.GetValid().OrderBy("Name ASC").ToList(), "CountryPK", "Name");    
 
             //counties ddl
             if (cityCommunityView.CountryFK != null)
             {
                 ICountiesRepository countiesRepository = new CountiesRepository(db);
-                cityCommunityView.Counties = new SelectList(countiesRepository.GetCountiesByCountry(Convert.ToInt32((int)cityCommunityView.CountryFK)), "CountyPK", "Name");
+                cityCommunityView.Counties = new SelectList(countiesRepository.GetCountiesByCountry(Convert.ToInt32((int)cityCommunityView.CountryFK)).OrderBy("Name ASC"), "CountyPK", "Name");
             }
             else
             {

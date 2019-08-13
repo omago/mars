@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using Mateus.Model.EFModel.Repository.Interface;
 using Mateus.Model.EFModel.Repository.Concrete;
 using System.Data.Objects;
+using PITFramework.Support;
 
 namespace Mateus.Model.BussinesLogic.Views.LegalEntityBankModel
 {
@@ -62,7 +63,7 @@ namespace Mateus.Model.BussinesLogic.Views.LegalEntityBankModel
         {
             //bank ddl
             IBanksRepository banksRepository = new BanksRepository (db);
-            LegalEntityBankView.Banks = new SelectList(banksRepository.GetValid().ToList(), "BankPK", "Name");
+            LegalEntityBankView.Banks = new SelectList(banksRepository.GetValid().OrderBy("Name ASC").ToList(), "BankPK", "Name");
         }
 
         public static IQueryable<LegalEntityBankView> GetLegalEntityBankView(IQueryable<LegalEntityBank> legalEntityBankTable, IQueryable<Bank> bankTable, IQueryable<LegalEntity> legalEntitiesTable) 

@@ -61,7 +61,7 @@
     @Html.Partial("~/Views/Shared/Partial/Breadcrumb.cshtml")
 </div>
 <div id="content">
-    @using (Html.BeginForm("WorkDone", "Report", FormMethod.Get))
+    @using (Html.BeginForm("WorkDone", "Report", FormMethod.Get, new { id = "work-done-form" }))
     {
         <div id="report-controls">
             <div class="grid-5 text-left no-print">
@@ -74,20 +74,21 @@
                     @Html.DropDownList("workSubtypeFK", ViewBag.WorkSubtypes as SelectList, "Odaberite vrstu posla", new { @class = "w40" })<br />
                     @Html.DropDownList("serviceTypeFK", ViewBag.ServiceTypes as SelectList, "Odaberite vrstu usluge", new { @class = "w40 margin-right-10" })
                     @Html.DropDownList("userFK", ViewBag.Users as SelectList, "Odaberite korisnika", new { @class = "w40" })<br /><br />
-                    
+
                     @Html.TextBox("dateFrom", Request.QueryString["dateFrom"], new { @class = "w40 datepicker margin-right-10", placeholder = "Datum izvršenja od" })
                     @Html.TextBox("dateTo", Request.QueryString["dateTo"], new { @class = "w40 datepicker", placeholder = "Datum izvršenja do" })<br />
-                                  
+
                     @Html.TextBox("timeSpentFrom", Request.QueryString["timeSpentFrom"], new { @class = "w40 margin-right-10", placeholder = "Utrošeno vrijeme od" })
-                    @Html.TextBox("timeSpentTo", Request.QueryString["timeSpentTo"], new { @class = "w40", placeholder = "Utrošeno vrijeme do" })<br />    
-                                                  
+                    @Html.TextBox("timeSpentTo", Request.QueryString["timeSpentTo"], new { @class = "w40", placeholder = "Utrošeno vrijeme do" })<br />
+
                     @Html.TextBox("numberOfAttachmentsFrom", Request.QueryString["numberOfAttachmentsFrom"], new { @class = "w40 margin-right-10", placeholder = "Broj priloga od" })
                     @Html.TextBox("numberOfAttachmentsTo", Request.QueryString["numberOfAttachmentsTo"], new { @class = "w40", placeholder = "Broj priloga do" })<br />
 
                     @Html.TextBox("description", Request.QueryString["description"], new { @class = "w40", placeholder = "Opis" })<br />
 
                     <input type="submit" value="Pretraži" class="button search margin-top-20" />
-                    @Html.ActionLink("Očisti odabir", "ClearReport", null, new { @class = "button margin-top-20"})
+                    <input type="submit" value="Izvezi u Excel" id="export-to-excel" class="button margin-top-20" />
+                    @Html.ActionLink("Očisti odabir", "ClearReport", null, new { @class = "button margin-top-20" })
 
                 </div>
             </div>
@@ -217,10 +218,7 @@
                                 {  
                                     timeSpentTotal = timeSpentTotal + (item.TimeSpent == null ? 0 : (int)item.TimeSpent);
                             
-                                    int timeSpentHours = item.TimeSpent == null ? 0 : (int)item.TimeSpent / 60;
-                                    int timeSpentMinutes = (item.TimeSpent == null ? 0 : (int)item.TimeSpent) - (timeSpentHours*60);
-                        
-                                    <td class="left @LinkHelper.getIsSorted("TimeSpent")">@(timeSpentHours.ToString() + "h " + timeSpentMinutes.ToString() + "min")</td>
+                                    <td class="left @LinkHelper.getIsSorted("TimeSpent")">@LinkHelper.calculateTimeSpent(item.TimeSpent)</td>
                                 }
                                 @if(LinkHelper.isChecked(Request.QueryString["ShowComment"])) { <td class="left @LinkHelper.getIsSorted("Comment")">@if (!String.IsNullOrWhiteSpace(@item.Comment)) { @item.Comment }</td> }
                                 @if(LinkHelper.isChecked(Request.QueryString["ShowAttachments"])) { <td class="@LinkHelper.getIsSorted("WorkDoneAttachmentsCount")">@item.WorkDoneAttachmentsCount.ToString()</td> }

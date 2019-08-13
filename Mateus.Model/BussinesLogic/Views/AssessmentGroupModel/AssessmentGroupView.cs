@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using Mateus.Model.EFModel.Repository.Interface;
 using Mateus.Model.EFModel.Repository.Concrete;
 using System.Data.Objects;
+using PITFramework.Support;
 
 namespace Mateus.Model.BussinesLogic.Views.AssessmentGroupModel
 {
@@ -45,7 +46,7 @@ namespace Mateus.Model.BussinesLogic.Views.AssessmentGroupModel
         public void BindDDLs(AssessmentGroupView assessmentGroupView, ObjectContext db) 
         {
             IAssessmentTypesRepository assessmentTypesRepository = new AssessmentTypesRepository(db);
-            assessmentGroupView.AssessmentTypes = new SelectList(assessmentTypesRepository.GetValid().ToList(), "AssessmentTypePK", "Name");
+            assessmentGroupView.AssessmentTypes = new SelectList(assessmentTypesRepository.GetValid().OrderBy("Name ASC").ToList(), "AssessmentTypePK", "Name");
         }
 
         public static IQueryable<AssessmentGroupView> GetAssessmentGroupView(IQueryable<AssessmentGroup> assessmentGroupTable, IQueryable<AssessmentType> assessmentTypeTable, IQueryable<AssessmentQuestion> assessmentQuestionTable) 

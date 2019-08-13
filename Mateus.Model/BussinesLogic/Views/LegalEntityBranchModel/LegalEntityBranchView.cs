@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using Mateus.Model.EFModel.Repository.Interface;
 using Mateus.Model.EFModel.Repository.Concrete;
 using System.Data.Objects;
+using PITFramework.Support;
 
 namespace Mateus.Model.BussinesLogic.Views.LegalEntityBranchModel
 {
@@ -102,17 +103,17 @@ namespace Mateus.Model.BussinesLogic.Views.LegalEntityBranchModel
         {
             //countries ddl
             ICountriesRepository countriesRepository = new CountriesRepository(db);
-            legalEntityBranchView.Countries = new SelectList(countriesRepository.GetValid().ToList(), "CountryPK", "Name");
+            legalEntityBranchView.Countries = new SelectList(countriesRepository.GetValid().OrderBy("Name ASC").ToList(), "CountryPK", "Name");
 
             //counties ddl
             ICountiesRepository countiesRepository = new CountiesRepository(db);
-            legalEntityBranchView.Counties = new SelectList(countiesRepository.GetCountiesByCountry((int)legalEntityBranchView.CountryFK).ToList(), "CountyPK", "Name");
+            legalEntityBranchView.Counties = new SelectList(countiesRepository.GetCountiesByCountry((int)legalEntityBranchView.CountryFK).OrderBy("Name ASC").ToList(), "CountyPK", "Name");
 
             //citiesCommunities dll
             if (legalEntityBranchView.CountyFK != null)
             {
                 ICitiesCommunitiesRepository citiesCommunitiesRepository = new CitiesCommunitiesRepository(db);
-                legalEntityBranchView.CitiesCommunities = new SelectList(citiesCommunitiesRepository.GetCitiesCommunitiesByCounty(Convert.ToInt32(legalEntityBranchView.CountyFK)), "CityCommunityPK", "Name", legalEntityBranchView.CityCommunityFK);
+                legalEntityBranchView.CitiesCommunities = new SelectList(citiesCommunitiesRepository.GetCitiesCommunitiesByCounty(Convert.ToInt32(legalEntityBranchView.CountyFK)).OrderBy("Name ASC"), "CityCommunityPK", "Name", legalEntityBranchView.CityCommunityFK);
             }
             else
             {
@@ -123,7 +124,7 @@ namespace Mateus.Model.BussinesLogic.Views.LegalEntityBranchModel
             if (legalEntityBranchView.CountyFK != null)
             {
                 IPostalOfficesRepository postalOfficesRepository = new PostalOfficesRepository(db);
-                legalEntityBranchView.PostalOffices = new SelectList(postalOfficesRepository.GetValidByCounty(Convert.ToInt32(legalEntityBranchView.CountyFK)), "PostalOfficePK", "Name", legalEntityBranchView.PostalOfficeFK);
+                legalEntityBranchView.PostalOffices = new SelectList(postalOfficesRepository.GetValidByCounty(Convert.ToInt32(legalEntityBranchView.CountyFK)).OrderBy("Name ASC"), "PostalOfficePK", "Name", legalEntityBranchView.PostalOfficeFK);
             }
             else
             {
@@ -134,7 +135,7 @@ namespace Mateus.Model.BussinesLogic.Views.LegalEntityBranchModel
             if (legalEntityBranchView.PostalOfficeFK != null)
             {
                 IPlacesRepository placesRepository = new PlacesRepository(db);
-                legalEntityBranchView.Places = new SelectList(placesRepository.GetPlacesByPostalOffice(Convert.ToInt32(legalEntityBranchView.PostalOfficeFK)), "PlacePK", "Name", legalEntityBranchView.PlaceFK);
+                legalEntityBranchView.Places = new SelectList(placesRepository.GetPlacesByPostalOffice(Convert.ToInt32(legalEntityBranchView.PostalOfficeFK)).OrderBy("Name ASC"), "PlacePK", "Name", legalEntityBranchView.PlaceFK);
             }
             else
             {

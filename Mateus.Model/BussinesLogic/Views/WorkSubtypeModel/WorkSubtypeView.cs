@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using Mateus.Model.EFModel.Repository.Interface;
 using Mateus.Model.EFModel.Repository.Concrete;
 using System.Data.Objects;
+using PITFramework.Support;
 
 namespace Mateus.Model.BussinesLogic.Views.WorkSubtypeModel
 {
@@ -44,7 +45,7 @@ namespace Mateus.Model.BussinesLogic.Views.WorkSubtypeModel
         public void BindDDLs(WorkSubtypeView workSubtypeView, ObjectContext db) 
         {
             IWorkTypesRepository workTypesRepository = new WorkTypesRepository(db);
-            workSubtypeView.WorkTypes = new SelectList(workTypesRepository.GetValid().ToList(), "WorkTypePK", "Name");
+            workSubtypeView.WorkTypes = new SelectList(workTypesRepository.GetValid().OrderBy("Name ASC").ToList(), "WorkTypePK", "Name");
         }
 
         public static IQueryable<WorkSubtypeView> GetWorkSubtypeView(IQueryable<WorkSubtype> workSubtypeTable, IQueryable<WorkType> workTypeTable) 

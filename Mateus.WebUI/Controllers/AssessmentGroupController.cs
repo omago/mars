@@ -8,6 +8,7 @@ using PITFramework.Support;
 using Mateus.Model.BussinesLogic.Views.AssessmentGroupModel;
 using Mateus.Support;
 using PITFramework.Support.Grid;
+using PITFramework.Support;
 
 namespace Mateus.Controllers
 {
@@ -43,7 +44,7 @@ namespace Mateus.Controllers
                                                         .OrderBy(ordering);
 
             //AssessmentTypes ddl
-            ViewBag.AssessmentTypes = new SelectList(assessmentTypesRepository.GetValid().ToList(), "AssessmentTypePK", "Name", Request.QueryString["assessmentTypeFK"]);
+            ViewBag.AssessmentTypes = new SelectList(assessmentTypesRepository.GetValid().OrderBy("Name ASC").ToList(), "AssessmentTypePK", "Name", Request.QueryString["assessmentTypeFK"]);
 
             if (!String.IsNullOrWhiteSpace(Request.QueryString["searchString"]))
             { 

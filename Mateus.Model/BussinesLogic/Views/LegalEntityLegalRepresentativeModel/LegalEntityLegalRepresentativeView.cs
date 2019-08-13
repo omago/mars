@@ -8,6 +8,7 @@ using Mateus.Model.EFModel.Repository.Interface;
 using Mateus.Model.EFModel.Repository.Concrete;
 using System.Data.Objects;
 using Mateus.Model.BussinesLogic.Views.PhysicalEntityModel;
+using PITFramework.Support;
 
 namespace Mateus.Model.BussinesLogic.Views.LegalEntityLegalRepresentativeModel
 {
@@ -66,7 +67,7 @@ namespace Mateus.Model.BussinesLogic.Views.LegalEntityLegalRepresentativeModel
         {
             //way of representation ddl
             IWaysOfRepresentationRepository wayOfRepresentationView = new WaysOfRepresentationRepository(db);
-            legalEntityLegalRepresentativeView.WaysOfRepresentation = new SelectList(wayOfRepresentationView.GetValid().ToList(), "WayOfRepresentationPK", "Name");
+            legalEntityLegalRepresentativeView.WaysOfRepresentation = new SelectList(wayOfRepresentationView.GetValid().OrderBy("Name ASC").ToList(), "WayOfRepresentationPK", "Name");
 
             //physicalEntity ddl
             PhysicalEntityView PhysicalEntityView = new PhysicalEntityView();

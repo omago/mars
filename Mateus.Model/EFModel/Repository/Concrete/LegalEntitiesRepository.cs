@@ -47,7 +47,7 @@ namespace Mateus.Model.EFModel.Repository.Concrete
 
         public IQueryable<LegalEntity> GetValid()
         {
-            return GetAll().Where(legalEntity => legalEntity.Deleted == false || legalEntity.Deleted == null).Where(legalEntity => legalEntity.Active == true);
+            return GetAll().Where(legalEntity => legalEntity.Deleted == false || legalEntity.Deleted == null);
         }
 
         public IQueryable<LegalEntity> GetValidOwners()
