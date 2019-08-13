@@ -431,7 +431,7 @@ namespace Mateus.Controllers
                     setRowValue(rowIndex, ShowWorkType, "Vrsta rada", item.WorkTypeName);
                     setRowValue(rowIndex, ShowWorkSubtype, "Vrsta posla", item.WorkSubtypeName);
                     setRowValue(rowIndex, ShowServiceType, "Vrsta usluge", item.ServiceTypeName);
-                    setRowValue(rowIndex, ShowDate, "Datum izvršenja", item.Date.Value.ToString("dd.MM.yyyy."));
+                    setRowValue(rowIndex, ShowDate, "Datum izvršenja", item.Date?.ToString("dd.MM.yyyy."));
                     setRowValue(rowIndex, ShowUsername, "Korisnik",  item.UserUsername);
                     setRowValue(rowIndex, ShowDescription, "Opis", item.Description);
                     setRowValue(rowIndex, ShowTimeSpent, "Utrošeno vrijeme", LinkHelper.calculateTimeSpent(item.TimeSpent));
